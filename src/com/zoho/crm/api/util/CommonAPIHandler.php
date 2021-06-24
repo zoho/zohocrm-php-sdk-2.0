@@ -227,7 +227,7 @@ class CommonAPIHandler
         }
         catch(SDKException $e)
         {
-            SDKLogger::severeError(Constants::SET_API_URL_EXCEPTION, $ex);
+            SDKLogger::severeError(Constants::SET_API_URL_EXCEPTION, $e);
                     
             throw $e;
         }
@@ -305,7 +305,7 @@ class CommonAPIHandler
 
         try
         {
-            $connector->addHeader(Constants::ZOHO_SDK, php_uname('s') . "/" . php_uname('r') . " php/" . phpversion() . ":" . Constants::SDK_VERSION);
+            $connector->addHeader(Constants::ZOHO_SDK, php_uname('s') . "/" . php_uname('r') . "/" . "php-2.0/" . phpversion() . ":" . Constants::SDK_VERSION);
         
             $response = $connector->fireRequest($convertInstance);
     
