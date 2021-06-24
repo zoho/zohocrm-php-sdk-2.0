@@ -2738,7 +2738,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     ```php
     //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName);
+    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
     //Get instance of BodyWrapper Class that will contain the request body
     $request = new BodyWrapper();
     //List of Record instances
@@ -2755,9 +2755,8 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     array_push($records, $record1);
     //Set the list to Records in BodyWrapper instance
     $request->setData($records);
-    $headerInstance = new HeaderMap();
     //Call updateRecord method that takes BodyWrapper instance, relatedRecordId as parameter.
-    $response = $relatedRecordsOperations->updateRelatedRecord($relatedListId, $request, $headerInstance);
+    $response = $relatedRecordsOperations->updateRelatedRecord($relatedListId, $request);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/rel-records-samples.html?src=update_rel_record)
@@ -2778,10 +2777,10 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     ```php
     //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,$recordId,$moduleAPIName);
+    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName, $recordId, $moduleAPIName, $xExternal);
     $headerInstance = new HeaderMap();
     //Call updateRecord method that takes relatedListId as parameter.
-    $response = $relatedRecordsOperations->delinkRecord($relatedListId, $headerInstance);
+    $response = $relatedRecordsOperations->delinkRecord($relatedListId);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/rel-records-samples.html?src=delink_single)
