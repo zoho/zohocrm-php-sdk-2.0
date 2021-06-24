@@ -63,7 +63,7 @@ class RelatedRecords
 	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
 	 * @throws Exception
 	 */
-	public static function getRelatedRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName)
+	public static function getRelatedRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $xExternal)
 	{
 		//example
 		//$moduleAPIName = "Leads";
@@ -71,7 +71,7 @@ class RelatedRecords
 		//$relatedListAPIName = "Products";
 		
 		//Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-	    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName);
+	    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
 		
 		//Get instance of ParameterMap Class
 		$paramInstance = new ParameterMap();
@@ -734,7 +734,7 @@ class RelatedRecords
 	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
 	 * @throws Exception
 	 */
-	public static function updateRelatedRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName)
+	public static function updateRelatedRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $xExternal)
 	{
 		//API Name of the module to update record
 		//$moduleAPIName = "Leads";
@@ -742,7 +742,7 @@ class RelatedRecords
 		//$relatedListAPIName = "Products";
 		
 		//Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,  $recordId,  $moduleAPIName);
+	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
 		
 		//Get instance of BodyWrapper Class that will contain the request body
 		$request = new BodyWrapper();
@@ -783,10 +783,8 @@ class RelatedRecords
 		//Set the list to Records in BodyWrapper instance
 		$request->setData($records);
 	
-		$headerInstance = new HeaderMap();
-
 		//Call updateRecord method that takes BodyWrapper instance as parameter.
-		$response = $relatedRecordsOperations->updateRelatedRecords($request, $headerInstance);
+		$response = $relatedRecordsOperations->updateRelatedRecords($request);
 		
 		if($response != null)
 		{
@@ -899,7 +897,7 @@ class RelatedRecords
 	 * @param relatedListIds - The ID of the related record.
 	 * @throws Exception
 	 */
-	public static function delinkRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName, array $relatedListIds)
+	public static function delinkRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName, array $relatedListIds, string $xExternal)
 	{
 		//API Name of the module to update record
 		//$moduleAPIName = "Leads";
@@ -907,7 +905,7 @@ class RelatedRecords
 		//$relatedListAPIName = "Products";
 		
 		//Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,  $recordId,  $moduleAPIName);
+	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
 		
 		//Get instance of ParameterMap Class
 		$paramInstance = new ParameterMap();
@@ -917,10 +915,8 @@ class RelatedRecords
 			$paramInstance->add(DelinkRecordsParam::ids(), $relatedListId);
 		}
 		
-		$headerInstance = new HeaderMap();
-
 		//Call delinkRecords method that takes paramInstance instance as parameter.
-		$response = $relatedRecordsOperations->delinkRecords($paramInstance, $headerInstance);
+		$response = $relatedRecordsOperations->delinkRecords($paramInstance);
 		
 		if($response != null)
 		{
@@ -1033,7 +1029,7 @@ class RelatedRecords
 	 * @param relatedListId - The ID of the related record.
 	 * @throws Exception
 	 */
-	public static function getRelatedRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId, string $destinationFolder)
+	public static function getRelatedRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId, string $destinationFolder, string $xExternal)
 	{
 		//example
 		//$moduleAPIName = "Leads";
@@ -1043,7 +1039,7 @@ class RelatedRecords
 		//$destinationFolder = "/Users/user_name/Desktop";
 		
 		//Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,  $recordId,  $moduleAPIName);
+	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
 		
 		$headerInstance = new HeaderMap();
 
@@ -1679,7 +1675,7 @@ class RelatedRecords
 	 * @param relatedListId - The ID of the related record.
 	 * @throws Exception
 	 */
-	public static function updateRelatedRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId)
+	public static function updateRelatedRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId, string $xExternal)
 	{
 		//API Name of the module to update record
 		//$moduleAPIName = "Leads";
@@ -1688,7 +1684,7 @@ class RelatedRecords
 		//$relatedRecordId = "34770614994115";
 		
 		//Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-	    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName);
+	    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
 		
 		//Get instance of BodyWrapper Class that will contain the request body
 		$request = new BodyWrapper();
@@ -1713,10 +1709,8 @@ class RelatedRecords
 		//Set the list to Records in BodyWrapper instance
 		$request->setData($records);
 
-		$headerInstance = new HeaderMap();
-	
 		//Call updateRecord method that takes BodyWrapper instance, relatedRecordId as parameter.
-		$response = $relatedRecordsOperations->updateRelatedRecord($relatedListId, $request, $headerInstance);
+		$response = $relatedRecordsOperations->updateRelatedRecord($relatedListId, $request);
 		
 		if($response != null)
 		{
@@ -1830,7 +1824,7 @@ class RelatedRecords
 	 * @param relatedListId - The ID of the related record.
 	 * @throws Exception
 	 */
-	public static function delinkRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId)
+	public static function delinkRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId, string $xExternal)
 	{
 		//API Name of the module to update record
 		//$moduleAPIName = "Leads";
@@ -1839,7 +1833,7 @@ class RelatedRecords
 		//$relatedRecordId = "34770614994115";
 		
 		//Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName, $recordId, $moduleAPIName);
+	    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName, $recordId, $moduleAPIName, $xExternal);
 
 		$headerInstance = new HeaderMap();
 		
