@@ -17,10 +17,10 @@ abstract class DataCenter
      * @return string A string representing the File Upload URL.
      */
     public abstract function getFileUploadUrl();
-    
-    public static function setEnvironment($url, $accountUrl, $fileUploadUrl)
+
+    public static function setEnvironment($url, $accountUrl, $fileUploadUrl, $name)
     {
-        return new Environment($url, $accountUrl, $fileUploadUrl); 
+        return new Environment($url, $accountUrl, $fileUploadUrl, $name);
     }
 }
 
@@ -30,19 +30,24 @@ abstract class DataCenter
 class Environment
 {
     public $url = null;
-    
+
     public $accountUrl = null;
 
     public $fileUploadUrl = null;
-    
-    public function __construct($url, $accountUrl, $fileUploadUrl)
+
+    public $name = null;
+
+    public function __construct($url, $accountUrl, $fileUploadUrl, $name)
     {
         $this->url = $url;
 
         $this->accountUrl = $accountUrl;
 
         $this->fileUploadUrl = $fileUploadUrl;
+
+        $this->name = $name;
     }
+
     /**
      * This method to get Zoho CRM API URL.
      * @return string A string representing the Zoho CRM API URL.
@@ -51,7 +56,7 @@ class Environment
     {
         return $this->url;
     }
-    
+
     /**
      * This method to get Zoho CRM Accounts URL.
      * @return string A string representing the accounts URL.
@@ -68,5 +73,14 @@ class Environment
     public function getFileUploadUrl()
     {
         return $this->fileUploadUrl;
+    }
+
+    /**
+     * This method to get name.
+     * @return string A string representing the name.
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

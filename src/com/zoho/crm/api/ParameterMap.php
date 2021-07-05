@@ -2,8 +2,11 @@
 namespace com\zoho\crm\api;
 
 use com\zoho\crm\api\util\Constants;
+
 use com\zoho\crm\api\util\HeaderParamValidator;
+
 use com\zoho\crm\api\exception\SDKException;
+
 use com\zoho\crm\api\util\DataTypeConverter;
 
 /**
@@ -12,7 +15,7 @@ use com\zoho\crm\api\util\DataTypeConverter;
 class ParameterMap
 {
     private $parameterMap = array();
-    
+
     /**
      * This is a getter method to get parameter map.
      * @return array An array representing the API request parameters.
@@ -30,33 +33,33 @@ class ParameterMap
     {
         $this->parameterMap = $parameterMap;
     }
-    
+
     /**
      * This method to add parameter name and value.
      * @param Param $param A Param class instance.
      * @param object $value A object containing the parameter value.
      */
-    public function add(Param $param, $value) 
+    public function add(Param $param, $value)
     {
         if($param === null)
         {
-            throw new SDKException(Constants::HEADER_NULL_ERROR, Constants::HEADER_INSTANCE_NULL_ERROR);
+            throw new SDKException(Constants::PARAMETER_NULL_ERROR, Constants::PARAM_INSTANCE_NULL_ERROR);
         }
 
         $paramName = $param->getName();
-        
+
         if($paramName === null)
         {
-            throw new SDKException(Constants::HEADER_NAME_NULL_ERROR, Constants::HEADER_NAME_NULL_ERROR_MESSAGE);
+            throw new SDKException(Constants::PARAM_NAME_NULL_ERROR, Constants::PARAM_NAME_NULL_ERROR_MESSAGE);
         }
-        
+
         if($value === null)
         {
-            throw new SDKException(Constants::HEADER_NULL_ERROR,$paramName.Constants::NULL_VALUE_ERROR_MESSAGE);
+            throw new SDKException(Constants::PARAMETER_NULL_ERROR, $paramName.Constants::NULL_VALUE_ERROR_MESSAGE);
         }
 
         $paramClassName = $param->getClassName();
-        
+
         $parsedParamValue = null;
 
         if($paramClassName != null)

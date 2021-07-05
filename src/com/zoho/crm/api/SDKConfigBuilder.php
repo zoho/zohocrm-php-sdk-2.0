@@ -33,7 +33,7 @@ class SDKConfigBuilder
      * This is a setter method to set autoRefreshFields.
      * @param autoRefreshFields
      */
-    public function setAutoRefreshFields(bool $autoRefreshFields)
+    public function autoRefreshFields(bool $autoRefreshFields)
     {
         $this->autoRefreshFields = $autoRefreshFields;
 
@@ -44,7 +44,7 @@ class SDKConfigBuilder
      * This is a setter method to set pickListValidation.
      * @param pickListValidation
      */
-    public function setPickListValidation(bool $pickListValidation)
+    public function pickListValidation(bool $pickListValidation)
     {
         $this->pickListValidation = $pickListValidation;
 
@@ -55,7 +55,7 @@ class SDKConfigBuilder
      * This is a setter method to set enableSSLVerification.
      * @param enableSSLVerification
      */
-    public function setSSLVerification(bool $enableSSLVerification)
+    public function sslVerification(bool $enableSSLVerification)
     {
         $this->enableSSLVerification = $enableSSLVerification;
 

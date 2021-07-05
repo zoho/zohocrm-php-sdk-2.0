@@ -29,7 +29,6 @@ use com\zoho\api\logger\SDKLogger;
  */
 class Initializer
 {
-
     public static $LOCAL = array();
 
     private static $initializer;
@@ -44,14 +43,11 @@ class Initializer
 
     public static $jsonDetails = null;
 
-    private $sdkConfig = null;
+    private $resourcePath = null;
 
     private $requestProxy = null;
 
-    private $resourcePath = null;
-
-    private function __construct()
-    {}
+    private $sdkConfig = null;
 
     /**
      * This to initialize the SDK.
@@ -69,57 +65,10 @@ class Initializer
     {
         try
         {
-            if(!$user instanceof UserSignature)
-            {
-                $error = array(Constants::FIELD => Constants::USER, Constants::EXPECTED_TYPE => UserSignature::class);
-
-                throw new SDKException(Constants::INITIALIZATION_ERROR, Constants::INITIALIZATION_EXCEPTION, $error);
-            }
-
-            if(!$environment instanceof Environment)
-            {
-                $error = array(Constants::FIELD => Constants::ENVIRONMENT, Constants::EXPECTED_TYPE => Environment::class);
-
-                throw new SDKException(Constants::INITIALIZATION_ERROR, Constants::INITIALIZATION_EXCEPTION, $error);
-            }
-
-            if(!$token instanceof Token)
-            {
-                $error = array(Constants::FIELD => Constants::TOKEN, Constants::EXPECTED_TYPE => Token::class);
-
-                throw new SDKException(Constants::INITIALIZATION_ERROR, Constants::INITIALIZATION_EXCEPTION, $error);
-            }
-
-            if(!$store instanceof TokenStore)
-            {
-                $error = array(Constants::FIELD => Constants::STORE, Constants::EXPECTED_TYPE => TokenStore::class);
-
-                throw new SDKException(Constants::INITIALIZATION_ERROR, Constants::INITIALIZATION_EXCEPTION, $error);
-            }
-
-            if(!$sdkConfig instanceof SDKConfig)
-            {
-                $error = array(Constants::FIELD => Constants::SDK_CONFIG, Constants::EXPECTED_TYPE => SDKConfig::class);
-
-                throw new SDKException(Constants::INITIALIZATION_ERROR, Constants::INITIALIZATION_EXCEPTION, $error);
-            }
-
-            if(is_null($resourcePath) || strlen($resourcePath) <= 0)
-            {
-                $exception = new SDKException(Constants::INITIALIZATION_ERROR, Constants::RESOURCE_PATH_ERROR_MESSAGE);
-                
-                throw $exception;
-            }
-
-            if (is_null($logger)) 
-            {
-                $logger = Logger::getInstance(Levels::INFO, getcwd() . DIRECTORY_SEPARATOR . Constants::LOGFILE_NAME);
-            }
-
             SDKLogger::initialize($logger);
 
             try
-            { 
+            {
                 if(is_null(self::$jsonDetails))
                 {
                     self::$jsonDetails = json_decode(file_get_contents(explode("src", realpath(__DIR__))[0] . Constants::JSON_DETAILS_FILE_PATH), true);
@@ -145,7 +94,7 @@ class Initializer
             $initializer->sdkConfig = $sdkConfig;
 
             $initializer->resourcePath = $resourcePath;
-            
+
             $initializer->requestProxy = $proxy;
 
             self::$LOCAL[$initializer->getEncodedKey($user, $environment)] = $initializer;
@@ -176,12 +125,12 @@ class Initializer
      */
     public static function getInitializer()
     {
-        if (!empty(self::$LOCAL) && count(self::$LOCAL) != 0) 
+        if (!empty(self::$LOCAL) && count(self::$LOCAL) != 0)
         {
             $initializer = new Initializer();
 
             $key = $initializer->getEncodedKey(self::$initializer->user, self::$initializer->environment);
-            
+
             if(array_key_exists($key, self::$LOCAL))
             {
                 return self::$LOCAL[$key];
@@ -200,35 +149,6 @@ class Initializer
      */
     public static function switchUser($user, $environment, $token, $sdkConfig, $proxy=null)
     {
-        
-        if(!$user instanceof UserSignature)
-        {
-            $error = array(Constants::FIELD => Constants::USER, Constants::EXPECTED_TYPE => UserSignature::class);
-            
-            throw new SDKException(Constants::SWITCH_USER_ERROR, Constants::SWITCH_USER_EXCEPTION, $error);
-        }
-        
-        if(!$environment instanceof Environment)
-        {
-            $error = array(Constants::FIELD => Constants::ENVIRONMENT, Constants::EXPECTED_TYPE => Environment::class);
-            
-            throw new SDKException(Constants::SWITCH_USER_ERROR, Constants::SWITCH_USER_EXCEPTION, $error);
-        }
-        
-        if(!$token instanceof Token)
-        {
-            $error = array(Constants::FIELD => Constants::TOKEN, Constants::EXPECTED_TYPE => Token::class);
-            
-            throw new SDKException(Constants::SWITCH_USER_ERROR, Constants::SWITCH_USER_EXCEPTION, $error);
-        }
-        
-        if(!$sdkConfig instanceof SDKConfig)
-        {
-            $error = array(Constants::FIELD => Constants::SDK_CONFIG, Constants::EXPECTED_TYPE => SDKConfig::class);
-            
-            throw new SDKException(Constants::SWITCH_USER_ERROR, Constants::SWITCH_USER_EXCEPTION, $error);
-        }
-        
         $initializer = new Initializer();
 
         $initializer->user = $user;
@@ -281,7 +201,7 @@ class Initializer
     {
         return $this->user;
     }
-    
+
     /**
      * This is a getter method to get RequestProxy.
      *
@@ -291,7 +211,7 @@ class Initializer
     {
         return $this->requestProxy;
     }
-    
+
 
     /**
      * This is a getter method to get OAuth client application information.
@@ -322,7 +242,7 @@ class Initializer
         $initializer = new Initializer();
 
         $key = $initializer->getEncodedKey($user, $environment);
-        
+
         if(array_key_exists($key, self::$LOCAL))
         {
             unset(self::$LOCAL[$initializer->getEncodedKey($user, $environment)]);
@@ -332,11 +252,11 @@ class Initializer
             $exception = new SDKException(null, Constants::USER_NOT_FOUND_ERROR_MESSAGE);
 
             SDKLogger::info(Constants::USER_NOT_FOUND_ERROR . $exception);
-            
+
             throw $exception;
         }
     }
-    
+
     private function getEncodedKey($user, $environment)
     {
         $userMail = $user->getEmail();
@@ -353,3 +273,4 @@ class Initializer
 		return Constants::FOR_EMAIL_ID . self::$initializer->getUser()->getEmail() . Constants::IN_ENVIRONMENT . self::$initializer->getEnvironment()->getUrl() . ".";
 	}
 }
+?>

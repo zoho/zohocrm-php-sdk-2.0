@@ -2,12 +2,12 @@
 namespace com\zoho\crm\api\util;
 
 use com\zoho\crm\api\Initializer;
+
 use com\zoho\crm\api\exception\SDKException;
 
-
 use com\zoho\crm\api\util\Constants;
-use com\zoho\api\logger\SDKLogger;
 
+use com\zoho\api\logger\SDKLogger;
 
 /**
  * The class contains methods to manipulate the module fields only when autoRefreshFields is set to false in Initializer.
@@ -20,7 +20,7 @@ class ModuleFieldsHandler
 	 */
 	private static function getDirectory()
 	{
-        return Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
+		return Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
 	}
 
 	private static function getFileName()
@@ -70,7 +70,7 @@ class ModuleFieldsHandler
 		{
             $recordFieldDetailsDirectory = self::getDirectory();
 
-			$files = glob($recordFieldDetailsDirectory.'/*.json');
+			$files = glob($recordFieldDetailsDirectory . '/*.json');
 
             // Deleting all the files in the list
             foreach($files as $file)
@@ -128,7 +128,7 @@ class ModuleFieldsHandler
 		try {
 			self::deleteFields($module);
 
-			Utility::getFields($module);
+			Utility::getFieldsInfo($module);
 		}
 		catch (SDKException $ex)
 		{

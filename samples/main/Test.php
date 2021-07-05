@@ -198,7 +198,7 @@ class Test
 	{
 		$absoluteFilePath = "/Users/abc-XXX/Desktop/Leads.zip";
 		
-		$orgID = "673xxx";
+		$orgID = "xxxxx";
 		
 		$moduleAPIName = "Leads";
 		
@@ -238,6 +238,14 @@ class Test
 		ContactRoles::updateContactRole($contactRoleId);
 		
 		ContactRoles::deleteContactRole($contactRoleId);
+		
+		ContactRoles::getAllContactRolesOfDeal("34770610207275");
+
+		ContactRoles::getContactRoleOfDeal("34770610208073", "34770610207275");
+
+		ContactRoles::addContactRoleToDeal("34770610208073", "34770610207275");
+
+		ContactRoles::removeContactRoleFromDeal("34770610208073", "34770610207275");
     }
 
     public static function Currency()

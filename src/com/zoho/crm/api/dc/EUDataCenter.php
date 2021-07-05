@@ -9,13 +9,13 @@ use com\zoho\crm\api\dc\DataCenter;
 class EUDataCenter extends DataCenter
 {
     private static $PRODUCTION = null;
-    
+
     private static $SANDBOX = null;
-    
+
     private static $DEVELOPER = null;
-    
+
     private static $EU = null;
-    
+
     /**
      * This Environment class instance represents the Zoho CRM Production Environment in EU Domain.
      * @return Environment A Environment class instance.
@@ -23,13 +23,13 @@ class EUDataCenter extends DataCenter
     public static function PRODUCTION()
     {
         self::$EU = new EUDataCenter();
-        
-        if (EUDataCenter::$PRODUCTION == null)
+
+        if (self::$PRODUCTION == null)
         {
-            EUDataCenter::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.eu", self::$EU->getIAMUrl(), self::$EU->getFileUploadUrl());
+            self::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.eu", self::$EU->getIAMUrl(), self::$EU->getFileUploadUrl(), "eu_prd");
         }
-        
-        return EUDataCenter::$PRODUCTION;
+
+        return self::$PRODUCTION;
     }
 
     /**
@@ -39,13 +39,13 @@ class EUDataCenter extends DataCenter
     public static function SANDBOX()
     {
         self::$EU = new EUDataCenter();
-        
-        if (EUDataCenter::$SANDBOX == null)
+
+        if (self::$SANDBOX == null)
         {
-            EUDataCenter::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.eu", self::$EU->getIAMUrl(), self::$EU->getFileUploadUrl());
+            self::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.eu", self::$EU->getIAMUrl(), self::$EU->getFileUploadUrl(), "eu_sdb");
         }
-        
-        return EUDataCenter::$SANDBOX;
+
+        return self::$SANDBOX;
     }
 
     /**
@@ -55,13 +55,13 @@ class EUDataCenter extends DataCenter
     public static function DEVELOPER()
     {
         self::$EU = new EUDataCenter();
-        
-        if (EUDataCenter::$DEVELOPER == null)
+
+        if (self::$DEVELOPER == null)
         {
-            EUDataCenter::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.eu", self::$EU->getIAMUrl(), self::$EU->getFileUploadUrl());
+            self::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.eu", self::$EU->getIAMUrl(), self::$EU->getFileUploadUrl(), "eu_dev");
         }
-        
-        return EUDataCenter::$DEVELOPER;
+
+        return self::$DEVELOPER;
     }
 
     public function getIAMUrl()

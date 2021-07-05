@@ -8,16 +8,16 @@ namespace com\zoho\api\logger;
 class Logger
 {
     private $filePath = null;
-    
+
     private $level = null;
-    
+
     private function __construct($level, $filePath)
     {
         $this->level = $level;
-        
+
         $this->filePath = $filePath;
     }
-    
+
     /**
      * Creates an Logger class instance with the specified log level and file path.
      * @param Levels $level A string containing the log level.
@@ -28,7 +28,7 @@ class Logger
     {
         return new Logger($level, $filePath);
     }
-    
+
     /**
      * This is a getter method to get logger level.
      * @return string A string representing the logger level.
@@ -37,7 +37,7 @@ class Logger
     {
         return $this->level;
     }
-    
+
     /**
      * This is a getter method to get log file path.
      * @return string A string representing the log file path.

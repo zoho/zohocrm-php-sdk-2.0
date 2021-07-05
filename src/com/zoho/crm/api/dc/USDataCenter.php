@@ -9,13 +9,13 @@ use com\zoho\crm\api\dc\DataCenter;
 class USDataCenter extends DataCenter
 {
     private static $PRODUCTION = null;
-    
+
     private static $SANDBOX = null;
-    
+
     private static $DEVELOPER = null;
-    
+
     private static $US = null;
-    
+
     /**
      * This Environment class instance represents the Zoho CRM Production Environment in US Domain.
      * @return Environment A Environment class instance.
@@ -23,15 +23,15 @@ class USDataCenter extends DataCenter
     public static function PRODUCTION()
     {
         self::$US = new USDataCenter();
-        
-        if (USDataCenter::$PRODUCTION == null)
+
+        if (self::$PRODUCTION == null)
         {
-            USDataCenter::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.com", self::$US->getIAMUrl(), self::$US->getFileUploadUrl());
+            self::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.com", self::$US->getIAMUrl(), self::$US->getFileUploadUrl(), "us_prd");
         }
-        
-        return USDataCenter::$PRODUCTION;
+
+        return self::$PRODUCTION;
     }
-    
+
     /**
      * This Environment class instance represents the Zoho CRM Sandbox Environment in US Domain.
      * @return Environment A Environment class instance.
@@ -39,13 +39,13 @@ class USDataCenter extends DataCenter
     public static function SANDBOX()
     {
         self::$US = new USDataCenter();
-        
-        if (USDataCenter::$SANDBOX == null)
+
+        if (self::$SANDBOX == null)
         {
-            USDataCenter::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.com", self::$US->getIAMUrl(), self::$US->getFileUploadUrl());
+            self::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.com", self::$US->getIAMUrl(), self::$US->getFileUploadUrl(), "us_sdb");
         }
-        
-        return USDataCenter::$SANDBOX;
+
+        return self::$SANDBOX;
     }
 
     /**
@@ -55,13 +55,13 @@ class USDataCenter extends DataCenter
     public static function DEVELOPER()
     {
         self::$US = new USDataCenter();
-        
-        if (USDataCenter::$DEVELOPER == null)
+
+        if (self::$DEVELOPER == null)
         {
-            USDataCenter::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.com", self::$US->getIAMUrl(), self::$US->getFileUploadUrl());
+            self::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.com", self::$US->getIAMUrl(), self::$US->getFileUploadUrl(), "us_dev");
         }
-        
-        return USDataCenter::$DEVELOPER;
+
+        return self::$DEVELOPER;
     }
 
     public function getIAMUrl()

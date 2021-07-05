@@ -38,11 +38,11 @@ class HeaderParamValidator
                 $detailsJO = [];
 
                 $detailsJO[Constants::HEADER_OR_PARAM_NAME] = $name;
-                
+
                 $detailsJO[Constants::CLASS_KEY] =  $className;
-                
+
                 $detailsJO[Constants::EXPECTED_TYPE] = $typeDetail[Constants::TYPE];
-                
+
                 throw new SDKException(Constants::TYPE_ERROR, null, $detailsJO, null);
             }
             else
@@ -53,7 +53,7 @@ class HeaderParamValidator
 
         return $value;
     }
-    
+
     public function getJSONDetails()
     {
         $json_Details = Initializer::$jsonDetails;
@@ -88,12 +88,9 @@ class HeaderParamValidator
     {
         foreach($json_Details as $json_Detail)
         {
-            if(array_key_exists(Constants::NAME, $json_Detail))
+            if(array_key_exists(Constants::NAME, $json_Detail) && strtolower($name) == strtolower($json_Detail[Constants::NAME]))
             {
-                if(strtolower($name) == strtolower($json_Detail[Constants::NAME]))
-                {
-                    return $json_Detail;
-                }
+                return $json_Detail;
             }
         }
     }
@@ -114,7 +111,7 @@ class HeaderParamValidator
 
 			$check = $test($varType, $type);
         }
-        
+
         if(strtolower($varType) == strtolower(Constants::OBJECT) || strtolower($type) == strtolower(Constants::OBJECT))
 		{
 			if(strtolower($type) == strtolower(Constants::OBJECT))

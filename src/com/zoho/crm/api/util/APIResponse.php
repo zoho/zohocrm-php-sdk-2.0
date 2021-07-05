@@ -11,9 +11,9 @@ class APIResponse
     private $statusCode;
 
     private $object;
-    
+
     private $isExpected;
-    
+
     /**
      * Creates an APIResponse class instance with the specified parameters.
      * @param array $headers A array containing the API response headers.
@@ -25,9 +25,9 @@ class APIResponse
         $this->headers = $headers;
 
         $this->statusCode = $statusCode;
-    
+
         $this->object = $object;
-        
+
         $this->isExpected = $expectedType;
     }
 
@@ -39,7 +39,7 @@ class APIResponse
     {
         return $this->headers;
     }
-    
+
     /**
      * This is a getter method to get the API response HTTP status code.
      * @return string A string representing the API response HTTP status code.
@@ -48,7 +48,7 @@ class APIResponse
     {
         return $this->statusCode;
     }
-    
+
     /**
      * This method to get an API response POJO class instance.
      * @return object A POJO class instance.
@@ -57,7 +57,7 @@ class APIResponse
     {
         return $this->object;
     }
-    
+
     /**
      * This is a getter method to get an API response instance that is the expected type or not.
      * @return Boolean representing the instance is expected type or not.

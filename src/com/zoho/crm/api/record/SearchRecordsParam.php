@@ -46,4 +46,9 @@ class SearchRecordsParam
 		return new Param('per_page', 'com.zoho.crm.api.Record.SearchRecordsParam'); 
 
 	}
+	public static final function fields()
+	{
+		return new Param('fields', 'com.zoho.crm.api.Record.SearchRecordsParam'); 
+
+	}
 } 

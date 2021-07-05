@@ -161,6 +161,7 @@ class ContactRolesOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
 		Utility::getFields("Contacts"); 
+		$handlerInstance->setModuleAPIName("Contacts"); 
 		return $handlerInstance->apiCall(RecordResponseHandler::class, 'application/json'); 
 
 	}
@@ -183,6 +184,7 @@ class ContactRolesOperations
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		Utility::getFields("Contacts"); 
+		$handlerInstance->setModuleAPIName("Contacts"); 
 		return $handlerInstance->apiCall(RecordResponseHandler::class, 'application/json'); 
 
 	}

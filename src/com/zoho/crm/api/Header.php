@@ -9,7 +9,7 @@ class Header
     private $name = null;
 
     private $className = null;
- 
+
     /**
      * Creates an Header class instance with the specified header name.
      * @param string $name A string containing the header name.
@@ -21,7 +21,7 @@ class Header
 
         $this->className = $className;
     }
-    
+
     /**
      * This is a getter method to get header name.
      * @return string A string representing the header name.

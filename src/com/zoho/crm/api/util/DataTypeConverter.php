@@ -9,7 +9,7 @@ use com\zoho\crm\api\util\Constants;
 class DataTypeConverter
 {
 	private static $PRE_CONVERTER_MAP = array();
-	
+
 	private static $POST_CONVERTER_MAP = array();
 
 	/**
@@ -21,50 +21,49 @@ class DataTypeConverter
 		{
 			return;
         }
-        
+
         $string = function ($obj) { return print_r($obj,true); };
-        
+
         $integer = function ($obj) { return intval($obj); };
-        
+
         $float = function ($obj) { return floatval($obj); };
-        
+
         $long = function ($obj) { return print_r($obj, true); };
-        
+
 		$bool = function ($obj) { return (bool)$obj; };
 
 		$double = function ($obj) { return (double)$obj; };
 
         $stringToDateTime = function ($obj) { return date_create($obj)->setTimezone(new \DateTimeZone(date_default_timezone_get())); };
-        
+
 		$dateTimeToString = function ($obj) { return $obj->format(\Datetime::ATOM); };
 
 		$stringToDate = function ($obj) { return date('Y-m-d', strtotime($obj)); };
-        
+
 		$dateToString = function ($obj) { return $obj->format('Y-m-d'); };
 
 		$preObject = function ($obj) { return self::preConvertObjectData($obj); };
 
 		$postObject = function ($obj) { return self::postConvertObjectData($obj); };
-        
+
         self::addToMap(\String::class, $string, $string);
-        
+
         self::addToMap(Constants::INTEGER_NAMESPACE, $integer, $integer);
-        
+
         self::addToMap(Constants::LONG_NAMESPACE, $long, $long);
-        
+
         self::addToMap(Constants::FLOAT_NAMESPACE, $float, $float);
-        
+
         self::addToMap(Constants::BOOLEAN_NAMESPACE, $bool, $bool);
-        
+
         self::addToMap(\DateTime::class, $stringToDateTime, $dateTimeToString);
-        
+
 		self::addToMap(Constants::DATE, $stringToDate, $dateToString);
-		
+
 		self::addToMap(Constants::OBJECT, $preObject, $postObject);
 
 		self::addToMap(Constants::DOUBLE_NAMESPACE, $double, $double);
 	}
-	
 
 	static function preConvertObjectData($obj)
 	{
@@ -111,10 +110,10 @@ class DataTypeConverter
 	static function addToMap($name, $preConverter, $postConverter)
 	{
 	    self::$PRE_CONVERTER_MAP[$name] = $preConverter;
-	    
+
 	    self::$POST_CONVERTER_MAP[$name] = $postConverter;
 	}
-	
+
 	/**
 	 * This method is to convert JSON value to expected data value.
 	 * @param object $obj A Object containing the JSON value.
@@ -123,11 +122,16 @@ class DataTypeConverter
 	 */
     static function preConvert($obj, $type)
 	{
-        self::init();
-   
-        return self::$PRE_CONVERTER_MAP[$type]($obj);
+		self::init();
+
+		if(array_key_exists($type, self::$PRE_CONVERTER_MAP))
+		{
+			return self::$PRE_CONVERTER_MAP[$type]($obj);
+		}
+
+        return $obj;
 	}
-	
+
 	/**
 	 * This method to convert PHP data to JSON data value.
 	 * @param object $obj A object containing the PHP data value.
@@ -137,7 +141,12 @@ class DataTypeConverter
 	static function postConvert($obj, $type)
 	{
 		self::init();
-		
-	    return self::$POST_CONVERTER_MAP[$type]($obj);
+
+		if(array_key_exists($type, self::$POST_CONVERTER_MAP))
+		{
+			return self::$POST_CONVERTER_MAP[$type]($obj);
+		}
+
+		return $obj;
 	}
 }
