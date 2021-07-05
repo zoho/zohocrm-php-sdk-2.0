@@ -41,7 +41,7 @@ class APIHTTPConnector
 	{
 		$this->contentType = $contentType;
 	}
-    
+
     /**
      * This is a setter method to set the API URL.
      * @param string $url A string containing the API Request URL.
@@ -59,7 +59,7 @@ class APIHTTPConnector
     {
         $this->requestMethod = $httpMethod;
     }
-    
+
     /**
      * This is a getter method to get API request headers.
      * @return array A array representing the API request headers.
@@ -68,7 +68,7 @@ class APIHTTPConnector
     {
         return $this->headers;
     }
-    
+
     /**
      * This is a setter method to set API request headers.
      * @param array $headers A array containing the API request headers.
@@ -77,7 +77,7 @@ class APIHTTPConnector
     {
         $this->headers = $headers;
     }
-    
+
     /**
      * This method to add API request header name and value.
      * @param string $headerName A string containing the API request header name.
@@ -87,7 +87,7 @@ class APIHTTPConnector
     {
         $this->headers[$headerName] = $headerValue;
     }
-    
+
     /**
      * This is a getter method to get API request parameters.
      * @return array A array representing the API request parameters.
@@ -96,7 +96,7 @@ class APIHTTPConnector
     {
         return $this->parameters;
     }
-    
+
     /**
      * This is a setter method to set API request parameters.
      * @param array $params A array containing the API request parameters.
@@ -105,7 +105,7 @@ class APIHTTPConnector
     {
         $this->parameters = $params;
     }
-    
+
     /**
      * This method to add API request param name and value.
      * @param string $paramName A string containing the API request param name.
@@ -115,7 +115,7 @@ class APIHTTPConnector
     {
         $this->parameters[$paramName] = $paramValue;
     }
-    
+
     /**
      * This is a setter method to set the API request body.
      * @param object $requestBody A Object containing the API request body.
@@ -124,7 +124,7 @@ class APIHTTPConnector
     {
         $this->requestBody = $requestBody;
     }
-    
+
     /**
      * This method makes a Zoho CRM Rest API requests
      * @param Converter $converterInstance A Converter class instance to call appendToRequest method.
@@ -133,7 +133,7 @@ class APIHTTPConnector
     public function fireRequest($converterInstance)
     {
         $curl_pointer = curl_init();
-        
+
         $curl_options = array();
 
         if (is_array($this->getParams()) && count($this->getParams()) > 0)
@@ -143,35 +143,35 @@ class APIHTTPConnector
 
         $curl_options[CURLOPT_URL] = $this->url;
 
-        if($this->isSetContentType() == true)
+        if($this->contentType != null)
         {
-            $this->addHeader(Constants::CONTENT_TYPE, $this->contentType);
+            $this->setContentTypeHeader();
         }
-        
+
         $curl_options[CURLOPT_RETURNTRANSFER] = true;
 
         $curl_options[CURLOPT_TIMEOUT] = Initializer::getInitializer()->getSDKConfig()->timeout();
 
         $curl_options[CURLOPT_CONNECTTIMEOUT] = Initializer::getInitializer()->getSDKConfig()->connectionTimeout();
-        
+
         $curl_options[CURLOPT_HEADER] = 1;
-        
+
         $requestProxy = Initializer::getInitializer()->getRequestProxy();
-        
+
         if ($requestProxy!=null)
         {
             $proxyHost = $requestProxy->getHost();
-        
+
             $proxyPort = strval($requestProxy->getPort());
-        
+
             $proxyUser = $requestProxy->getUser();
-        
+
             $proxyPassword = $requestProxy->getPassword();
-        
+
             $curl_options[CURLOPT_PROXY] = $proxyHost;
-        
+
             $curl_options[CURLOPT_PROXYPORT] = $proxyPort;
-            
+
             $userPass = "";
 
             if ($proxyUser!=null)
@@ -188,7 +188,7 @@ class APIHTTPConnector
 
             SDKLogger::info($this->proxyLog($requestProxy));
         }
-        
+
         $this->getRequestObject($curl_options);
 
         if ($this->requestBody != null)
@@ -215,35 +215,35 @@ class APIHTTPConnector
         {
             $response[Constants::ERROR] = curl_error($curl_pointer);
         }
-        
+
         $response[Constants::HTTP_CODE] = curl_getinfo($curl_pointer)[Constants::HTTP_CODE];
 
         $header_size = curl_getinfo($curl_pointer, CURLINFO_HEADER_SIZE);
 
-        $headers = substr($response[Constants::RESPONSE], 0, $header_size);
+        $responseHeaders = substr($response[Constants::RESPONSE], 0, $header_size);
 
         curl_close($curl_pointer);
 
-        $headers = explode("\r\n", $headers);
+        $responseHeaders = explode("\r\n", $responseHeaders);
 
-        $headers = array_filter($headers);
+        $responseHeaders = array_filter($responseHeaders);
 
         $headersArray = array();
-        
-        foreach($headers as $key => $value)
+
+        foreach($responseHeaders as $key => $value)
         {
             array_push($headersArray, preg_split('/:\s{1,}/', $value, 2));
         }
-        
+
         $tmp = [];
-        
+
         foreach($headersArray as $h)
         {
             $tmp[strtolower($h[0])] = isset($h[1]) ? $h[1] : $h[0];
         }
-        
+
         $headersArray = $tmp; $tmp = null;
-        
+
         $response[Constants::HEADERS] = $headersArray;
 
         return $response;
@@ -275,15 +275,18 @@ class APIHTTPConnector
                 $curl_options[CURLOPT_CUSTOMREQUEST] = Constants::REQUEST_METHOD_PUT;
                 break;
             case Constants::REQUEST_METHOD_PATCH:
-                
+
                 $curl_options[CURLOPT_CUSTOMREQUEST] = Constants::REQUEST_METHOD_PATCH;
+                break;
+            default:
+                break;
         }
     }
 
     private function setQueryHeaders(&$request)
     {
         $headersArray = array();
-        
+
         if (array_key_exists(CURLOPT_HTTPHEADER, $request))
         {
             $headersArray = $request[CURLOPT_HTTPHEADER];
@@ -298,57 +301,57 @@ class APIHTTPConnector
                 $headersArray[] = $key . ":" . $value;
             }
         }
-        
+
         $request[CURLOPT_HTTPHEADER] = $headersArray;
     }
-    
+
     private function setQueryParams()
     {
-        $params_as_string = "";
-        
+        $paramsAsString = "";
+
         foreach ($this->parameters as $key => $value)
         {
-            $params_as_string = $params_as_string . $key . "=" . urlencode($value) . "&";
+            $paramsAsString = $paramsAsString . $key . "=" . urlencode($value) . "&";
         }
-        
-        $params_as_string = rtrim($params_as_string, "&");
-        
-        $params_as_string = str_replace(PHP_EOL, '', $params_as_string);
-        
-        $this->url = $this->url . "?" . $params_as_string;
+
+        $paramsAsString = rtrim($paramsAsString, "&");
+
+        $paramsAsString = str_replace(PHP_EOL, '', $paramsAsString);
+
+        $this->url = $this->url . "?" . $paramsAsString;
     }
 
-    private function isSetContentType()
+    private function setContentTypeHeader()
 	{
 		foreach(Constants::SET_TO_CONTENT_TYPE as $contentType)
 		{
 			if(strpos($this->url, $contentType) == true)
 			{
-				return true;
+                $this->headers[Constants::CONTENT_TYPE] = $this->contentType;
+
+                return;
 			}
 		}
-		
-		return false;
     }
-    
+
     public function toString()
 	{
 		$reqHeaders = $this->headers;
-		
+
 		$reqHeaders[Constants::AUTHORIZATION] = Constants::CANT_DISCLOSE;
-		
+
 		return $this->requestMethod . " - " . Constants::URL . " = ". $this->url . " , " . Constants::HEADERS . " = ". json_encode($reqHeaders, JSON_UNESCAPED_UNICODE) . " , " . Constants::PARAMS . " = " . json_encode($this->parameters, JSON_UNESCAPED_UNICODE) . "." ;
     }
-    
+
     public function proxyLog($requestProxy)
     {
 	    $proxyDetails = Constants::PROXY_SETTINGS.Constants::PROXY_HOST.$requestProxy->getHost()." , ".Constants::PROXY_PORT.strval($requestProxy->getPort());
-	    
+
         if ($requestProxy->getUser() != null)
         {
 	        $proxyDetails = $proxyDetails . " , " . Constants::PROXY_USER . $requestProxy->getUser();
         }
-        
+
 	    return $proxyDetails;
 	}
 }

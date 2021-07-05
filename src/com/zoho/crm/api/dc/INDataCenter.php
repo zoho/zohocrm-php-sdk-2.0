@@ -9,13 +9,13 @@ use com\zoho\crm\api\dc\DataCenter;
 class INDataCenter extends DataCenter
 {
     private static $PRODUCTION = null;
-    
+
     private static $SANDBOX = null;
-    
+
     private static $DEVELOPER = null;
-    
+
     private static $IN = null;
-    
+
     /**
      * This Environment class instance represents the Zoho CRM Production Environment in IN Domain.
      * @return Environment A Environment class instance.
@@ -23,13 +23,13 @@ class INDataCenter extends DataCenter
     public static function PRODUCTION()
     {
         self::$IN = new INDataCenter();
-        
-        if (INDataCenter::$PRODUCTION == null)
+
+        if (self::$PRODUCTION == null)
         {
-            INDataCenter::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.in", self::$IN ->getIAMUrl(), self::$IN->getFileUploadUrl());
+            self::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.in", self::$IN ->getIAMUrl(), self::$IN->getFileUploadUrl(), "in_prd");
         }
-        
-        return INDataCenter::$PRODUCTION;
+
+        return self::$PRODUCTION;
     }
 
     /**
@@ -39,13 +39,13 @@ class INDataCenter extends DataCenter
     public static function SANDBOX()
     {
         self::$IN = new INDataCenter();
-        
-        if (INDataCenter::$SANDBOX == null)
+
+        if (self::$SANDBOX == null)
         {
-            INDataCenter::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.in", self::$IN ->getIAMUrl(), self::$IN->getFileUploadUrl());
+            self::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.in", self::$IN ->getIAMUrl(), self::$IN->getFileUploadUrl(), "in_sdb");
         }
-        
-        return INDataCenter::$SANDBOX;
+
+        return self::$SANDBOX;
     }
 
     /**
@@ -55,13 +55,13 @@ class INDataCenter extends DataCenter
     public static function DEVELOPER()
     {
         self::$IN = new INDataCenter();
-        
-        if (INDataCenter::$DEVELOPER == null)
+
+        if (self::$DEVELOPER == null)
         {
-            INDataCenter::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.in", self::$IN ->getIAMUrl(), self::$IN->getFileUploadUrl());
+            self::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.in", self::$IN ->getIAMUrl(), self::$IN->getFileUploadUrl(), "in_dev");
         }
-        
-        return INDataCenter::$DEVELOPER;
+
+        return self::$DEVELOPER;
     }
 
     public function getIAMUrl()

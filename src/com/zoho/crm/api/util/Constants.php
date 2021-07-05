@@ -464,7 +464,7 @@ class Constants
 
     const FORM_REQUEST_EXCEPTION = "Exception in forming request body : ";
 
-    const SDK_VERSION = "1.0.0";
+    const SDK_VERSION = "2.0.0";
 
     const API_CALL_EXCEPTION = "Exception in current API call execution : ";
 
@@ -635,5 +635,49 @@ class Constants
     const PHOTO_UPLOAD_ERROR_MESSAGE  = "The given module is not supported in API.";
 
     const INVALID_MODULE  = "INVALID_MODULE";
+
+    const REDIRECT_URI = "redirect_uri";
+
+    const INVALID_TOKEN_ERROR = "INVALID TOKEN ERROR" ;
+
+    const NO_ACCESS_TOKEN_ERROR = "ACCESS TOKEN IS NOT PRESENT IN RESPONSE" ;
+
+    const MYSQL_TABLE_NAME = "oauthtoken";
+
+    const GET_TOKEN_BY_ID_DB_ERROR = "Exception in getTokenById - DBStore : Given ID is invalid";
+
+    const GET_TOKEN_BY_ID_FILE_ERROR = "Exception in getTokenById - FileStore : Given ID is invalid";
+
+    const USERSIGNATURE_ERROR_MESSAGE = "UserSignature MUST NOT be null.";
+
+    const ENVIRONMENT_ERROR_MESSAGE = "Environment MUST NOT be null.";
+
+    const TOKEN_ERROR_MESSAGE = "Token MUST NOT be null.";
+
+    const STORE_ERROR_MESSAGE = "Store MUST NOT be null.";
+
+    const SDK_CONFIG_ERROR_MESSAGE = "sdkConfig MUST NOT be null.";
+
+    const RESOURCE_PATH_INVALID_ERROR_MESSAGE = "Resource Path MUST be a valid directory.";
+
+    const USER_SIGNATURE_ERROR = "USERSIGNATURE ERROR";
+
+    const DEFAULT_MODULENAME_VS_APINAME = array("leads"=>"Leads", "contacts"=>"Contacts", "accounts"=>"Accounts", "deals"=>"Deals", "tasks"=>"Tasks", "events"=>"Events", "activities"=>"Activities", "calls"=>"Calls", "products"=>"Products", "quotes"=>"Quotes", "sales_orders"=>"Sales_Orders", "purchase_orders"=>"Purchase_Orders", "invoices"=>"Invoices", "campaigns"=>"Campaigns", "vendors"=>"Vendors", "price_books"=>"Price_Books", "cases"=>"Cases", "solutions"=>"Solutions", "visits"=>"Visits", "approvals"=>"Approvals", "notes"=>"Notes", "attachments"=>"Attachments", "actions_performed"=>"Actions_Performed");
+
+    const GENERATED_TYPE = "generated_type";
+
+    const GENERATED_TYPE_CUSTOM = "custom";
+
+    const UPLOAD_PHOTO_UNSUPPORTED_ERROR = "UPLOAD PHOTO UNSUPPORTED MODULE";
+
+    const UPLOAD_PHOTO_UNSUPPORTED_MESSAGE = "Photo Upload Operation is not supported by the module: ";
+
+    const SDK_MODULE_METADATA = "SDK-MODULE-METADATA";
+
+    const CLIENT_ID_NULL_ERROR_MESSAGE = "ClientID MUST NOT be null" ;
+
+    const CLIENT_SECRET_NULL_ERROR_MESSAGE = "ClientSecret MUST NOT be null" ;
+
+    const OAUTH_MANDATORY_KEYS = ["grantToken", "refreshToken", "id"];
 }
 ?>

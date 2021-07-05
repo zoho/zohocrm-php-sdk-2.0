@@ -13,21 +13,21 @@ class XMLConverter extends Converter
 
     public function formRequest($requestObject, $pack, $instanceNumber, $memberDetail=null)
     {
-        return NULL;
+        return null;
     }
 
     public function appendToRequest(&$requestBase, $requestObject)
     {
-        return NULL;
+        return null;
     }
-    
+
     public function getWrappedResponse($responseObject, $pack)
     {
-        return NULL;
+        return $this->getResponse($responseObject, $pack);
     }
 
     public function getResponse($response, $pack)
     {
-        return NULL;
+        return null;
     }
 }

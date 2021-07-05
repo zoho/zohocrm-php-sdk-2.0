@@ -406,4 +406,84 @@ class RecordOperations
 		return $handlerInstance->apiCall(MassUpdateResponseHandler::class, 'application/json'); 
 
 	}
+
+	/**
+	 * The method to get record using external id
+	 * @param string $externalFieldValue A string
+	 * @param string $moduleAPIName A string
+	 * @param ParameterMap $paramInstance An instance of ParameterMap
+	 * @param HeaderMap $headerInstance An instance of HeaderMap
+	 * @return APIResponse An instance of APIResponse
+	 */
+	public  function getRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
+	{
+		$handlerInstance=new CommonAPIHandler(); 
+		$apiPath=""; 
+		$apiPath=$apiPath.('/crm/v2/'); 
+		$apiPath=$apiPath.(strval($moduleAPIName)); 
+		$apiPath=$apiPath.('/'); 
+		$apiPath=$apiPath.(strval($externalFieldValue)); 
+		$handlerInstance->setAPIPath($apiPath); 
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
+		$handlerInstance->setParam($paramInstance); 
+		$handlerInstance->setHeader($headerInstance); 
+		Utility::getFields($moduleAPIName); 
+		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+
+	}
+
+	/**
+	 * The method to update record using external id
+	 * @param string $externalFieldValue A string
+	 * @param string $moduleAPIName A string
+	 * @param BodyWrapper $request An instance of BodyWrapper
+	 * @param HeaderMap $headerInstance An instance of HeaderMap
+	 * @return APIResponse An instance of APIResponse
+	 */
+	public  function updateRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
+	{
+		$handlerInstance=new CommonAPIHandler(); 
+		$apiPath=""; 
+		$apiPath=$apiPath.('/crm/v2/'); 
+		$apiPath=$apiPath.(strval($moduleAPIName)); 
+		$apiPath=$apiPath.('/'); 
+		$apiPath=$apiPath.(strval($externalFieldValue)); 
+		$handlerInstance->setAPIPath($apiPath); 
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
+		$handlerInstance->setContentType('application/json'); 
+		$handlerInstance->setRequest($request); 
+		$handlerInstance->setHeader($headerInstance); 
+		Utility::getFields($moduleAPIName); 
+		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+
+	}
+
+	/**
+	 * The method to delete record using external id
+	 * @param string $externalFieldValue A string
+	 * @param string $moduleAPIName A string
+	 * @param ParameterMap $paramInstance An instance of ParameterMap
+	 * @param HeaderMap $headerInstance An instance of HeaderMap
+	 * @return APIResponse An instance of APIResponse
+	 */
+	public  function deleteRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
+	{
+		$handlerInstance=new CommonAPIHandler(); 
+		$apiPath=""; 
+		$apiPath=$apiPath.('/crm/v2/'); 
+		$apiPath=$apiPath.(strval($moduleAPIName)); 
+		$apiPath=$apiPath.('/'); 
+		$apiPath=$apiPath.(strval($externalFieldValue)); 
+		$handlerInstance->setAPIPath($apiPath); 
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
+		$handlerInstance->setParam($paramInstance); 
+		$handlerInstance->setHeader($headerInstance); 
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+
+	}
 } 

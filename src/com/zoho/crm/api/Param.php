@@ -9,7 +9,7 @@ class Param
    private $name = null;
 
    private $className = null;
-   
+
    /**
     * Creates an Param class instance with the specified parameter name.
     * @param string $name A string containing the parameter name.
@@ -21,7 +21,7 @@ class Param
 
        $this->className = $className;
    }
-   
+
    /**
     * This is a getter method to get parameter name.
     * @return string A string representing the parameter name.

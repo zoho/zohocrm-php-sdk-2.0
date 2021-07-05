@@ -1,4 +1,4 @@
-# Migrating from Zoho CRM PHP SDK
+# Migrating from Zoho CRM PHP SDK 2.x to 3.x
 
 Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/php-sdk-archive) to zohocrm/php-sdk-2.0
 
@@ -101,7 +101,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/restclient-sample.html?src=organization_details)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of OrgOperations Class
@@ -125,7 +125,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/restclient-sample.html?src=current_user)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of UsersOperations Class
@@ -151,7 +151,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=user_details)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of UsersOperations Class
@@ -182,7 +182,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_user)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of UsersOperations Class
@@ -234,7 +234,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=update_user)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of UsersOperations Class
@@ -269,7 +269,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_user)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of UsersOperations Class
@@ -293,7 +293,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=all_profiles)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of ProfilesOperations Class
@@ -315,7 +315,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=profile_data)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of ProfilesOperations Class
@@ -340,7 +340,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=all_roles)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RolesOperations Class
@@ -362,7 +362,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=role_data)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RolesOperations Class
@@ -386,7 +386,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_org_taxes)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TaxesOperations Class
@@ -408,7 +408,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_org_tax)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TaxesOperations Class
@@ -434,7 +434,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_org_tax)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TaxesOperations Class
@@ -476,7 +476,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=update_org_tax)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TaxesOperations Class
@@ -520,7 +520,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_org_taxes)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TaxesOperations Class
@@ -548,7 +548,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_org_tax)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TaxesOperations Class
@@ -575,7 +575,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_notes)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of NotesOperations Class
@@ -612,7 +612,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_notes)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of NotesOperations Class
@@ -657,7 +657,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_notes)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of NotesOperations Class
@@ -688,7 +688,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=add_note)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
   - [Create Notes](#create-notes)
 
@@ -708,7 +708,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=update_note)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of NotesOperations Class
@@ -745,7 +745,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_note)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of NotesOperations Class
@@ -769,7 +769,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_variables)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariablesOperations Class
@@ -815,7 +815,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_variables)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariablesOperations Class
@@ -888,7 +888,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=update_variables)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariablesOperations Class
@@ -934,7 +934,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=get_variable)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariablesOperations Class
@@ -962,7 +962,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=update_variable)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariablesOperations Class
@@ -997,7 +997,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=delete_variable)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariablesOperations Class
@@ -1021,7 +1021,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_variable_groups)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariableGroupsOperations Class
@@ -1038,13 +1038,13 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     ```php
     $variable_group_ins=ZCRMVariableGroup::getInstance();//to get the rest client
-    $variable_group_ins->setId("35240330231001");
+    $variable_group_ins->setId("3524033000000231001");
     $variable_group_instance = $variable_group_ins->getVariableGroup();
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=get_variable_group)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of VariableGroupsOperations Class
@@ -1068,7 +1068,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_fields)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of FieldsOperations Class that takes moduleAPIName as parameter
@@ -1093,7 +1093,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=field_details)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of FieldsOperations Class that takes moduleAPIName as parameter
@@ -1117,7 +1117,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_layouts)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of LayoutsOperations Class that takes moduleAPIName as parameter
@@ -1139,7 +1139,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=layout_details)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of LayoutsOperations Class that takes moduleAPIName as parameter
@@ -1166,7 +1166,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_custom_views)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of CustomViewOperations Class that takes moduleAPIName as parameter
@@ -1188,7 +1188,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=custom_view_details)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of CustomViewOperations Class that takes moduleAPIName as parameter
@@ -1212,7 +1212,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_related_lists)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RelatedListsOperations Class that takes moduleAPIName as parameter
@@ -1234,7 +1234,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=related_list_details)
 
-    - v1.x.x
+    - v2.x.x - zohocrm/php-sdk-2.0
 
         ```php
         //Get instance of RelatedListsOperations Class that takes moduleAPIName as parameter
@@ -1261,7 +1261,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=records_list)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class that takes moduleAPIName as parameter
@@ -1295,7 +1295,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     // $datetime = date_create("2021-02-26T15:28:34+05:30")->setTimezone(new \DateTimeZone(date_default_timezone_get()));
     // $headerInstance->add(GetRecordsHeader::IfModifiedSince(), $datetime);
     //Call getRecords method
-    $response = $recordOperations->getRecords($moduleAPIName,$paramInstance, $headerInstance);
+    $response = $recordOperations->getRecords($moduleAPIName, $paramInstance, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=get_records)
@@ -1313,7 +1313,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=get_record)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -1337,7 +1337,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     // $ifmodifiedsince = date_create("2020-06-02T11:03:06+05:30")->setTimezone(new \DateTimeZone(date_default_timezone_get()));
     // $headerInstance->add(GetRecordHeader::IfModifiedSince(), $ifmodifiedsince);
     //Call getRecord method that takes paramInstance, moduleAPIName and recordID as parameter
-    $response = $recordOperations->getRecord( $recordId,$moduleAPIName,$paramInstance, $headerInstance);
+    $response = $recordOperations->getRecord($recordId, $moduleAPIName, $paramInstance, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=get_record)
@@ -1404,7 +1404,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=search_record_criteria)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //example, moduleAPIName = "Leads";
@@ -1483,7 +1483,6 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $record->setFieldValue("Pricing_Model", "Flat"); // setting the price book model
     array_push($pricebookRecords, $record); // pushing the record to the array
 
-
     $trigger=array();//triggers to include
     $responseIn = $moduleIns->updateRecords($inventoryRecords,$trigger); // updating the records.$trigger is optional , to update price book records$pricebookRecords can be used in the place of $inventoryRecords
 
@@ -1491,7 +1490,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=update_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -1597,7 +1596,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
 [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=create_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class that takes moduleAPIName as parameter
@@ -1799,7 +1798,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=delete_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //API Name of the module to update record
@@ -1860,7 +1859,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=permanently_deleted_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -1903,7 +1902,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=upsert_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class that takes moduleAPIName as parameter
@@ -1979,7 +1978,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=mass_update_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2053,7 +2052,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=create_record)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
   - [Create a Record](#create-records)
 
@@ -2093,7 +2092,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=update_record)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2160,7 +2159,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_record)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2191,7 +2190,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=convert_record)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2255,7 +2254,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=upload_photo)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2283,7 +2282,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=download_photo)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2305,7 +2304,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_photo)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of RecordOperations Class
@@ -2329,7 +2328,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=get_tags)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     $tagsOperations = new TagsOperations();
@@ -2354,7 +2353,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=tag_count)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     $tagsOperations = new TagsOperations();
@@ -2382,7 +2381,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=create_tags)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TagsOperations Class
@@ -2424,7 +2423,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=update_tags)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TagsOperations Class
@@ -2468,7 +2467,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=add_tags)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TagsOperations Class
@@ -2510,7 +2509,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=remove_tags)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TagsOperations Class
@@ -2545,7 +2544,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=add_tags_to_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TagsOperations Class
@@ -2578,7 +2577,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=remove_tags_from_records)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of TagsOperations Class
@@ -2612,7 +2611,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=get_attachments)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2634,7 +2633,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=upload_attachments)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2662,7 +2661,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=link_attachments)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     /Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2687,7 +2686,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=download_attachments)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2709,7 +2708,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_attachments)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2734,11 +2733,11 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=add_relation)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
-    //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName,  $recordId,  $moduleAPIName, $xExternal);
+    //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, relatedListAPIName as parameter
+    $relatedRecordsOperations = new RelatedRecordsOperations( $relatedListAPIName, $moduleAPIName);
     //Get instance of BodyWrapper Class that will contain the request body
     $request = new BodyWrapper();
     //List of Record instances
@@ -2755,8 +2754,9 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     array_push($records, $record1);
     //Set the list to Records in BodyWrapper instance
     $request->setData($records);
-    //Call updateRecord method that takes BodyWrapper instance, relatedRecordId as parameter.
-    $response = $relatedRecordsOperations->updateRelatedRecord($relatedListId, $request);
+    $headerInstance = new HeaderMap();
+    //Call updateRecord method that takes relatedRecordId, recordId and BodyWrapper instance as parameter.
+    $response = $relatedRecordsOperations->updateRelatedRecord($$relatedListId, $recordId, $request);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/rel-records-samples.html?src=update_rel_record)
@@ -2773,14 +2773,14 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=remove_relation)
 
-- v1.x.x
+- v2.x.x - zohocrm/php-sdk-2.0
 
     ```php
-    //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
-    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName, $recordId, $moduleAPIName, $xExternal);
+    //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, relatedListAPIName as parameter
+    $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,$moduleAPIName);
     $headerInstance = new HeaderMap();
-    //Call updateRecord method that takes relatedListId as parameter.
-    $response = $relatedRecordsOperations->delinkRecord($relatedListId);
+    //Call updateRecord method that takes relatedListId, recordId as parameter.
+    $response = $relatedRecordsOperations->delinkRecord($relatedListId, $recordId);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/rel-records-samples.html?src=delink_single)

@@ -63,7 +63,7 @@ class CommonAPIHandler
 
         $this->param = new ParameterMap();
     }
-    
+
     /**
      * This is a setter method to set an API request content type.
      * @param string $contentType A string containing the API request content type.
@@ -80,12 +80,6 @@ class CommonAPIHandler
     public function setAPIPath($apiPath)
     {
         $this->apiPath = $apiPath;
-    }
-    
-
-    public function getAPIPath()
-    {
-        return $this->apiPath ;
     }
 
     /**
@@ -107,7 +101,7 @@ class CommonAPIHandler
 
         $this->param->add($paramInstane, $paramValue);
     }
-    
+
     /**
      * This method to add an API request header.
      * @param string $header A Header containing the API request header .
@@ -119,7 +113,7 @@ class CommonAPIHandler
         {
             return;
         }
-        
+
         if ($this->header === null)
         {
             $this->header = new HeaderMap();
@@ -127,7 +121,7 @@ class CommonAPIHandler
 
         $this->header->add($headerInstane, $headerValue);
     }
-    
+
     /**
      * This is a setter method to set the API request parameter map.
      * @param ParameterMap $param A ParameterMap class instance containing the API request parameter.
@@ -139,7 +133,7 @@ class CommonAPIHandler
             return;
         }
 
-        if($this->param->getParameterMap()!==null && count($this->param->getParameterMap())>0)
+        if($this->param->getParameterMap() !== null && count($this->param->getParameterMap()) > 0)
         {
             $this->param->setParameterMap(array_merge($this->param->getParameterMap(), $param->getParameterMap()));
         }
@@ -157,7 +151,7 @@ class CommonAPIHandler
     {
         return $this->moduleAPIName;
     }
-    
+
     /**
      * This is a setter method to set the Zoho CRM module API name.
      * @param string $moduleAPIName A string containing the Zoho CRM module API name.
@@ -166,7 +160,7 @@ class CommonAPIHandler
     {
         $this->moduleAPIName = $moduleAPIName;
     }
-    
+
     /**
      * This is a setter method to set the API request header map.
      * @param HeaderMap $header A HeaderMap class instance containing the API request header.
@@ -178,14 +172,14 @@ class CommonAPIHandler
             return;
         }
 
-        if($this->header->getHeaderMap()!== null && count($this->header->getHeaderMap())>0)
+        if($this->header->getHeaderMap() !== null && count($this->header->getHeaderMap()) > 0)
         {
             $this->header->setHeaderMap(array_merge($this->header->getHeaderMap(), $header->getHeaderMap()));
         }
         else
         {
             $this->header = $header;
-        }   
+        }
     }
 
     /**
@@ -196,7 +190,7 @@ class CommonAPIHandler
     {
         $this->request = $request;
     }
-    
+
     /**
      * This is a setter method to set the HTTP API request method.
      * @param string $httpMethod A string containing the HTTP API request method.
@@ -209,8 +203,8 @@ class CommonAPIHandler
     /**
      * This method is used in constructing API request and response details. To make the Zoho CRM API calls.
      * @param string $className A string containing the method return type.
-     * @param string $encodeType A String containing the expected API response content type. 
-     * @return \com\zoho\crm\api\util\APIResponse A APIResponse representing the Zoho CRM API response instance or null. 
+     * @param string $encodeType A String containing the expected API response content type.
+     * @return \com\zoho\crm\api\util\APIResponse A APIResponse representing the Zoho CRM API response instance or null.
      */
     public function apiCall($className, $encodeType)
     {
@@ -218,7 +212,7 @@ class CommonAPIHandler
         {
             throw new SDKException(Constants::SDK_UNINITIALIZATION_ERROR,Constants::SDK_UNINITIALIZATION_MESSAGE);
         }
-        
+
         $connector = new APIHTTPConnector();
 
         try
@@ -228,32 +222,32 @@ class CommonAPIHandler
         catch(SDKException $e)
         {
             SDKLogger::severeError(Constants::SET_API_URL_EXCEPTION, $e);
-                    
+
             throw $e;
         }
         catch (\Exception $e)
         {
             $exception = new SDKException(null, null, null, $e);
-            
+
             SDKLogger::severeError(Constants::SET_API_URL_EXCEPTION, $exception);
-                        
+
             throw $exception;
         }
-        
+
         $connector->setRequestMethod($this->httpMethod);
 
         $connector->setContentType($this->contentType);
-        
+
         if ($this->header != null && count($this->header->getHeaderMap()) > 0)
         {
             $connector->setHeaders($this->header->getHeaderMap());
         }
-       
+
         if ($this->param != null && count($this->param->getParameterMap()) > 0)
         {
             $connector->setParams($this->param->getParameterMap());
         }
-        
+
         try
         {
             Initializer::getInitializer()->getToken()->authenticate($connector);
@@ -261,20 +255,20 @@ class CommonAPIHandler
         catch (SDKException $e)
 		{
 		    SDKLogger::severeError(Constants::AUTHENTICATION_EXCEPTION, $e);
-                    
+
 		    throw $e;
         }
         catch (\Exception $e)
         {
             $exception = new SDKException(null, null, null, $e);
-            
+
             SDKLogger::severeError(Constants::AUTHENTICATION_EXCEPTION, $exception);
-            
+
             throw $exception;
         }
-        
+
         $convertInstance = null;
-       
+
         if ($this->contentType != null && in_array(strtoupper($this->httpMethod), Constants::IS_GENERATE_REQUEST_BODY))
         {
             $requestObject = null;
@@ -283,38 +277,38 @@ class CommonAPIHandler
             {
                 $convertInstance = $this->getConverterClassInstance(strtolower($this->contentType));
 
-                $requestObject = $convertInstance->formRequest($this->request, get_class($this->request), null,null);
+                $requestObject = $convertInstance->formRequest($this->request, get_class($this->request), null, null);
             }
             catch (SDKException $e)
 			{
 			    SDKLogger::severeError(Constants::FORM_REQUEST_EXCEPTION, $e);
-				
+
 				throw $e;
             }
             catch (\Exception $e)
             {
-                $exception = new SDKException(null,null,null,$e);
-                
+                $exception = new SDKException(null, null, null, $e);
+
                 SDKLogger::severeError(Constants::FORM_REQUEST_EXCEPTION, $exception);
-                
+
                 throw $exception;
             }
-            
+
             $connector->setRequestBody($requestObject);
         }
 
         try
         {
             $connector->addHeader(Constants::ZOHO_SDK, php_uname('s') . "/" . php_uname('r') . "/" . "php-2.0/" . phpversion() . ":" . Constants::SDK_VERSION);
-        
+
             $response = $connector->fireRequest($convertInstance);
-    
+
             $statusCode = $response[Constants::HTTP_CODE];
-    
+
             $headerMap = $response[Constants::HEADERS];
-            
+
             $isModel = false;
-    
+
             $returnObject  = null;
 
             if(array_key_exists(Constants::CONTENT_TYPE, $headerMap) && !array_key_exists(Constants::ERROR, $response))
@@ -324,7 +318,7 @@ class CommonAPIHandler
                 if (strpos($responseContentType, ';') != false)
                 {
                     $splitArray = explode(';', $responseContentType);
-        
+
                     $responseContentType = $splitArray[0];
                 }
 
@@ -332,12 +326,9 @@ class CommonAPIHandler
 
                 $returnObject = $converterInstance->getWrappedResponse($response[Constants::RESPONSE], $className);
 
-                if ($returnObject !== null)
+                if ($returnObject !== null && ($className == get_class($returnObject) || $this->isExpectedType($returnObject, $className)))
                 {
-                    if ($className == get_class($returnObject) || $this->isExpectedType($returnObject, $className))
-                    {
-                        $isModel = true;
-                    }
+                    $isModel = true;
                 }
             }
             else
@@ -351,12 +342,13 @@ class CommonAPIHandler
                     SDKLogger::severeError(Constants::API_ERROR_RESPONSE . json_encode($response, JSON_UNESCAPED_UNICODE), null);
                 }
             }
-            
+
             return new APIResponse($headerMap, $statusCode, $returnObject, $isModel);
         }
         catch (SDKException $e)
 		{
-		    SDKLogger::severeError(Constants::API_CALL_EXCEPTION , $e);
+            SDKLogger::severeError(Constants::API_CALL_EXCEPTION , $e);
+
 		    throw $e;
         }
         catch (\Exception $e)
@@ -367,7 +359,7 @@ class CommonAPIHandler
 
             throw $exception;
         }
-        
+
         return null;
     }
 
@@ -385,7 +377,7 @@ class CommonAPIHandler
 
         return false;
     }
-    
+
     /**
      * This method is used to get a Converter class instance.
      * @param string $encodeType A string containing the API response content type.
@@ -448,9 +440,9 @@ class CommonAPIHandler
             case "video/3gpp2":
             case "font/ttf":
                 return new Downloader($this);
+            default:
+                return null;
         }
-
-        return null;
     }
 
     private function setAPIUrl(APIHTTPConnector $connector)
@@ -462,23 +454,23 @@ class CommonAPIHandler
             if(strpos($this->apiPath, Constants::CONTENT_API_URL) != false)
             {
                 $APIPath = $APIPath . (Initializer::getInitializer()->getEnvironment()->getFileUploadUrl());
-                
-                try 
+
+                try
                 {
                     $uri = parse_url($this->apiPath);
-                    
+
                     $APIPath = $APIPath . ($uri['path']);
-                } 
-                catch (\Exception $ex) 
+                }
+                catch (\Exception $ex)
                 {
                     $excp = new SDKException(null, null, null, $ex);
 
                     SDKLogger::severeError(Constants::INVALID_URL_ERROR, $excp);
-                    
+
                     throw $excp;
                 }
             }
-            else 
+            else
             {
                 if(substr($this->apiPath, 0, 1) == "/")
                 {
@@ -491,10 +483,10 @@ class CommonAPIHandler
         else
         {
             $APIPath = $APIPath . (Initializer::getInitializer()->getEnvironment()->getUrl());
-            
+
             $APIPath = $APIPath . ($this->apiPath);
         }
-        
+
         $connector->setUrl($APIPath);
     }
 
@@ -521,6 +513,11 @@ class CommonAPIHandler
 	public function setCategoryMethod($category)
 	{
 		$this->categoryMethod = $category;
+    }
+
+    public function getAPIPath()
+	{
+		return $this->apiPath;
 	}
 }
 ?>

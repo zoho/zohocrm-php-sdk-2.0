@@ -2,10 +2,12 @@
 namespace com\zoho\crm\api;
 
 use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\HeaderParamValidator;
-use com\zoho\crm\api\util\DataTypeConverter;
 
+use com\zoho\crm\api\exception\SDKException;
+
+use com\zoho\crm\api\util\HeaderParamValidator;
+
+use com\zoho\crm\api\util\DataTypeConverter;
 
 /**
  * This class represents the HTTP header name and value.
@@ -41,29 +43,29 @@ class HeaderMap
     {
         if($header === null)
         {
-            throw new SDKException(Constants::PARAMETER_NULL_ERROR, Constants::PARAM_INSTANCE_NULL_ERROR);
+            throw new SDKException(Constants::HEADER_NULL_ERROR, Constants::HEADER_INSTANCE_NULL_ERROR);
         }
 
         $headerName = $header->getName();
-        
+
         if($headerName === null)
         {
-            throw new SDKException(Constants::PARAM_NAME_NULL_ERROR, Constants::PARAM_NAME_NULL_ERROR_MESSAGE);
+            throw new SDKException(Constants::HEADER_NAME_NULL_ERROR, Constants::HEADER_NAME_NULL_ERROR_MESSAGE);
         }
-        
+
         if($value === null)
         {
-            throw new SDKException(Constants::PARAMETER_NULL_ERROR,$headerName.Constants::NULL_VALUE_ERROR_MESSAGE);
+            throw new SDKException(Constants::HEADER_NULL_ERROR, $headerName.Constants::NULL_VALUE_ERROR_MESSAGE);
         }
 
         $headerClassName = $header->getClassName();
-        
+
         $parsedHeaderValue = null;
-        
+
         if($headerClassName != null)
         {
             $headerParamValidator = new HeaderParamValidator();
-            
+
             $parsedHeaderValue = $headerParamValidator->validate($header, $value);
         }
         else
@@ -77,7 +79,7 @@ class HeaderMap
                 $parsedHeaderValue = $value;
             }
         }
-        
+
         if (array_key_exists($headerName, $this->headerMap) &&  isset($this->headerMap[$headerName]))
         {
             $headerValue = $this->headerMap[$headerName];
@@ -87,7 +89,7 @@ class HeaderMap
             $this->headerMap[$headerName] = $headerValue;
         }
         else
-        {   
+        {
             $this->headerMap[$headerName] = $parsedHeaderValue;
         }
     }

@@ -1,5 +1,5 @@
 <?php
-namespace com\zoho\crm\sample\contactroles;
+namespace samples\src\com\zoho\crm\api\contactroles;
 
 use com\zoho\crm\api\contactroles\BodyWrapper;
 

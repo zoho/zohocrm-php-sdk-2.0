@@ -9,13 +9,13 @@ use com\zoho\crm\api\dc\DataCenter;
 class AUDataCenter extends DataCenter
 {
     private static $PRODUCTION = null;
-    
+
     private static $SANDBOX = null;
-    
+
     private static $DEVELOPER = null;
-    
+
     private static $AU = null;
-    
+
     /**
      * This Environment class instance represents the Zoho CRM Production Environment in AU Domain.
      * @return Environment A Environment class instance.
@@ -23,13 +23,13 @@ class AUDataCenter extends DataCenter
     public static function PRODUCTION()
     {
         self::$AU = new AUDataCenter();
-        
-        if (AUDataCenter::$PRODUCTION == null)
+
+        if (self::$PRODUCTION == null)
         {
-            AUDataCenter::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.com.au", self::$AU->getIAMUrl(), self::$AU->getFileUploadUrl());
+            self::$PRODUCTION = DataCenter::setEnvironment("https://www.zohoapis.com.au", self::$AU->getIAMUrl(), self::$AU->getFileUploadUrl(), "au_prd");
         }
-        
-        return AUDataCenter::$PRODUCTION;
+
+        return self::$PRODUCTION;
     }
 
     /**
@@ -39,13 +39,13 @@ class AUDataCenter extends DataCenter
     public static function SANDBOX()
     {
         self::$AU = new AUDataCenter();
-        
-        if (AUDataCenter::$SANDBOX == null)
+
+        if (self::$SANDBOX == null)
         {
-            AUDataCenter::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.com.au", self::$AU->getIAMUrl(), self::$AU->getFileUploadUrl());
+            self::$SANDBOX = DataCenter::setEnvironment("https://sandbox.zohoapis.com.au", self::$AU->getIAMUrl(), self::$AU->getFileUploadUrl(), "au_sdb");
         }
-        
-        return AUDataCenter::$SANDBOX;
+
+        return self::$SANDBOX;
     }
 
     /**
@@ -55,13 +55,13 @@ class AUDataCenter extends DataCenter
     public static function DEVELOPER()
     {
         self::$AU = new AUDataCenter();
-        
-        if (AUDataCenter::$DEVELOPER == null)
+
+        if (self::$DEVELOPER == null)
         {
-            AUDataCenter::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.com.au", self::$AU->getIAMUrl(), self::$AU->getFileUploadUrl());
+            self::$DEVELOPER = DataCenter::setEnvironment("https://developer.zohoapis.com.au", self::$AU->getIAMUrl(), self::$AU->getFileUploadUrl(), "au_dev");
         }
-        
-        return AUDataCenter::$DEVELOPER;
+
+        return self::$DEVELOPER;
     }
 
     public function getIAMUrl()
@@ -71,6 +71,6 @@ class AUDataCenter extends DataCenter
 
     public function getFileUploadUrl()
     {
-        return "https://content.zohoapis.com.au"; 
+        return "https://content.zohoapis.com.au";
     }
 }

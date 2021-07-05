@@ -49,21 +49,135 @@ class Utility
 
     public static $moduleAPIName;
 
+    public static function assertNotNull($value, $errorCode, $errorMessage)
+	{
+		if($value == null)
+		{
+			throw new SDKException($errorCode, $errorMessage);
+		}
+    }
+
+    private static function fileExistsFlow($moduleAPIName, $recordFieldDetailsPath, &$lastModifiedTime)
+    {
+        $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
+
+        if(Initializer::getInitializer()->getSDKConfig()->getAutoRefreshFields() && !self::$newFile && !self::$getModifiedModules && (!array_key_exists(Constants::FIELDS_LAST_MODIFIED_TIME, $recordFieldDetailsJson) || self::$forceRefresh || (round(microtime(true) * 1000) - $recordFieldDetailsJson[Constants::FIELDS_LAST_MODIFIED_TIME]) > 3600000))
+        {
+            self::$getModifiedModules = true;
+
+            $lastModifiedTime = (!self::$forceRefresh && array_key_exists(Constants::FIELDS_LAST_MODIFIED_TIME, $recordFieldDetailsJson)) ?  $recordFieldDetailsJson[Constants::FIELDS_LAST_MODIFIED_TIME] : null;
+
+            self::modifyFields($recordFieldDetailsPath, $lastModifiedTime);
+
+            self::$getModifiedModules = false;
+        }
+        else if(!Initializer::getInitializer()->getSDKConfig()->getAutoRefreshFields() && self::$forceRefresh && !self::$getModifiedModules)
+        {
+            self::$getModifiedModules = true;
+
+            self::modifyFields($recordFieldDetailsPath, $lastModifiedTime);
+
+            self::$getModifiedModules = false;
+        }
+
+        $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
+
+        if ($moduleAPIName == null || (array_key_exists(strtolower($moduleAPIName), $recordFieldDetailsJson) && isset($recordFieldDetailsJson[strtolower($moduleAPIName)])))
+        {
+            return;
+        }
+        else
+        {
+            self::fillDataType();
+
+            $recordFieldDetailsJson[strtolower($moduleAPIName)] = array();
+
+            file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
+
+            $fieldDetails = self::getFieldDetails($moduleAPIName);
+
+            $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
+
+            $recordFieldDetailsJson[strtolower($moduleAPIName)] = $fieldDetails;
+
+            file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
+        }
+    }
+
+    private static function verifyModuleAPIName($moduleName)
+	{
+		if($moduleName != null && array_key_exists(strtolower($moduleName), Constants::DEFAULT_MODULENAME_VS_APINAME) && Constants::DEFAULT_MODULENAME_VS_APINAME[strtolower($moduleName)] != null)
+		{
+			return Constants::DEFAULT_MODULENAME_VS_APINAME[strtolower($moduleName)];
+		}
+
+        $recordFieldDetailsPath = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY . DIRECTORY_SEPARATOR . self::getFileName();
+
+        if (file_exists($recordFieldDetailsPath))
+        {
+            $fieldsJSON = Initializer::getJSON($recordFieldDetailsPath);
+
+			if(array_key_exists(Constants::SDK_MODULE_METADATA, $fieldsJSON) && array_key_exists(strtolower($moduleName), $fieldsJSON[Constants::SDK_MODULE_METADATA]))
+			{
+                $moduleMeta = $fieldsJSON[Constants::SDK_MODULE_METADATA];
+
+				return $moduleMeta[strtolower($moduleName)][Constants::API_NAME];
+			}
+        }
+
+		return $moduleName;
+	}
+
+    private static function setHandlerAPIPath($moduleAPIName, $handlerInstance)
+	{
+		if($handlerInstance == null)
+		{
+			return;
+		}
+
+		$apiPath = $handlerInstance->getAPIPath();
+
+		if(strpos(strtolower($apiPath), strtolower($moduleAPIName)) == true)
+		{
+			$apiPathSplit = explode("/", $apiPath);
+
+			for($i = 0; $i < sizeof($apiPathSplit); $i++)
+			{
+				if(strtolower($apiPathSplit[$i]) == strtolower($moduleAPIName))
+				{
+					$apiPathSplit[$i] = $moduleAPIName;
+				}
+				else if(array_key_exists(strtolower($apiPathSplit[$i]), Constants::DEFAULT_MODULENAME_VS_APINAME) && Constants::DEFAULT_MODULENAME_VS_APINAME[strtolower($apiPathSplit[$i])] != null)
+				{
+					$apiPathSplit[$i] = Constants::DEFAULT_MODULENAME_VS_APINAME[strtolower($apiPathSplit[$i])];
+				}
+			}
+
+			$apiPath = join("/", $apiPathSplit);
+
+			$handlerInstance->setAPIPath($apiPath);
+		}
+	}
+
     /**
      * This method to fetch field details of the current module for the current user and store the result in a JSON file.
-     * @param string $moduleAPIName
-     * A string containing the CRM module API name.
+     * @param string $moduleAPIName A String containing the CRM module API name.
+     * @param string $handlerInstance A CommonAPIHandler Instance
      */
-    public static function getFields($moduleAPIName)
+    public static function getFields($moduleAPIName, $handlerInstance = null)
     {
         self::$moduleAPIName = $moduleAPIName;
 
-        self::getFieldsInfo(self::$moduleAPIName);
+        self::getFieldsInfo(self::$moduleAPIName, $handlerInstance);
     }
 
-    public static function getFieldsInfo($moduleAPIName)
-    {
-
+    /**
+	 * This method to fetch field details of the current module for the current user and store the result in a JSON file.
+	 * @param moduleAPIName A String containing the CRM module API name.
+	 * @throws SDKException
+	 */
+	public static function getFieldsInfo($moduleAPIName, $handlerInstance = null)
+	{
         $recordFieldDetailsPath = null;
 
         $lastModifiedTime = null;
@@ -82,93 +196,61 @@ class Utility
                 mkdir($resourcesPath);
             }
 
+            $moduleAPIName = self::verifyModuleAPIName($moduleAPIName);
+
+            self::setHandlerAPIPath($moduleAPIName, $handlerInstance);
+
             $recordFieldDetailsPath = $resourcesPath . DIRECTORY_SEPARATOR . self::getFileName();
 
             if (file_exists($recordFieldDetailsPath))
             {
-                $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
-
-                if(Initializer::getInitializer()->getSDKConfig()->getautoRefreshFields() && !self::$newFile && !self::$getModifiedModules && (!array_key_exists(Constants::FIELDS_LAST_MODIFIED_TIME, $recordFieldDetailsJson) || self::$forceRefresh || (round(microtime(true) * 1000) - $recordFieldDetailsJson[Constants::FIELDS_LAST_MODIFIED_TIME]) > 3600000))
-                {
-                    self::$getModifiedModules = true;
-
-                    $lastModifiedTime = array_key_exists(Constants::FIELDS_LAST_MODIFIED_TIME, $recordFieldDetailsJson) ?  $recordFieldDetailsJson[Constants::FIELDS_LAST_MODIFIED_TIME] : null;
-
-					self::modifyFields($recordFieldDetailsPath, $lastModifiedTime);
-
-					self::$getModifiedModules = false;
-                }
-                else if(!Initializer::getInitializer()->getSDKConfig()->getautoRefreshFields() && self::$forceRefresh && !self::$getModifiedModules)
-                {
-                    self::$getModifiedModules = true;
-
-                    self::modifyFields($recordFieldDetailsPath, $lastModifiedTime);
-
-                    self::$getModifiedModules = false;
-                }
-
-                $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
-
-                if ($moduleAPIName == null || array_key_exists(strtolower($moduleAPIName), $recordFieldDetailsJson) && isset($recordFieldDetailsJson[strtolower($moduleAPIName)]))
-                {
-                    return;
-                }
-                else
-                {
-                    self::fillDataType();
-
-                    $recordFieldDetailsJson[strtolower($moduleAPIName)] = array();
-
-                    file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
-
-                    $fieldDetails = self::getFieldDetails($moduleAPIName);
-
-                    $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
-
-                    $recordFieldDetailsJson[strtolower($moduleAPIName)] = $fieldDetails;
-
-                    file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
-                }
+                self::fileExistsFlow($moduleAPIName, $recordFieldDetailsPath, $lastModifiedTime);
             }
-            else if(Initializer::getInitializer()->getSDKConfig()->getautoRefreshFields())
+            else if(Initializer::getInitializer()->getSDKConfig()->getAutoRefreshFields())
             {
                 self::$newFile = true;
 
                 self::fillDataType();
 
-                self::$apiSupportedModule = count(self::$apiSupportedModule) > 0 ? self::$apiSupportedModule : self::getAllModules(null);
+                self::$apiSupportedModule = count(self::$apiSupportedModule) > 0 ? self::$apiSupportedModule : self::getModules(null);
 
-                $recordFieldDetailsJson = array();
+                $recordFieldDetailsJson = file_exists($recordFieldDetailsPath) ? Initializer::getJSON($recordFieldDetailsPath) : array();
 
                 $recordFieldDetailsJson[Constants::FIELDS_LAST_MODIFIED_TIME] = round(microtime(true) * 1000);
 
-                foreach (self::$apiSupportedModule as $module => $value)
-				{
-					if(!array_key_exists($module, $recordFieldDetailsJson))
-					{
-						$recordFieldDetailsJson[$module] = array();
+                if(count(self::$apiSupportedModule) > 0)
+                {
+                    foreach(self::$apiSupportedModule as $module => $value)
+                    {
+                        if(!array_key_exists($module, $recordFieldDetailsJson))
+                        {
+                            $moduleData = self::$apiSupportedModule[$module];
 
-						file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
+                            $recordFieldDetailsJson[$module] = array();
 
-                        $fieldDetails = Utility::getFieldDetails($module);
+                            file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));// file created with only dummy
 
-                        $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
+                            $fieldDetails = Utility::getFieldDetails($moduleData[Constants::API_NAME]);
 
-                        $recordFieldDetailsJson[$module] = $fieldDetails;
+                            $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
 
-                        file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
-					}
-				}
+                            $recordFieldDetailsJson[$module] = $fieldDetails;
+
+                            file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
+                        }
+                    }
+                }
 
 				self::$newFile = false;
             }
             else if(self::$forceRefresh && !self::$getModifiedModules)
             {
+                //New file - and force refresh by User
                 self::$getModifiedModules = true;
 
                 $recordFieldDetailsJson = array();
 
-                file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
+                file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));// file created with only dummy
 
                 self::modifyFields($recordFieldDetailsPath, $lastModifiedTime);
 
@@ -257,7 +339,7 @@ class Utility
 
     private static function modifyFields($recordFieldDetailsPath, $modifiedTime)
 	{
-        $modifiedModules = self::getAllModules($modifiedTime);
+        $modifiedModules = self::getModules($modifiedTime);
 
 		$recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
 
@@ -279,7 +361,9 @@ class Utility
 
 			foreach($modifiedModules as $module => $value)
 			{
-				Utility::getFieldsInfo($module);
+                $moduleData = $modifiedModules[$module];
+
+				Utility::getFieldsInfo($moduleData[Constants::API_NAME], null);
 			}
 		}
     }
@@ -292,7 +376,7 @@ class Utility
 
         foreach ($fieldsJSON as $key => $value)
         {
-            if(array_key_exists(Constants::SUBFORM, $value) && $value[Constants::SUBFORM] == true && $recordFieldDetailsJson[$value[Constants::MODULE]])
+            if(array_key_exists(Constants::SUBFORM, $value) && $value[Constants::SUBFORM] == true && array_key_exists($value[Constants::MODULE], $recordFieldDetailsJson))
             {
                 array_push($subformModules, $value[Constants::MODULE]);
             }
@@ -307,7 +391,6 @@ class Utility
                 self::deleteFields($recordFieldDetailsJson, $subformModule);
             }
         }
-
     }
 
     private static function getFileName()
@@ -333,7 +416,7 @@ class Utility
 
 			$resourcesPath = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
 
-            if (!file_exists($resourcesPath))
+            if (!is_dir($resourcesPath))
             {
                 mkdir($resourcesPath);
             }
@@ -397,7 +480,7 @@ class Utility
                 {
     				$commonAPIHandler->setModuleAPIName($relatedListJO[Constants::MODULE]);
 
-    				self::getFieldsInfo($relatedListJO[Constants::MODULE]);
+    				self::getFieldsInfo($relatedListJO[Constants::MODULE], $commonAPIHandler);
 			    }
 
 				return true;
@@ -602,10 +685,76 @@ class Utility
 
     public static function verifyPhotoSupport($moduleAPIName)
 	{
-        return;
+		try
+		{
+			$moduleAPIName = self::verifyModuleAPIName($moduleAPIName);
+
+			if(in_array(strtolower($moduleAPIName), Constants::PHOTO_SUPPORTED_MODULES))
+			{
+				return true;
+			}
+
+            $modules = self::getModuleNames();
+
+			if(array_key_exists(strtolower($moduleAPIName), $modules) && $modules[strtolower($moduleAPIName)] != null)
+			{
+                $moduleMetaData = $modules[strtolower($moduleAPIName)];
+
+				if(array_key_exists(Constants::GENERATED_TYPE, $moduleMetaData) && $moduleMetaData[Constants::GENERATED_TYPE] != Constants::GENERATED_TYPE_CUSTOM)
+				{
+					throw new SDKException(Constants::UPLOAD_PHOTO_UNSUPPORTED_ERROR, Constants::UPLOAD_PHOTO_UNSUPPORTED_MESSAGE . $moduleAPIName);
+				}
+			}
+		}
+		catch(SDKException $e)
+		{
+			throw $e;
+		}
+		catch(\Exception $e)
+		{
+			throw new SDKException(Constants::EXCEPTION, $e);
+		}
+
+		return true;
     }
 
-    private static function getAllModules($header)
+    private static function getModuleNames()
+	{
+		$moduleData = array();
+
+        $resourcesPath = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
+
+        if (!is_dir($resourcesPath))
+        {
+            mkdir($resourcesPath);
+        }
+
+        $recordFieldDetailsPath = $resourcesPath . DIRECTORY_SEPARATOR . self::getFileName();
+
+        if (!file_exists($recordFieldDetailsPath) || (file_exists($recordFieldDetailsPath) && (!array_key_exists(Constants::SDK_MODULE_METADATA, Initializer::getJSON($recordFieldDetailsPath)) || (Initializer::getJSON($recordFieldDetailsPath)[Constants::SDK_MODULE_METADATA] == null || count(Initializer::getJSON($recordFieldDetailsPath)[Constants::SDK_MODULE_METADATA]) <= 0))))
+        {
+			$moduleData = self::getModules(null);
+
+			self::writeModuleMetaData($recordFieldDetailsPath, $moduleData);
+
+			return $moduleData;
+		}
+
+		$recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
+
+		return $recordFieldDetailsJson[Constants::SDK_MODULE_METADATA];
+    }
+
+    private static function writeModuleMetaData($recordFieldDetailsPath, $moduleData)
+	{
+		$fieldDetailsJSON = file_exists($recordFieldDetailsPath) ? Initializer::getJSON($recordFieldDetailsPath) : array();
+
+		$fieldDetailsJSON[Constants::SDK_MODULE_METADATA] = $moduleData;
+
+        file_put_contents($recordFieldDetailsPath, json_encode($fieldDetailsJSON));
+	}
+
+    private static function getModules($header)
 	{
 		$apiNames = array();
 
@@ -647,7 +796,13 @@ class Utility
                 {
                     if($module->getAPISupported())
                     {
-                        $apiNames[strtolower($module->getAPIName())] = $module->getGeneratedType()->getValue();
+                        $moduleDetails = array();
+
+                        $moduleDetails[Constants::API_NAME] = $module->getAPIName();
+
+                        $moduleDetails[Constants::GENERATED_TYPE] = $module->getGeneratedType()->getValue();
+
+                        $apiNames[strtolower($module->getAPIName())] = $moduleDetails;
                     }
                 }
             }
@@ -666,6 +821,27 @@ class Utility
                 throw new SDKException(Constants::API_EXCEPTION, null, $errorResponse);
             }
         }
+
+        if($header == null)
+		{
+			try
+			{
+                $resourcesPath = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
+
+                if (!file_exists($resourcesPath))
+                {
+                    mkdir($resourcesPath);
+                }
+
+                $recordFieldDetailsPath = $resourcesPath . DIRECTORY_SEPARATOR . self::getFileName();
+
+				self::writeModuleMetaData($recordFieldDetailsPath, $apiNames);
+			}
+			catch (\Exception $e)
+			{
+				throw new SDKException(Constants::EXCEPTION, null, null, $e);
+			}
+		}
 
 		return $apiNames;
     }
@@ -717,7 +893,7 @@ class Utility
 
             return $fieldDetail;
         }
-        else if ($keyName == Constants::PRICING_DETAILS && strtolower($moduleAPIName) == Constants::PRICE_BOOKS)
+        else if (strtolower($keyName) == Constants::PRICING_DETAILS && strtolower($moduleAPIName) == Constants::PRICE_BOOKS)
         {
             $fieldDetail[Constants::NAME] = $keyName;
 
@@ -761,6 +937,8 @@ class Utility
 
 			$fieldDetail[Constants::STRUCTURE_NAME] = Constants::LAYOUT_NAMESPACE;
 
+            $fieldDetail[Constants::LOOKUP] = true;
+
 			return $fieldDetail;
 		}
         else if (array_key_exists($apiType, Utility::$apiTypeVsdataType))
@@ -773,7 +951,7 @@ class Utility
             {
                 $returnType = $field->getFormula()->getReturnType();
 
-                if($returnType != null && array_key_exists($returnType, Utility::$apiTypeVsdataType))
+                if($returnType != null && array_key_exists($returnType, Utility::$apiTypeVsdataType) && Utility::$apiTypeVsdataType[$returnType] != null)
                 {
                     $fieldDetail[Constants::TYPE] = Utility::$apiTypeVsdataType[$returnType];
                 }

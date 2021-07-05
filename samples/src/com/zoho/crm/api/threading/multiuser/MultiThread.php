@@ -1,19 +1,15 @@
 <?php 
 namespace samples\src\com\zoho\crm\api\threading\multiuser;
 
-use com\zoho\api\authenticator\OAuthToken;
+use com\zoho\api\authenticator\store\DBBuilder;
 
-use com\zoho\api\authenticator\TokenType;
-
-use com\zoho\api\authenticator\store\DBStore;
-
-use com\zoho\crm\api\Initializer;
+use com\zoho\crm\api\InitializeBuilder;
 
 use com\zoho\crm\api\UserSignature;
 
 use com\zoho\crm\api\dc\USDataCenter;
 
-use com\zoho\api\logger\Logger;
+use com\zoho\api\logger\LogBuilder;
 
 use com\zoho\api\logger\Levels;
 
@@ -27,62 +23,107 @@ use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\SDKConfigBuilder;
 
+use com\zoho\api\authenticator\OAuthBuilder;
+
 class MultiThread
-{	
+{
 	public function main()
 	{
-		$logger = Logger::getInstance(Levels::INFO, "/Users/user_name/Documents/php_sdk_log.log");
+		$logger = (new LogBuilder())
+		->level(Levels::INFO)
+		->filePath("/Users/user_name/Documents/php_sdk_log.log")
+		->build();
 		
 		$environment1 = USDataCenter::PRODUCTION();
 		
 		$user1 = new UserSignature("abc@zoho.com");
 		
-		$tokenstore = new DBStore();
+		$tokenstore = (new DBBuilder())
+		->host("hostName")
+		->databaseName("databaseName")
+		->userName("userName")
+		->portNumber("portNumber")
+		->tableName("tableName")
+		->password("password")
+		->build();
 		
-		$token1 = new OAuthToken("clientId1", "clientSecret1", "REFRESH/GRANT token", TokenType::REFRESH/GRANT);
+		//Create a Token instance
+		$token1 = (new OAuthBuilder())
+		->clientId("ClientId1")
+		// ->id("php_abc_us_prd_")
+		->clientSecret("ClientSecret1")
+		// ->grantToken("GrantToken")
+		->refreshToken("RefreshToken")
+		// ->redirectURL("RedirectURL")
+		->build();
         
-        $autoRefreshFields = true;
-
-        $pickListValidation = true;
+        $resourcePath ="/Users/user_name/Documents/php-sdk-application/";
 
         $builderInstance = new SDKConfigBuilder();
 
-		//Create an instance of SDKConfig
-		$configInstance = $builderInstance->setPickListValidation($pickListValidation)->setAutoRefreshFields($autoRefreshFields)->build();
+        $autoRefreshFields = false;
 
-        $resourcePath = "/Users/user_name/Documents/phpsdk-application";
+		$pickListValidation = false;
 
-        Initializer::initialize($user1, $environment1, $token1, $tokenstore, $configInstance, $resourcePath, $logger);
+		$enableSSLVerification = true;
+
+		$builderInstance = new SDKConfigBuilder();
+
+		$connectionTimeout = 50; //The number of seconds to wait while trying to connect. Use 0 to wait indefinitely.
+
+    	$timeout = 50; //The maximum number of seconds to allow cURL functions to execute.
+
+        $configInstance = $builderInstance
+		->autoRefreshFields($autoRefreshFields)
+		->pickListValidation($pickListValidation)
+		->sslVerification($enableSSLVerification)
+		->connectionTimeout($connectionTimeout)
+		->timeout($timeout)
+		->build();
+
+        (new InitializeBuilder())
+		->user($user1)
+		->environment($environment1)
+		->token($token1)
+		->store($tokenstore)
+		->SDKConfig($configInstance)
+		->resourcePath($resourcePath)
+		->logger($logger)
+		->initialize();
         
         $this->getRecords("Leads");
 		
 		$environment2 = USDataCenter::PRODUCTION();
 		
 		$user2 = new UserSignature("xyz@zoho.com");
+
+        //Create a Token instance
+		$token2 = (new OAuthBuilder())
+		->clientId("ClientId2")
+		// ->id("php_abc_us_prd_")
+		->clientSecret("ClientSecret2")
+		// ->grantToken("GrantToken")
+		->refreshToken("RefreshToken")
+		// ->redirectURL("RedirectURL")
+		->build();
 		
-		$token2 = new OAuthToken("clientId2", "clientSecret2", "REFRESH/GRANT token", TokenType::REFRESH/GRANT, "redirectURL");
-        
-        $configInstance2 = $builderInstance->setPickListValidation(false)->setAutoRefreshFields(false)->build();
-
-        Initializer::switchUser($user2, $environment2, $token2, $configInstance2);
-
-        Initializer::removeUserConfiguration($user1, $environment1);
-        
-        //Throws Exception when the configuration is not present
-        try
-        {
-            Initializer::removeUserConfiguration($user1, $environment1);
-        }
-        catch(\Exception $ex)
-        {
-            print_r($ex);
-        }
-
+        (new InitializeBuilder())
+		->user($user2)
+		->environment($environment2)
+		->token($token2)
+		->SDKConfig($configInstance)
+		->switchUser();
+    
         $this->getRecords("Leads");
 
-        Initializer::switchUser($user1, $environment1, $token1, $configInstance);
+        (new InitializeBuilder())
+		->user($user1)
+		->environment($environment1)
+		->token($token1)
+		->SDKConfig($configInstance)
+		->switchUser();
 
-        $this->getRecords("apiName2");
+        $this->getRecords("apiName2");	
     }
     
     public function getRecords($moduleAPIName) 
@@ -99,12 +140,12 @@ class MultiThread
             
             $headerInstance->add(GetRecordsHeader::IfModifiedSince(), $ifmodifiedsince);
             
-            //Call getRecords method that takes moduleAPIName, paramInstance, moduleAPIName as parameter
-            $response = $recordOperations->getRecords($moduleAPIName, $paramInstance, $headerInstance);
+            //Call getRecord method that takes paramInstance, moduleAPIName as parameter
+            $response = $recordOperations->getRecords($moduleAPIName,$paramInstance, $headerInstance);
 
             echo($response->getStatusCode() . "\n");
 
-            print_r($response->getObject());
+            print_r($response);
 
             echo("\n");
         } 

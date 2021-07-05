@@ -21,24 +21,24 @@ class StreamWrapper
     public function __construct($name, $stream, $filepath)
     {
         $this->name = $name;
-        
+
         $this->stream = $stream;
-        
+
         if ($filepath != null)
         {
             if(file_exists($filepath))
             {
                 $file = fopen($filepath, "rb");
-             
+
                 $this->name = basename($filepath);
-                
+
                 $this->stream = fread($file, filesize($filepath));
-                
+
                 fclose($file);
             }
             else
             {
-                throw new SDKException(Constants::FILE_ERROR, Constants::FILE_DOES_NOT_EXISTS." ".$filepath);
+                throw new SDKException(Constants::FILE_ERROR, Constants::FILE_DOES_NOT_EXISTS . " " . $filepath);
             }
         }
     }

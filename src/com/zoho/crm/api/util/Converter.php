@@ -3,7 +3,6 @@ namespace com\zoho\crm\api\util;
 
 use com\zoho\crm\api\exception\SDKException;
 
-
 use com\zoho\crm\api\Initializer;
 
 use com\zoho\crm\api\util\Constants;
@@ -21,17 +20,17 @@ abstract class Converter
      */
     public function __construct($commonAPIHandler)
     {
-       $this->commonAPIHandler=$commonAPIHandler;
+       $this->commonAPIHandler = $commonAPIHandler;
     }
-    
+
     /**
-     * This abstract method is to process the API response. 
-     * @param object $response A object containing the API response contents or response. 
+     * This abstract method is to process the API response.
+     * @param object $response A object containing the API response contents or response.
      * @param string $pack A string containing the expected method return type.
      * @return object A object representing the POJO class instance.
      */
     public abstract function getResponse($response, $pack);
-    
+
     /**
      * This abstract method is to construct the API request.
      * @param object $responseObject A object containing the POJO class instance.
@@ -41,16 +40,16 @@ abstract class Converter
      * @return object A object representing the API request body object.
      */
     public abstract function formRequest($responseObject, $pack, $instanceNumber, $memberDetail=null);
-    
+
     /**
      * This abstract method is to construct the API request body.
      * @param object $requestBase A curl instance.
      * @param object $requestObject A object containing the API request body object.
      */
     public abstract function appendToRequest(&$requestBase, $requestObject);
-    
+
     /**
-     * This abstract method is to process the API response. 
+     * This abstract method is to process the API response.
      * @param object $response A object containing the HttpResponse class instance.
      * @param $pack $pack A string containing the expected method return type.
      */
@@ -70,9 +69,9 @@ abstract class Converter
     public function valueChecker($className, $memberName, $keyDetails, $value, &$uniqueValuesMap, $instanceNumber)
 	{
 		$detailsJO = array();
-        
+
 		$name = $keyDetails[Constants::NAME];
-		
+
 		$type  = $keyDetails[Constants::TYPE];
 
 		$varType = gettype($value);
@@ -99,6 +98,16 @@ abstract class Converter
 
 					if(!$check)
 					{
+						$result = $data instanceof $structureName;
+
+						if ($result)
+						{
+							$check = true;
+						}
+					}
+
+					if(!$check)
+					{
 						$instanceNumber = $index;
 
 						$type = Constants::ARRAY_KEY . "(" . $structureName . ")";
@@ -114,6 +123,16 @@ abstract class Converter
 			else
 			{
 				$check = $test($varType, $type);
+
+				if(!$check)
+				{
+					$result = $value instanceof $type;
+
+					if ($result)
+					{
+						$check = true;
+					}
+				}
 			}
 		}
 
@@ -125,50 +144,62 @@ abstract class Converter
 			}
 			else
 			{
-				$className = get_class($value);
+				$className1 = get_class($value);
 
-				$check = $test($className, $type);
+				$check = $test($className1, $type);
+
+				if(!$check)
+				{
+					$result = $value instanceof $type;
+
+					if ($result)
+					{
+						$check = true;
+					}
+				}
+
+				$varType = $className1;
 			}
 		}
-		
+
 		if (!$check && $value != null)
         {
             $detailsJO[Constants::FIELD] = $memberName;
-            
+
             $detailsJO[Constants::CLASS_KEY] =  $className;
-            
+
             $detailsJO[Constants::INDEX] = $instanceNumber;
-            
+
 			$detailsJO[Constants::EXPECTED_TYPE] = $type;
-			
+
 			$detailsJO[Constants::GIVEN_TYPE] = $varType;
-            
+
 			throw new SDKException(Constants::TYPE_ERROR, null, $detailsJO, null);
         }
-        
+
 		if(array_key_exists(Constants::VALUES, $keyDetails) && (!array_key_exists(Constants::PICKLIST, $keyDetails) || ($keyDetails[Constants::PICKLIST] && Initializer::getInitializer()->getSDKConfig()->getPickListValidation())))
 		{
 			$valuesJA = $keyDetails[Constants::VALUES];
-			
+
 			if($value instanceof Choice)
 			{
 				$choice = $value;
-				
+
 				$value = $choice->getValue();
 			}
-			
+
 			if(!in_array($value, $valuesJA))
 			{
 			    $detailsJO[Constants::FIELD] =  $memberName;
-			
+
 			    $detailsJO[Constants::CLASS_KEY] = $className;
-				
+
 				$detailsJO[Constants::INDEX] = $instanceNumber;
-				
+
 				$detailsJO[Constants::GIVEN_VALUE] = $value;
-				
+
 			    $detailsJO[Constants::ACCEPTED_VALUES] =  $valuesJA;
-				
+
 				throw new SDKException(Constants::UNACCEPTED_VALUES_ERROR, null, $detailsJO, null);
 			}
 		}
@@ -180,17 +211,17 @@ abstract class Converter
 			if(array_key_exists($name, $uniqueValuesMap))
 			{
 				$valuesArray = $uniqueValuesMap[$name];
-			
+
 				if($valuesArray != null && in_array($value, $valuesArray))
 				{
 					$detailsJO[Constants::FIELD] =  $memberName;
-					
+
 					$detailsJO[Constants::CLASS_KEY] =  $className;
-					
+
 					$detailsJO[Constants::FIRST_INDEX] = array_search($value, $valuesArray);
-					
+
 					$detailsJO[Constants::NEXT_INDEX] =  $instanceNumber;
-					
+
 					throw new SDKException(Constants::UNIQUE_KEY_ERROR, null , $detailsJO, null);
 				}
 			}
@@ -202,7 +233,7 @@ abstract class Converter
 				}
 
 				$valuesArray[] = $value;
-				
+
 				$uniqueValuesMap[$name] = $valuesArray;
 			}
 		}
@@ -210,7 +241,7 @@ abstract class Converter
 		if(array_key_exists(Constants::MIN_LENGTH, $keyDetails) || array_key_exists(Constants::MAX_LENGTH, $keyDetails))
 		{
 			$count = 0;
-			
+
 			if(is_array($value))
 			{
 				$count = count($value);
@@ -223,63 +254,60 @@ abstract class Converter
 		    if(array_key_exists(Constants::MAX_LENGTH, $keyDetails) && $count > $keyDetails[Constants::MAX_LENGTH])
 			{
 			    $detailsJO[Constants::FIELD] =  $memberName;
-			    
+
 			    $detailsJO[Constants::CLASS_KEY] =  $className;
-			    
+
 			    $detailsJO[Constants::GIVEN_LENGTH] =  $count;
-			    
+
 			    $detailsJO[Constants::MAXIMUM_LENGTH] =  $keyDetails[Constants::MAX_LENGTH];
-				
+
 			    throw new SDKException(Constants::MAXIMUM_LENGTH_ERROR, null, $detailsJO, null);
 			}
-			
+
 			if(array_key_exists(Constants::MIN_LENGTH, $keyDetails) && $count < $keyDetails[Constants::MIN_LENGTH])
 			{
 			    $detailsJO[Constants::FIELD] =  $memberName;
-			    
+
 			    $detailsJO[Constants::CLASS_KEY] =  $className;
-			    
+
 			    $detailsJO[Constants::GIVEN_LENGTH] =  $count;
-				
+
 			    $detailsJO[Constants::MINIMUM_LENGTH] = $keyDetails[Constants::MIN_LENGTH];
-				
+
 				throw new SDKException(Constants::MINIMUM_LENGTH_ERROR, null, $detailsJO, null);
 			}
 		}
-		
-		if(array_key_exists(Constants::REGEX, $keyDetails))
+
+		if(array_key_exists(Constants::REGEX, $keyDetails) && !preg_match($keyDetails[Constants::REGEX], $value))
 		{
-		    if (!preg_match($keyDetails[Constants::REGEX], $value))
-			{
-			    $detailsJO[Constants::FIELD] =  $memberName;
-			    
-			    $detailsJO[Constants::CLASS_KEY] =  $className;
-				
-			    $detailsJO[Constants::INSTANCE_NUMBER] = $instanceNumber;
-				
-				throw new SDKException(Constants::REGEX_MISMATCH_ERROR, null, $detailsJO, null);
-			}
+		    $detailsJO[Constants::FIELD] =  $memberName;
+
+			$detailsJO[Constants::CLASS_KEY] =  $className;
+
+			$detailsJO[Constants::INSTANCE_NUMBER] = $instanceNumber;
+
+			throw new SDKException(Constants::REGEX_MISMATCH_ERROR, null, $detailsJO, null);
         }
-        
+
         return true;
 	}
-	
+
 	/**
-	 * This method to get the module field JSON details file path. 
+	 * This method to get the module field JSON details file path.
 	 * @return string A string representing the module field JSON details file path.
 	 */
 	public function getEncodedFileName()
 	{
 		$fileName = Initializer::getInitializer()->getUser()->getEmail();
 
-		$fileName = explode("@",$fileName)[0] . Initializer::getInitializer()->getEnvironment()->getUrl();
+		$fileName = explode("@", $fileName)[0] . Initializer::getInitializer()->getEnvironment()->getUrl();
 
 		$input = unpack('C*', utf8_encode($fileName));
 
 		$str = base64_encode(implode(array_map("chr", $input)));
-		
+
 		$path = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
-		
+
 		return $path . DIRECTORY_SEPARATOR . $str . ".json";
 	}
 }

@@ -14,7 +14,7 @@ interface Token
      * @param APIHTTPConnector $connector A APIHTTPConnector class instance.
      */
     public function authenticate(APIHTTPConnector $urlConnection);
-    
+
     /**
      * The method to remove the current token from the Store.
      */
