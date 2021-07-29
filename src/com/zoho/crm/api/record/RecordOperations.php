@@ -35,8 +35,8 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
 
 	}
@@ -63,8 +63,8 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -90,6 +90,7 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -112,8 +113,8 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
 
 	}
@@ -136,10 +137,9 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -162,10 +162,9 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -188,6 +187,7 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -212,8 +212,8 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -237,6 +237,7 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(DeletedRecordsHandler::class, 'application/json'); 
 
 	}
@@ -260,8 +261,8 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
 
 	}
@@ -285,7 +286,7 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setMandatoryChecker(true); 
-		Utility::getFields("Deals"); 
+		Utility::getFields("Deals", $handlerInstance); 
 		return $handlerInstance->apiCall(ConvertActionHandler::class, 'application/json'); 
 
 	}
@@ -308,6 +309,7 @@ class RecordOperations
 		$handlerInstance->setAPIPath($apiPath); 
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(DownloadHandler::class, 'application/x-download'); 
 
 	}
@@ -334,6 +336,7 @@ class RecordOperations
 		$handlerInstance->setContentType('multipart/form-data'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setMandatoryChecker(true); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		Utility::verifyPhotoSupport($moduleAPIName); 
 		return $handlerInstance->apiCall(FileHandler::class, 'application/json'); 
 
@@ -357,6 +360,7 @@ class RecordOperations
 		$handlerInstance->setAPIPath($apiPath); 
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(FileHandler::class, 'application/json'); 
 
 	}
@@ -380,8 +384,8 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setMandatoryChecker(true); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(MassUpdateActionHandler::class, 'application/json'); 
 
 	}
@@ -403,6 +407,7 @@ class RecordOperations
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(MassUpdateResponseHandler::class, 'application/json'); 
 
 	}
@@ -428,8 +433,8 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
 
 	}
@@ -456,8 +461,8 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -483,6 +488,7 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
+		Utility::getFields($moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}

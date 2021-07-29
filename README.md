@@ -459,7 +459,7 @@ Before you get started with creating your PHP application, you need to register 
 - The path containing the absolute directory path to store user specific files containing module fields information.
 
     ```php
-    $resourcePath = "/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath = "/Users/user_name/Documents/phpsdk-application";
     ```
 
 ## Initializing the Application
@@ -571,7 +571,7 @@ class Initialize
 
     $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
-    $resourcePath = "/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath = "/Users/user_name/Documents/phpsdk-application";
 
     //Create an instance of RequestProxy
     $requestProxy = (new ProxyBuilder())
@@ -806,7 +806,7 @@ class MultiThread
 
     $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
-    $resourcePath ="/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
     (new InitializeBuilder())
     ->user($user1)
@@ -980,7 +980,7 @@ class Record
 
     $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
-    $resourcePath ="/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
     /*
     * Set the following in InitializeBuilder
