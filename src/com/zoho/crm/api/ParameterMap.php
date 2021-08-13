@@ -79,6 +79,11 @@ class ParameterMap
                 $parsedParamValue = $value;
             }
         }
+        
+        if($parsedParamValue === true || $parsedParamValue === false)
+        {
+            $parsedParamValue = json_encode($parsedParamValue, JSON_UNESCAPED_UNICODE);
+        }
 
         if (array_key_exists($paramName, $this->parameterMap) && isset($this->parameterMap[$paramName]))
         {

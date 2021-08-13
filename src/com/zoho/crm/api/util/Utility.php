@@ -200,6 +200,10 @@ class Utility
 
             self::setHandlerAPIPath($moduleAPIName, $handlerInstance);
 
+            if($handlerInstance != null && $handlerInstance->getModuleAPIName() == null && !in_array(strtolower($moduleAPIName), Constants::SKIP_MODULES)) {
+                return;
+            }
+
             $recordFieldDetailsPath = $resourcesPath . DIRECTORY_SEPARATOR . self::getFileName();
 
             if (file_exists($recordFieldDetailsPath))
@@ -427,6 +431,8 @@ class Utility
 			{
                 $isNewData = true;
 
+                $moduleAPIName = self::verifyModuleAPIName($moduleAPIName);
+
                 $relatedListValues = self::getRelatedListDetails($moduleAPIName);
 
                 $recordFieldDetailsJSON = file_exists($recordFieldDetailsPath) ?  Initializer::getJSON($recordFieldDetailsPath) : array();
@@ -476,7 +482,7 @@ class Utility
 			        throw new SDKException(Constants::UNSUPPORTED_IN_API, $commonAPIHandler->getHttpMethod() . " " . $commonAPIHandler->getAPIPath() . " " . Constants::UNSUPPORTED_IN_API_MESSAGE);
                 }
 
-                if($relatedListJO[Constants::MODULE] === Constants::NULL_VALUE)
+                if(strtolower($relatedListJO[Constants::MODULE]) !== Constants::NULL_VALUE)
                 {
     				$commonAPIHandler->setModuleAPIName($relatedListJO[Constants::MODULE]);
 

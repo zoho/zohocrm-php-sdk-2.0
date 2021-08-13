@@ -81,7 +81,6 @@ class RelatedRecordsOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
 		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.UpdateRelatedRecordsHeader'), $this->xExternal); 
 		Utility::getRelatedLists($this->relatedListAPIName, $this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
@@ -109,6 +108,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.DelinkRecordsHeader'), $this->xExternal); 
 		$handlerInstance->setParam($paramInstance); 
+		Utility::getFields($this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
@@ -162,7 +162,6 @@ class RelatedRecordsOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
 		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.UpdateRelatedRecordsUsingExternalIDHeader'), $this->xExternal); 
 		Utility::getRelatedLists($this->relatedListAPIName, $this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
@@ -276,6 +275,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.DelinkRecordHeader'), $this->xExternal); 
+		Utility::getFields($this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}

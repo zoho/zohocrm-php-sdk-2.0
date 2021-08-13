@@ -18,7 +18,7 @@ class Constants
 
     const CLIENT_SECRET = "client_secret";
 
-    const REDIRECT_URL = "redirect_uri";
+    const REDIRECT_URL = "redirect_url";
 
     const GRANT_TYPE = "grant_type";
 
@@ -464,7 +464,7 @@ class Constants
 
     const FORM_REQUEST_EXCEPTION = "Exception in forming request body : ";
 
-    const SDK_VERSION = "2.0.0";
+    const SDK_VERSION = "3.0.0";
 
     const API_CALL_EXCEPTION = "Exception in current API call execution : ";
 
@@ -679,5 +679,7 @@ class Constants
     const CLIENT_SECRET_NULL_ERROR_MESSAGE = "ClientSecret MUST NOT be null" ;
 
     const OAUTH_MANDATORY_KEYS = ["grantToken", "refreshToken", "id"];
+
+    const SKIP_MODULES = array("deals");
 }
 ?>
