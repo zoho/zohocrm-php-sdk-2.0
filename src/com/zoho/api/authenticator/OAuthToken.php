@@ -295,11 +295,6 @@ class OAuthToken implements Token
 
         $requestParams[Constants::CLIENT_SECRET] =  $this->clientSecret;
 
-        if($this->redirectURL != null)
-        {
-            $requestParams[Constants::REDIRECT_URI] =  $this->redirectURL;
-        }
-
         $requestParams[Constants::GRANT_TYPE] = Constants::REFRESH_TOKEN;
 
         $requestParams[Constants::REFRESH_TOKEN] =  $this->refreshToken;
