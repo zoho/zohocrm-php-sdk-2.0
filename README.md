@@ -377,7 +377,7 @@ Before you get started with creating your PHP application, you need to register 
     ->build();
     ```
   
-- Create an instance of **Logger** Class to log exception and API information. By default, the SDK constructs a Logger instance with level - INFO and file_path - (sdk_logs.log parallel to bin/(Debug or Release) folder )
+- Create an instance of **Logger** Class to log exception and API information. By default, the SDK constructs a Logger instance with level - INFO and file_path - (sdk_logs.log, created in the current working directory)
 
     ```php
     /*
@@ -391,7 +391,7 @@ Before you get started with creating your PHP application, you need to register 
     ->build();
     ```
 
-- Create an instance of **TokenStore** to persist tokens, used for authenticating all the requests. By default, the SDK creates the sdk_tokens.txt file (parallel to to bin/(Debug or Release) folder) to persist the tokens.
+- Create an instance of **TokenStore** to persist tokens, used for authenticating all the requests. By default, the SDK creates the sdk_tokens.txt created in the current working directory) to persist the tokens.
 
     ```php
     /*
@@ -470,7 +470,7 @@ Before you get started with creating your PHP application, you need to register 
      ->build();
     ```
 
-- The path containing the absolute directory path to store user specific files containing module fields information. By default, the SDK stores the user-specific files in a folder parallel to bin/(Debug or Release)
+- The path containing the absolute directory path to store user specific files containing module fields information. By default, the SDK stores the user-specific files within a folder in the current working directory.
 
     ```php
     $resourcePath = "/Users/user_name/Documents/phpsdk-application";
