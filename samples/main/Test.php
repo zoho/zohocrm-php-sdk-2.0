@@ -63,7 +63,7 @@ class Test
 {
     public static function main()
     {
-		Initialize::initialize();
+        Initialize::initialize();
 
 		self::moduleFieldsHandler();
 
@@ -120,7 +120,7 @@ class Test
 		self::VariableGroup();
 
 		self::Variable();
-	}
+    }
 	
 	public static function moduleFieldsHandler()
 	{
@@ -137,7 +137,7 @@ class Test
 		ModuleFieldsHandler::deleteAllFieldFiles();
 	}
 
-    public static function Attachment()
+	public static function Attachment()
     {
         $moduleAPIName = "Leads";
 		
@@ -238,7 +238,7 @@ class Test
 		ContactRoles::updateContactRole($contactRoleId);
 		
 		ContactRoles::deleteContactRole($contactRoleId);
-		
+
 		ContactRoles::getAllContactRolesOfDeal("34770610207275");
 
 		ContactRoles::getContactRoleOfDeal("34770610208073", "34770610207275");
@@ -265,20 +265,20 @@ class Test
 		Currency::getCurrency($currencyId);
 		
 		Currency::updateCurrency($currencyId);
-    }
-    
-    public static function CustomView()
+	}
+
+	public static function CustomView()
 	{
 		$moduleAPIName = "Leads";
 		
 		$customID = "3477xxx";
-		
+
 		CustomView::getCustomViews($moduleAPIName);
 		
 		CustomView::getCustomView($moduleAPIName, $customID);
-    }
-    
-    public static function Field()
+	}
+
+	public static function Field()
 	{
 		$moduleAPIName = "Leads";
 		
@@ -287,9 +287,9 @@ class Test
 		Fields::getFields($moduleAPIName);
 		
 		Fields::getField($moduleAPIName, $fieldId);
-    }
-    
-    public static function File()
+	}
+
+	public static function File()
 	{
 		$destinationFolder = "/Users/abc-XXX/Desktop";
 		
@@ -298,14 +298,14 @@ class Test
 		File::uploadFiles();
 		
 		File::getFile($id, $destinationFolder);
-    }
-    
-    public static function Layout()
+	}
+
+	public static function Layout()
 	{
 		$moduleAPIName = "Leads";
 		
 		$layoutId = "3477xxx";
-		
+
 		Layout::getLayouts($moduleAPIName);
 		
 		Layout::getLayout($moduleAPIName, $layoutId);
@@ -324,9 +324,9 @@ class Test
 		Modules::updateModuleByAPIName($moduleAPIName);
 		
 		Modules::updateModuleById($moduleId);
-    }
-    
-    public static function Note()
+	}
+
+	public static function Note()
 	{
 		$notesId = array("3477xxx","3477xxx","3477xxx");
 		
@@ -345,9 +345,9 @@ class Test
 		Note::updateNote($noteId);
 		
 		Note::deleteNote($noteId);
-    }
-    
-    public static function Notification() 
+	}
+
+	public static function Notification() 
 	{
 		$channelIds = array("1006800212");
 			
@@ -362,18 +362,18 @@ class Test
 		Notification::disableNotifications($channelIds);
 		
 		Notification::disableNotification();
-    }
-    
-    public static function Organization()
+	}
+
+	public static function Organization()
 	{
 		$absoluteFilePath = "/Users/abc-XXX/Desktop/image.png";
 		
 		Organization::getOrganization();
 		
 		Organization::uploadOrganizationPhoto($absoluteFilePath);
-    }
-    
-    public static function Profile()
+	}
+
+	public static function Profile()
 	{
 		$profileId = "3477xxx";
 		
@@ -385,13 +385,15 @@ class Test
 	public static function Query()
 	{
 		Query::getRecords();
-    }
-    
-    public static function Record()
+	}
+
+	public static function Record()
 	{
 		$moduleAPIName = "Leads";
 		
 		$recordId = "3477xxx";
+
+		$externalFieldValue = "TestExternal";
 		
 		$destinationFolder =  "/Users/abc-XXX/Desktop";
 		
@@ -406,6 +408,12 @@ class Test
 		Record::updateRecord($moduleAPIName, $recordId);
 		
 		Record::deleteRecord($moduleAPIName, $recordId);
+
+		Record::getRecordUsingExternalId($moduleAPIName, $externalFieldValue, $destinationFolder);
+
+		Record::updateRecordUsingExternalId($moduleAPIName, $externalFieldValue);
+		
+		Record::deleteRecordUsingExternalId($moduleAPIName, $externalFieldValue);
 
 		Record::getRecords($moduleAPIName);
 		
@@ -422,10 +430,10 @@ class Test
 		Record::searchRecords($moduleAPIName);
 		
 		Record::convertLead($recordId);
+
+		Record::uploadPhoto($moduleAPIName, $recordId, $absoluteFilePath);
 		
 		Record::getPhoto($moduleAPIName, $recordId, $destinationFolder);
-		
-		Record::uploadPhoto($moduleAPIName, $recordId, $absoluteFilePath);
 		
 		Record::deletePhoto($moduleAPIName, $recordId);
 		
@@ -439,7 +447,7 @@ class Test
 		$moduleAPIName = "Leads";
 		
 		$relatedListId = "3477xxx";
-		
+
 		RelatedList::getRelatedLists($moduleAPIName);
 		
 		RelatedList::getRelatedList($moduleAPIName, $relatedListId);
@@ -459,17 +467,33 @@ class Test
 
 		$destinationFolder =  "/Users/abc-XXX/Desktop";
 
+		$externalValue = "TestExternal121";
+
+		$externalFieldValue = "TestExternal121";
+
 		RelatedRecords::getRelatedRecords($moduleAPIName, $recordId, $relatedListAPIName);
 		
 		RelatedRecords::updateRelatedRecords($moduleAPIName, $recordId, $relatedListAPIName);
 		
 		RelatedRecords::delinkRecords($moduleAPIName, $recordId, $relatedListAPIName, $relatedListIds);
+
+		RelatedRecords::getRelatedRecordsUsingExternalId($moduleAPIName, $externalValue, $relatedListAPIName);
 		
+		RelatedRecords::updateRelatedRecordsUsingExternalId($moduleAPIName, $externalValue, $relatedListAPIName);
+		
+		RelatedRecords::deleteRelatedRecordsUsingExternalId($moduleAPIName, $externalValue, $relatedListAPIName, $relatedListIds);
+
 		RelatedRecords::getRelatedRecord($moduleAPIName, $recordId, $relatedListAPIName, $relatedRecordId, $destinationFolder);
 		
 		RelatedRecords::updateRelatedRecord($moduleAPIName, $recordId, $relatedListAPIName, $relatedRecordId);
 		
 		RelatedRecords::delinkRecord($moduleAPIName, $recordId, $relatedListAPIName, $relatedRecordId);
+
+		RelatedRecords::getRelatedRecordUsingExternalId($moduleAPIName, $externalValue, $relatedListAPIName, $externalFieldValue, $destinationFolder);
+		
+		RelatedRecords::updateRelatedRecordUsingExternalId($moduleAPIName, $externalValue, $relatedListAPIName, $externalFieldValue);
+		
+		RelatedRecords::deleteRelatedRecordUsingExternalId($moduleAPIName, $externalValue, $relatedListAPIName, $externalFieldValue);
 	}
 
 	public static function Role()

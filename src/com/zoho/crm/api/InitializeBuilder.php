@@ -18,11 +18,15 @@ use com\zoho\crm\api\sdkconfigbuilder\SDKConfig;
 
 use com\zoho\crm\api\dc\Environment;
 
-use com\zoho\api\logger\Logger;
+use com\zoho\api\logger\LogBuilder;
 
 use com\zoho\crm\api\RequestProxy;
 
 use com\zoho\api\logger\Levels;
+
+use com\zoho\api\authenticator\store\FileStore;
+
+use com\zoho\api\logger\Logger;
 
 class InitializeBuilder
 {
@@ -72,15 +76,24 @@ class InitializeBuilder
 
         Utility::assertNotNull($this->token, $this->errorMessage, Constants::TOKEN_ERROR_MESSAGE);
 
-        Utility::assertNotNull($this->store, $this->errorMessage, Constants::STORE_ERROR_MESSAGE);
+        if(is_null($this->store))
+        {
+            $this->store = new FileStore(getcwd() . DIRECTORY_SEPARATOR . Constants::TOKEN_FILE);
+        }
 
-        Utility::assertNotNull($this->sdkConfig, $this->errorMessage, Constants::SDK_CONFIG_ERROR_MESSAGE);
+        if(is_null($this->sdkConfig))
+        {
+            $this->sdkConfig = (new SDKConfigBuilder())->build();
+        }
 
-        Utility::assertNotNull($this->resourcePath, $this->errorMessage, Constants::RESOURCE_PATH_ERROR_MESSAGE);
+        if(is_null($this->resourcePath))
+        {
+            $this->resourcePath = getcwd();
+        }
 
         if(is_null($this->logger))
         {
-            $this->logger = Logger::getInstance(Levels::INFO, getcwd() . DIRECTORY_SEPARATOR . Constants::LOGFILE_NAME);
+            $this->logger = (new LogBuilder())->level(Levels::INFO)->filePath(getcwd() . DIRECTORY_SEPARATOR . Constants::LOG_FILE_NAME)->build();
         }
 
         Initializer::initialize($this->user, $this->environment, $this->token, $this->store, $this->sdkConfig, $this->resourcePath, $this->logger, $this->requestProxy);
@@ -111,8 +124,6 @@ class InitializeBuilder
 
     public function SDKConfig(SDKConfig $sdkConfig)
     {
-        Utility::assertNotNull($sdkConfig, $this->errorMessage, Constants::SDK_CONFIG_ERROR_MESSAGE);
-
         $this->sdkConfig = $sdkConfig;
 
         return $this;
@@ -127,12 +138,7 @@ class InitializeBuilder
 
     public function resourcePath(string $resourcePath)
     {
-        if(is_null($resourcePath) || strlen($resourcePath) <= 0)
-        {
-            throw new SDKException($this->errorMessage, Constants::RESOURCE_PATH_ERROR_MESSAGE);
-        }
-
-        if(!is_dir($resourcePath))
+        if($resourcePath != null && !is_dir($resourcePath))
         {
             throw new SDKException($this->errorMessage, Constants::RESOURCE_PATH_INVALID_ERROR_MESSAGE);
         }
@@ -153,8 +159,6 @@ class InitializeBuilder
 
     public function store(TokenStore $store)
     {
-        Utility::assertNotNull($store, $this->errorMessage, Constants::STORE_ERROR_MESSAGE);
-
         $this->store = $store;
 
         return $this;
