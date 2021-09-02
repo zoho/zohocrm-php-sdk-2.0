@@ -356,7 +356,9 @@ class Constants
 
     const KEY_MODIFIED = "keyModified";
 
-    const LOGFILE_NAME = "sdk_logs.log";
+    const LOG_FILE_NAME = "sdk_logs.log";
+
+    const TOKEN_FILE = "sdk_tokens.txt";
 
     const THREAD_LOCAL = "ThreadLocal";
 
@@ -464,7 +466,7 @@ class Constants
 
     const FORM_REQUEST_EXCEPTION = "Exception in forming request body : ";
 
-    const SDK_VERSION = "3.0.0";
+    const SDK_VERSION = "4.0.0";
 
     const API_CALL_EXCEPTION = "Exception in current API call execution : ";
 
@@ -678,8 +680,10 @@ class Constants
 
     const CLIENT_SECRET_NULL_ERROR_MESSAGE = "ClientSecret MUST NOT be null" ;
 
-    const OAUTH_MANDATORY_KEYS = ["grantToken", "refreshToken", "id"];
+    const OAUTH_MANDATORY_KEYS = ["grantToken", "refreshToken", "id", "accessToken"];
 
     const SKIP_MODULES = array("deals");
+
+    const PHP = "php_";
 }
 ?>

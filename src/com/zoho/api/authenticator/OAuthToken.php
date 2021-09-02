@@ -234,7 +234,7 @@ class OAuthToken implements Token
             {
                 $token = $this->refreshToken != null ? $this->refreshAccessToken($user, $store)->getAccessToken() : $this->generateAccessToken($user, $store)->getAccessToken();
             }
-            else if ($this->isAccessTokenExpired($oauthToken->getExpiresIn())) //access token will expire in next 5 seconds or less
+            else if ($oauthToken->getExpiresIn() != null && $this->isAccessTokenExpired($oauthToken->getExpiresIn())) //access token will expire in next 5 seconds or less
             {
                 SDKLogger::info(Constants::REFRESH_TOKEN_MESSAGE);
 
@@ -452,7 +452,7 @@ class OAuthToken implements Token
      * @param string $redirectURL A string containing the OAuth redirect URL.
      * @param string $id A string
      */
-    private function __construct($clientID, $clientSecret, $grantToken, $refreshToken, $redirectURL=null, $id=null)
+    private function __construct($clientID, $clientSecret, $grantToken, $refreshToken, $redirectURL=null, $id=null, $accessToken=null)
     {
         $this->clientID = $clientID;
 
@@ -464,6 +464,8 @@ class OAuthToken implements Token
 
         $this->redirectURL = $redirectURL;
 
+        $this->accessToken = $accessToken;
+
         $this->id = $id;
     }
 
@@ -471,7 +473,7 @@ class OAuthToken implements Token
 	{
 		$email = Initializer::getInitializer()->getUser()->getEmail();
 
-		$builder = "php_".explode("@",$email)[0]."_";
+		$builder = Constants::PHP.explode("@",$email)[0]."_";
 
 		$builder .= Initializer::getInitializer()->getEnvironment()->getName()."_";
 

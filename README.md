@@ -29,11 +29,11 @@ Since Zoho CRM APIs are authenticated with OAuth2 standards, you should register
 
 - Click on `ADD CLIENT`.
 
-- Choose a `Client Type`.
+- Choose the `Client Type`.
 
 - Enter **Client Name**, **Client Domain** or **Homepage URL** and **Authorized Redirect URIs** then click `CREATE`.
 
-- Your Client app would have been created and displayed by now.
+- Your Client app will be created.
 
 - Select the created OAuth client.
 
@@ -48,8 +48,6 @@ PHP SDK is installable through **Composer**. **Composer** is a tool for dependen
 - PHP SDK must be installed into client app though **Composer**.
 
 ## Including the SDK in your project
-
-You can include the SDK to your project using:
 
 - Install **Composer** (if not installed).
 
@@ -121,7 +119,7 @@ The persistence is achieved by writing an implementation of the inbuilt **TokenS
 
 - **deleteTokens()** - The method to delete all the stored tokens.
 
-- **getTokenById($id, $token)** - This method is used to retrieve the user token details based on unique ID.
+- **getTokenById($id, $token)** - The method to retrieve the user's token details based on unique ID.
 
 Note:
 
@@ -158,7 +156,7 @@ In case the user prefers to use the default DataBase persistence, **MySQL** can 
   - redirect_url varchar(255)
 
 Note:
-- Custom database name and table name can be set in DBStore instance
+- Custom database name and table name can be set in DBStore instance.
 
 #### MySQL Query
 
@@ -232,7 +230,7 @@ $tokenstore = new FileStore("/Users/username/Documents/php_sdk_token.txt");
 
 ### Custom Persistence
 
-To use Custom Persistence, the user must implement **TokenStore interface** (**com\zoho\api\authenticator\store\TokenStore**) and override the methods.
+To use Custom Persistence, you must implement **TokenStore interface**(**com\zoho\api\authenticator\store\TokenStore**) and override the methods.
 
 ```php
 namespace store;
@@ -309,19 +307,14 @@ class CustomStore implements TokenStore
 
 Before you get started with creating your PHP application, you need to register your client and authenticate the app with Zoho.
 
-- Create an instance of **Logger** Class to log exception and API information.
-
-    ```php
-    /*
-    * Create an instance of Logger Class that requires the following
-    * level -> Level of the log messages to be logged. Can be configured by typing Levels "::" and choose any level from the list displayed.
-    * filePath -> Absolute file path, where messages need to be logged.
-    */
-    $logger = (new LogBuilder())
-    ->level(Levels::INFO)
-    ->filePath("/Users/user_name/Documents/php_sdk_log.log")
-    ->build();
-    ```
+| Mandatory Keys    | Optional Keys |
+| :---------------- | :------------ |
+| User              | Logger        |
+| Environment       | Store         |
+| Token             | SDKConfig     |
+|                   | RequestProxy  |
+|                   | ResourcePath  |
+----
 
 - Create an instance of **UserSignature** that identifies the current user.
 
@@ -330,7 +323,7 @@ Before you get started with creating your PHP application, you need to register 
     $user = new UserSignature("abc@zoho.com");
     ```
 
-- Configure API environment which decides the domain and the URL to make API calls.
+- Configure the API environment which decides the domain and the URL to make API calls.
 
     ```php
     /*
@@ -342,7 +335,7 @@ Before you get started with creating your PHP application, you need to register 
     $environment = USDataCenter::PRODUCTION();
     ```
 
-- Create an instance of OAuthToken with the information  that you get after registering your Zoho client.
+- Create an instance of **OAuthToken** with the information that you get after registering your Zoho client.
 
     ```php
     /*
@@ -350,6 +343,7 @@ Before you get started with creating your PHP application, you need to register 
     * clientId -> OAuth client id.
     * clientSecret -> OAuth client secret.
     * refreshToken -> REFRESH token.
+    * accessToken -> Access token.
     * grantToken -> GRANT token.
     * id -> User unique id.
     * redirectURL -> OAuth redirect URL.
@@ -376,9 +370,28 @@ Before you get started with creating your PHP application, you need to register 
     ->refreshToken("refreshToken")
     ->redirectURL("redirectURL")
     ->build();
+
+    // if access token is available
+    $token = (new OAuthBuilder())
+    ->accessToken("accessToken")
+    ->build();
+    ```
+  
+- Create an instance of **Logger** Class to log exception and API information. By default, the SDK constructs a Logger instance with level - INFO and file_path - (sdk_logs.log parallel to bin/(Debug or Release) folder )
+
+    ```php
+    /*
+    * Create an instance of Logger Class that requires the following
+    * level -> Level of the log messages to be logged. Can be configured by typing Levels "::" and choose any level from the list displayed.
+    * filePath -> Absolute file path, where messages need to be logged.
+    */
+    $logger = (new LogBuilder())
+    ->level(Levels::INFO)
+    ->filePath("/Users/user_name/Documents/php_sdk_log.log")
+    ->build();
     ```
 
-- Create an instance of TokenStore to persist tokens, used for authenticating all the requests.
+- Create an instance of **TokenStore** to persist tokens, used for authenticating all the requests. By default, the SDK creates the sdk_tokens.txt file (parallel to to bin/(Debug or Release) folder) to persist the tokens.
 
     ```php
     /*
@@ -410,6 +423,7 @@ Before you get started with creating your PHP application, you need to register 
 
     ```php
     /*
+    * By default, the SDK creates the SDKConfig instance
     * autoRefreshFields (default value is false)
     * true - all the modules' fields will be auto-refreshed in the background, every hour.
     * false - the fields will not be auto-refreshed in the background. The user can manually delete the file(s) or refresh the fields using methods from ModuleFieldsHandler(com\zoho\crm\api\util\ModuleFieldsHandler)
@@ -456,10 +470,10 @@ Before you get started with creating your PHP application, you need to register 
      ->build();
     ```
 
-- The path containing the absolute directory path to store user specific files containing module fields information.
+- The path containing the absolute directory path to store user specific files containing module fields information. By default, the SDK stores the user-specific files in a folder parallel to bin/(Debug or Release)
 
     ```php
-    $resourcePath = "/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath = "/Users/user_name/Documents/phpsdk-application";
     ```
 
 ## Initializing the Application
@@ -571,7 +585,7 @@ class Initialize
 
     $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
-    $resourcePath = "/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath = "/Users/user_name/Documents/phpsdk-application";
 
     //Create an instance of RequestProxy
     $requestProxy = (new ProxyBuilder())
@@ -806,7 +820,7 @@ class MultiThread
 
     $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
-    $resourcePath ="/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
     (new InitializeBuilder())
     ->user($user1)
@@ -980,7 +994,7 @@ class Record
 
     $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
-    $resourcePath ="/Users/user_name/Documents/phpsdk-application/";
+    $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
     /*
     * Set the following in InitializeBuilder

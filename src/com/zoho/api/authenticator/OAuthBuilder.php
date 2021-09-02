@@ -16,9 +16,11 @@ class OAuthBuilder
 
     private $redirectURL;
 
+    private $refreshToken;
+
     private $grantToken;
 
-    private $refreshToken;
+    private $accessToken;
 
     private $id;
 
@@ -68,9 +70,16 @@ class OAuthBuilder
         return $this;
     }
 
+    public function accessToken(string $accessToken)
+    {
+        $this->accessToken = $accessToken;
+
+        return $this;
+    }
+
     public function build()
     {
-        if($this->grantToken == null && $this->refreshToken == null && $this->id == null)
+        if($this->grantToken == null && $this->refreshToken == null && $this->id == null && $this->accessToken == null)
         {
             throw new SDKException(Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR, Constants::OAUTH_MANDATORY_KEYS);
         }
@@ -83,7 +92,7 @@ class OAuthBuilder
 
         $object = $class->newInstanceWithoutConstructor();
 
-        $constructor->invoke($object, $this->clientID, $this->clientSecret, $this->grantToken, $this->refreshToken, $this->redirectURL, $this->id);
+        $constructor->invoke($object, $this->clientID, $this->clientSecret, $this->grantToken, $this->refreshToken, $this->redirectURL, $this->id, $this->accessToken);
 
         return $object;
     }
