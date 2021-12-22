@@ -3,6 +3,7 @@
 	"description" : "Zoho CRM API SDK for PHP",
 	"type" : "sdk",
 	"homepage": "https://github.com/zoho/zohocrm-php-sdk-2.0",
+	"license": "Apache-2.0",
 	"authors" : [
 		{
 			"name" : "Zoho CRM API Team",
