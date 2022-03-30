@@ -975,7 +975,7 @@ class Utility
             $fieldDetail[Constants::LOOKUP] = true;
         }
 
-        if(strtolower($apiType) == Constants::CONSENT_LOOKUP)
+        if(strtolower($apiType) == Constants::CONSENT_LOOKUP || strtolower($apiType) == Constants::OWNER_LOOKUP)
         {
             $fieldDetail[Constants::SKIP_MANDATORY] = true;
         }
