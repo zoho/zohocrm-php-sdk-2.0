@@ -330,7 +330,7 @@ class Constants
 
     const REQUIRED = "required";
 
-    const REQUIRED_IN_UPDATE = "required_in_update";
+    const REQUIRED_IN_UPDATE = "required-in-update";
 
     const MANDATORY_KEY_ERROR = "Value missing or null for mandatory key(s) ";
 
@@ -440,7 +440,7 @@ class Constants
 
     const CONSENT_LOOKUP = "consent_lookup";
 
-    const SKIP_MANDATORY = "skip_mandatory";
+    const SKIP_MANDATORY = "skip-mandatory";
 
     const SE_MODULE = "se_module";
 
@@ -466,7 +466,7 @@ class Constants
 
     const FORM_REQUEST_EXCEPTION = "Exception in forming request body : ";
 
-    const SDK_VERSION = "4.0.0";
+    const SDK_VERSION = "5.0.0";
 
     const API_CALL_EXCEPTION = "Exception in current API call execution : ";
 
@@ -685,5 +685,7 @@ class Constants
     const SKIP_MODULES = array("deals");
 
     const PHP = "php_";
+
+    const OWNER_LOOKUP = "ownerlookup";
 }
 ?>
