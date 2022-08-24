@@ -7,7 +7,7 @@ namespace com\zoho\crm\api\exception;
  */
 class SDKException extends \Exception
 {
-    
+
     private $_message;
 
     private $_code = 0;
@@ -16,7 +16,7 @@ class SDKException extends \Exception
     private $_cause;
 
     private $_details;
-   
+
     /**
      * Creates an SDKException class instance with the specified parameters.
      * @param string $errorCode A string containing the Exception error code.
@@ -34,12 +34,12 @@ class SDKException extends \Exception
         
         $this->_details = $details;
         
-        if (!$message && $cause != null)
+        if ($cause != null)
         {
-            $this->_message = $cause->getMessage();
+            $this->_message = $message . "\n" . $cause->getMessage();
         }
         
-        parent::__construct($message);
+        parent::__construct($this->_message);
     }
     
     /**
