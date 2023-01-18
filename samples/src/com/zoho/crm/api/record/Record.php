@@ -79,7 +79,23 @@ use com\zoho\crm\api\record\GetRecordsParam;
 
 use com\zoho\crm\api\record\SearchRecordsParam;
 
-use com\zoho\crm\api\record\{Cases, Field, Solutions, Accounts, Campaigns, Calls, Leads, Tasks, Deals, Sales_Orders, Contacts, Quotes, Events, Price_Books, Purchase_Orders, Vendors};
+use com\zoho\crm\api\record\{ApplyFeatureExecution,
+    Cases,
+    Field,
+    Solutions,
+    Accounts,
+    Campaigns,
+    Calls,
+    Leads,
+    Tasks,
+    Deals,
+    Sales_Orders,
+    Contacts,
+    Quotes,
+    Events,
+    Price_Books,
+    Purchase_Orders,
+    Vendors};
 
 use com\zoho\crm\api\util\Choice;
 
@@ -2866,7 +2882,20 @@ class Record
 		
 		//Get instance of BodyWrapper Class that will contain the request body
 		$bodyWrapper = new BodyWrapper();
-		
+
+        //Get instance of ApplyFeatureExecution class
+        $featureExecutionObject=new ApplyFeatureExecution();
+
+        //List of ApplyFeatureExecution instances
+        $applyFeatureExecution= array();
+
+        $featureExecutionObject->setName("layout_rules");
+
+        array_push($applyFeatureExecution,$featureExecutionObject);
+
+        //setting the applyFeatureExecution list to BodyWrapper instance
+        $bodyWrapper->setApplyFeatureExecution($applyFeatureExecution);
+
 		//List of Record instances
 		$records = array();
 
@@ -3335,6 +3364,19 @@ class Record
 		
 		//Get instance of Record Class
 		$record1 = new $recordClass();
+
+        //Get instance of ApplyFeatureExecution class
+        $featureExecutionObject=new ApplyFeatureExecution();
+
+        //List of applyFeatureExecution instances
+        $applyFeatureExecution= array();
+
+        $featureExecutionObject->setName("layout_rules");
+
+        array_push($applyFeatureExecution,$featureExecutionObject);
+
+        //set applyfeatureExecution to BodyWrapeer instance
+        $request->setApplyFeatureExecution($applyFeatureExecution);
 		
 		$record1->setId("3477061010531018");
 		
@@ -3675,7 +3717,20 @@ class Record
 		
 		//Get instance of Record Class
 		$record1 = new $recordClass();
-		
+
+        //Get instance of ApplyFeatureExecution class
+        $featureExecutionObject=new ApplyFeatureExecution();
+
+        //List of ApplyFeatureExecution instances
+        $applyFeatureExecution= array();
+
+        $featureExecutionObject->setName("layout_rules");
+
+        array_push($applyFeatureExecution,$featureExecutionObject);
+
+        //set applyFeatureExecution to BodyWrapper instance
+        $request->setApplyFeatureExecution($applyFeatureExecution);
+
 		/*
 		 * Call addFieldValue method that takes two arguments
 		 * 1 -> Call Field "." and choose the module from the displayed list and press "." and choose the field name from the displayed list.
