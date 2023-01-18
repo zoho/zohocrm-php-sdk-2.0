@@ -7,6 +7,7 @@ class BodyWrapper implements Model
 {
 
 	private  $data;
+	private  $applyFeatureExecution;
 	private  $trigger;
 	private  $process;
 	private  $duplicateCheckFields;
@@ -32,6 +33,27 @@ class BodyWrapper implements Model
 	{
 		$this->data=$data; 
 		$this->keyModified['data'] = 1; 
+
+	}
+
+	/**
+	 * The method to get the applyFeatureExecution
+	 * @return array A array representing the applyFeatureExecution
+	 */
+	public  function getApplyFeatureExecution()
+	{
+		return $this->applyFeatureExecution; 
+
+	}
+
+	/**
+	 * The method to set the value to applyFeatureExecution
+	 * @param array $applyFeatureExecution A array
+	 */
+	public  function setApplyFeatureExecution(array $applyFeatureExecution)
+	{
+		$this->applyFeatureExecution=$applyFeatureExecution; 
+		$this->keyModified['apply_feature_execution'] = 1; 
 
 	}
 
