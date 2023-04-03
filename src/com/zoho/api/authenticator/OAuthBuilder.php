@@ -81,7 +81,7 @@ class OAuthBuilder
     {
         if($this->grantToken == null && $this->refreshToken == null && $this->id == null && $this->accessToken == null)
         {
-            throw new SDKException(Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR, Constants::OAUTH_MANDATORY_KEYS);
+            throw new SDKException(Constants::MANDATORY_VALUE_ERROR, Constants::MANDATORY_KEY_ERROR . " - " . implode(', ', Constants::OAUTH_MANDATORY_KEYS));
         }
 
         $class = new \ReflectionClass(OAuthToken::class);

@@ -1,4 +1,22 @@
-# ZOHO CRM PHP SDK - 2.0
+License
+=======
+
+    Copyright (c) 2021, ZOHO CORPORATION PRIVATE LIMITED 
+    All rights reserved. 
+
+    Licensed under the Apache License, Version 2.0 (the "License"); 
+    you may not use this file except in compliance with the License. 
+    You may obtain a copy of the License at 
+    
+        http://www.apache.org/licenses/LICENSE-2.0 
+    
+    Unless required by applicable law or agreed to in writing, software 
+    distributed under the License is distributed on an "AS IS" BASIS, 
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+    See the License for the specific language governing permissions and 
+    limitations under the License.
+
+# ZOHO CRM PHP SDK 2.0 for API version 2.0
 
 ## Table Of Contents
 
@@ -49,6 +67,8 @@ PHP SDK is installable through **Composer**. **Composer** is a tool for dependen
 
 ## Including the SDK in your project
 
+You can include the SDK to your project using:
+
 - Install **Composer** (if not installed).
 
   - Run this command to install the composer.
@@ -93,7 +113,7 @@ PHP SDK is installable through **Composer**. **Composer** is a tool for dependen
 
 ## Token Persistence
 
-Token persistence refers to storing and utilizing the authentication tokens that are provided by Zoho. There are three ways provided by the SDK in which persistence can be utilized. They are DataBase Persistence, File Persistence and Custom Persistence.
+Token persistence refers to storing and utilizing the authentication tokens that are provided by Zoho.  Token persistence enables the SDK to automatically refresh the access token after initialization using the refresh token without the need for user intervention. There are three ways provided by the SDK in which persistence can be applied. They are file persistence, DB persistence and Custom persistence. Please note that the default method of token persistence provided by the Zoho CRM SDK is File persistence.
 
 ### Table of Contents
 
@@ -119,7 +139,7 @@ The persistence is achieved by writing an implementation of the inbuilt **TokenS
 
 - **deleteTokens()** - The method to delete all the stored tokens.
 
-- **getTokenById($id, $token)** - The method to retrieve the user's token details based on unique ID.
+- **getTokenById($id, $token)** - This method is used to retrieve the user token details based on unique ID.
 
 Note:
 
@@ -131,11 +151,11 @@ Note:
 
 ### DataBase Persistence
 
-In case the user prefers to use the default DataBase persistence, **MySQL** can be used.
+Database persistence is a technique that involves storing and retrieving data from a database.  In case the user prefers to use the default DataBase persistence, **MySQL** can be used.
 
 - The database name should be **zohooauth**.
 
-- There must be a table name oauthtoken with columns.
+- There must be a table named **oauthtoken** with the following columns.
 
   - id varchar(255)
 
@@ -156,7 +176,7 @@ In case the user prefers to use the default DataBase persistence, **MySQL** can 
   - redirect_url varchar(255)
 
 Note:
-- Custom database name and table name can be set in DBStore instance.
+- Custom database name and table name can be set in DBStore instance
 
 #### MySQL Query
 
@@ -179,12 +199,13 @@ CREATE TABLE oauthtoken (
 
 ```php
 /*
-* hostName -> DataBase host name. Default value "localhost"
-* databaseName -> DataBase name. Default  value "zohooauth"
-* userName -> DataBase user name. Default value "root"
-* password -> DataBase password. Default value ""
-* portNumber -> DataBase port number. Default value "3306"
-* tableName -> Table Name. Default value "oauthtoken"
+* Create an instance of TokenStore.
+* host -> DataBase host name. Default "localhost"
+* databaseName -> DataBase name. Default "zohooauth"
+* userName -> DataBase user name. Default "root"
+* tableName -> DataBase table name. Default "oauthtoken"
+* password -> DataBase password. Default ""
+* portNumber -> DataBase port number. Default "3306"
 */
 // $tokenstore = (new DBBuilder())->build();
 $tokenstore = (new DBBuilder())
@@ -199,7 +220,7 @@ $tokenstore = (new DBBuilder())
 
 ### File Persistence
 
-In case of default File Persistence, the user can persist tokens in the local drive, by providing the the absolute file path to the FileStore object.
+File persistence is a simple approach for storing and retrieving data that is saved to a file on local drive. In case of default File Persistence, the user can persist tokens in the local drive, by providing the the absolute file path to the FileStore object.
 
 - The File contains
 
@@ -225,22 +246,17 @@ In case of default File Persistence, the user can persist tokens in the local dr
 
 ```php
 //Parameter containing the absolute file path to store tokens
-$tokenstore = new FileStore("/Users/username/Documents/php_sdk_token.txt");
+$tokenstore = new FileStore("/Documents/php_sdk_token.txt");
 ```
 
 ### Custom Persistence
 
-To use Custom Persistence, you must implement **TokenStore interface**(**com\zoho\api\authenticator\store\TokenStore**) and override the methods.
+Users can create their own logic for storing and retrieving authentication tokens using the custom persistence technique.  To use Custom Persistence, the user must implement **TokenStore interface** (**com\zoho\api\authenticator\store\TokenStore**) and override the methods.
 
 ```php
-namespace store;
-
 use com\zoho\api\authenticator\Token;
-
 use com\zoho\crm\api\exception\SDKException;
-
 use com\zoho\crm\api\UserSignature;
-
 use com\zoho\api\authenticator\store\TokenStore;
 
 class CustomStore implements TokenStore
@@ -256,7 +272,6 @@ class CustomStore implements TokenStore
       // Add code to get the token
       return null;
     }
-
     /**
       * @param user A UserSignature class instance.
       * @param token A Token (com\zoho\api\authenticator\OAuthToken) class instance.
@@ -266,7 +281,6 @@ class CustomStore implements TokenStore
     {
       // Add code to save the token
     }
-
     /**
       * @param token A Token (com\zoho\api\authenticator\OAuthToken) class instance.
       * @throws SDKException if any problem occurs.
@@ -275,7 +289,6 @@ class CustomStore implements TokenStore
     {
       // Add code to delete the token
     }
-
     /**
       * @return array  An array of Token (com\zoho\api\authenticator\OAuthToken) class instances
     */
@@ -309,12 +322,15 @@ Before you get started with creating your PHP application, you need to register 
 
 | Mandatory Keys    | Optional Keys |
 | :---------------- | :------------ |
-| User              | Logger        |
-| Environment       | Store         |
-| Token             | SDKConfig     |
-|                   | RequestProxy  |
-|                   | ResourcePath  |
+| user              | logger        |
+| environment       | store         |
+| token             | SDKConfig     |
+|                   | requestProxy  |
+|                   | resourcePath  |
 ----
+
+The **user** key will be used to store and identify the **tokenstore** details in the DB or File Storage for token persistence. The **environment** key contains the domain information to make API calls. The **token** key represents the OAuth info, including the clientID, clientSecret, grantToken, redirectURL, refreshToken or accessToken depending on the flow that you use. Refer to ##create an instance of OAuthToken## for more details. 
+
 
 - Create an instance of **UserSignature** that identifies the current user.
 
@@ -335,48 +351,34 @@ Before you get started with creating your PHP application, you need to register 
     $environment = USDataCenter::PRODUCTION();
     ```
 
-- Create an instance of **OAuthToken** with the information that you get after registering your Zoho client.
+- Create an instance of **OAuthToken** with the information that you get after registering your Zoho client. In the context of token persistence, the grant token flow and refresh token flow involve storing and persisting the token. However, the access token flow does not involve token persistence and the access token is directly utilized for API calls. Depending on the tokens available with you, choose grantToken flow, refreshToken flow or accessToken flow.  
 
-    ```php
-    /*
-    * Create a Token instance that requires the following
-    * clientId -> OAuth client id.
-    * clientSecret -> OAuth client secret.
-    * refreshToken -> REFRESH token.
-    * accessToken -> Access token.
-    * grantToken -> GRANT token.
-    * id -> User unique id.
-    * redirectURL -> OAuth redirect URL.
-    */
-    //Create a Token instance
-    // if refresh token is available
-    // The SDK throws an exception, if the given id is invalid.
-    $token = (new OAuthBuilder())
-    ->id("id")
-    ->build();
-
-    // if grant token is available
+  - Use the following method for **grantToken flow :**
+  ```php
     $token = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")
     ->grantToken("grantToken")
     ->redirectURL("redirectURL")
     ->build();
-
-    // if ID (obtained from persistence) is available
+    ```
+  - Use the following method for **refreshToken flow :**
+  ```php
     $token = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")
     ->refreshToken("refreshToken")
     ->redirectURL("redirectURL")
     ->build();
+  ```
 
-    // if access token is available
+  - Use the following method for **accessToken flow :**
+  ```php
     $token = (new OAuthBuilder())
     ->accessToken("accessToken")
     ->build();
-    ```
-  
+  ```
+
 - Create an instance of **Logger** Class to log exception and API information. By default, the SDK constructs a Logger instance with level - INFO and file_path - (sdk_logs.log, created in the current working directory)
 
     ```php
@@ -387,12 +389,13 @@ Before you get started with creating your PHP application, you need to register 
     */
     $logger = (new LogBuilder())
     ->level(Levels::INFO)
-    ->filePath("/Users/user_name/Documents/php_sdk_log.log")
+    ->filePath("/Documents/php_sdk_log.log")
     ->build();
     ```
 
-- Create an instance of **TokenStore** to persist tokens, used for authenticating all the requests. By default, the SDK creates the sdk_tokens.txt created in the current working directory) to persist the tokens.
+- Create an instance of **TokenStore** to persist tokens, used for authenticating all the requests. By default, the SDK creates the sdk_tokens.txt in the current working directory to persist the tokens.
 
+  - Use the following method for DB Store
     ```php
     /*
     * Create an instance of DBStore that requires the following
@@ -403,8 +406,6 @@ Before you get started with creating your PHP application, you need to register 
     * portNumber -> DataBase port number. Default value "3306"
     * tabletName -> DataBase table name. Default value "oauthtoken"
     */
-    //$tokenstore = (new DBBuilder())->build();
-
     $tokenstore = (new DBBuilder())
     ->host("hostName")
     ->databaseName("dataBaseName")
@@ -413,10 +414,14 @@ Before you get started with creating your PHP application, you need to register 
     ->portNumber("portNumber")
     ->tableName("tableName")
     ->build();
-
-    // $tokenstore = new FileStore("absolute_file_path");
-
-    // $tokenstore = new CustomStore();
+    ```
+  - Use the following method for File Store
+    ```php
+    $tokenstore = new FileStore("absolute_file_path");
+    ```
+  - Use the following method for Custom Store
+    ```php
+    $tokenstore = new CustomStore();
     ```
 
 - Create an instance of SDKConfig containing SDK configurations.
@@ -439,17 +444,12 @@ Before you get started with creating your PHP application, you need to register 
     * false - the SDK skips the verification
     */
     $autoRefreshFields = false;
-
     $pickListValidation = false;
-
     $enableSSLVerification = true;
-
     //The number of seconds to wait while trying to connect. Use 0 to wait indefinitely.
     $connectionTimeout = 2;
-
     //The maximum number of seconds to allow cURL functions to execute.
     $timeout = 2;
-
     $sdkConfig = (new SDKConfigBuilder())
     ->autoRefreshFields($autoRefreshFields)
     ->pickListValidation($pickListValidation)
@@ -470,10 +470,10 @@ Before you get started with creating your PHP application, you need to register 
      ->build();
     ```
 
-- The path containing the absolute directory path to store user specific files containing module fields information. By default, the SDK stores the user-specific files within a folder in the current working directory.
+- The path containing the absolute directory path to store user specific files containing module fields information.
 
     ```php
-    $resourcePath = "/Users/user_name/Documents/phpsdk-application";
+    $resourcePath = "/Documents/phpsdk-application";
     ```
 
 ## Initializing the Application
@@ -482,86 +482,34 @@ Initialize the SDK using the following code.
 
 ```php
 <?php
-namespace com\zoho\crm\sample\initializer;
-
 use com\zoho\api\authenticator\OAuthBuilder;
-
 use com\zoho\api\authenticator\store\DBBuilder;
-
 use com\zoho\api\authenticator\store\FileStore;
-
 use com\zoho\crm\api\InitializeBuilder;
-
 use com\zoho\crm\api\UserSignature;
-
 use com\zoho\crm\api\dc\USDataCenter;
-
 use com\zoho\api\logger\LogBuilder;
-
 use com\zoho\api\logger\Levels;
-
 use com\zoho\crm\api\SDKConfigBuilder;
-
 use com\zoho\crm\api\ProxyBuilder;
+require_once "vendor/autoload.php";
 
 class Initialize
 {
   public static function initialize()
   {
-    /*
-      * Create an instance of Logger Class that requires the following
-      * level -> Level of the log messages to be logged. Can be configured by typing Levels "::" and choose any level from the list displayed.
-      * filePath -> Absolute file path, where messages need to be logged.
-    */
     $logger = (new LogBuilder())
     ->level(Levels::INFO)
-    ->filePath("/Users/user_name/Documents/php_sdk_log.log")
+    ->filePath("/Documents/php_sdk_log.log")
     ->build();
-
-    //Create an UserSignature instance that takes user Email as parameter
     $user = new UserSignature("abc@zoho.com");
-
-    /*
-      * Configure the environment
-      * which is of the pattern Domain::Environment
-      * Available Domains: USDataCenter, EUDataCenter, INDataCenter, CNDataCenter, AUDataCenter
-      * Available Environments: PRODUCTION(), DEVELOPER(), SANDBOX()
-    */
     $environment = USDataCenter::PRODUCTION();
-
-    /*
-    * Create a Token instance
-    * clientId -> OAuth client id.
-    * clientSecret -> OAuth client secret.
-    * grantToken -> GRANT token.
-    * redirectURL -> OAuth redirect URL.
-    */
-    //Create a Token instance
     $token = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")
     ->grantToken("grantToken")
     ->redirectURL("redirectURL")
     ->build();
-
-    /*
-     * TokenStore can be any of the following
-     * DB Persistence - Create an instance of DBStore
-     * File Persistence - Create an instance of FileStore
-     * Custom Persistence - Create an instance of CustomStore
-    */
-
-    /*
-    * Create an instance of DBStore.
-    * host -> DataBase host name. Default value "localhost"
-    * databaseName -> DataBase name. Default  value "zohooauth"
-    * userName -> DataBase user name. Default value "root"
-    * password -> DataBase password. Default value ""
-    * portNumber -> DataBase port number. Default value "3306"
-    * tableName -> DataBase table name. Default value "oauthtoken"
-    */
-    //$tokenstore = (new DBBuilder())->build();
-
     $tokenstore = (new DBBuilder())
     ->host("hostName")
     ->databaseName("dataBaseName")
@@ -570,42 +518,24 @@ class Initialize
     ->portNumber("portNumber")
     ->tableName("tableName")
     ->build();
-
-    // $tokenstore = new FileStore("absolute_file_path");
-
-    // $tokenstore = new CustomStore();
-
     $autoRefreshFields = false;
-
     $pickListValidation = false;
-
     $connectionTimeout = 2;//The number of seconds to wait while trying to connect. Use 0 to wait indefinitely.
-
     $timeout = 2;//The maximum number of seconds to allow cURL functions to execute.
-
-    $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
-
-    $resourcePath = "/Users/user_name/Documents/phpsdk-application";
-
-    //Create an instance of RequestProxy
+    $sdkConfig = (new SDKConfigBuilder())
+    ->autoRefreshFields($autoRefreshFields)
+    ->pickListValidation($pickListValidation)
+    ->sslVerification($enableSSLVerification)
+    ->connectionTimeout($connectionTimeout)
+    ->timeout($timeout)
+    ->build();
+    $resourcePath = "/Documents/phpsdk-application";
     $requestProxy = (new ProxyBuilder())
     ->host("proxyHost")
     ->port("proxyPort")
     ->user("proxyUser")
     ->password("password")
     ->build();
-
-    /*
-      * Set the following in InitializeBuilder
-      * user -> UserSignature instance
-      * environment -> Environment instance
-      * token -> Token instance
-      * store -> TokenStore instance
-      * SDKConfig -> SDKConfig instance
-      * resourcePath -> resourcePath - A String
-      * logger -> Log instance (optional)
-      * requestProxy -> RequestProxy instance (optional)
-    */
     (new InitializeBuilder())
     ->user($user)
     ->environment($environment)
@@ -733,7 +663,9 @@ The **PHP SDK** supports both single user and a multi-user app.
 
 ### Multi-user App
 
-Multi-users functionality is achieved using **switchUser()** method
+In the PHP SDK, multi-user functionality is achieved using the **switchUser()**method. To use this method, you need to provide the user, environment, token, and SDK configuration details.
+
+Please note that only one user can send requests at a time. If another user need to send requests, the **switchUser()** method must be used prior to sending the requests.
 
 ```php
   (new InitializeBuilder())
@@ -752,110 +684,52 @@ To Remove a user's configuration in SDK. Use the below code
 
 ```php
 <?php
-namespace multiuser;
-
 use com\zoho\api\authenticator\OAuthBuilder;
-
-use com\zoho\api\authenticator\store\DBBuilder;
-
-use com\zoho\api\authenticator\store\FileStore;
-
 use com\zoho\crm\api\InitializeBuilder;
-
 use com\zoho\crm\api\UserSignature;
-
 use com\zoho\crm\api\dc\USDataCenter;
-
 use com\zoho\crm\api\dc\EUDataCenter;
-
-use com\zoho\api\logger\LogBuilder;
-
-use com\zoho\api\logger\Levels;
-
-use com\zoho\crm\api\SDKConfigBuilder;
-
-use com\zoho\crm\api\ProxyBuilder;
-
 use com\zoho\crm\api\Initializer;
-
 use com\zoho\crm\api\record\RecordOperations;
-
 use com\zoho\crm\api\record\GetRecordsHeader;
-
 use com\zoho\crm\api\HeaderMap;
-
 use com\zoho\crm\api\ParameterMap;
-
 require_once 'vendor/autoload.php';
 
-class MultiThread
+class MultiUser
 {
   public function main()
   {
-    $logger = (new LogBuilder())
-    ->level(Levels::INFO)
-    ->filePath("/Users/user_name/Documents/php_sdk_log.log")
-    ->build();
-
     $environment1 = USDataCenter::PRODUCTION();
-
     $user1 = new UserSignature("abc1@zoho.com");
-
-    $tokenstore = (new DBBuilder())->host("hostName")->databaseName("dataBaseName")->userName("userName")->password("password")->portNumber("portNumber")->tableName("tableName")->build();
-
     $token1 = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")
     ->grantToken("grantToken")
     ->redirectURL("redirectURL")
     ->build();
-
-    $autoRefreshFields = false;
-
-    $pickListValidation = false;
-
-    $connectionTimeout = 2;
-
-    $timeout = 2;
-
-    $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
-
-    $resourcePath ="/Users/user_name/Documents/phpsdk-application";
-
     (new InitializeBuilder())
     ->user($user1)
     ->environment($environment1)
     ->token($token1)
-    ->store($tokenstore)
-    ->SDKConfig($configInstance)
-    ->resourcePath($resourcePath)
-    ->logger($logger)
     ->initialize();
-
     $this->getRecords("Leads");
 
     $environment2 = EUDataCenter::PRODUCTION();
-
     $user2 = new UserSignature("abc2@zoho.eu");
-
     $token2 = (new OAuthBuilder())
     ->clientId("clientId2")
     ->clientSecret("clientSecret2")
     ->refreshToken("refreshToken2")
     ->redirectURL("redirectURL2")
     ->build();
-
-    $this->getRecords("Leads");
-
     // Initializer::removeUserConfiguration($user1, $environment1);
 
     (new InitializeBuilder())
     ->user($user2)
     ->environment($environment2)
     ->token($token2)
-    ->SDKConfig($configInstance)
     ->switchUser();
-
     $this->getRecords("Contacts");
   }
 
@@ -864,24 +738,14 @@ class MultiThread
     try
     {
       $recordOperations = new RecordOperations();
-
       $paramInstance = new ParameterMap();
-
       $paramInstance->add(GetRecordsParam::approved(), "false");
-
       $headerInstance = new HeaderMap();
-
       $ifmodifiedsince = date_create("2020-06-02T11:03:06+05:30")->setTimezone(new \DateTimeZone(date_default_timezone_get()));
-
       $headerInstance->add(GetRecordsHeader::IfModifiedSince(), $ifmodifiedsince);
-
-      //Call getRecord method that takes paramInstance, moduleAPIName as parameter
       $response = $recordOperations->getRecords($moduleAPIName,$paramInstance, $headerInstance);
-
       echo($response->getStatusCode() . "\n");
-
       print_r($response->getObject());
-
       echo("\n");
     }
     catch (\Exception $e)
@@ -890,9 +754,7 @@ class MultiThread
     }
   }
 }
-
-$obj = new MultiThread();
-
+$obj = new MultiUser();
 $obj->main();
 ?>
 ```
@@ -911,224 +773,94 @@ $obj->main();
 
 ```php
 <?php
-namespace index;
-
-use com\zoho\api\authenticator\OAuthToken;
-
-use com\zoho\api\authenticator\store\DBStore;
-
-use com\zoho\api\authenticator\store\FileStore;
-
-use com\zoho\crm\api\Initializer;
-
+use com\zoho\api\authenticator\OAuthBuilder;
+use com\zoho\crm\api\InitializeBuilder;
 use com\zoho\crm\api\UserSignature;
-
-use com\zoho\crm\api\SDKConfigBuilder;
-
 use com\zoho\crm\api\dc\USDataCenter;
-
-use com\zoho\api\logger\Logger;
-
-use com\zoho\api\logger\Levels;
-
 use com\zoho\crm\api\record\RecordOperations;
-
 use com\zoho\crm\api\HeaderMap;
-
 use com\zoho\crm\api\ParameterMap;
-
 use com\zoho\crm\api\record\GetRecordsHeader;
-
 use com\zoho\crm\api\record\GetRecordsParam;
-
 use com\zoho\crm\api\record\ResponseWrapper;
-
 require_once 'vendor/autoload.php';
 
 class Record
 {
-  public static function getRecord()
+  public function initialize()
   {
-    /*
-      * Create an instance of Logger Class that requires the following
-      * level -> Level of the log messages to be logged. Can be configured by typing Levels "::" and choose any level from the list displayed.
-      * filePath -> Absolute file path, where messages need to be logged.
-    */
-    $logger = (new LogBuilder())
-    ->level(Levels::INFO)
-    ->filePath("/Users/user_name/Documents/php_sdk_log.log")
-    ->build();
-
-    //Create an UserSignature instance that takes user Email as parameter
     $user = new UserSignature("abc@zoho.com");
-
-    /*
-      * Configure the environment
-      * which is of the pattern Domain::Environment
-      * Available Domains: USDataCenter, EUDataCenter, INDataCenter, CNDataCenter, AUDataCenter
-      * Available Environments: PRODUCTION(), DEVELOPER(), SANDBOX()
-    */
     $environment = USDataCenter::PRODUCTION();
-
-    //Create a Token instance
     $token = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")
     ->refreshToken("refreshToken")
     ->redirectURL("redirectURL")
     ->build();
-
-    //$tokenstore = (new DBBuilder())->build();
-
-    $tokenstore = (new DBBuilder())->host("hostName")->databaseName("dataBaseName")->userName("userName")->password("password")->portNumber("portNumber")->tableName("tableName")->build();
-
-    // $tokenstore = new FileStore("absolute_file_path");
-
-    $autoRefreshFields = false;
-
-    $pickListValidation = false;
-
-    $connectionTimeout = 2;
-
-    $timeout = 2;
-
-    $sdkConfig = (new SDKConfigBuilder())->autoRefreshFields($autoRefreshFields)->pickListValidation($pickListValidation)->sslVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
-
-    $resourcePath ="/Users/user_name/Documents/phpsdk-application";
-
-    /*
-    * Set the following in InitializeBuilder
-    * user -> UserSignature instance
-    * environment -> Environment instance
-    * token -> Token instance
-    * store -> TokenStore instance
-    * SDKConfig -> SDKConfig instance
-    * resourcePath -> resourcePath -A String
-    * logger -> Log instance (optional)
-    * requestProxy -> RequestProxy instance (optional)
-    */
     (new InitializeBuilder())
     ->user($user)
     ->environment($environment)
     ->token($token)
-    ->store($tokenstore)
-    ->SDKConfig($configInstance)
-    ->resourcePath($resourcePath)
-    ->logger($logger)
-    ->requestProxy($requestProxy)
     ->initialize();
+  }
 
+  public function getRecord()
+  {
     try
     {
       $recordOperations = new RecordOperations();
-
       $paramInstance = new ParameterMap();
-
       $paramInstance->add(GetRecordsParam::approved(), "both");
-
       $headerInstance = new HeaderMap();
-
       $ifmodifiedsince = date_create("2020-06-02T11:03:06+05:30")->setTimezone(new \DateTimeZone(date_default_timezone_get()));
-
       $headerInstance->add(GetRecordsHeader::IfModifiedSince(), $ifmodifiedsince);
-
       $moduleAPIName = "Leads";
-
-      //Call getRecord method that takes paramInstance, moduleAPIName as parameter
-      $response = $recordOperations->getRecords($moduleAPIName,$paramInstance, $headerInstance);
-
+      $response = $recordOperations->getRecords($moduleAPIName, $paramInstance, $headerInstance);
       if($response != null)
       {
-        //Get the status code from response
         echo("Status Code: " . $response->getStatusCode() . "\n");
-
-        //Get object from response
         $responseHandler = $response->getObject();
-
         if($responseHandler instanceof ResponseWrapper)
         {
-          //Get the received ResponseWrapper instance
           $responseWrapper = $responseHandler;
-
-          //Get the list of obtained Record instances
           $records = $responseWrapper->getData();
-
           if($records != null)
           {
             $recordClass = 'com\zoho\crm\api\record\Record';
-
             foreach($records as $record)
             {
-              //Get the ID of each Record
               echo("Record ID: " . $record->getId() . "\n");
-
-              //Get the createdBy User instance of each Record
               $createdBy = $record->getCreatedBy();
-
-              //Check if createdBy is not null
               if($createdBy != null)
               {
-                //Get the ID of the createdBy User
                 echo("Record Created By User-ID: " . $createdBy->getId() . "\n");
-
-                //Get the name of the createdBy User
                 echo("Record Created By User-Name: " . $createdBy->getName() . "\n");
-
-                //Get the Email of the createdBy User
                 echo("Record Created By User-Email: " . $createdBy->getEmail() . "\n");
               }
-
-              //Get the CreatedTime of each Record
               echo("Record CreatedTime: ");
-
               print_r($record->getCreatedTime());
-
               echo("\n");
-
-              //Get the modifiedBy User instance of each Record
               $modifiedBy = $record->getModifiedBy();
-
-              //Check if modifiedBy is not null
               if($modifiedBy != null)
               {
-                //Get the ID of the modifiedBy User
                 echo("Record Modified By User-ID: " . $modifiedBy->getId() . "\n");
-
-                //Get the name of the modifiedBy User
                 echo("Record Modified By User-Name: " . $modifiedBy->getName() . "\n");
-
-                //Get the Email of the modifiedBy User
                 echo("Record Modified By User-Email: " . $modifiedBy->getEmail() . "\n");
               }
-
-              //Get the ModifiedTime of each Record
               echo("Record ModifiedTime: ");
-
               print_r($record->getModifiedTime());
-
               print_r("\n");
-
-              //Get the list of Tag instance each Record
               $tags = $record->getTag();
-
-              //Check if tags is not null
               if($tags != null)
               {
                 foreach($tags as $tag)
                 {
-                  //Get the Name of each Tag
                   echo("Record Tag Name: " . $tag->getName() . "\n");
-
-                  //Get the Id of each Tag
                   echo("Record Tag ID: " . $tag->getId() . "\n");
                 }
               }
-
-              //To get particular field value
-              echo("Record Field Value: " . $record->getKeyValue("Last_Name") . "\n");// FieldApiName
-
+              echo("Record Field Value: " . $record->getKeyValue("Last_Name") . "\n");
               echo("Record KeyValues : \n" );
-              //Get the KeyValue map
               foreach($record->getKeyValues() as $keyName => $value)
               {
                 echo("Field APIName" . $keyName . " \tValue : ");
@@ -1149,7 +881,8 @@ class Record
   }
 }
 
-Record::getRecord();
-
+$obj = new Record();
+$obj->initialize();
+$obj->getRecord();
 ?>
 ```
