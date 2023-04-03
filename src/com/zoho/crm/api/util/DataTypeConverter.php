@@ -22,7 +22,13 @@ class DataTypeConverter
 			return;
         }
 
-        $string = function ($obj) { return print_r($obj,true); };
+        $string = function ($obj) { 
+			if(preg_match('/\\\\u([0-9a-fA-F]{4})/', $obj))
+			{
+				return print_r(json_decode('' . $obj . ''), true);
+			}
+			return print_r($obj,true); 
+		};
 
         $integer = function ($obj) { return intval($obj); };
 
