@@ -2950,10 +2950,10 @@ class Record
 		 */
 		
 		// Subform sample:
-		$subform = new Record();
+		$subform = new $recordClass();
 		$subform->addKeyValue("dateTime_1", (new DateTime("now")));
 		$subform->addKeyValue("number_1", 1212332);
-		$record->addKeyValue("Subform_1", [$subform]);
+		$record1->addKeyValue("Subform_1", [$subform]);
 		// end subform
 		
 		$record1->addKeyValue("Custom_field", "Value");
