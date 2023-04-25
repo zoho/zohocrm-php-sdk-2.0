@@ -2883,18 +2883,18 @@ class Record
 		//Get instance of BodyWrapper Class that will contain the request body
 		$bodyWrapper = new BodyWrapper();
 
-        //Get instance of ApplyFeatureExecution class
-        $featureExecutionObject=new ApplyFeatureExecution();
+		//Get instance of ApplyFeatureExecution class
+		$featureExecutionObject=new ApplyFeatureExecution();
 
-        //List of ApplyFeatureExecution instances
-        $applyFeatureExecution= array();
+		//List of ApplyFeatureExecution instances
+		$applyFeatureExecution= array();
 
-        $featureExecutionObject->setName("layout_rules");
+		$featureExecutionObject->setName("layout_rules");
 
-        array_push($applyFeatureExecution,$featureExecutionObject);
+		array_push($applyFeatureExecution,$featureExecutionObject);
 
-        //setting the applyFeatureExecution list to BodyWrapper instance
-        $bodyWrapper->setApplyFeatureExecution($applyFeatureExecution);
+		//setting the applyFeatureExecution list to BodyWrapper instance
+		$bodyWrapper->setApplyFeatureExecution($applyFeatureExecution);
 
 		//List of Record instances
 		$records = array();
@@ -2948,7 +2948,15 @@ class Record
 		 * 1 -> A string that is the Field's API Name
 		 * 2 -> Value
 		 */
-		// $record1->addKeyValue("Custom_field", "Value");
+		
+		// Subform sample:
+		$subform = new Record();
+		$subform->addKeyValue("dateTime_1", (new DateTime("now")));
+		$subform->addKeyValue("number_1", 1212332);
+		$record->addKeyValue("Subform_1", [$subform]);
+		// end subform
+		
+		$record1->addKeyValue("Custom_field", "Value");
 		
 		// $record1->addKeyValue("Custom_field_2", "value");
 		
