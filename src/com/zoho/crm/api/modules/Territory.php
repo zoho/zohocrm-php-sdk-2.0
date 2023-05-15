@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\modules;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Territory implements Model
 {
@@ -17,7 +17,7 @@ class Territory implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -27,8 +27,8 @@ class Territory implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class Territory implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -48,8 +48,8 @@ class Territory implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -59,7 +59,7 @@ class Territory implements Model
 	 */
 	public  function getSubordinates()
 	{
-		return $this->subordinates; 
+		return $this->subordinates;
 
 	}
 
@@ -69,8 +69,8 @@ class Territory implements Model
 	 */
 	public  function setSubordinates(bool $subordinates)
 	{
-		$this->subordinates=$subordinates; 
-		$this->keyModified['subordinates'] = 1; 
+		$this->subordinates=$subordinates;
+		$this->keyModified['subordinates'] = 1;
 
 	}
 
@@ -83,10 +83,10 @@ class Territory implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -97,7 +97,7 @@ class Territory implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Currency implements Model
 {
@@ -16,7 +16,7 @@ class Currency implements Model
 	 */
 	public  function getRoundingOption()
 	{
-		return $this->roundingOption; 
+		return $this->roundingOption;
 
 	}
 
@@ -26,8 +26,8 @@ class Currency implements Model
 	 */
 	public  function setRoundingOption(string $roundingOption)
 	{
-		$this->roundingOption=$roundingOption; 
-		$this->keyModified['rounding_option'] = 1; 
+		$this->roundingOption=$roundingOption;
+		$this->keyModified['rounding_option'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Currency implements Model
 	 */
 	public  function getPrecision()
 	{
-		return $this->precision; 
+		return $this->precision;
 
 	}
 
@@ -47,8 +47,8 @@ class Currency implements Model
 	 */
 	public  function setPrecision(int $precision)
 	{
-		$this->precision=$precision; 
-		$this->keyModified['precision'] = 1; 
+		$this->precision=$precision;
+		$this->keyModified['precision'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Currency implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Currency implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

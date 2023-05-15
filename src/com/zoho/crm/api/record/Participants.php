@@ -1,8 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Participants extends Record implements Model
 {
@@ -14,7 +13,7 @@ class Participants extends Record implements Model
 	 */
 	public  function getName()
 	{
-		return $this->getKeyValue('name'); 
+		return $this->getKeyValue('name');
 
 	}
 
@@ -24,7 +23,7 @@ class Participants extends Record implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->addKeyValue('name', $name); 
+		$this->addKeyValue('name', $name);
 
 	}
 
@@ -34,7 +33,7 @@ class Participants extends Record implements Model
 	 */
 	public  function getEmail()
 	{
-		return $this->getKeyValue('Email'); 
+		return $this->getKeyValue('Email');
 
 	}
 
@@ -44,7 +43,7 @@ class Participants extends Record implements Model
 	 */
 	public  function setEmail(string $email)
 	{
-		$this->addKeyValue('Email', $email); 
+		$this->addKeyValue('Email', $email);
 
 	}
 
@@ -54,7 +53,7 @@ class Participants extends Record implements Model
 	 */
 	public  function getInvited()
 	{
-		return $this->getKeyValue('invited'); 
+		return $this->getKeyValue('invited');
 
 	}
 
@@ -64,7 +63,7 @@ class Participants extends Record implements Model
 	 */
 	public  function setInvited(bool $invited)
 	{
-		$this->addKeyValue('invited', $invited); 
+		$this->addKeyValue('invited', $invited);
 
 	}
 
@@ -74,7 +73,7 @@ class Participants extends Record implements Model
 	 */
 	public  function getType()
 	{
-		return $this->getKeyValue('type'); 
+		return $this->getKeyValue('type');
 
 	}
 
@@ -84,7 +83,7 @@ class Participants extends Record implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->addKeyValue('type', $type); 
+		$this->addKeyValue('type', $type);
 
 	}
 
@@ -94,7 +93,7 @@ class Participants extends Record implements Model
 	 */
 	public  function getParticipant()
 	{
-		return $this->getKeyValue('participant'); 
+		return $this->getKeyValue('participant');
 
 	}
 
@@ -104,7 +103,7 @@ class Participants extends Record implements Model
 	 */
 	public  function setParticipant(string $participant)
 	{
-		$this->addKeyValue('participant', $participant); 
+		$this->addKeyValue('participant', $participant);
 
 	}
 
@@ -114,7 +113,7 @@ class Participants extends Record implements Model
 	 */
 	public  function getStatus()
 	{
-		return $this->getKeyValue('status'); 
+		return $this->getKeyValue('status');
 
 	}
 
@@ -124,7 +123,7 @@ class Participants extends Record implements Model
 	 */
 	public  function setStatus(string $status)
 	{
-		$this->addKeyValue('status', $status); 
+		$this->addKeyValue('status', $status);
 
 	}
-} 
+}

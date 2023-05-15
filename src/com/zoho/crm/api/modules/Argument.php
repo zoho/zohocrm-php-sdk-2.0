@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\modules;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Argument implements Model
 {
@@ -16,7 +16,7 @@ class Argument implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -26,8 +26,8 @@ class Argument implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Argument implements Model
 	 */
 	public  function getValue()
 	{
-		return $this->value; 
+		return $this->value;
 
 	}
 
@@ -47,8 +47,8 @@ class Argument implements Model
 	 */
 	public  function setValue(string $value)
 	{
-		$this->value=$value; 
-		$this->keyModified['value'] = 1; 
+		$this->value=$value;
+		$this->keyModified['value'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Argument implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Argument implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

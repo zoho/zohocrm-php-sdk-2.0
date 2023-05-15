@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\org;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class LicenseDetails implements Model
 {
@@ -20,7 +20,7 @@ class LicenseDetails implements Model
 	 */
 	public  function getPaidExpiry()
 	{
-		return $this->paidExpiry; 
+		return $this->paidExpiry;
 
 	}
 
@@ -30,8 +30,8 @@ class LicenseDetails implements Model
 	 */
 	public  function setPaidExpiry(\DateTime $paidExpiry)
 	{
-		$this->paidExpiry=$paidExpiry; 
-		$this->keyModified['paid_expiry'] = 1; 
+		$this->paidExpiry=$paidExpiry;
+		$this->keyModified['paid_expiry'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class LicenseDetails implements Model
 	 */
 	public  function getUsersLicensePurchased()
 	{
-		return $this->usersLicensePurchased; 
+		return $this->usersLicensePurchased;
 
 	}
 
@@ -51,8 +51,8 @@ class LicenseDetails implements Model
 	 */
 	public  function setUsersLicensePurchased(string $usersLicensePurchased)
 	{
-		$this->usersLicensePurchased=$usersLicensePurchased; 
-		$this->keyModified['users_license_purchased'] = 1; 
+		$this->usersLicensePurchased=$usersLicensePurchased;
+		$this->keyModified['users_license_purchased'] = 1;
 
 	}
 
@@ -62,7 +62,7 @@ class LicenseDetails implements Model
 	 */
 	public  function getTrialType()
 	{
-		return $this->trialType; 
+		return $this->trialType;
 
 	}
 
@@ -72,8 +72,8 @@ class LicenseDetails implements Model
 	 */
 	public  function setTrialType(string $trialType)
 	{
-		$this->trialType=$trialType; 
-		$this->keyModified['trial_type'] = 1; 
+		$this->trialType=$trialType;
+		$this->keyModified['trial_type'] = 1;
 
 	}
 
@@ -83,7 +83,7 @@ class LicenseDetails implements Model
 	 */
 	public  function getTrialExpiry()
 	{
-		return $this->trialExpiry; 
+		return $this->trialExpiry;
 
 	}
 
@@ -93,8 +93,8 @@ class LicenseDetails implements Model
 	 */
 	public  function setTrialExpiry(string $trialExpiry)
 	{
-		$this->trialExpiry=$trialExpiry; 
-		$this->keyModified['trial_expiry'] = 1; 
+		$this->trialExpiry=$trialExpiry;
+		$this->keyModified['trial_expiry'] = 1;
 
 	}
 
@@ -104,7 +104,7 @@ class LicenseDetails implements Model
 	 */
 	public  function getPaid()
 	{
-		return $this->paid; 
+		return $this->paid;
 
 	}
 
@@ -114,8 +114,8 @@ class LicenseDetails implements Model
 	 */
 	public  function setPaid(bool $paid)
 	{
-		$this->paid=$paid; 
-		$this->keyModified['paid'] = 1; 
+		$this->paid=$paid;
+		$this->keyModified['paid'] = 1;
 
 	}
 
@@ -125,7 +125,7 @@ class LicenseDetails implements Model
 	 */
 	public  function getPaidType()
 	{
-		return $this->paidType; 
+		return $this->paidType;
 
 	}
 
@@ -135,8 +135,8 @@ class LicenseDetails implements Model
 	 */
 	public  function setPaidType(string $paidType)
 	{
-		$this->paidType=$paidType; 
-		$this->keyModified['paid_type'] = 1; 
+		$this->paidType=$paidType;
+		$this->keyModified['paid_type'] = 1;
 
 	}
 
@@ -149,10 +149,10 @@ class LicenseDetails implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -163,7 +163,7 @@ class LicenseDetails implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Crypt implements Model
 {
@@ -20,7 +20,7 @@ class Crypt implements Model
 	 */
 	public  function getMode()
 	{
-		return $this->mode; 
+		return $this->mode;
 
 	}
 
@@ -30,8 +30,8 @@ class Crypt implements Model
 	 */
 	public  function setMode(string $mode)
 	{
-		$this->mode=$mode; 
-		$this->keyModified['mode'] = 1; 
+		$this->mode=$mode;
+		$this->keyModified['mode'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class Crypt implements Model
 	 */
 	public  function getColumn()
 	{
-		return $this->column; 
+		return $this->column;
 
 	}
 
@@ -51,8 +51,8 @@ class Crypt implements Model
 	 */
 	public  function setColumn(string $column)
 	{
-		$this->column=$column; 
-		$this->keyModified['column'] = 1; 
+		$this->column=$column;
+		$this->keyModified['column'] = 1;
 
 	}
 
@@ -62,7 +62,7 @@ class Crypt implements Model
 	 */
 	public  function getEncfldids()
 	{
-		return $this->encfldids; 
+		return $this->encfldids;
 
 	}
 
@@ -72,8 +72,8 @@ class Crypt implements Model
 	 */
 	public  function setEncfldids(array $encfldids)
 	{
-		$this->encfldids=$encfldids; 
-		$this->keyModified['encFldIds'] = 1; 
+		$this->encfldids=$encfldids;
+		$this->keyModified['encFldIds'] = 1;
 
 	}
 
@@ -83,7 +83,7 @@ class Crypt implements Model
 	 */
 	public  function getNotify()
 	{
-		return $this->notify; 
+		return $this->notify;
 
 	}
 
@@ -93,8 +93,8 @@ class Crypt implements Model
 	 */
 	public  function setNotify(string $notify)
 	{
-		$this->notify=$notify; 
-		$this->keyModified['notify'] = 1; 
+		$this->notify=$notify;
+		$this->keyModified['notify'] = 1;
 
 	}
 
@@ -104,7 +104,7 @@ class Crypt implements Model
 	 */
 	public  function getTable()
 	{
-		return $this->table; 
+		return $this->table;
 
 	}
 
@@ -114,8 +114,8 @@ class Crypt implements Model
 	 */
 	public  function setTable(string $table)
 	{
-		$this->table=$table; 
-		$this->keyModified['table'] = 1; 
+		$this->table=$table;
+		$this->keyModified['table'] = 1;
 
 	}
 
@@ -125,7 +125,7 @@ class Crypt implements Model
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -135,8 +135,8 @@ class Crypt implements Model
 	 */
 	public  function setStatus(int $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -149,10 +149,10 @@ class Crypt implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -163,7 +163,7 @@ class Crypt implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class PickListValue implements Model
 {
@@ -21,7 +21,7 @@ class PickListValue implements Model
 	 */
 	public  function getDisplayValue()
 	{
-		return $this->displayValue; 
+		return $this->displayValue;
 
 	}
 
@@ -31,8 +31,8 @@ class PickListValue implements Model
 	 */
 	public  function setDisplayValue(string $displayValue)
 	{
-		$this->displayValue=$displayValue; 
-		$this->keyModified['display_value'] = 1; 
+		$this->displayValue=$displayValue;
+		$this->keyModified['display_value'] = 1;
 
 	}
 
@@ -42,7 +42,7 @@ class PickListValue implements Model
 	 */
 	public  function getSequenceNumber()
 	{
-		return $this->sequenceNumber; 
+		return $this->sequenceNumber;
 
 	}
 
@@ -52,8 +52,8 @@ class PickListValue implements Model
 	 */
 	public  function setSequenceNumber(int $sequenceNumber)
 	{
-		$this->sequenceNumber=$sequenceNumber; 
-		$this->keyModified['sequence_number'] = 1; 
+		$this->sequenceNumber=$sequenceNumber;
+		$this->keyModified['sequence_number'] = 1;
 
 	}
 
@@ -63,7 +63,7 @@ class PickListValue implements Model
 	 */
 	public  function getExpectedDataType()
 	{
-		return $this->expectedDataType; 
+		return $this->expectedDataType;
 
 	}
 
@@ -73,8 +73,8 @@ class PickListValue implements Model
 	 */
 	public  function setExpectedDataType(string $expectedDataType)
 	{
-		$this->expectedDataType=$expectedDataType; 
-		$this->keyModified['expected_data_type'] = 1; 
+		$this->expectedDataType=$expectedDataType;
+		$this->keyModified['expected_data_type'] = 1;
 
 	}
 
@@ -84,7 +84,7 @@ class PickListValue implements Model
 	 */
 	public  function getMaps()
 	{
-		return $this->maps; 
+		return $this->maps;
 
 	}
 
@@ -94,8 +94,8 @@ class PickListValue implements Model
 	 */
 	public  function setMaps(array $maps)
 	{
-		$this->maps=$maps; 
-		$this->keyModified['maps'] = 1; 
+		$this->maps=$maps;
+		$this->keyModified['maps'] = 1;
 
 	}
 
@@ -105,7 +105,7 @@ class PickListValue implements Model
 	 */
 	public  function getActualValue()
 	{
-		return $this->actualValue; 
+		return $this->actualValue;
 
 	}
 
@@ -115,8 +115,8 @@ class PickListValue implements Model
 	 */
 	public  function setActualValue(string $actualValue)
 	{
-		$this->actualValue=$actualValue; 
-		$this->keyModified['actual_value'] = 1; 
+		$this->actualValue=$actualValue;
+		$this->keyModified['actual_value'] = 1;
 
 	}
 
@@ -126,7 +126,7 @@ class PickListValue implements Model
 	 */
 	public  function getSysRefName()
 	{
-		return $this->sysRefName; 
+		return $this->sysRefName;
 
 	}
 
@@ -136,8 +136,8 @@ class PickListValue implements Model
 	 */
 	public  function setSysRefName(string $sysRefName)
 	{
-		$this->sysRefName=$sysRefName; 
-		$this->keyModified['sys_ref_name'] = 1; 
+		$this->sysRefName=$sysRefName;
+		$this->keyModified['sys_ref_name'] = 1;
 
 	}
 
@@ -147,7 +147,7 @@ class PickListValue implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -157,8 +157,8 @@ class PickListValue implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['type'] = 1;
 
 	}
 
@@ -171,10 +171,10 @@ class PickListValue implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -185,7 +185,7 @@ class PickListValue implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

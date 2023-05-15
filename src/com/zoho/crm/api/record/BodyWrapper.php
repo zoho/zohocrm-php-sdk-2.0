@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class BodyWrapper implements Model
 {
@@ -21,7 +21,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getData()
 	{
-		return $this->data; 
+		return $this->data;
 
 	}
 
@@ -31,8 +31,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setData(array $data)
 	{
-		$this->data=$data; 
-		$this->keyModified['data'] = 1; 
+		$this->data=$data;
+		$this->keyModified['data'] = 1;
 
 	}
 
@@ -42,7 +42,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getApplyFeatureExecution()
 	{
-		return $this->applyFeatureExecution; 
+		return $this->applyFeatureExecution;
 
 	}
 
@@ -52,8 +52,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setApplyFeatureExecution(array $applyFeatureExecution)
 	{
-		$this->applyFeatureExecution=$applyFeatureExecution; 
-		$this->keyModified['apply_feature_execution'] = 1; 
+		$this->applyFeatureExecution=$applyFeatureExecution;
+		$this->keyModified['apply_feature_execution'] = 1;
 
 	}
 
@@ -63,7 +63,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getTrigger()
 	{
-		return $this->trigger; 
+		return $this->trigger;
 
 	}
 
@@ -73,8 +73,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setTrigger(array $trigger)
 	{
-		$this->trigger=$trigger; 
-		$this->keyModified['trigger'] = 1; 
+		$this->trigger=$trigger;
+		$this->keyModified['trigger'] = 1;
 
 	}
 
@@ -84,7 +84,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getProcess()
 	{
-		return $this->process; 
+		return $this->process;
 
 	}
 
@@ -94,8 +94,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setProcess(array $process)
 	{
-		$this->process=$process; 
-		$this->keyModified['process'] = 1; 
+		$this->process=$process;
+		$this->keyModified['process'] = 1;
 
 	}
 
@@ -105,7 +105,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getDuplicateCheckFields()
 	{
-		return $this->duplicateCheckFields; 
+		return $this->duplicateCheckFields;
 
 	}
 
@@ -115,8 +115,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setDuplicateCheckFields(array $duplicateCheckFields)
 	{
-		$this->duplicateCheckFields=$duplicateCheckFields; 
-		$this->keyModified['duplicate_check_fields'] = 1; 
+		$this->duplicateCheckFields=$duplicateCheckFields;
+		$this->keyModified['duplicate_check_fields'] = 1;
 
 	}
 
@@ -126,7 +126,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getWfTrigger()
 	{
-		return $this->wfTrigger; 
+		return $this->wfTrigger;
 
 	}
 
@@ -136,8 +136,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setWfTrigger(string $wfTrigger)
 	{
-		$this->wfTrigger=$wfTrigger; 
-		$this->keyModified['wf_trigger'] = 1; 
+		$this->wfTrigger=$wfTrigger;
+		$this->keyModified['wf_trigger'] = 1;
 
 	}
 
@@ -147,7 +147,7 @@ class BodyWrapper implements Model
 	 */
 	public  function getLarId()
 	{
-		return $this->larId; 
+		return $this->larId;
 
 	}
 
@@ -157,8 +157,8 @@ class BodyWrapper implements Model
 	 */
 	public  function setLarId(string $larId)
 	{
-		$this->larId=$larId; 
-		$this->keyModified['lar_id'] = 1; 
+		$this->larId=$larId;
+		$this->keyModified['lar_id'] = 1;
 
 	}
 
@@ -171,10 +171,10 @@ class BodyWrapper implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -185,7 +185,7 @@ class BodyWrapper implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

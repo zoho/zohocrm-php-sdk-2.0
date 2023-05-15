@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkread;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class CallBack implements Model
 {
@@ -17,7 +17,7 @@ class CallBack implements Model
 	 */
 	public  function getUrl()
 	{
-		return $this->url; 
+		return $this->url;
 
 	}
 
@@ -27,8 +27,8 @@ class CallBack implements Model
 	 */
 	public  function setUrl(string $url)
 	{
-		$this->url=$url; 
-		$this->keyModified['url'] = 1; 
+		$this->url=$url;
+		$this->keyModified['url'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class CallBack implements Model
 	 */
 	public  function getMethod()
 	{
-		return $this->method; 
+		return $this->method;
 
 	}
 
@@ -48,8 +48,8 @@ class CallBack implements Model
 	 */
 	public  function setMethod(Choice $method)
 	{
-		$this->method=$method; 
-		$this->keyModified['method'] = 1; 
+		$this->method=$method;
+		$this->keyModified['method'] = 1;
 
 	}
 
@@ -62,10 +62,10 @@ class CallBack implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -76,7 +76,7 @@ class CallBack implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\customviews;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Translation implements Model
 {
@@ -18,7 +18,7 @@ class Translation implements Model
 	 */
 	public  function getPublicViews()
 	{
-		return $this->publicViews; 
+		return $this->publicViews;
 
 	}
 
@@ -28,8 +28,8 @@ class Translation implements Model
 	 */
 	public  function setPublicViews(string $publicViews)
 	{
-		$this->publicViews=$publicViews; 
-		$this->keyModified['public_views'] = 1; 
+		$this->publicViews=$publicViews;
+		$this->keyModified['public_views'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class Translation implements Model
 	 */
 	public  function getOtherUsersViews()
 	{
-		return $this->otherUsersViews; 
+		return $this->otherUsersViews;
 
 	}
 
@@ -49,8 +49,8 @@ class Translation implements Model
 	 */
 	public  function setOtherUsersViews(string $otherUsersViews)
 	{
-		$this->otherUsersViews=$otherUsersViews; 
-		$this->keyModified['other_users_views'] = 1; 
+		$this->otherUsersViews=$otherUsersViews;
+		$this->keyModified['other_users_views'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class Translation implements Model
 	 */
 	public  function getSharedWithMe()
 	{
-		return $this->sharedWithMe; 
+		return $this->sharedWithMe;
 
 	}
 
@@ -70,8 +70,8 @@ class Translation implements Model
 	 */
 	public  function setSharedWithMe(string $sharedWithMe)
 	{
-		$this->sharedWithMe=$sharedWithMe; 
-		$this->keyModified['shared_with_me'] = 1; 
+		$this->sharedWithMe=$sharedWithMe;
+		$this->keyModified['shared_with_me'] = 1;
 
 	}
 
@@ -81,7 +81,7 @@ class Translation implements Model
 	 */
 	public  function getCreatedByMe()
 	{
-		return $this->createdByMe; 
+		return $this->createdByMe;
 
 	}
 
@@ -91,8 +91,8 @@ class Translation implements Model
 	 */
 	public  function setCreatedByMe(string $createdByMe)
 	{
-		$this->createdByMe=$createdByMe; 
-		$this->keyModified['created_by_me'] = 1; 
+		$this->createdByMe=$createdByMe;
+		$this->keyModified['created_by_me'] = 1;
 
 	}
 
@@ -105,10 +105,10 @@ class Translation implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -119,7 +119,7 @@ class Translation implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

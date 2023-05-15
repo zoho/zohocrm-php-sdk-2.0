@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\Header;
+use Zoho\Crm\Header;
 
 class GetDeletedRecordsHeader
 {
 
 	public static final function IfModifiedSince()
 	{
-		return new Header('If-Modified-Since', 'com.zoho.crm.api.Record.GetDeletedRecordsHeader'); 
+		return new Header('If-Modified-Since', 'com.zoho.crm.api.Record.GetDeletedRecordsHeader');
 
 	}
-} 
+}

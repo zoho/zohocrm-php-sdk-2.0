@@ -1,12 +1,10 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\modules;
 
-use com\zoho\crm\api\Header;
-use com\zoho\crm\api\HeaderMap;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\HeaderMap;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
 
 class ModulesOperations
 {
@@ -18,14 +16,14 @@ class ModulesOperations
 	 */
 	public  function getModules(HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/modules'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setHeader($headerInstance); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/modules');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setHeader($headerInstance);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -36,14 +34,14 @@ class ModulesOperations
 	 */
 	public  function getModule(string $apiName)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/modules/'); 
-		$apiPath=$apiPath.(strval($apiName)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/modules/');
+		$apiPath=$apiPath.(strval($apiName));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -55,16 +53,16 @@ class ModulesOperations
 	 */
 	public  function updateModuleByAPIName(string $apiName, BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/modules/'); 
-		$apiPath=$apiPath.(strval($apiName)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/modules/');
+		$apiPath=$apiPath.(strval($apiName));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -76,16 +74,16 @@ class ModulesOperations
 	 */
 	public  function updateModuleById(string $id, BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/modules/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/modules/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
-} 
+}

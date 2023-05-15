@@ -1,8 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class LineItemProduct extends Record implements Model
 {
@@ -14,7 +13,7 @@ class LineItemProduct extends Record implements Model
 	 */
 	public  function getProductCode()
 	{
-		return $this->getKeyValue('Product_Code'); 
+		return $this->getKeyValue('Product_Code');
 
 	}
 
@@ -24,7 +23,7 @@ class LineItemProduct extends Record implements Model
 	 */
 	public  function setProductCode(string $productCode)
 	{
-		$this->addKeyValue('Product_Code', $productCode); 
+		$this->addKeyValue('Product_Code', $productCode);
 
 	}
 
@@ -34,7 +33,7 @@ class LineItemProduct extends Record implements Model
 	 */
 	public  function getCurrency()
 	{
-		return $this->getKeyValue('Currency'); 
+		return $this->getKeyValue('Currency');
 
 	}
 
@@ -44,7 +43,7 @@ class LineItemProduct extends Record implements Model
 	 */
 	public  function setCurrency(string $currency)
 	{
-		$this->addKeyValue('Currency', $currency); 
+		$this->addKeyValue('Currency', $currency);
 
 	}
 
@@ -54,7 +53,7 @@ class LineItemProduct extends Record implements Model
 	 */
 	public  function getName()
 	{
-		return $this->getKeyValue('name'); 
+		return $this->getKeyValue('name');
 
 	}
 
@@ -64,7 +63,7 @@ class LineItemProduct extends Record implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->addKeyValue('name', $name); 
+		$this->addKeyValue('name', $name);
 
 	}
-} 
+}

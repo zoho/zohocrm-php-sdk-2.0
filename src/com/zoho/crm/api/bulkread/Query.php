@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkread;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Query implements Model
 {
@@ -19,7 +19,7 @@ class Query implements Model
 	 */
 	public  function getModule()
 	{
-		return $this->module; 
+		return $this->module;
 
 	}
 
@@ -29,8 +29,8 @@ class Query implements Model
 	 */
 	public  function setModule(string $module)
 	{
-		$this->module=$module; 
-		$this->keyModified['module'] = 1; 
+		$this->module=$module;
+		$this->keyModified['module'] = 1;
 
 	}
 
@@ -40,7 +40,7 @@ class Query implements Model
 	 */
 	public  function getCvid()
 	{
-		return $this->cvid; 
+		return $this->cvid;
 
 	}
 
@@ -50,8 +50,8 @@ class Query implements Model
 	 */
 	public  function setCvid(string $cvid)
 	{
-		$this->cvid=$cvid; 
-		$this->keyModified['cvid'] = 1; 
+		$this->cvid=$cvid;
+		$this->keyModified['cvid'] = 1;
 
 	}
 
@@ -61,7 +61,7 @@ class Query implements Model
 	 */
 	public  function getFields()
 	{
-		return $this->fields; 
+		return $this->fields;
 
 	}
 
@@ -71,8 +71,8 @@ class Query implements Model
 	 */
 	public  function setFields(array $fields)
 	{
-		$this->fields=$fields; 
-		$this->keyModified['fields'] = 1; 
+		$this->fields=$fields;
+		$this->keyModified['fields'] = 1;
 
 	}
 
@@ -82,7 +82,7 @@ class Query implements Model
 	 */
 	public  function getPage()
 	{
-		return $this->page; 
+		return $this->page;
 
 	}
 
@@ -92,8 +92,8 @@ class Query implements Model
 	 */
 	public  function setPage(int $page)
 	{
-		$this->page=$page; 
-		$this->keyModified['page'] = 1; 
+		$this->page=$page;
+		$this->keyModified['page'] = 1;
 
 	}
 
@@ -103,7 +103,7 @@ class Query implements Model
 	 */
 	public  function getCriteria()
 	{
-		return $this->criteria; 
+		return $this->criteria;
 
 	}
 
@@ -113,8 +113,8 @@ class Query implements Model
 	 */
 	public  function setCriteria(Criteria $criteria)
 	{
-		$this->criteria=$criteria; 
-		$this->keyModified['criteria'] = 1; 
+		$this->criteria=$criteria;
+		$this->keyModified['criteria'] = 1;
 
 	}
 
@@ -127,10 +127,10 @@ class Query implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -141,7 +141,7 @@ class Query implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

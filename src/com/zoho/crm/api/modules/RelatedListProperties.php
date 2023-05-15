@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\modules;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class RelatedListProperties implements Model
 {
@@ -17,7 +17,7 @@ class RelatedListProperties implements Model
 	 */
 	public  function getSortBy()
 	{
-		return $this->sortBy; 
+		return $this->sortBy;
 
 	}
 
@@ -27,8 +27,8 @@ class RelatedListProperties implements Model
 	 */
 	public  function setSortBy(string $sortBy)
 	{
-		$this->sortBy=$sortBy; 
-		$this->keyModified['sort_by'] = 1; 
+		$this->sortBy=$sortBy;
+		$this->keyModified['sort_by'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class RelatedListProperties implements Model
 	 */
 	public  function getFields()
 	{
-		return $this->fields; 
+		return $this->fields;
 
 	}
 
@@ -48,8 +48,8 @@ class RelatedListProperties implements Model
 	 */
 	public  function setFields(array $fields)
 	{
-		$this->fields=$fields; 
-		$this->keyModified['fields'] = 1; 
+		$this->fields=$fields;
+		$this->keyModified['fields'] = 1;
 
 	}
 
@@ -59,7 +59,7 @@ class RelatedListProperties implements Model
 	 */
 	public  function getSortOrder()
 	{
-		return $this->sortOrder; 
+		return $this->sortOrder;
 
 	}
 
@@ -69,8 +69,8 @@ class RelatedListProperties implements Model
 	 */
 	public  function setSortOrder(string $sortOrder)
 	{
-		$this->sortOrder=$sortOrder; 
-		$this->keyModified['sort_order'] = 1; 
+		$this->sortOrder=$sortOrder;
+		$this->keyModified['sort_order'] = 1;
 
 	}
 
@@ -83,10 +83,10 @@ class RelatedListProperties implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -97,7 +97,7 @@ class RelatedListProperties implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

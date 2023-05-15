@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\notification;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ActionWrapper implements Model, ActionHandler
 {
@@ -15,7 +15,7 @@ class ActionWrapper implements Model, ActionHandler
 	 */
 	public  function getWatch()
 	{
-		return $this->watch; 
+		return $this->watch;
 
 	}
 
@@ -25,8 +25,8 @@ class ActionWrapper implements Model, ActionHandler
 	 */
 	public  function setWatch(array $watch)
 	{
-		$this->watch=$watch; 
-		$this->keyModified['watch'] = 1; 
+		$this->watch=$watch;
+		$this->keyModified['watch'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class ActionWrapper implements Model, ActionHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class ActionWrapper implements Model, ActionHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

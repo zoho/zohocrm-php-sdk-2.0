@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ViewType implements Model
 {
@@ -18,7 +18,7 @@ class ViewType implements Model
 	 */
 	public  function getView()
 	{
-		return $this->view; 
+		return $this->view;
 
 	}
 
@@ -28,8 +28,8 @@ class ViewType implements Model
 	 */
 	public  function setView(bool $view)
 	{
-		$this->view=$view; 
-		$this->keyModified['view'] = 1; 
+		$this->view=$view;
+		$this->keyModified['view'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class ViewType implements Model
 	 */
 	public  function getEdit()
 	{
-		return $this->edit; 
+		return $this->edit;
 
 	}
 
@@ -49,8 +49,8 @@ class ViewType implements Model
 	 */
 	public  function setEdit(bool $edit)
 	{
-		$this->edit=$edit; 
-		$this->keyModified['edit'] = 1; 
+		$this->edit=$edit;
+		$this->keyModified['edit'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class ViewType implements Model
 	 */
 	public  function getCreate()
 	{
-		return $this->create; 
+		return $this->create;
 
 	}
 
@@ -70,8 +70,8 @@ class ViewType implements Model
 	 */
 	public  function setCreate(bool $create)
 	{
-		$this->create=$create; 
-		$this->keyModified['create'] = 1; 
+		$this->create=$create;
+		$this->keyModified['create'] = 1;
 
 	}
 
@@ -81,7 +81,7 @@ class ViewType implements Model
 	 */
 	public  function getQuickCreate()
 	{
-		return $this->quickCreate; 
+		return $this->quickCreate;
 
 	}
 
@@ -91,8 +91,8 @@ class ViewType implements Model
 	 */
 	public  function setQuickCreate(bool $quickCreate)
 	{
-		$this->quickCreate=$quickCreate; 
-		$this->keyModified['quick_create'] = 1; 
+		$this->quickCreate=$quickCreate;
+		$this->keyModified['quick_create'] = 1;
 
 	}
 
@@ -105,10 +105,10 @@ class ViewType implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -119,7 +119,7 @@ class ViewType implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

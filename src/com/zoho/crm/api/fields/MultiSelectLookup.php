@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class MultiSelectLookup implements Model
 {
@@ -20,7 +20,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -30,8 +30,8 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function getLinkingModule()
 	{
-		return $this->linkingModule; 
+		return $this->linkingModule;
 
 	}
 
@@ -51,8 +51,8 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setLinkingModule(string $linkingModule)
 	{
-		$this->linkingModule=$linkingModule; 
-		$this->keyModified['linking_module'] = 1; 
+		$this->linkingModule=$linkingModule;
+		$this->keyModified['linking_module'] = 1;
 
 	}
 
@@ -62,7 +62,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function getLookupApiname()
 	{
-		return $this->lookupApiname; 
+		return $this->lookupApiname;
 
 	}
 
@@ -72,8 +72,8 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setLookupApiname(string $lookupApiname)
 	{
-		$this->lookupApiname=$lookupApiname; 
-		$this->keyModified['lookup_apiname'] = 1; 
+		$this->lookupApiname=$lookupApiname;
+		$this->keyModified['lookup_apiname'] = 1;
 
 	}
 
@@ -83,7 +83,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -93,8 +93,8 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -104,7 +104,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function getConnectedlookupApiname()
 	{
-		return $this->connectedlookupApiname; 
+		return $this->connectedlookupApiname;
 
 	}
 
@@ -114,8 +114,8 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setConnectedlookupApiname(string $connectedlookupApiname)
 	{
-		$this->connectedlookupApiname=$connectedlookupApiname; 
-		$this->keyModified['connectedlookup_apiname'] = 1; 
+		$this->connectedlookupApiname=$connectedlookupApiname;
+		$this->keyModified['connectedlookup_apiname'] = 1;
 
 	}
 
@@ -125,7 +125,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -135,8 +135,8 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -149,10 +149,10 @@ class MultiSelectLookup implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -163,7 +163,7 @@ class MultiSelectLookup implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

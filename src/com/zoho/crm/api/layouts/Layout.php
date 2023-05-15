@@ -1,9 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\layouts;
 
-use com\zoho\crm\api\profiles\Profile;
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class Layout implements Model
 {
@@ -28,7 +27,7 @@ class Layout implements Model
 	 */
 	public  function getCreatedTime()
 	{
-		return $this->createdTime; 
+		return $this->createdTime;
 
 	}
 
@@ -38,8 +37,8 @@ class Layout implements Model
 	 */
 	public  function setCreatedTime(\DateTime $createdTime)
 	{
-		$this->createdTime=$createdTime; 
-		$this->keyModified['created_time'] = 1; 
+		$this->createdTime=$createdTime;
+		$this->keyModified['created_time'] = 1;
 
 	}
 
@@ -49,7 +48,7 @@ class Layout implements Model
 	 */
 	public  function getConvertMapping()
 	{
-		return $this->convertMapping; 
+		return $this->convertMapping;
 
 	}
 
@@ -59,8 +58,8 @@ class Layout implements Model
 	 */
 	public  function setConvertMapping(array $convertMapping)
 	{
-		$this->convertMapping=$convertMapping; 
-		$this->keyModified['convert_mapping'] = 1; 
+		$this->convertMapping=$convertMapping;
+		$this->keyModified['convert_mapping'] = 1;
 
 	}
 
@@ -70,7 +69,7 @@ class Layout implements Model
 	 */
 	public  function getModifiedTime()
 	{
-		return $this->modifiedTime; 
+		return $this->modifiedTime;
 
 	}
 
@@ -80,8 +79,8 @@ class Layout implements Model
 	 */
 	public  function setModifiedTime(\DateTime $modifiedTime)
 	{
-		$this->modifiedTime=$modifiedTime; 
-		$this->keyModified['modified_time'] = 1; 
+		$this->modifiedTime=$modifiedTime;
+		$this->keyModified['modified_time'] = 1;
 
 	}
 
@@ -91,7 +90,7 @@ class Layout implements Model
 	 */
 	public  function getVisible()
 	{
-		return $this->visible; 
+		return $this->visible;
 
 	}
 
@@ -101,8 +100,8 @@ class Layout implements Model
 	 */
 	public  function setVisible(bool $visible)
 	{
-		$this->visible=$visible; 
-		$this->keyModified['visible'] = 1; 
+		$this->visible=$visible;
+		$this->keyModified['visible'] = 1;
 
 	}
 
@@ -112,7 +111,7 @@ class Layout implements Model
 	 */
 	public  function getCreatedFor()
 	{
-		return $this->createdFor; 
+		return $this->createdFor;
 
 	}
 
@@ -122,8 +121,8 @@ class Layout implements Model
 	 */
 	public  function setCreatedFor(User $createdFor)
 	{
-		$this->createdFor=$createdFor; 
-		$this->keyModified['created_for'] = 1; 
+		$this->createdFor=$createdFor;
+		$this->keyModified['created_for'] = 1;
 
 	}
 
@@ -133,7 +132,7 @@ class Layout implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -143,8 +142,8 @@ class Layout implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -154,7 +153,7 @@ class Layout implements Model
 	 */
 	public  function getModifiedBy()
 	{
-		return $this->modifiedBy; 
+		return $this->modifiedBy;
 
 	}
 
@@ -164,8 +163,8 @@ class Layout implements Model
 	 */
 	public  function setModifiedBy(User $modifiedBy)
 	{
-		$this->modifiedBy=$modifiedBy; 
-		$this->keyModified['modified_by'] = 1; 
+		$this->modifiedBy=$modifiedBy;
+		$this->keyModified['modified_by'] = 1;
 
 	}
 
@@ -175,7 +174,7 @@ class Layout implements Model
 	 */
 	public  function getProfiles()
 	{
-		return $this->profiles; 
+		return $this->profiles;
 
 	}
 
@@ -185,8 +184,8 @@ class Layout implements Model
 	 */
 	public  function setProfiles(array $profiles)
 	{
-		$this->profiles=$profiles; 
-		$this->keyModified['profiles'] = 1; 
+		$this->profiles=$profiles;
+		$this->keyModified['profiles'] = 1;
 
 	}
 
@@ -196,7 +195,7 @@ class Layout implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -206,8 +205,8 @@ class Layout implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -217,7 +216,7 @@ class Layout implements Model
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->createdBy; 
+		return $this->createdBy;
 
 	}
 
@@ -227,8 +226,8 @@ class Layout implements Model
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->createdBy=$createdBy; 
-		$this->keyModified['created_by'] = 1; 
+		$this->createdBy=$createdBy;
+		$this->keyModified['created_by'] = 1;
 
 	}
 
@@ -238,7 +237,7 @@ class Layout implements Model
 	 */
 	public  function getSections()
 	{
-		return $this->sections; 
+		return $this->sections;
 
 	}
 
@@ -248,8 +247,8 @@ class Layout implements Model
 	 */
 	public  function setSections(array $sections)
 	{
-		$this->sections=$sections; 
-		$this->keyModified['sections'] = 1; 
+		$this->sections=$sections;
+		$this->keyModified['sections'] = 1;
 
 	}
 
@@ -259,7 +258,7 @@ class Layout implements Model
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -269,8 +268,8 @@ class Layout implements Model
 	 */
 	public  function setStatus(int $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -283,10 +282,10 @@ class Layout implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -297,7 +296,7 @@ class Layout implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

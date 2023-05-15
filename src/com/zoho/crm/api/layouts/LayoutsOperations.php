@@ -1,11 +1,10 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\layouts;
 
-use com\zoho\crm\api\Param;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\Param;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
 
 class LayoutsOperations
 {
@@ -18,7 +17,7 @@ class LayoutsOperations
 	 */
 	public function __Construct(string $module=null)
 	{
-		$this->module=$module; 
+		$this->module=$module;
 
 	}
 
@@ -28,14 +27,14 @@ class LayoutsOperations
 	 */
 	public  function getLayouts()
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/layouts'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.Layouts.GetLayoutsParam'), $this->module); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/layouts');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.Layouts.GetLayoutsParam'), $this->module);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -46,15 +45,15 @@ class LayoutsOperations
 	 */
 	public  function getLayout(string $id)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/layouts/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.Layouts.GetLayoutParam'), $this->module); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/layouts/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.Layouts.GetLayoutParam'), $this->module);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
-} 
+}

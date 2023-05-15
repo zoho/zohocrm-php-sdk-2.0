@@ -1,9 +1,9 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
 use com\zoho\crm\api\customviews\Criteria;
 use com\zoho\crm\api\layouts\Layout;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Field implements Model
 {
@@ -64,7 +64,7 @@ class Field implements Model
 	 */
 	public  function getSystemMandatory()
 	{
-		return $this->systemMandatory; 
+		return $this->systemMandatory;
 
 	}
 
@@ -74,8 +74,8 @@ class Field implements Model
 	 */
 	public  function setSystemMandatory(bool $systemMandatory)
 	{
-		$this->systemMandatory=$systemMandatory; 
-		$this->keyModified['system_mandatory'] = 1; 
+		$this->systemMandatory=$systemMandatory;
+		$this->keyModified['system_mandatory'] = 1;
 
 	}
 
@@ -85,7 +85,7 @@ class Field implements Model
 	 */
 	public  function getWebhook()
 	{
-		return $this->webhook; 
+		return $this->webhook;
 
 	}
 
@@ -95,8 +95,8 @@ class Field implements Model
 	 */
 	public  function setWebhook(bool $webhook)
 	{
-		$this->webhook=$webhook; 
-		$this->keyModified['webhook'] = 1; 
+		$this->webhook=$webhook;
+		$this->keyModified['webhook'] = 1;
 
 	}
 
@@ -106,7 +106,7 @@ class Field implements Model
 	 */
 	public  function getPrivate()
 	{
-		return $this->private; 
+		return $this->private;
 
 	}
 
@@ -116,8 +116,8 @@ class Field implements Model
 	 */
 	public  function setPrivate(Private1 $private)
 	{
-		$this->private=$private; 
-		$this->keyModified['private'] = 1; 
+		$this->private=$private;
+		$this->keyModified['private'] = 1;
 
 	}
 
@@ -127,7 +127,7 @@ class Field implements Model
 	 */
 	public  function getLayouts()
 	{
-		return $this->layouts; 
+		return $this->layouts;
 
 	}
 
@@ -137,8 +137,8 @@ class Field implements Model
 	 */
 	public  function setLayouts(Layout $layouts)
 	{
-		$this->layouts=$layouts; 
-		$this->keyModified['layouts'] = 1; 
+		$this->layouts=$layouts;
+		$this->keyModified['layouts'] = 1;
 
 	}
 
@@ -148,7 +148,7 @@ class Field implements Model
 	 */
 	public  function getContent()
 	{
-		return $this->content; 
+		return $this->content;
 
 	}
 
@@ -158,8 +158,8 @@ class Field implements Model
 	 */
 	public  function setContent(string $content)
 	{
-		$this->content=$content; 
-		$this->keyModified['content'] = 1; 
+		$this->content=$content;
+		$this->keyModified['content'] = 1;
 
 	}
 
@@ -169,7 +169,7 @@ class Field implements Model
 	 */
 	public  function getColumnName()
 	{
-		return $this->columnName; 
+		return $this->columnName;
 
 	}
 
@@ -179,8 +179,8 @@ class Field implements Model
 	 */
 	public  function setColumnName(string $columnName)
 	{
-		$this->columnName=$columnName; 
-		$this->keyModified['column_name'] = 1; 
+		$this->columnName=$columnName;
+		$this->keyModified['column_name'] = 1;
 
 	}
 
@@ -190,7 +190,7 @@ class Field implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -200,8 +200,8 @@ class Field implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['_type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['_type'] = 1;
 
 	}
 
@@ -211,7 +211,7 @@ class Field implements Model
 	 */
 	public  function getTransitionSequence()
 	{
-		return $this->transitionSequence; 
+		return $this->transitionSequence;
 
 	}
 
@@ -221,8 +221,8 @@ class Field implements Model
 	 */
 	public  function setTransitionSequence(int $transitionSequence)
 	{
-		$this->transitionSequence=$transitionSequence; 
-		$this->keyModified['transition_sequence'] = 1; 
+		$this->transitionSequence=$transitionSequence;
+		$this->keyModified['transition_sequence'] = 1;
 
 	}
 
@@ -232,7 +232,7 @@ class Field implements Model
 	 */
 	public  function getPersonalityName()
 	{
-		return $this->personalityName; 
+		return $this->personalityName;
 
 	}
 
@@ -242,8 +242,8 @@ class Field implements Model
 	 */
 	public  function setPersonalityName(string $personalityName)
 	{
-		$this->personalityName=$personalityName; 
-		$this->keyModified['personality_name'] = 1; 
+		$this->personalityName=$personalityName;
+		$this->keyModified['personality_name'] = 1;
 
 	}
 
@@ -253,7 +253,7 @@ class Field implements Model
 	 */
 	public  function getMessage()
 	{
-		return $this->message; 
+		return $this->message;
 
 	}
 
@@ -263,8 +263,8 @@ class Field implements Model
 	 */
 	public  function setMessage(string $message)
 	{
-		$this->message=$message; 
-		$this->keyModified['message'] = 1; 
+		$this->message=$message;
+		$this->keyModified['message'] = 1;
 
 	}
 
@@ -274,7 +274,7 @@ class Field implements Model
 	 */
 	public  function getMandatory()
 	{
-		return $this->mandatory; 
+		return $this->mandatory;
 
 	}
 
@@ -284,8 +284,8 @@ class Field implements Model
 	 */
 	public  function setMandatory(bool $mandatory)
 	{
-		$this->mandatory=$mandatory; 
-		$this->keyModified['mandatory'] = 1; 
+		$this->mandatory=$mandatory;
+		$this->keyModified['mandatory'] = 1;
 
 	}
 
@@ -295,7 +295,7 @@ class Field implements Model
 	 */
 	public  function getCriteria()
 	{
-		return $this->criteria; 
+		return $this->criteria;
 
 	}
 
@@ -305,8 +305,8 @@ class Field implements Model
 	 */
 	public  function setCriteria(Criteria $criteria)
 	{
-		$this->criteria=$criteria; 
-		$this->keyModified['criteria'] = 1; 
+		$this->criteria=$criteria;
+		$this->keyModified['criteria'] = 1;
 
 	}
 
@@ -316,7 +316,7 @@ class Field implements Model
 	 */
 	public  function getRelatedDetails()
 	{
-		return $this->relatedDetails; 
+		return $this->relatedDetails;
 
 	}
 
@@ -326,8 +326,8 @@ class Field implements Model
 	 */
 	public  function setRelatedDetails(RelatedDetails $relatedDetails)
 	{
-		$this->relatedDetails=$relatedDetails; 
-		$this->keyModified['related_details'] = 1; 
+		$this->relatedDetails=$relatedDetails;
+		$this->keyModified['related_details'] = 1;
 
 	}
 
@@ -337,7 +337,7 @@ class Field implements Model
 	 */
 	public  function getJsonType()
 	{
-		return $this->jsonType; 
+		return $this->jsonType;
 
 	}
 
@@ -347,8 +347,8 @@ class Field implements Model
 	 */
 	public  function setJsonType(string $jsonType)
 	{
-		$this->jsonType=$jsonType; 
-		$this->keyModified['json_type'] = 1; 
+		$this->jsonType=$jsonType;
+		$this->keyModified['json_type'] = 1;
 
 	}
 
@@ -358,7 +358,7 @@ class Field implements Model
 	 */
 	public  function getCrypt()
 	{
-		return $this->crypt; 
+		return $this->crypt;
 
 	}
 
@@ -368,8 +368,8 @@ class Field implements Model
 	 */
 	public  function setCrypt(Crypt $crypt)
 	{
-		$this->crypt=$crypt; 
-		$this->keyModified['crypt'] = 1; 
+		$this->crypt=$crypt;
+		$this->keyModified['crypt'] = 1;
 
 	}
 
@@ -379,7 +379,7 @@ class Field implements Model
 	 */
 	public  function getFieldLabel()
 	{
-		return $this->fieldLabel; 
+		return $this->fieldLabel;
 
 	}
 
@@ -389,8 +389,8 @@ class Field implements Model
 	 */
 	public  function setFieldLabel(string $fieldLabel)
 	{
-		$this->fieldLabel=$fieldLabel; 
-		$this->keyModified['field_label'] = 1; 
+		$this->fieldLabel=$fieldLabel;
+		$this->keyModified['field_label'] = 1;
 
 	}
 
@@ -400,7 +400,7 @@ class Field implements Model
 	 */
 	public  function getTooltip()
 	{
-		return $this->tooltip; 
+		return $this->tooltip;
 
 	}
 
@@ -410,8 +410,8 @@ class Field implements Model
 	 */
 	public  function setTooltip(ToolTip $tooltip)
 	{
-		$this->tooltip=$tooltip; 
-		$this->keyModified['tooltip'] = 1; 
+		$this->tooltip=$tooltip;
+		$this->keyModified['tooltip'] = 1;
 
 	}
 
@@ -421,7 +421,7 @@ class Field implements Model
 	 */
 	public  function getCreatedSource()
 	{
-		return $this->createdSource; 
+		return $this->createdSource;
 
 	}
 
@@ -431,8 +431,8 @@ class Field implements Model
 	 */
 	public  function setCreatedSource(string $createdSource)
 	{
-		$this->createdSource=$createdSource; 
-		$this->keyModified['created_source'] = 1; 
+		$this->createdSource=$createdSource;
+		$this->keyModified['created_source'] = 1;
 
 	}
 
@@ -442,7 +442,7 @@ class Field implements Model
 	 */
 	public  function getFieldReadOnly()
 	{
-		return $this->fieldReadOnly; 
+		return $this->fieldReadOnly;
 
 	}
 
@@ -452,8 +452,8 @@ class Field implements Model
 	 */
 	public  function setFieldReadOnly(bool $fieldReadOnly)
 	{
-		$this->fieldReadOnly=$fieldReadOnly; 
-		$this->keyModified['field_read_only'] = 1; 
+		$this->fieldReadOnly=$fieldReadOnly;
+		$this->keyModified['field_read_only'] = 1;
 
 	}
 
@@ -463,7 +463,7 @@ class Field implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -473,8 +473,8 @@ class Field implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -484,7 +484,7 @@ class Field implements Model
 	 */
 	public  function getReadOnly()
 	{
-		return $this->readOnly; 
+		return $this->readOnly;
 
 	}
 
@@ -494,8 +494,8 @@ class Field implements Model
 	 */
 	public  function setReadOnly(bool $readOnly)
 	{
-		$this->readOnly=$readOnly; 
-		$this->keyModified['read_only'] = 1; 
+		$this->readOnly=$readOnly;
+		$this->keyModified['read_only'] = 1;
 
 	}
 
@@ -505,7 +505,7 @@ class Field implements Model
 	 */
 	public  function getAssociationDetails()
 	{
-		return $this->associationDetails; 
+		return $this->associationDetails;
 
 	}
 
@@ -515,8 +515,8 @@ class Field implements Model
 	 */
 	public  function setAssociationDetails(AssociationDetails $associationDetails)
 	{
-		$this->associationDetails=$associationDetails; 
-		$this->keyModified['association_details'] = 1; 
+		$this->associationDetails=$associationDetails;
+		$this->keyModified['association_details'] = 1;
 
 	}
 
@@ -526,7 +526,7 @@ class Field implements Model
 	 */
 	public  function getQuickSequenceNumber()
 	{
-		return $this->quickSequenceNumber; 
+		return $this->quickSequenceNumber;
 
 	}
 
@@ -536,8 +536,8 @@ class Field implements Model
 	 */
 	public  function setQuickSequenceNumber(int $quickSequenceNumber)
 	{
-		$this->quickSequenceNumber=$quickSequenceNumber; 
-		$this->keyModified['quick_sequence_number'] = 1; 
+		$this->quickSequenceNumber=$quickSequenceNumber;
+		$this->keyModified['quick_sequence_number'] = 1;
 
 	}
 
@@ -547,7 +547,7 @@ class Field implements Model
 	 */
 	public  function getBusinesscardSupported()
 	{
-		return $this->businesscardSupported; 
+		return $this->businesscardSupported;
 
 	}
 
@@ -557,8 +557,8 @@ class Field implements Model
 	 */
 	public  function setBusinesscardSupported(bool $businesscardSupported)
 	{
-		$this->businesscardSupported=$businesscardSupported; 
-		$this->keyModified['businesscard_supported'] = 1; 
+		$this->businesscardSupported=$businesscardSupported;
+		$this->keyModified['businesscard_supported'] = 1;
 
 	}
 
@@ -568,7 +568,7 @@ class Field implements Model
 	 */
 	public  function getMultiModuleLookup()
 	{
-		return $this->multiModuleLookup; 
+		return $this->multiModuleLookup;
 
 	}
 
@@ -578,8 +578,8 @@ class Field implements Model
 	 */
 	public  function setMultiModuleLookup(array $multiModuleLookup)
 	{
-		$this->multiModuleLookup=$multiModuleLookup; 
-		$this->keyModified['multi_module_lookup'] = 1; 
+		$this->multiModuleLookup=$multiModuleLookup;
+		$this->keyModified['multi_module_lookup'] = 1;
 
 	}
 
@@ -589,7 +589,7 @@ class Field implements Model
 	 */
 	public  function getCurrency()
 	{
-		return $this->currency; 
+		return $this->currency;
 
 	}
 
@@ -599,8 +599,8 @@ class Field implements Model
 	 */
 	public  function setCurrency(Currency $currency)
 	{
-		$this->currency=$currency; 
-		$this->keyModified['currency'] = 1; 
+		$this->currency=$currency;
+		$this->keyModified['currency'] = 1;
 
 	}
 
@@ -610,7 +610,7 @@ class Field implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -620,8 +620,8 @@ class Field implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -631,7 +631,7 @@ class Field implements Model
 	 */
 	public  function getCustomField()
 	{
-		return $this->customField; 
+		return $this->customField;
 
 	}
 
@@ -641,8 +641,8 @@ class Field implements Model
 	 */
 	public  function setCustomField(bool $customField)
 	{
-		$this->customField=$customField; 
-		$this->keyModified['custom_field'] = 1; 
+		$this->customField=$customField;
+		$this->keyModified['custom_field'] = 1;
 
 	}
 
@@ -652,7 +652,7 @@ class Field implements Model
 	 */
 	public  function getLookup()
 	{
-		return $this->lookup; 
+		return $this->lookup;
 
 	}
 
@@ -662,8 +662,8 @@ class Field implements Model
 	 */
 	public  function setLookup(Module $lookup)
 	{
-		$this->lookup=$lookup; 
-		$this->keyModified['lookup'] = 1; 
+		$this->lookup=$lookup;
+		$this->keyModified['lookup'] = 1;
 
 	}
 
@@ -673,7 +673,7 @@ class Field implements Model
 	 */
 	public  function getVisible()
 	{
-		return $this->visible; 
+		return $this->visible;
 
 	}
 
@@ -683,8 +683,8 @@ class Field implements Model
 	 */
 	public  function setVisible(bool $visible)
 	{
-		$this->visible=$visible; 
-		$this->keyModified['visible'] = 1; 
+		$this->visible=$visible;
+		$this->keyModified['visible'] = 1;
 
 	}
 
@@ -694,7 +694,7 @@ class Field implements Model
 	 */
 	public  function getLength()
 	{
-		return $this->length; 
+		return $this->length;
 
 	}
 
@@ -704,8 +704,8 @@ class Field implements Model
 	 */
 	public  function setLength(int $length)
 	{
-		$this->length=$length; 
-		$this->keyModified['length'] = 1; 
+		$this->length=$length;
+		$this->keyModified['length'] = 1;
 
 	}
 
@@ -715,7 +715,7 @@ class Field implements Model
 	 */
 	public  function getViewType()
 	{
-		return $this->viewType; 
+		return $this->viewType;
 
 	}
 
@@ -725,8 +725,8 @@ class Field implements Model
 	 */
 	public  function setViewType(ViewType $viewType)
 	{
-		$this->viewType=$viewType; 
-		$this->keyModified['view_type'] = 1; 
+		$this->viewType=$viewType;
+		$this->keyModified['view_type'] = 1;
 
 	}
 
@@ -736,7 +736,7 @@ class Field implements Model
 	 */
 	public  function getSubform()
 	{
-		return $this->subform; 
+		return $this->subform;
 
 	}
 
@@ -746,8 +746,8 @@ class Field implements Model
 	 */
 	public  function setSubform(Module $subform)
 	{
-		$this->subform=$subform; 
-		$this->keyModified['subform'] = 1; 
+		$this->subform=$subform;
+		$this->keyModified['subform'] = 1;
 
 	}
 
@@ -757,7 +757,7 @@ class Field implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -767,8 +767,8 @@ class Field implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -778,7 +778,7 @@ class Field implements Model
 	 */
 	public  function getUnique()
 	{
-		return $this->unique; 
+		return $this->unique;
 
 	}
 
@@ -788,8 +788,8 @@ class Field implements Model
 	 */
 	public  function setUnique(Unique $unique)
 	{
-		$this->unique=$unique; 
-		$this->keyModified['unique'] = 1; 
+		$this->unique=$unique;
+		$this->keyModified['unique'] = 1;
 
 	}
 
@@ -799,7 +799,7 @@ class Field implements Model
 	 */
 	public  function getHistoryTracking()
 	{
-		return $this->historyTracking; 
+		return $this->historyTracking;
 
 	}
 
@@ -809,8 +809,8 @@ class Field implements Model
 	 */
 	public  function setHistoryTracking(bool $historyTracking)
 	{
-		$this->historyTracking=$historyTracking; 
-		$this->keyModified['history_tracking'] = 1; 
+		$this->historyTracking=$historyTracking;
+		$this->keyModified['history_tracking'] = 1;
 
 	}
 
@@ -820,7 +820,7 @@ class Field implements Model
 	 */
 	public  function getDataType()
 	{
-		return $this->dataType; 
+		return $this->dataType;
 
 	}
 
@@ -830,8 +830,8 @@ class Field implements Model
 	 */
 	public  function setDataType(string $dataType)
 	{
-		$this->dataType=$dataType; 
-		$this->keyModified['data_type'] = 1; 
+		$this->dataType=$dataType;
+		$this->keyModified['data_type'] = 1;
 
 	}
 
@@ -841,7 +841,7 @@ class Field implements Model
 	 */
 	public  function getFormula()
 	{
-		return $this->formula; 
+		return $this->formula;
 
 	}
 
@@ -851,8 +851,8 @@ class Field implements Model
 	 */
 	public  function setFormula(Formula $formula)
 	{
-		$this->formula=$formula; 
-		$this->keyModified['formula'] = 1; 
+		$this->formula=$formula;
+		$this->keyModified['formula'] = 1;
 
 	}
 
@@ -862,7 +862,7 @@ class Field implements Model
 	 */
 	public  function getDecimalPlace()
 	{
-		return $this->decimalPlace; 
+		return $this->decimalPlace;
 
 	}
 
@@ -872,8 +872,8 @@ class Field implements Model
 	 */
 	public  function setDecimalPlace(int $decimalPlace)
 	{
-		$this->decimalPlace=$decimalPlace; 
-		$this->keyModified['decimal_place'] = 1; 
+		$this->decimalPlace=$decimalPlace;
+		$this->keyModified['decimal_place'] = 1;
 
 	}
 
@@ -883,7 +883,7 @@ class Field implements Model
 	 */
 	public  function getMassUpdate()
 	{
-		return $this->massUpdate; 
+		return $this->massUpdate;
 
 	}
 
@@ -893,8 +893,8 @@ class Field implements Model
 	 */
 	public  function setMassUpdate(bool $massUpdate)
 	{
-		$this->massUpdate=$massUpdate; 
-		$this->keyModified['mass_update'] = 1; 
+		$this->massUpdate=$massUpdate;
+		$this->keyModified['mass_update'] = 1;
 
 	}
 
@@ -904,7 +904,7 @@ class Field implements Model
 	 */
 	public  function getBlueprintSupported()
 	{
-		return $this->blueprintSupported; 
+		return $this->blueprintSupported;
 
 	}
 
@@ -914,8 +914,8 @@ class Field implements Model
 	 */
 	public  function setBlueprintSupported(bool $blueprintSupported)
 	{
-		$this->blueprintSupported=$blueprintSupported; 
-		$this->keyModified['blueprint_supported'] = 1; 
+		$this->blueprintSupported=$blueprintSupported;
+		$this->keyModified['blueprint_supported'] = 1;
 
 	}
 
@@ -925,7 +925,7 @@ class Field implements Model
 	 */
 	public  function getMultiselectlookup()
 	{
-		return $this->multiselectlookup; 
+		return $this->multiselectlookup;
 
 	}
 
@@ -935,8 +935,8 @@ class Field implements Model
 	 */
 	public  function setMultiselectlookup(MultiSelectLookup $multiselectlookup)
 	{
-		$this->multiselectlookup=$multiselectlookup; 
-		$this->keyModified['multiselectlookup'] = 1; 
+		$this->multiselectlookup=$multiselectlookup;
+		$this->keyModified['multiselectlookup'] = 1;
 
 	}
 
@@ -946,7 +946,7 @@ class Field implements Model
 	 */
 	public  function getPickListValues()
 	{
-		return $this->pickListValues; 
+		return $this->pickListValues;
 
 	}
 
@@ -956,8 +956,8 @@ class Field implements Model
 	 */
 	public  function setPickListValues(array $pickListValues)
 	{
-		$this->pickListValues=$pickListValues; 
-		$this->keyModified['pick_list_values'] = 1; 
+		$this->pickListValues=$pickListValues;
+		$this->keyModified['pick_list_values'] = 1;
 
 	}
 
@@ -967,7 +967,7 @@ class Field implements Model
 	 */
 	public  function getAutoNumber()
 	{
-		return $this->autoNumber; 
+		return $this->autoNumber;
 
 	}
 
@@ -977,8 +977,8 @@ class Field implements Model
 	 */
 	public  function setAutoNumber(AutoNumber $autoNumber)
 	{
-		$this->autoNumber=$autoNumber; 
-		$this->keyModified['auto_number'] = 1; 
+		$this->autoNumber=$autoNumber;
+		$this->keyModified['auto_number'] = 1;
 
 	}
 
@@ -988,7 +988,7 @@ class Field implements Model
 	 */
 	public  function getDefaultValue()
 	{
-		return $this->defaultValue; 
+		return $this->defaultValue;
 
 	}
 
@@ -998,8 +998,8 @@ class Field implements Model
 	 */
 	public  function setDefaultValue(string $defaultValue)
 	{
-		$this->defaultValue=$defaultValue; 
-		$this->keyModified['default_value'] = 1; 
+		$this->defaultValue=$defaultValue;
+		$this->keyModified['default_value'] = 1;
 
 	}
 
@@ -1009,7 +1009,7 @@ class Field implements Model
 	 */
 	public  function getSectionId()
 	{
-		return $this->sectionId; 
+		return $this->sectionId;
 
 	}
 
@@ -1019,8 +1019,8 @@ class Field implements Model
 	 */
 	public  function setSectionId(int $sectionId)
 	{
-		$this->sectionId=$sectionId; 
-		$this->keyModified['section_id'] = 1; 
+		$this->sectionId=$sectionId;
+		$this->keyModified['section_id'] = 1;
 
 	}
 
@@ -1030,7 +1030,7 @@ class Field implements Model
 	 */
 	public  function getValidationRule()
 	{
-		return $this->validationRule; 
+		return $this->validationRule;
 
 	}
 
@@ -1040,8 +1040,8 @@ class Field implements Model
 	 */
 	public  function setValidationRule(array $validationRule)
 	{
-		$this->validationRule=$validationRule; 
-		$this->keyModified['validation_rule'] = 1; 
+		$this->validationRule=$validationRule;
+		$this->keyModified['validation_rule'] = 1;
 
 	}
 
@@ -1051,7 +1051,7 @@ class Field implements Model
 	 */
 	public  function getConvertMapping()
 	{
-		return $this->convertMapping; 
+		return $this->convertMapping;
 
 	}
 
@@ -1061,8 +1061,8 @@ class Field implements Model
 	 */
 	public  function setConvertMapping(array $convertMapping)
 	{
-		$this->convertMapping=$convertMapping; 
-		$this->keyModified['convert_mapping'] = 1; 
+		$this->convertMapping=$convertMapping;
+		$this->keyModified['convert_mapping'] = 1;
 
 	}
 
@@ -1075,10 +1075,10 @@ class Field implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -1089,7 +1089,7 @@ class Field implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

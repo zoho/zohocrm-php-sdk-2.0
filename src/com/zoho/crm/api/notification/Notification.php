@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\notification;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Notification implements Model
 {
@@ -25,7 +25,7 @@ class Notification implements Model
 	 */
 	public  function getChannelExpiry()
 	{
-		return $this->channelExpiry; 
+		return $this->channelExpiry;
 
 	}
 
@@ -35,8 +35,8 @@ class Notification implements Model
 	 */
 	public  function setChannelExpiry(\DateTime $channelExpiry)
 	{
-		$this->channelExpiry=$channelExpiry; 
-		$this->keyModified['channel_expiry'] = 1; 
+		$this->channelExpiry=$channelExpiry;
+		$this->keyModified['channel_expiry'] = 1;
 
 	}
 
@@ -46,7 +46,7 @@ class Notification implements Model
 	 */
 	public  function getResourceUri()
 	{
-		return $this->resourceUri; 
+		return $this->resourceUri;
 
 	}
 
@@ -56,8 +56,8 @@ class Notification implements Model
 	 */
 	public  function setResourceUri(string $resourceUri)
 	{
-		$this->resourceUri=$resourceUri; 
-		$this->keyModified['resource_uri'] = 1; 
+		$this->resourceUri=$resourceUri;
+		$this->keyModified['resource_uri'] = 1;
 
 	}
 
@@ -67,7 +67,7 @@ class Notification implements Model
 	 */
 	public  function getResourceId()
 	{
-		return $this->resourceId; 
+		return $this->resourceId;
 
 	}
 
@@ -77,8 +77,8 @@ class Notification implements Model
 	 */
 	public  function setResourceId(string $resourceId)
 	{
-		$this->resourceId=$resourceId; 
-		$this->keyModified['resource_id'] = 1; 
+		$this->resourceId=$resourceId;
+		$this->keyModified['resource_id'] = 1;
 
 	}
 
@@ -88,7 +88,7 @@ class Notification implements Model
 	 */
 	public  function getNotifyUrl()
 	{
-		return $this->notifyUrl; 
+		return $this->notifyUrl;
 
 	}
 
@@ -98,8 +98,8 @@ class Notification implements Model
 	 */
 	public  function setNotifyUrl(string $notifyUrl)
 	{
-		$this->notifyUrl=$notifyUrl; 
-		$this->keyModified['notify_url'] = 1; 
+		$this->notifyUrl=$notifyUrl;
+		$this->keyModified['notify_url'] = 1;
 
 	}
 
@@ -109,7 +109,7 @@ class Notification implements Model
 	 */
 	public  function getResourceName()
 	{
-		return $this->resourceName; 
+		return $this->resourceName;
 
 	}
 
@@ -119,8 +119,8 @@ class Notification implements Model
 	 */
 	public  function setResourceName(string $resourceName)
 	{
-		$this->resourceName=$resourceName; 
-		$this->keyModified['resource_name'] = 1; 
+		$this->resourceName=$resourceName;
+		$this->keyModified['resource_name'] = 1;
 
 	}
 
@@ -130,7 +130,7 @@ class Notification implements Model
 	 */
 	public  function getChannelId()
 	{
-		return $this->channelId; 
+		return $this->channelId;
 
 	}
 
@@ -140,8 +140,8 @@ class Notification implements Model
 	 */
 	public  function setChannelId(string $channelId)
 	{
-		$this->channelId=$channelId; 
-		$this->keyModified['channel_id'] = 1; 
+		$this->channelId=$channelId;
+		$this->keyModified['channel_id'] = 1;
 
 	}
 
@@ -151,7 +151,7 @@ class Notification implements Model
 	 */
 	public  function getEvents()
 	{
-		return $this->events; 
+		return $this->events;
 
 	}
 
@@ -161,8 +161,8 @@ class Notification implements Model
 	 */
 	public  function setEvents(array $events)
 	{
-		$this->events=$events; 
-		$this->keyModified['events'] = 1; 
+		$this->events=$events;
+		$this->keyModified['events'] = 1;
 
 	}
 
@@ -172,7 +172,7 @@ class Notification implements Model
 	 */
 	public  function getToken()
 	{
-		return $this->token; 
+		return $this->token;
 
 	}
 
@@ -182,8 +182,8 @@ class Notification implements Model
 	 */
 	public  function setToken(string $token)
 	{
-		$this->token=$token; 
-		$this->keyModified['token'] = 1; 
+		$this->token=$token;
+		$this->keyModified['token'] = 1;
 
 	}
 
@@ -193,7 +193,7 @@ class Notification implements Model
 	 */
 	public  function getNotifyOnRelatedAction()
 	{
-		return $this->notifyOnRelatedAction; 
+		return $this->notifyOnRelatedAction;
 
 	}
 
@@ -203,8 +203,8 @@ class Notification implements Model
 	 */
 	public  function setNotifyOnRelatedAction(bool $notifyOnRelatedAction)
 	{
-		$this->notifyOnRelatedAction=$notifyOnRelatedAction; 
-		$this->keyModified['notify_on_related_action'] = 1; 
+		$this->notifyOnRelatedAction=$notifyOnRelatedAction;
+		$this->keyModified['notify_on_related_action'] = 1;
 
 	}
 
@@ -214,7 +214,7 @@ class Notification implements Model
 	 */
 	public  function getFields()
 	{
-		return $this->fields; 
+		return $this->fields;
 
 	}
 
@@ -224,8 +224,8 @@ class Notification implements Model
 	 */
 	public  function setFields(array $fields)
 	{
-		$this->fields=$fields; 
-		$this->keyModified['fields'] = 1; 
+		$this->fields=$fields;
+		$this->keyModified['fields'] = 1;
 
 	}
 
@@ -235,7 +235,7 @@ class Notification implements Model
 	 */
 	public  function getDeleteevents()
 	{
-		return $this->deleteevents; 
+		return $this->deleteevents;
 
 	}
 
@@ -245,8 +245,8 @@ class Notification implements Model
 	 */
 	public  function setDeleteevents(bool $deleteevents)
 	{
-		$this->deleteevents=$deleteevents; 
-		$this->keyModified['_delete_events'] = 1; 
+		$this->deleteevents=$deleteevents;
+		$this->keyModified['_delete_events'] = 1;
 
 	}
 
@@ -259,10 +259,10 @@ class Notification implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -273,7 +273,7 @@ class Notification implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

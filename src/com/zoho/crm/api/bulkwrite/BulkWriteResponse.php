@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkwrite;
 
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class BulkWriteResponse implements Model, ResponseWrapper
 {
@@ -24,7 +24,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -34,8 +34,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setStatus(string $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -45,7 +45,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getCharacterEncoding()
 	{
-		return $this->characterEncoding; 
+		return $this->characterEncoding;
 
 	}
 
@@ -55,8 +55,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setCharacterEncoding(string $characterEncoding)
 	{
-		$this->characterEncoding=$characterEncoding; 
-		$this->keyModified['character_encoding'] = 1; 
+		$this->characterEncoding=$characterEncoding;
+		$this->keyModified['character_encoding'] = 1;
 
 	}
 
@@ -66,7 +66,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getResource()
 	{
-		return $this->resource; 
+		return $this->resource;
 
 	}
 
@@ -76,8 +76,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setResource(array $resource)
 	{
-		$this->resource=$resource; 
-		$this->keyModified['resource'] = 1; 
+		$this->resource=$resource;
+		$this->keyModified['resource'] = 1;
 
 	}
 
@@ -87,7 +87,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -97,8 +97,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -108,7 +108,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getCallback()
 	{
-		return $this->callback; 
+		return $this->callback;
 
 	}
 
@@ -118,8 +118,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setCallback(CallBack $callback)
 	{
-		$this->callback=$callback; 
-		$this->keyModified['callback'] = 1; 
+		$this->callback=$callback;
+		$this->keyModified['callback'] = 1;
 
 	}
 
@@ -129,7 +129,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getResult()
 	{
-		return $this->result; 
+		return $this->result;
 
 	}
 
@@ -139,8 +139,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setResult(Result $result)
 	{
-		$this->result=$result; 
-		$this->keyModified['result'] = 1; 
+		$this->result=$result;
+		$this->keyModified['result'] = 1;
 
 	}
 
@@ -150,7 +150,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->createdBy; 
+		return $this->createdBy;
 
 	}
 
@@ -160,8 +160,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->createdBy=$createdBy; 
-		$this->keyModified['created_by'] = 1; 
+		$this->createdBy=$createdBy;
+		$this->keyModified['created_by'] = 1;
 
 	}
 
@@ -171,7 +171,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getOperation()
 	{
-		return $this->operation; 
+		return $this->operation;
 
 	}
 
@@ -181,8 +181,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setOperation(string $operation)
 	{
-		$this->operation=$operation; 
-		$this->keyModified['operation'] = 1; 
+		$this->operation=$operation;
+		$this->keyModified['operation'] = 1;
 
 	}
 
@@ -192,7 +192,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function getCreatedTime()
 	{
-		return $this->createdTime; 
+		return $this->createdTime;
 
 	}
 
@@ -202,8 +202,8 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setCreatedTime(\DateTime $createdTime)
 	{
-		$this->createdTime=$createdTime; 
-		$this->keyModified['created_time'] = 1; 
+		$this->createdTime=$createdTime;
+		$this->keyModified['created_time'] = 1;
 
 	}
 
@@ -216,10 +216,10 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -230,7 +230,7 @@ class BulkWriteResponse implements Model, ResponseWrapper
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

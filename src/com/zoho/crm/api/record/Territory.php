@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Territory implements Model
 {
@@ -16,7 +16,7 @@ class Territory implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -26,8 +26,8 @@ class Territory implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Territory implements Model
 	 */
 	public  function getIncludeChild()
 	{
-		return $this->includeChild; 
+		return $this->includeChild;
 
 	}
 
@@ -47,8 +47,8 @@ class Territory implements Model
 	 */
 	public  function setIncludeChild(bool $includeChild)
 	{
-		$this->includeChild=$includeChild; 
-		$this->keyModified['include_child'] = 1; 
+		$this->includeChild=$includeChild;
+		$this->keyModified['include_child'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Territory implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Territory implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

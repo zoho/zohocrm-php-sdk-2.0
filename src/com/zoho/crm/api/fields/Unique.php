@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Unique implements Model
 {
@@ -15,7 +15,7 @@ class Unique implements Model
 	 */
 	public  function getCasesensitive()
 	{
-		return $this->casesensitive; 
+		return $this->casesensitive;
 
 	}
 
@@ -25,8 +25,8 @@ class Unique implements Model
 	 */
 	public  function setCasesensitive(string $casesensitive)
 	{
-		$this->casesensitive=$casesensitive; 
-		$this->keyModified['casesensitive'] = 1; 
+		$this->casesensitive=$casesensitive;
+		$this->keyModified['casesensitive'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class Unique implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class Unique implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

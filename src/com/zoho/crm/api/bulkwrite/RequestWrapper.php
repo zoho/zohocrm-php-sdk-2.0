@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkwrite;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class RequestWrapper implements Model
 {
@@ -19,7 +19,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getCharacterEncoding()
 	{
-		return $this->characterEncoding; 
+		return $this->characterEncoding;
 
 	}
 
@@ -29,8 +29,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setCharacterEncoding(string $characterEncoding)
 	{
-		$this->characterEncoding=$characterEncoding; 
-		$this->keyModified['character_encoding'] = 1; 
+		$this->characterEncoding=$characterEncoding;
+		$this->keyModified['character_encoding'] = 1;
 
 	}
 
@@ -40,7 +40,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getOperation()
 	{
-		return $this->operation; 
+		return $this->operation;
 
 	}
 
@@ -50,8 +50,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setOperation(Choice $operation)
 	{
-		$this->operation=$operation; 
-		$this->keyModified['operation'] = 1; 
+		$this->operation=$operation;
+		$this->keyModified['operation'] = 1;
 
 	}
 
@@ -61,7 +61,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getCallback()
 	{
-		return $this->callback; 
+		return $this->callback;
 
 	}
 
@@ -71,8 +71,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setCallback(CallBack $callback)
 	{
-		$this->callback=$callback; 
-		$this->keyModified['callback'] = 1; 
+		$this->callback=$callback;
+		$this->keyModified['callback'] = 1;
 
 	}
 
@@ -82,7 +82,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getResource()
 	{
-		return $this->resource; 
+		return $this->resource;
 
 	}
 
@@ -92,8 +92,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setResource(array $resource)
 	{
-		$this->resource=$resource; 
-		$this->keyModified['resource'] = 1; 
+		$this->resource=$resource;
+		$this->keyModified['resource'] = 1;
 
 	}
 
@@ -106,10 +106,10 @@ class RequestWrapper implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -120,7 +120,7 @@ class RequestWrapper implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

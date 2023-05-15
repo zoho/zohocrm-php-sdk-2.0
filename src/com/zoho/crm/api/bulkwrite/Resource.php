@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkwrite;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class Resource implements Model
 {
@@ -23,7 +23,7 @@ class Resource implements Model
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -33,8 +33,8 @@ class Resource implements Model
 	 */
 	public  function setStatus(Choice $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -44,7 +44,7 @@ class Resource implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -54,8 +54,8 @@ class Resource implements Model
 	 */
 	public  function setType(Choice $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['type'] = 1;
 
 	}
 
@@ -65,7 +65,7 @@ class Resource implements Model
 	 */
 	public  function getModule()
 	{
-		return $this->module; 
+		return $this->module;
 
 	}
 
@@ -75,8 +75,8 @@ class Resource implements Model
 	 */
 	public  function setModule(string $module)
 	{
-		$this->module=$module; 
-		$this->keyModified['module'] = 1; 
+		$this->module=$module;
+		$this->keyModified['module'] = 1;
 
 	}
 
@@ -86,7 +86,7 @@ class Resource implements Model
 	 */
 	public  function getFileId()
 	{
-		return $this->fileId; 
+		return $this->fileId;
 
 	}
 
@@ -96,8 +96,8 @@ class Resource implements Model
 	 */
 	public  function setFileId(string $fileId)
 	{
-		$this->fileId=$fileId; 
-		$this->keyModified['file_id'] = 1; 
+		$this->fileId=$fileId;
+		$this->keyModified['file_id'] = 1;
 
 	}
 
@@ -107,7 +107,7 @@ class Resource implements Model
 	 */
 	public  function getIgnoreEmpty()
 	{
-		return $this->ignoreEmpty; 
+		return $this->ignoreEmpty;
 
 	}
 
@@ -117,8 +117,8 @@ class Resource implements Model
 	 */
 	public  function setIgnoreEmpty(bool $ignoreEmpty)
 	{
-		$this->ignoreEmpty=$ignoreEmpty; 
-		$this->keyModified['ignore_empty'] = 1; 
+		$this->ignoreEmpty=$ignoreEmpty;
+		$this->keyModified['ignore_empty'] = 1;
 
 	}
 
@@ -128,7 +128,7 @@ class Resource implements Model
 	 */
 	public  function getFindBy()
 	{
-		return $this->findBy; 
+		return $this->findBy;
 
 	}
 
@@ -138,8 +138,8 @@ class Resource implements Model
 	 */
 	public  function setFindBy(string $findBy)
 	{
-		$this->findBy=$findBy; 
-		$this->keyModified['find_by'] = 1; 
+		$this->findBy=$findBy;
+		$this->keyModified['find_by'] = 1;
 
 	}
 
@@ -149,7 +149,7 @@ class Resource implements Model
 	 */
 	public  function getFieldMappings()
 	{
-		return $this->fieldMappings; 
+		return $this->fieldMappings;
 
 	}
 
@@ -159,8 +159,8 @@ class Resource implements Model
 	 */
 	public  function setFieldMappings(array $fieldMappings)
 	{
-		$this->fieldMappings=$fieldMappings; 
-		$this->keyModified['field_mappings'] = 1; 
+		$this->fieldMappings=$fieldMappings;
+		$this->keyModified['field_mappings'] = 1;
 
 	}
 
@@ -170,7 +170,7 @@ class Resource implements Model
 	 */
 	public  function getFile()
 	{
-		return $this->file; 
+		return $this->file;
 
 	}
 
@@ -180,8 +180,8 @@ class Resource implements Model
 	 */
 	public  function setFile(File $file)
 	{
-		$this->file=$file; 
-		$this->keyModified['file'] = 1; 
+		$this->file=$file;
+		$this->keyModified['file'] = 1;
 
 	}
 
@@ -194,10 +194,10 @@ class Resource implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -208,7 +208,7 @@ class Resource implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

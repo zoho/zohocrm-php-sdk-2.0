@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class LeadConverter implements Model
 {
@@ -22,7 +22,7 @@ class LeadConverter implements Model
 	 */
 	public  function getOverwrite()
 	{
-		return $this->overwrite; 
+		return $this->overwrite;
 
 	}
 
@@ -32,8 +32,8 @@ class LeadConverter implements Model
 	 */
 	public  function setOverwrite(bool $overwrite)
 	{
-		$this->overwrite=$overwrite; 
-		$this->keyModified['overwrite'] = 1; 
+		$this->overwrite=$overwrite;
+		$this->keyModified['overwrite'] = 1;
 
 	}
 
@@ -43,7 +43,7 @@ class LeadConverter implements Model
 	 */
 	public  function getNotifyLeadOwner()
 	{
-		return $this->notifyLeadOwner; 
+		return $this->notifyLeadOwner;
 
 	}
 
@@ -53,8 +53,8 @@ class LeadConverter implements Model
 	 */
 	public  function setNotifyLeadOwner(bool $notifyLeadOwner)
 	{
-		$this->notifyLeadOwner=$notifyLeadOwner; 
-		$this->keyModified['notify_lead_owner'] = 1; 
+		$this->notifyLeadOwner=$notifyLeadOwner;
+		$this->keyModified['notify_lead_owner'] = 1;
 
 	}
 
@@ -64,7 +64,7 @@ class LeadConverter implements Model
 	 */
 	public  function getNotifyNewEntityOwner()
 	{
-		return $this->notifyNewEntityOwner; 
+		return $this->notifyNewEntityOwner;
 
 	}
 
@@ -74,8 +74,8 @@ class LeadConverter implements Model
 	 */
 	public  function setNotifyNewEntityOwner(bool $notifyNewEntityOwner)
 	{
-		$this->notifyNewEntityOwner=$notifyNewEntityOwner; 
-		$this->keyModified['notify_new_entity_owner'] = 1; 
+		$this->notifyNewEntityOwner=$notifyNewEntityOwner;
+		$this->keyModified['notify_new_entity_owner'] = 1;
 
 	}
 
@@ -85,7 +85,7 @@ class LeadConverter implements Model
 	 */
 	public  function getAccounts()
 	{
-		return $this->accounts; 
+		return $this->accounts;
 
 	}
 
@@ -95,8 +95,8 @@ class LeadConverter implements Model
 	 */
 	public  function setAccounts(string $accounts)
 	{
-		$this->accounts=$accounts; 
-		$this->keyModified['Accounts'] = 1; 
+		$this->accounts=$accounts;
+		$this->keyModified['Accounts'] = 1;
 
 	}
 
@@ -106,7 +106,7 @@ class LeadConverter implements Model
 	 */
 	public  function getContacts()
 	{
-		return $this->contacts; 
+		return $this->contacts;
 
 	}
 
@@ -116,8 +116,8 @@ class LeadConverter implements Model
 	 */
 	public  function setContacts(string $contacts)
 	{
-		$this->contacts=$contacts; 
-		$this->keyModified['Contacts'] = 1; 
+		$this->contacts=$contacts;
+		$this->keyModified['Contacts'] = 1;
 
 	}
 
@@ -127,7 +127,7 @@ class LeadConverter implements Model
 	 */
 	public  function getAssignTo()
 	{
-		return $this->assignTo; 
+		return $this->assignTo;
 
 	}
 
@@ -137,8 +137,8 @@ class LeadConverter implements Model
 	 */
 	public  function setAssignTo(string $assignTo)
 	{
-		$this->assignTo=$assignTo; 
-		$this->keyModified['assign_to'] = 1; 
+		$this->assignTo=$assignTo;
+		$this->keyModified['assign_to'] = 1;
 
 	}
 
@@ -148,7 +148,7 @@ class LeadConverter implements Model
 	 */
 	public  function getDeals()
 	{
-		return $this->deals; 
+		return $this->deals;
 
 	}
 
@@ -158,8 +158,8 @@ class LeadConverter implements Model
 	 */
 	public  function setDeals(Record $deals)
 	{
-		$this->deals=$deals; 
-		$this->keyModified['Deals'] = 1; 
+		$this->deals=$deals;
+		$this->keyModified['Deals'] = 1;
 
 	}
 
@@ -169,7 +169,7 @@ class LeadConverter implements Model
 	 */
 	public  function getCarryOverTags()
 	{
-		return $this->carryOverTags; 
+		return $this->carryOverTags;
 
 	}
 
@@ -179,8 +179,8 @@ class LeadConverter implements Model
 	 */
 	public  function setCarryOverTags(CarryOverTags $carryOverTags)
 	{
-		$this->carryOverTags=$carryOverTags; 
-		$this->keyModified['carry_over_tags'] = 1; 
+		$this->carryOverTags=$carryOverTags;
+		$this->keyModified['carry_over_tags'] = 1;
 
 	}
 
@@ -193,10 +193,10 @@ class LeadConverter implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -207,7 +207,7 @@ class LeadConverter implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

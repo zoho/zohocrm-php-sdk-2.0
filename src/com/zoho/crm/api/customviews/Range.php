@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\customviews;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Range implements Model
 {
@@ -16,7 +16,7 @@ class Range implements Model
 	 */
 	public  function getFrom()
 	{
-		return $this->from; 
+		return $this->from;
 
 	}
 
@@ -26,8 +26,8 @@ class Range implements Model
 	 */
 	public  function setFrom(int $from)
 	{
-		$this->from=$from; 
-		$this->keyModified['from'] = 1; 
+		$this->from=$from;
+		$this->keyModified['from'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Range implements Model
 	 */
 	public  function getTo()
 	{
-		return $this->to; 
+		return $this->to;
 
 	}
 
@@ -47,8 +47,8 @@ class Range implements Model
 	 */
 	public  function setTo(int $to)
 	{
-		$this->to=$to; 
-		$this->keyModified['to'] = 1; 
+		$this->to=$to;
+		$this->keyModified['to'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Range implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Range implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

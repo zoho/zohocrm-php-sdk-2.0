@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\contactroles;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class RecordBodyWrapper implements Model
 {
@@ -15,7 +15,7 @@ class RecordBodyWrapper implements Model
 	 */
 	public  function getData()
 	{
-		return $this->data; 
+		return $this->data;
 
 	}
 
@@ -25,8 +25,8 @@ class RecordBodyWrapper implements Model
 	 */
 	public  function setData(array $data)
 	{
-		$this->data=$data; 
-		$this->keyModified['data'] = 1; 
+		$this->data=$data;
+		$this->keyModified['data'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class RecordBodyWrapper implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class RecordBodyWrapper implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

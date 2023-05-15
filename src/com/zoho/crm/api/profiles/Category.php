@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\profiles;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Category implements Model
 {
@@ -17,7 +17,7 @@ class Category implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -27,8 +27,8 @@ class Category implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class Category implements Model
 	 */
 	public  function getPermissionsDetails()
 	{
-		return $this->permissionsDetails; 
+		return $this->permissionsDetails;
 
 	}
 
@@ -48,8 +48,8 @@ class Category implements Model
 	 */
 	public  function setPermissionsDetails(array $permissionsDetails)
 	{
-		$this->permissionsDetails=$permissionsDetails; 
-		$this->keyModified['permissions_details'] = 1; 
+		$this->permissionsDetails=$permissionsDetails;
+		$this->keyModified['permissions_details'] = 1;
 
 	}
 
@@ -59,7 +59,7 @@ class Category implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -69,8 +69,8 @@ class Category implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -83,10 +83,10 @@ class Category implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -97,7 +97,7 @@ class Category implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

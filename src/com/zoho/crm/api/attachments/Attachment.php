@@ -1,9 +1,9 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\attachments;
 
 use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class Attachment implements Model
 {
@@ -33,7 +33,7 @@ class Attachment implements Model
 	 */
 	public  function getOwner()
 	{
-		return $this->owner; 
+		return $this->owner;
 
 	}
 
@@ -43,8 +43,8 @@ class Attachment implements Model
 	 */
 	public  function setOwner(User $owner)
 	{
-		$this->owner=$owner; 
-		$this->keyModified['Owner'] = 1; 
+		$this->owner=$owner;
+		$this->keyModified['Owner'] = 1;
 
 	}
 
@@ -54,7 +54,7 @@ class Attachment implements Model
 	 */
 	public  function getModifiedTime()
 	{
-		return $this->modifiedTime; 
+		return $this->modifiedTime;
 
 	}
 
@@ -64,8 +64,8 @@ class Attachment implements Model
 	 */
 	public  function setModifiedTime(\DateTime $modifiedTime)
 	{
-		$this->modifiedTime=$modifiedTime; 
-		$this->keyModified['Modified_Time'] = 1; 
+		$this->modifiedTime=$modifiedTime;
+		$this->keyModified['Modified_Time'] = 1;
 
 	}
 
@@ -75,7 +75,7 @@ class Attachment implements Model
 	 */
 	public  function getFileName()
 	{
-		return $this->fileName; 
+		return $this->fileName;
 
 	}
 
@@ -85,8 +85,8 @@ class Attachment implements Model
 	 */
 	public  function setFileName(string $fileName)
 	{
-		$this->fileName=$fileName; 
-		$this->keyModified['File_Name'] = 1; 
+		$this->fileName=$fileName;
+		$this->keyModified['File_Name'] = 1;
 
 	}
 
@@ -96,7 +96,7 @@ class Attachment implements Model
 	 */
 	public  function getCreatedTime()
 	{
-		return $this->createdTime; 
+		return $this->createdTime;
 
 	}
 
@@ -106,8 +106,8 @@ class Attachment implements Model
 	 */
 	public  function setCreatedTime(\DateTime $createdTime)
 	{
-		$this->createdTime=$createdTime; 
-		$this->keyModified['Created_Time'] = 1; 
+		$this->createdTime=$createdTime;
+		$this->keyModified['Created_Time'] = 1;
 
 	}
 
@@ -117,7 +117,7 @@ class Attachment implements Model
 	 */
 	public  function getSize()
 	{
-		return $this->size; 
+		return $this->size;
 
 	}
 
@@ -127,8 +127,8 @@ class Attachment implements Model
 	 */
 	public  function setSize(string $size)
 	{
-		$this->size=$size; 
-		$this->keyModified['Size'] = 1; 
+		$this->size=$size;
+		$this->keyModified['Size'] = 1;
 
 	}
 
@@ -138,7 +138,7 @@ class Attachment implements Model
 	 */
 	public  function getParentId()
 	{
-		return $this->parentId; 
+		return $this->parentId;
 
 	}
 
@@ -148,8 +148,8 @@ class Attachment implements Model
 	 */
 	public  function setParentId(Record $parentId)
 	{
-		$this->parentId=$parentId; 
-		$this->keyModified['Parent_Id'] = 1; 
+		$this->parentId=$parentId;
+		$this->keyModified['Parent_Id'] = 1;
 
 	}
 
@@ -159,7 +159,7 @@ class Attachment implements Model
 	 */
 	public  function getEditable()
 	{
-		return $this->editable; 
+		return $this->editable;
 
 	}
 
@@ -169,8 +169,8 @@ class Attachment implements Model
 	 */
 	public  function setEditable(bool $editable)
 	{
-		$this->editable=$editable; 
-		$this->keyModified['$editable'] = 1; 
+		$this->editable=$editable;
+		$this->keyModified['$editable'] = 1;
 
 	}
 
@@ -180,7 +180,7 @@ class Attachment implements Model
 	 */
 	public  function getFileId()
 	{
-		return $this->fileId; 
+		return $this->fileId;
 
 	}
 
@@ -190,8 +190,8 @@ class Attachment implements Model
 	 */
 	public  function setFileId(string $fileId)
 	{
-		$this->fileId=$fileId; 
-		$this->keyModified['$file_id'] = 1; 
+		$this->fileId=$fileId;
+		$this->keyModified['$file_id'] = 1;
 
 	}
 
@@ -201,7 +201,7 @@ class Attachment implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -211,8 +211,8 @@ class Attachment implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['$type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['$type'] = 1;
 
 	}
 
@@ -222,7 +222,7 @@ class Attachment implements Model
 	 */
 	public  function getSeModule()
 	{
-		return $this->seModule; 
+		return $this->seModule;
 
 	}
 
@@ -232,8 +232,8 @@ class Attachment implements Model
 	 */
 	public  function setSeModule(string $seModule)
 	{
-		$this->seModule=$seModule; 
-		$this->keyModified['$se_module'] = 1; 
+		$this->seModule=$seModule;
+		$this->keyModified['$se_module'] = 1;
 
 	}
 
@@ -243,7 +243,7 @@ class Attachment implements Model
 	 */
 	public  function getModifiedBy()
 	{
-		return $this->modifiedBy; 
+		return $this->modifiedBy;
 
 	}
 
@@ -253,8 +253,8 @@ class Attachment implements Model
 	 */
 	public  function setModifiedBy(User $modifiedBy)
 	{
-		$this->modifiedBy=$modifiedBy; 
-		$this->keyModified['Modified_By'] = 1; 
+		$this->modifiedBy=$modifiedBy;
+		$this->keyModified['Modified_By'] = 1;
 
 	}
 
@@ -264,7 +264,7 @@ class Attachment implements Model
 	 */
 	public  function getState()
 	{
-		return $this->state; 
+		return $this->state;
 
 	}
 
@@ -274,8 +274,8 @@ class Attachment implements Model
 	 */
 	public  function setState(string $state)
 	{
-		$this->state=$state; 
-		$this->keyModified['$state'] = 1; 
+		$this->state=$state;
+		$this->keyModified['$state'] = 1;
 
 	}
 
@@ -285,7 +285,7 @@ class Attachment implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -295,8 +295,8 @@ class Attachment implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -306,7 +306,7 @@ class Attachment implements Model
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->createdBy; 
+		return $this->createdBy;
 
 	}
 
@@ -316,8 +316,8 @@ class Attachment implements Model
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->createdBy=$createdBy; 
-		$this->keyModified['Created_By'] = 1; 
+		$this->createdBy=$createdBy;
+		$this->keyModified['Created_By'] = 1;
 
 	}
 
@@ -327,7 +327,7 @@ class Attachment implements Model
 	 */
 	public  function getLinkUrl()
 	{
-		return $this->linkUrl; 
+		return $this->linkUrl;
 
 	}
 
@@ -337,8 +337,8 @@ class Attachment implements Model
 	 */
 	public  function setLinkUrl(string $linkUrl)
 	{
-		$this->linkUrl=$linkUrl; 
-		$this->keyModified['$link_url'] = 1; 
+		$this->linkUrl=$linkUrl;
+		$this->keyModified['$link_url'] = 1;
 
 	}
 
@@ -348,7 +348,7 @@ class Attachment implements Model
 	 */
 	public  function getDescription()
 	{
-		return $this->description; 
+		return $this->description;
 
 	}
 
@@ -358,8 +358,8 @@ class Attachment implements Model
 	 */
 	public  function setDescription(string $description)
 	{
-		$this->description=$description; 
-		$this->keyModified['description'] = 1; 
+		$this->description=$description;
+		$this->keyModified['description'] = 1;
 
 	}
 
@@ -369,7 +369,7 @@ class Attachment implements Model
 	 */
 	public  function getCategory()
 	{
-		return $this->category; 
+		return $this->category;
 
 	}
 
@@ -379,8 +379,8 @@ class Attachment implements Model
 	 */
 	public  function setCategory(string $category)
 	{
-		$this->category=$category; 
-		$this->keyModified['category'] = 1; 
+		$this->category=$category;
+		$this->keyModified['category'] = 1;
 
 	}
 
@@ -393,10 +393,10 @@ class Attachment implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -407,7 +407,7 @@ class Attachment implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

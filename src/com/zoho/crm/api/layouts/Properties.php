@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\layouts;
 
 use com\zoho\crm\api\fields\ToolTip;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Properties implements Model
 {
@@ -18,7 +18,7 @@ class Properties implements Model
 	 */
 	public  function getReorderRows()
 	{
-		return $this->reorderRows; 
+		return $this->reorderRows;
 
 	}
 
@@ -28,8 +28,8 @@ class Properties implements Model
 	 */
 	public  function setReorderRows(bool $reorderRows)
 	{
-		$this->reorderRows=$reorderRows; 
-		$this->keyModified['reorder_rows'] = 1; 
+		$this->reorderRows=$reorderRows;
+		$this->keyModified['reorder_rows'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class Properties implements Model
 	 */
 	public  function getTooltip()
 	{
-		return $this->tooltip; 
+		return $this->tooltip;
 
 	}
 
@@ -49,8 +49,8 @@ class Properties implements Model
 	 */
 	public  function setTooltip(ToolTip $tooltip)
 	{
-		$this->tooltip=$tooltip; 
-		$this->keyModified['tooltip'] = 1; 
+		$this->tooltip=$tooltip;
+		$this->keyModified['tooltip'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class Properties implements Model
 	 */
 	public  function getMaximumRows()
 	{
-		return $this->maximumRows; 
+		return $this->maximumRows;
 
 	}
 
@@ -70,8 +70,8 @@ class Properties implements Model
 	 */
 	public  function setMaximumRows(int $maximumRows)
 	{
-		$this->maximumRows=$maximumRows; 
-		$this->keyModified['maximum_rows'] = 1; 
+		$this->maximumRows=$maximumRows;
+		$this->keyModified['maximum_rows'] = 1;
 
 	}
 
@@ -84,10 +84,10 @@ class Properties implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -98,7 +98,7 @@ class Properties implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

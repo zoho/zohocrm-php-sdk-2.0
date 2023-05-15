@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\profiles;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Section implements Model
 {
@@ -16,7 +16,7 @@ class Section implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -26,8 +26,8 @@ class Section implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Section implements Model
 	 */
 	public  function getCategories()
 	{
-		return $this->categories; 
+		return $this->categories;
 
 	}
 
@@ -47,8 +47,8 @@ class Section implements Model
 	 */
 	public  function setCategories(array $categories)
 	{
-		$this->categories=$categories; 
-		$this->keyModified['categories'] = 1; 
+		$this->categories=$categories;
+		$this->keyModified['categories'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Section implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Section implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

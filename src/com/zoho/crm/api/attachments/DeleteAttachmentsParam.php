@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\attachments;
 
-use com\zoho\crm\api\Param;
+use Zoho\Crm\Param;
 
 class DeleteAttachmentsParam
 {
 
 	public static final function ids()
 	{
-		return new Param('ids', 'com.zoho.crm.api.Attachments.DeleteAttachmentsParam'); 
+		return new Param('ids', 'com.zoho.crm.api.Attachments.DeleteAttachmentsParam');
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class RecurringActivity implements Model
 {
@@ -15,7 +15,7 @@ class RecurringActivity implements Model
 	 */
 	public  function getRrule()
 	{
-		return $this->rrule; 
+		return $this->rrule;
 
 	}
 
@@ -25,8 +25,8 @@ class RecurringActivity implements Model
 	 */
 	public  function setRrule(string $rrule)
 	{
-		$this->rrule=$rrule; 
-		$this->keyModified['RRULE'] = 1; 
+		$this->rrule=$rrule;
+		$this->keyModified['RRULE'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class RecurringActivity implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class RecurringActivity implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,19 +1,19 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\Header;
+use Zoho\Crm\Header;
 
 class GetRecordsHeader
 {
 
 	public static final function IfModifiedSince()
 	{
-		return new Header('If-Modified-Since', 'com.zoho.crm.api.Record.GetRecordsHeader'); 
+		return new Header('If-Modified-Since', 'com.zoho.crm.api.Record.GetRecordsHeader');
 
 	}
 	public static final function XEXTERNAL()
 	{
-		return new Header('X-EXTERNAL', 'com.zoho.crm.api.Record.GetRecordsHeader'); 
+		return new Header('X-EXTERNAL', 'com.zoho.crm.api.Record.GetRecordsHeader');
 
 	}
-} 
+}

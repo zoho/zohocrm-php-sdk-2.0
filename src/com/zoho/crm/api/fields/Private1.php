@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Private1 implements Model
 {
@@ -17,7 +17,7 @@ class Private1 implements Model
 	 */
 	public  function getRestricted()
 	{
-		return $this->restricted; 
+		return $this->restricted;
 
 	}
 
@@ -27,8 +27,8 @@ class Private1 implements Model
 	 */
 	public  function setRestricted(bool $restricted)
 	{
-		$this->restricted=$restricted; 
-		$this->keyModified['restricted'] = 1; 
+		$this->restricted=$restricted;
+		$this->keyModified['restricted'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class Private1 implements Model
 	 */
 	public  function getExport()
 	{
-		return $this->export; 
+		return $this->export;
 
 	}
 
@@ -48,8 +48,8 @@ class Private1 implements Model
 	 */
 	public  function setExport(bool $export)
 	{
-		$this->export=$export; 
-		$this->keyModified['export'] = 1; 
+		$this->export=$export;
+		$this->keyModified['export'] = 1;
 
 	}
 
@@ -59,7 +59,7 @@ class Private1 implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -69,8 +69,8 @@ class Private1 implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['type'] = 1;
 
 	}
 
@@ -83,10 +83,10 @@ class Private1 implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -97,7 +97,7 @@ class Private1 implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

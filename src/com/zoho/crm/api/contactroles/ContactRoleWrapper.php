@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\contactroles;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ContactRoleWrapper implements Model
 {
@@ -15,7 +15,7 @@ class ContactRoleWrapper implements Model
 	 */
 	public  function getContactRole()
 	{
-		return $this->contactRole; 
+		return $this->contactRole;
 
 	}
 
@@ -25,8 +25,8 @@ class ContactRoleWrapper implements Model
 	 */
 	public  function setContactRole(string $contactRole)
 	{
-		$this->contactRole=$contactRole; 
-		$this->keyModified['Contact_Role'] = 1; 
+		$this->contactRole=$contactRole;
+		$this->keyModified['Contact_Role'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class ContactRoleWrapper implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class ContactRoleWrapper implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

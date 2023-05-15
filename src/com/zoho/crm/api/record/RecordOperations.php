@@ -1,15 +1,12 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\Header;
-use com\zoho\crm\api\HeaderMap;
-use com\zoho\crm\api\Param;
-use com\zoho\crm\api\ParameterMap;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Utility;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\HeaderMap;
+use Zoho\Crm\ParameterMap;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
+use Zoho\Crm\Util\Utility;
 
 class RecordOperations
 {
@@ -24,20 +21,20 @@ class RecordOperations
 	 */
 	public  function getRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -51,21 +48,21 @@ class RecordOperations
 	 */
 	public  function updateRecord(string $id, string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -79,19 +76,19 @@ class RecordOperations
 	 */
 	public  function deleteRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -104,18 +101,18 @@ class RecordOperations
 	 */
 	public  function getRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -128,19 +125,19 @@ class RecordOperations
 	 */
 	public  function createRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -153,19 +150,19 @@ class RecordOperations
 	 */
 	public  function updateRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -178,17 +175,17 @@ class RecordOperations
 	 */
 	public  function deleteRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -201,20 +198,20 @@ class RecordOperations
 	 */
 	public  function upsertRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/upsert'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_ACTION); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/upsert');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_ACTION);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -227,18 +224,18 @@ class RecordOperations
 	 */
 	public  function getDeletedRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/deleted'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(DeletedRecordsHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/deleted');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(DeletedRecordsHandler::class, 'application/json');
 
 	}
 
@@ -251,19 +248,19 @@ class RecordOperations
 	 */
 	public  function searchRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/search'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/search');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -275,19 +272,19 @@ class RecordOperations
 	 */
 	public  function convertLead(string $id, ConvertBodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Leads/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$apiPath=$apiPath.('/actions/convert'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		Utility::getFields("Deals", $handlerInstance); 
-		return $handlerInstance->apiCall(ConvertActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Leads/');
+		$apiPath=$apiPath.(strval($id));
+		$apiPath=$apiPath.('/actions/convert');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		Utility::getFields("Deals", $handlerInstance);
+		return $handlerInstance->apiCall(ConvertActionHandler::class, 'application/json');
 
 	}
 
@@ -299,18 +296,18 @@ class RecordOperations
 	 */
 	public  function getPhoto(string $id, string $moduleAPIName)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$apiPath=$apiPath.('/photo'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(DownloadHandler::class, 'application/x-download'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($id));
+		$apiPath=$apiPath.('/photo');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(DownloadHandler::class, 'application/x-download');
 
 	}
 
@@ -323,22 +320,22 @@ class RecordOperations
 	 */
 	public  function uploadPhoto(string $id, string $moduleAPIName, FileBodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$apiPath=$apiPath.('/photo'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
-		$handlerInstance->setContentType('multipart/form-data'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		Utility::verifyPhotoSupport($moduleAPIName); 
-		return $handlerInstance->apiCall(FileHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($id));
+		$apiPath=$apiPath.('/photo');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE);
+		$handlerInstance->setContentType('multipart/form-data');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		Utility::verifyPhotoSupport($moduleAPIName);
+		return $handlerInstance->apiCall(FileHandler::class, 'application/json');
 
 	}
 
@@ -350,18 +347,18 @@ class RecordOperations
 	 */
 	public  function deletePhoto(string $id, string $moduleAPIName)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$apiPath=$apiPath.('/photo'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(FileHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($id));
+		$apiPath=$apiPath.('/photo');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(FileHandler::class, 'application/json');
 
 	}
 
@@ -373,20 +370,20 @@ class RecordOperations
 	 */
 	public  function massUpdateRecords(string $moduleAPIName, MassUpdateBodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/actions/mass_update'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(MassUpdateActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/actions/mass_update');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(MassUpdateActionHandler::class, 'application/json');
 
 	}
 
@@ -398,17 +395,17 @@ class RecordOperations
 	 */
 	public  function getMassUpdateStatus(string $moduleAPIName, ParameterMap $paramInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/actions/mass_update'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(MassUpdateResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/actions/mass_update');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(MassUpdateResponseHandler::class, 'application/json');
 
 	}
 
@@ -422,20 +419,20 @@ class RecordOperations
 	 */
 	public  function getRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($externalFieldValue)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($externalFieldValue));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -449,21 +446,21 @@ class RecordOperations
 	 */
 	public  function updateRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($externalFieldValue)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setHeader($headerInstance); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($externalFieldValue));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -477,19 +474,19 @@ class RecordOperations
 	 */
 	public  function deleteRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/'); 
-		$apiPath=$apiPath.(strval($moduleAPIName)); 
-		$apiPath=$apiPath.('/'); 
-		$apiPath=$apiPath.(strval($externalFieldValue)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName, $handlerInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/');
+		$apiPath=$apiPath.(strval($externalFieldValue));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setHeader($headerInstance);
+		Utility::getFields($moduleAPIName, $handlerInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
-} 
+}

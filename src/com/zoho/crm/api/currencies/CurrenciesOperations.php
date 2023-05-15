@@ -1,10 +1,9 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\currencies;
 
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
 
 class CurrenciesOperations
 {
@@ -15,13 +14,13 @@ class CurrenciesOperations
 	 */
 	public  function getCurrencies()
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -32,16 +31,16 @@ class CurrenciesOperations
 	 */
 	public  function addCurrencies(BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -52,16 +51,16 @@ class CurrenciesOperations
 	 */
 	public  function updateCurrencies(BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -72,16 +71,16 @@ class CurrenciesOperations
 	 */
 	public  function enableMultipleCurrencies(BaseCurrencyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies/actions/enable'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		return $handlerInstance->apiCall(BaseCurrencyActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies/actions/enable');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		return $handlerInstance->apiCall(BaseCurrencyActionHandler::class, 'application/json');
 
 	}
 
@@ -92,16 +91,16 @@ class CurrenciesOperations
 	 */
 	public  function updateBaseCurrency(BaseCurrencyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies/actions/enable'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		return $handlerInstance->apiCall(BaseCurrencyActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies/actions/enable');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		return $handlerInstance->apiCall(BaseCurrencyActionHandler::class, 'application/json');
 
 	}
 
@@ -112,14 +111,14 @@ class CurrenciesOperations
 	 */
 	public  function getCurrency(string $id)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -131,16 +130,16 @@ class CurrenciesOperations
 	 */
 	public  function updateCurrency(string $id, BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/org/currencies/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/org/currencies/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
-} 
+}

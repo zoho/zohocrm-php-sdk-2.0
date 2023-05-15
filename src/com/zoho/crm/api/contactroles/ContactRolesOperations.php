@@ -1,13 +1,11 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\contactroles;
 
-use com\zoho\crm\api\Param;
-use com\zoho\crm\api\ParameterMap;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Utility;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\ParameterMap;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
+use Zoho\Crm\Util\Utility;
 
 class ContactRolesOperations
 {
@@ -18,13 +16,13 @@ class ContactRolesOperations
 	 */
 	public  function getContactRoles()
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -35,16 +33,16 @@ class ContactRolesOperations
 	 */
 	public  function createContactRoles(BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_POST);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_CREATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -55,16 +53,16 @@ class ContactRolesOperations
 	 */
 	public  function updateContactRoles(BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		$handlerInstance->setMandatoryChecker(true); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		$handlerInstance->setMandatoryChecker(true);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -75,14 +73,14 @@ class ContactRolesOperations
 	 */
 	public  function deleteContactRoles(ParameterMap $paramInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setParam($paramInstance); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setParam($paramInstance);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -93,14 +91,14 @@ class ContactRolesOperations
 	 */
 	public  function getContactRole(string $id)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -112,16 +110,16 @@ class ContactRolesOperations
 	 */
 	public  function updateContactRole(string $id, BodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -132,14 +130,14 @@ class ContactRolesOperations
 	 */
 	public  function deleteContactRole(string $id)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Contacts/roles/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Contacts/roles/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		return $handlerInstance->apiCall(ActionHandler::class, 'application/json');
 
 	}
 
@@ -151,18 +149,18 @@ class ContactRolesOperations
 	 */
 	public  function getAllContactRolesOfDeal(string $dealId, ParameterMap $paramInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Deals/'); 
-		$apiPath=$apiPath.(strval($dealId)); 
-		$apiPath=$apiPath.('/Contact_Roles'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setModuleAPIName("Contacts"); 
-		Utility::getFields("Contacts", $handlerInstance); 
-		return $handlerInstance->apiCall(RecordResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Deals/');
+		$apiPath=$apiPath.(strval($dealId));
+		$apiPath=$apiPath.('/Contact_Roles');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		$handlerInstance->setModuleAPIName("Contacts");
+		Utility::getFields("Contacts", $handlerInstance);
+		return $handlerInstance->apiCall(RecordResponseHandler::class, 'application/json');
 
 	}
 
@@ -174,18 +172,18 @@ class ContactRolesOperations
 	 */
 	public  function getContactRoleOfDeal(string $contactId, string $dealId)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Deals/'); 
-		$apiPath=$apiPath.(strval($dealId)); 
-		$apiPath=$apiPath.('/Contact_Roles/'); 
-		$apiPath=$apiPath.(strval($contactId)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->setModuleAPIName("Contacts"); 
-		Utility::getFields("Contacts", $handlerInstance); 
-		return $handlerInstance->apiCall(RecordResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Deals/');
+		$apiPath=$apiPath.(strval($dealId));
+		$apiPath=$apiPath.('/Contact_Roles/');
+		$apiPath=$apiPath.(strval($contactId));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setModuleAPIName("Contacts");
+		Utility::getFields("Contacts", $handlerInstance);
+		return $handlerInstance->apiCall(RecordResponseHandler::class, 'application/json');
 
 	}
 
@@ -198,18 +196,18 @@ class ContactRolesOperations
 	 */
 	public  function addContactRoleToDeal(string $contactId, string $dealId, RecordBodyWrapper $request)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Deals/'); 
-		$apiPath=$apiPath.(strval($dealId)); 
-		$apiPath=$apiPath.('/Contact_Roles/'); 
-		$apiPath=$apiPath.(strval($contactId)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
-		$handlerInstance->setContentType('application/json'); 
-		$handlerInstance->setRequest($request); 
-		return $handlerInstance->apiCall(RecordActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Deals/');
+		$apiPath=$apiPath.(strval($dealId));
+		$apiPath=$apiPath.('/Contact_Roles/');
+		$apiPath=$apiPath.(strval($contactId));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_PUT);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE);
+		$handlerInstance->setContentType('application/json');
+		$handlerInstance->setRequest($request);
+		return $handlerInstance->apiCall(RecordActionHandler::class, 'application/json');
 
 	}
 
@@ -221,16 +219,16 @@ class ContactRolesOperations
 	 */
 	public  function removeContactRoleFromDeal(string $contactId, string $dealId)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/Deals/'); 
-		$apiPath=$apiPath.(strval($dealId)); 
-		$apiPath=$apiPath.('/Contact_Roles/'); 
-		$apiPath=$apiPath.(strval($contactId)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
-		return $handlerInstance->apiCall(RecordActionHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/Deals/');
+		$apiPath=$apiPath.(strval($dealId));
+		$apiPath=$apiPath.('/Contact_Roles/');
+		$apiPath=$apiPath.(strval($contactId));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE);
+		return $handlerInstance->apiCall(RecordActionHandler::class, 'application/json');
 
 	}
-} 
+}

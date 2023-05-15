@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\blueprint;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ValidationError implements Model
 {
@@ -16,7 +16,7 @@ class ValidationError implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -26,8 +26,8 @@ class ValidationError implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class ValidationError implements Model
 	 */
 	public  function getMessage()
 	{
-		return $this->message; 
+		return $this->message;
 
 	}
 
@@ -47,8 +47,8 @@ class ValidationError implements Model
 	 */
 	public  function setMessage(string $message)
 	{
-		$this->message=$message; 
-		$this->keyModified['message'] = 1; 
+		$this->message=$message;
+		$this->keyModified['message'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class ValidationError implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class ValidationError implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

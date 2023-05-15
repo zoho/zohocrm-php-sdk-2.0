@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\Param;
+use Zoho\Crm\Param;
 
 class DeleteRecordUsingExternalIDParam
 {
 
 	public static final function wfTrigger()
 	{
-		return new Param('wf_trigger', 'com.zoho.crm.api.Record.DeleteRecordUsingExternalIDParam'); 
+		return new Param('wf_trigger', 'com.zoho.crm.api.Record.DeleteRecordUsingExternalIDParam');
 
 	}
-} 
+}

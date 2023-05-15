@@ -1,9 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class Consent extends Record implements Model
 {
@@ -15,7 +14,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getOwner()
 	{
-		return $this->getKeyValue('Owner'); 
+		return $this->getKeyValue('Owner');
 
 	}
 
@@ -25,7 +24,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setOwner(User $owner)
 	{
-		$this->addKeyValue('Owner', $owner); 
+		$this->addKeyValue('Owner', $owner);
 
 	}
 
@@ -35,7 +34,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getContactThroughEmail()
 	{
-		return $this->getKeyValue('Contact_Through_Email'); 
+		return $this->getKeyValue('Contact_Through_Email');
 
 	}
 
@@ -45,7 +44,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setContactThroughEmail(bool $contactThroughEmail)
 	{
-		$this->addKeyValue('Contact_Through_Email', $contactThroughEmail); 
+		$this->addKeyValue('Contact_Through_Email', $contactThroughEmail);
 
 	}
 
@@ -55,7 +54,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getContactThroughSocial()
 	{
-		return $this->getKeyValue('Contact_Through_Social'); 
+		return $this->getKeyValue('Contact_Through_Social');
 
 	}
 
@@ -65,7 +64,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setContactThroughSocial(bool $contactThroughSocial)
 	{
-		$this->addKeyValue('Contact_Through_Social', $contactThroughSocial); 
+		$this->addKeyValue('Contact_Through_Social', $contactThroughSocial);
 
 	}
 
@@ -75,7 +74,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getContactThroughSurvey()
 	{
-		return $this->getKeyValue('Contact_Through_Survey'); 
+		return $this->getKeyValue('Contact_Through_Survey');
 
 	}
 
@@ -85,7 +84,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setContactThroughSurvey(bool $contactThroughSurvey)
 	{
-		$this->addKeyValue('Contact_Through_Survey', $contactThroughSurvey); 
+		$this->addKeyValue('Contact_Through_Survey', $contactThroughSurvey);
 
 	}
 
@@ -95,7 +94,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getContactThroughPhone()
 	{
-		return $this->getKeyValue('Contact_Through_Phone'); 
+		return $this->getKeyValue('Contact_Through_Phone');
 
 	}
 
@@ -105,7 +104,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setContactThroughPhone(bool $contactThroughPhone)
 	{
-		$this->addKeyValue('Contact_Through_Phone', $contactThroughPhone); 
+		$this->addKeyValue('Contact_Through_Phone', $contactThroughPhone);
 
 	}
 
@@ -115,7 +114,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getMailSentTime()
 	{
-		return $this->getKeyValue('Mail_Sent_Time'); 
+		return $this->getKeyValue('Mail_Sent_Time');
 
 	}
 
@@ -125,7 +124,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setMailSentTime(\DateTime $mailSentTime)
 	{
-		$this->addKeyValue('Mail_Sent_Time', $mailSentTime); 
+		$this->addKeyValue('Mail_Sent_Time', $mailSentTime);
 
 	}
 
@@ -135,7 +134,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getConsentDate()
 	{
-		return $this->getKeyValue('Consent_Date'); 
+		return $this->getKeyValue('Consent_Date');
 
 	}
 
@@ -145,7 +144,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setConsentDate(\DateTime $consentDate)
 	{
-		$this->addKeyValue('Consent_Date', $consentDate); 
+		$this->addKeyValue('Consent_Date', $consentDate);
 
 	}
 
@@ -155,7 +154,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getConsentRemarks()
 	{
-		return $this->getKeyValue('Consent_Remarks'); 
+		return $this->getKeyValue('Consent_Remarks');
 
 	}
 
@@ -165,7 +164,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setConsentRemarks(string $consentRemarks)
 	{
-		$this->addKeyValue('Consent_Remarks', $consentRemarks); 
+		$this->addKeyValue('Consent_Remarks', $consentRemarks);
 
 	}
 
@@ -175,7 +174,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getConsentThrough()
 	{
-		return $this->getKeyValue('Consent_Through'); 
+		return $this->getKeyValue('Consent_Through');
 
 	}
 
@@ -185,7 +184,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setConsentThrough(string $consentThrough)
 	{
-		$this->addKeyValue('Consent_Through', $consentThrough); 
+		$this->addKeyValue('Consent_Through', $consentThrough);
 
 	}
 
@@ -195,7 +194,7 @@ class Consent extends Record implements Model
 	 */
 	public  function getDataProcessingBasis()
 	{
-		return $this->getKeyValue('Data_Processing_Basis'); 
+		return $this->getKeyValue('Data_Processing_Basis');
 
 	}
 
@@ -205,7 +204,7 @@ class Consent extends Record implements Model
 	 */
 	public  function setDataProcessingBasis(string $dataProcessingBasis)
 	{
-		$this->addKeyValue('Data_Processing_Basis', $dataProcessingBasis); 
+		$this->addKeyValue('Data_Processing_Basis', $dataProcessingBasis);
 
 	}
-} 
+}

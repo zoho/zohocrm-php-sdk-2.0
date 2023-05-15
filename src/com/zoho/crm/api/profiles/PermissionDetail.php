@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\profiles;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class PermissionDetail implements Model
 {
@@ -19,7 +19,7 @@ class PermissionDetail implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -29,8 +29,8 @@ class PermissionDetail implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -40,7 +40,7 @@ class PermissionDetail implements Model
 	 */
 	public  function getModule()
 	{
-		return $this->module; 
+		return $this->module;
 
 	}
 
@@ -50,8 +50,8 @@ class PermissionDetail implements Model
 	 */
 	public  function setModule(string $module)
 	{
-		$this->module=$module; 
-		$this->keyModified['module'] = 1; 
+		$this->module=$module;
+		$this->keyModified['module'] = 1;
 
 	}
 
@@ -61,7 +61,7 @@ class PermissionDetail implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -71,8 +71,8 @@ class PermissionDetail implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -82,7 +82,7 @@ class PermissionDetail implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -92,8 +92,8 @@ class PermissionDetail implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -103,7 +103,7 @@ class PermissionDetail implements Model
 	 */
 	public  function getEnabled()
 	{
-		return $this->enabled; 
+		return $this->enabled;
 
 	}
 
@@ -113,8 +113,8 @@ class PermissionDetail implements Model
 	 */
 	public  function setEnabled(bool $enabled)
 	{
-		$this->enabled=$enabled; 
-		$this->keyModified['enabled'] = 1; 
+		$this->enabled=$enabled;
+		$this->keyModified['enabled'] = 1;
 
 	}
 
@@ -127,10 +127,10 @@ class PermissionDetail implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -141,7 +141,7 @@ class PermissionDetail implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

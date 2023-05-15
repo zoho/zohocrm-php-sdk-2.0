@@ -1,12 +1,11 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\customviews;
 
-use com\zoho\crm\api\Param;
-use com\zoho\crm\api\ParameterMap;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\Param;
+use Zoho\Crm\ParameterMap;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
 
 class CustomViewsOperations
 {
@@ -19,7 +18,7 @@ class CustomViewsOperations
 	 */
 	public function __Construct(string $module=null)
 	{
-		$this->module=$module; 
+		$this->module=$module;
 
 	}
 
@@ -30,15 +29,15 @@ class CustomViewsOperations
 	 */
 	public  function getCustomViews(ParameterMap $paramInstance=null)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/custom_views'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.CustomViews.GetCustomViewsParam'), $this->module); 
-		$handlerInstance->setParam($paramInstance); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/custom_views');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.CustomViews.GetCustomViewsParam'), $this->module);
+		$handlerInstance->setParam($paramInstance);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -49,15 +48,15 @@ class CustomViewsOperations
 	 */
 	public  function getCustomView(string $id)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/custom_views/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.CustomViews.GetCustomViewParam'), $this->module); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/custom_views/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->addParam(new Param('module', 'com.zoho.crm.api.CustomViews.GetCustomViewParam'), $this->module);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
-} 
+}

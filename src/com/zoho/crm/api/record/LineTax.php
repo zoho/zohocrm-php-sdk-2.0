@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class LineTax implements Model
 {
@@ -18,7 +18,7 @@ class LineTax implements Model
 	 */
 	public  function getPercentage()
 	{
-		return $this->percentage; 
+		return $this->percentage;
 
 	}
 
@@ -28,8 +28,8 @@ class LineTax implements Model
 	 */
 	public  function setPercentage(float $percentage)
 	{
-		$this->percentage=$percentage; 
-		$this->keyModified['percentage'] = 1; 
+		$this->percentage=$percentage;
+		$this->keyModified['percentage'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class LineTax implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -49,8 +49,8 @@ class LineTax implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class LineTax implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -70,8 +70,8 @@ class LineTax implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -81,7 +81,7 @@ class LineTax implements Model
 	 */
 	public  function getValue()
 	{
-		return $this->value; 
+		return $this->value;
 
 	}
 
@@ -91,8 +91,8 @@ class LineTax implements Model
 	 */
 	public  function setValue(float $value)
 	{
-		$this->value=$value; 
-		$this->keyModified['value'] = 1; 
+		$this->value=$value;
+		$this->keyModified['value'] = 1;
 
 	}
 
@@ -105,10 +105,10 @@ class LineTax implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -119,7 +119,7 @@ class LineTax implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

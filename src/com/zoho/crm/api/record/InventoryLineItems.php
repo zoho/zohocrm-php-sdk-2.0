@@ -1,8 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class InventoryLineItems extends Record implements Model
 {
@@ -14,7 +13,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getProduct()
 	{
-		return $this->getKeyValue('product'); 
+		return $this->getKeyValue('product');
 
 	}
 
@@ -24,7 +23,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setProduct(LineItemProduct $product)
 	{
-		$this->addKeyValue('product', $product); 
+		$this->addKeyValue('product', $product);
 
 	}
 
@@ -34,7 +33,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getQuantity()
 	{
-		return $this->getKeyValue('quantity'); 
+		return $this->getKeyValue('quantity');
 
 	}
 
@@ -44,7 +43,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setQuantity(float $quantity)
 	{
-		$this->addKeyValue('quantity', $quantity); 
+		$this->addKeyValue('quantity', $quantity);
 
 	}
 
@@ -54,7 +53,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getDiscount()
 	{
-		return $this->getKeyValue('Discount'); 
+		return $this->getKeyValue('Discount');
 
 	}
 
@@ -64,7 +63,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setDiscount(string $discount)
 	{
-		$this->addKeyValue('Discount', $discount); 
+		$this->addKeyValue('Discount', $discount);
 
 	}
 
@@ -74,7 +73,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getTotalAfterDiscount()
 	{
-		return $this->getKeyValue('total_after_discount'); 
+		return $this->getKeyValue('total_after_discount');
 
 	}
 
@@ -84,7 +83,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setTotalAfterDiscount(float $totalAfterDiscount)
 	{
-		$this->addKeyValue('total_after_discount', $totalAfterDiscount); 
+		$this->addKeyValue('total_after_discount', $totalAfterDiscount);
 
 	}
 
@@ -94,7 +93,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getNetTotal()
 	{
-		return $this->getKeyValue('net_total'); 
+		return $this->getKeyValue('net_total');
 
 	}
 
@@ -104,7 +103,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setNetTotal(float $netTotal)
 	{
-		$this->addKeyValue('net_total', $netTotal); 
+		$this->addKeyValue('net_total', $netTotal);
 
 	}
 
@@ -114,7 +113,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getBook()
 	{
-		return $this->getKeyValue('book'); 
+		return $this->getKeyValue('book');
 
 	}
 
@@ -124,7 +123,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setBook(float $book)
 	{
-		$this->addKeyValue('book', $book); 
+		$this->addKeyValue('book', $book);
 
 	}
 
@@ -134,7 +133,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getTax()
 	{
-		return $this->getKeyValue('Tax'); 
+		return $this->getKeyValue('Tax');
 
 	}
 
@@ -144,7 +143,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setTax(float $tax)
 	{
-		$this->addKeyValue('Tax', $tax); 
+		$this->addKeyValue('Tax', $tax);
 
 	}
 
@@ -154,7 +153,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getListPrice()
 	{
-		return $this->getKeyValue('list_price'); 
+		return $this->getKeyValue('list_price');
 
 	}
 
@@ -164,7 +163,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setListPrice(float $listPrice)
 	{
-		$this->addKeyValue('list_price', $listPrice); 
+		$this->addKeyValue('list_price', $listPrice);
 
 	}
 
@@ -174,7 +173,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getUnitPrice()
 	{
-		return $this->getKeyValue('unit_price'); 
+		return $this->getKeyValue('unit_price');
 
 	}
 
@@ -184,7 +183,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setUnitPrice(float $unitPrice)
 	{
-		$this->addKeyValue('unit_price', $unitPrice); 
+		$this->addKeyValue('unit_price', $unitPrice);
 
 	}
 
@@ -194,7 +193,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getQuantityInStock()
 	{
-		return $this->getKeyValue('quantity_in_stock'); 
+		return $this->getKeyValue('quantity_in_stock');
 
 	}
 
@@ -204,7 +203,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setQuantityInStock(float $quantityInStock)
 	{
-		$this->addKeyValue('quantity_in_stock', $quantityInStock); 
+		$this->addKeyValue('quantity_in_stock', $quantityInStock);
 
 	}
 
@@ -214,7 +213,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getTotal()
 	{
-		return $this->getKeyValue('total'); 
+		return $this->getKeyValue('total');
 
 	}
 
@@ -224,7 +223,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setTotal(float $total)
 	{
-		$this->addKeyValue('total', $total); 
+		$this->addKeyValue('total', $total);
 
 	}
 
@@ -234,7 +233,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getProductDescription()
 	{
-		return $this->getKeyValue('product_description'); 
+		return $this->getKeyValue('product_description');
 
 	}
 
@@ -244,7 +243,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setProductDescription(string $productDescription)
 	{
-		$this->addKeyValue('product_description', $productDescription); 
+		$this->addKeyValue('product_description', $productDescription);
 
 	}
 
@@ -254,7 +253,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function getLineTax()
 	{
-		return $this->getKeyValue('line_tax'); 
+		return $this->getKeyValue('line_tax');
 
 	}
 
@@ -264,7 +263,7 @@ class InventoryLineItems extends Record implements Model
 	 */
 	public  function setLineTax(array $lineTax)
 	{
-		$this->addKeyValue('line_tax', $lineTax); 
+		$this->addKeyValue('line_tax', $lineTax);
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class AutoNumber implements Model
 {
@@ -17,7 +17,7 @@ class AutoNumber implements Model
 	 */
 	public  function getPrefix()
 	{
-		return $this->prefix; 
+		return $this->prefix;
 
 	}
 
@@ -27,8 +27,8 @@ class AutoNumber implements Model
 	 */
 	public  function setPrefix(string $prefix)
 	{
-		$this->prefix=$prefix; 
-		$this->keyModified['prefix'] = 1; 
+		$this->prefix=$prefix;
+		$this->keyModified['prefix'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class AutoNumber implements Model
 	 */
 	public  function getSuffix()
 	{
-		return $this->suffix; 
+		return $this->suffix;
 
 	}
 
@@ -48,8 +48,8 @@ class AutoNumber implements Model
 	 */
 	public  function setSuffix(string $suffix)
 	{
-		$this->suffix=$suffix; 
-		$this->keyModified['suffix'] = 1; 
+		$this->suffix=$suffix;
+		$this->keyModified['suffix'] = 1;
 
 	}
 
@@ -59,7 +59,7 @@ class AutoNumber implements Model
 	 */
 	public  function getStartNumber()
 	{
-		return $this->startNumber; 
+		return $this->startNumber;
 
 	}
 
@@ -69,8 +69,8 @@ class AutoNumber implements Model
 	 */
 	public  function setStartNumber(int $startNumber)
 	{
-		$this->startNumber=$startNumber; 
-		$this->keyModified['start_number'] = 1; 
+		$this->startNumber=$startNumber;
+		$this->keyModified['start_number'] = 1;
 
 	}
 
@@ -83,10 +83,10 @@ class AutoNumber implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -97,7 +97,7 @@ class AutoNumber implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

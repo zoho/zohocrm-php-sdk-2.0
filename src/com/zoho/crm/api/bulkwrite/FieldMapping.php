@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkwrite;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class FieldMapping implements Model
 {
@@ -20,7 +20,7 @@ class FieldMapping implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -30,8 +30,8 @@ class FieldMapping implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class FieldMapping implements Model
 	 */
 	public  function getIndex()
 	{
-		return $this->index; 
+		return $this->index;
 
 	}
 
@@ -51,8 +51,8 @@ class FieldMapping implements Model
 	 */
 	public  function setIndex(int $index)
 	{
-		$this->index=$index; 
-		$this->keyModified['index'] = 1; 
+		$this->index=$index;
+		$this->keyModified['index'] = 1;
 
 	}
 
@@ -62,7 +62,7 @@ class FieldMapping implements Model
 	 */
 	public  function getFormat()
 	{
-		return $this->format; 
+		return $this->format;
 
 	}
 
@@ -72,8 +72,8 @@ class FieldMapping implements Model
 	 */
 	public  function setFormat(string $format)
 	{
-		$this->format=$format; 
-		$this->keyModified['format'] = 1; 
+		$this->format=$format;
+		$this->keyModified['format'] = 1;
 
 	}
 
@@ -83,7 +83,7 @@ class FieldMapping implements Model
 	 */
 	public  function getFindBy()
 	{
-		return $this->findBy; 
+		return $this->findBy;
 
 	}
 
@@ -93,8 +93,8 @@ class FieldMapping implements Model
 	 */
 	public  function setFindBy(string $findBy)
 	{
-		$this->findBy=$findBy; 
-		$this->keyModified['find_by'] = 1; 
+		$this->findBy=$findBy;
+		$this->keyModified['find_by'] = 1;
 
 	}
 
@@ -104,7 +104,7 @@ class FieldMapping implements Model
 	 */
 	public  function getDefaultValue()
 	{
-		return $this->defaultValue; 
+		return $this->defaultValue;
 
 	}
 
@@ -114,8 +114,8 @@ class FieldMapping implements Model
 	 */
 	public  function setDefaultValue(array $defaultValue)
 	{
-		$this->defaultValue=$defaultValue; 
-		$this->keyModified['default_value'] = 1; 
+		$this->defaultValue=$defaultValue;
+		$this->keyModified['default_value'] = 1;
 
 	}
 
@@ -125,7 +125,7 @@ class FieldMapping implements Model
 	 */
 	public  function getModule()
 	{
-		return $this->module; 
+		return $this->module;
 
 	}
 
@@ -135,8 +135,8 @@ class FieldMapping implements Model
 	 */
 	public  function setModule(string $module)
 	{
-		$this->module=$module; 
-		$this->keyModified['module'] = 1; 
+		$this->module=$module;
+		$this->keyModified['module'] = 1;
 
 	}
 
@@ -149,10 +149,10 @@ class FieldMapping implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -163,7 +163,7 @@ class FieldMapping implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Info implements Model
 {
@@ -18,7 +18,7 @@ class Info implements Model
 	 */
 	public  function getPerPage()
 	{
-		return $this->perPage; 
+		return $this->perPage;
 
 	}
 
@@ -28,8 +28,8 @@ class Info implements Model
 	 */
 	public  function setPerPage(int $perPage)
 	{
-		$this->perPage=$perPage; 
-		$this->keyModified['per_page'] = 1; 
+		$this->perPage=$perPage;
+		$this->keyModified['per_page'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class Info implements Model
 	 */
 	public  function getCount()
 	{
-		return $this->count; 
+		return $this->count;
 
 	}
 
@@ -49,8 +49,8 @@ class Info implements Model
 	 */
 	public  function setCount(int $count)
 	{
-		$this->count=$count; 
-		$this->keyModified['count'] = 1; 
+		$this->count=$count;
+		$this->keyModified['count'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class Info implements Model
 	 */
 	public  function getPage()
 	{
-		return $this->page; 
+		return $this->page;
 
 	}
 
@@ -70,8 +70,8 @@ class Info implements Model
 	 */
 	public  function setPage(int $page)
 	{
-		$this->page=$page; 
-		$this->keyModified['page'] = 1; 
+		$this->page=$page;
+		$this->keyModified['page'] = 1;
 
 	}
 
@@ -81,7 +81,7 @@ class Info implements Model
 	 */
 	public  function getMoreRecords()
 	{
-		return $this->moreRecords; 
+		return $this->moreRecords;
 
 	}
 
@@ -91,8 +91,8 @@ class Info implements Model
 	 */
 	public  function setMoreRecords(bool $moreRecords)
 	{
-		$this->moreRecords=$moreRecords; 
-		$this->keyModified['more_records'] = 1; 
+		$this->moreRecords=$moreRecords;
+		$this->keyModified['more_records'] = 1;
 
 	}
 
@@ -105,10 +105,10 @@ class Info implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -119,7 +119,7 @@ class Info implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

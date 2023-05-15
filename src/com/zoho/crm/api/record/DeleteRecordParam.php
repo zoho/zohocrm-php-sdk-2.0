@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\Param;
+use Zoho\Crm\Param;
 
 class DeleteRecordParam
 {
 
 	public static final function wfTrigger()
 	{
-		return new Param('wf_trigger', 'com.zoho.crm.api.Record.DeleteRecordParam'); 
+		return new Param('wf_trigger', 'com.zoho.crm.api.Record.DeleteRecordParam');
 
 	}
-} 
+}

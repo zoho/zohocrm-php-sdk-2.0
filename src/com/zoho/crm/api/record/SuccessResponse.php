@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class SuccessResponse implements Model, ActionResponse, FileHandler
 {
@@ -21,7 +21,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -31,8 +31,8 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setStatus(Choice $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -42,7 +42,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function getCode()
 	{
-		return $this->code; 
+		return $this->code;
 
 	}
 
@@ -52,8 +52,8 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setCode(Choice $code)
 	{
-		$this->code=$code; 
-		$this->keyModified['code'] = 1; 
+		$this->code=$code;
+		$this->keyModified['code'] = 1;
 
 	}
 
@@ -63,7 +63,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function getDuplicateField()
 	{
-		return $this->duplicateField; 
+		return $this->duplicateField;
 
 	}
 
@@ -73,8 +73,8 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setDuplicateField(string $duplicateField)
 	{
-		$this->duplicateField=$duplicateField; 
-		$this->keyModified['duplicate_field'] = 1; 
+		$this->duplicateField=$duplicateField;
+		$this->keyModified['duplicate_field'] = 1;
 
 	}
 
@@ -84,7 +84,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function getAction()
 	{
-		return $this->action; 
+		return $this->action;
 
 	}
 
@@ -94,8 +94,8 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setAction(Choice $action)
 	{
-		$this->action=$action; 
-		$this->keyModified['action'] = 1; 
+		$this->action=$action;
+		$this->keyModified['action'] = 1;
 
 	}
 
@@ -105,7 +105,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function getMessage()
 	{
-		return $this->message; 
+		return $this->message;
 
 	}
 
@@ -115,8 +115,8 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setMessage(Choice $message)
 	{
-		$this->message=$message; 
-		$this->keyModified['message'] = 1; 
+		$this->message=$message;
+		$this->keyModified['message'] = 1;
 
 	}
 
@@ -126,7 +126,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function getDetails()
 	{
-		return $this->details; 
+		return $this->details;
 
 	}
 
@@ -136,8 +136,8 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setDetails(array $details)
 	{
-		$this->details=$details; 
-		$this->keyModified['details'] = 1; 
+		$this->details=$details;
+		$this->keyModified['details'] = 1;
 
 	}
 
@@ -150,10 +150,10 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -164,7 +164,7 @@ class SuccessResponse implements Model, ActionResponse, FileHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

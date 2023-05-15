@@ -1,8 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\layouts;
 
-use com\zoho\crm\api\fields\Field;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Section implements Model
 {
@@ -25,7 +24,7 @@ class Section implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -35,8 +34,8 @@ class Section implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -46,7 +45,7 @@ class Section implements Model
 	 */
 	public  function getSequenceNumber()
 	{
-		return $this->sequenceNumber; 
+		return $this->sequenceNumber;
 
 	}
 
@@ -56,8 +55,8 @@ class Section implements Model
 	 */
 	public  function setSequenceNumber(int $sequenceNumber)
 	{
-		$this->sequenceNumber=$sequenceNumber; 
-		$this->keyModified['sequence_number'] = 1; 
+		$this->sequenceNumber=$sequenceNumber;
+		$this->keyModified['sequence_number'] = 1;
 
 	}
 
@@ -67,7 +66,7 @@ class Section implements Model
 	 */
 	public  function getIssubformsection()
 	{
-		return $this->issubformsection; 
+		return $this->issubformsection;
 
 	}
 
@@ -77,8 +76,8 @@ class Section implements Model
 	 */
 	public  function setIssubformsection(bool $issubformsection)
 	{
-		$this->issubformsection=$issubformsection; 
-		$this->keyModified['isSubformSection'] = 1; 
+		$this->issubformsection=$issubformsection;
+		$this->keyModified['isSubformSection'] = 1;
 
 	}
 
@@ -88,7 +87,7 @@ class Section implements Model
 	 */
 	public  function getTabTraversal()
 	{
-		return $this->tabTraversal; 
+		return $this->tabTraversal;
 
 	}
 
@@ -98,8 +97,8 @@ class Section implements Model
 	 */
 	public  function setTabTraversal(int $tabTraversal)
 	{
-		$this->tabTraversal=$tabTraversal; 
-		$this->keyModified['tab_traversal'] = 1; 
+		$this->tabTraversal=$tabTraversal;
+		$this->keyModified['tab_traversal'] = 1;
 
 	}
 
@@ -109,7 +108,7 @@ class Section implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -119,8 +118,8 @@ class Section implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -130,7 +129,7 @@ class Section implements Model
 	 */
 	public  function getColumnCount()
 	{
-		return $this->columnCount; 
+		return $this->columnCount;
 
 	}
 
@@ -140,8 +139,8 @@ class Section implements Model
 	 */
 	public  function setColumnCount(int $columnCount)
 	{
-		$this->columnCount=$columnCount; 
-		$this->keyModified['column_count'] = 1; 
+		$this->columnCount=$columnCount;
+		$this->keyModified['column_count'] = 1;
 
 	}
 
@@ -151,7 +150,7 @@ class Section implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -161,8 +160,8 @@ class Section implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -172,7 +171,7 @@ class Section implements Model
 	 */
 	public  function getGeneratedType()
 	{
-		return $this->generatedType; 
+		return $this->generatedType;
 
 	}
 
@@ -182,8 +181,8 @@ class Section implements Model
 	 */
 	public  function setGeneratedType(string $generatedType)
 	{
-		$this->generatedType=$generatedType; 
-		$this->keyModified['generated_type'] = 1; 
+		$this->generatedType=$generatedType;
+		$this->keyModified['generated_type'] = 1;
 
 	}
 
@@ -193,7 +192,7 @@ class Section implements Model
 	 */
 	public  function getFields()
 	{
-		return $this->fields; 
+		return $this->fields;
 
 	}
 
@@ -203,8 +202,8 @@ class Section implements Model
 	 */
 	public  function setFields(array $fields)
 	{
-		$this->fields=$fields; 
-		$this->keyModified['fields'] = 1; 
+		$this->fields=$fields;
+		$this->keyModified['fields'] = 1;
 
 	}
 
@@ -214,7 +213,7 @@ class Section implements Model
 	 */
 	public  function getProperties()
 	{
-		return $this->properties; 
+		return $this->properties;
 
 	}
 
@@ -224,8 +223,8 @@ class Section implements Model
 	 */
 	public  function setProperties(Properties $properties)
 	{
-		$this->properties=$properties; 
-		$this->keyModified['properties'] = 1; 
+		$this->properties=$properties;
+		$this->keyModified['properties'] = 1;
 
 	}
 
@@ -238,10 +237,10 @@ class Section implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -252,7 +251,7 @@ class Section implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class FileDetails implements Model
 {
@@ -29,7 +29,7 @@ class FileDetails implements Model
 	 */
 	public  function getExtn()
 	{
-		return $this->extn; 
+		return $this->extn;
 
 	}
 
@@ -39,8 +39,8 @@ class FileDetails implements Model
 	 */
 	public  function setExtn(string $extn)
 	{
-		$this->extn=$extn; 
-		$this->keyModified['extn'] = 1; 
+		$this->extn=$extn;
+		$this->keyModified['extn'] = 1;
 
 	}
 
@@ -50,7 +50,7 @@ class FileDetails implements Model
 	 */
 	public  function getIsPreviewAvailable()
 	{
-		return $this->isPreviewAvailable; 
+		return $this->isPreviewAvailable;
 
 	}
 
@@ -60,8 +60,8 @@ class FileDetails implements Model
 	 */
 	public  function setIsPreviewAvailable(bool $isPreviewAvailable)
 	{
-		$this->isPreviewAvailable=$isPreviewAvailable; 
-		$this->keyModified['is_Preview_Available'] = 1; 
+		$this->isPreviewAvailable=$isPreviewAvailable;
+		$this->keyModified['is_Preview_Available'] = 1;
 
 	}
 
@@ -71,7 +71,7 @@ class FileDetails implements Model
 	 */
 	public  function getDownloadUrl()
 	{
-		return $this->downloadUrl; 
+		return $this->downloadUrl;
 
 	}
 
@@ -81,8 +81,8 @@ class FileDetails implements Model
 	 */
 	public  function setDownloadUrl(string $downloadUrl)
 	{
-		$this->downloadUrl=$downloadUrl; 
-		$this->keyModified['download_Url'] = 1; 
+		$this->downloadUrl=$downloadUrl;
+		$this->keyModified['download_Url'] = 1;
 
 	}
 
@@ -92,7 +92,7 @@ class FileDetails implements Model
 	 */
 	public  function getDeleteUrl()
 	{
-		return $this->deleteUrl; 
+		return $this->deleteUrl;
 
 	}
 
@@ -102,8 +102,8 @@ class FileDetails implements Model
 	 */
 	public  function setDeleteUrl(string $deleteUrl)
 	{
-		$this->deleteUrl=$deleteUrl; 
-		$this->keyModified['delete_Url'] = 1; 
+		$this->deleteUrl=$deleteUrl;
+		$this->keyModified['delete_Url'] = 1;
 
 	}
 
@@ -113,7 +113,7 @@ class FileDetails implements Model
 	 */
 	public  function getEntityId()
 	{
-		return $this->entityId; 
+		return $this->entityId;
 
 	}
 
@@ -123,8 +123,8 @@ class FileDetails implements Model
 	 */
 	public  function setEntityId(string $entityId)
 	{
-		$this->entityId=$entityId; 
-		$this->keyModified['entity_Id'] = 1; 
+		$this->entityId=$entityId;
+		$this->keyModified['entity_Id'] = 1;
 
 	}
 
@@ -134,7 +134,7 @@ class FileDetails implements Model
 	 */
 	public  function getMode()
 	{
-		return $this->mode; 
+		return $this->mode;
 
 	}
 
@@ -144,8 +144,8 @@ class FileDetails implements Model
 	 */
 	public  function setMode(string $mode)
 	{
-		$this->mode=$mode; 
-		$this->keyModified['mode'] = 1; 
+		$this->mode=$mode;
+		$this->keyModified['mode'] = 1;
 
 	}
 
@@ -155,7 +155,7 @@ class FileDetails implements Model
 	 */
 	public  function getOriginalSizeByte()
 	{
-		return $this->originalSizeByte; 
+		return $this->originalSizeByte;
 
 	}
 
@@ -165,8 +165,8 @@ class FileDetails implements Model
 	 */
 	public  function setOriginalSizeByte(string $originalSizeByte)
 	{
-		$this->originalSizeByte=$originalSizeByte; 
-		$this->keyModified['original_Size_Byte'] = 1; 
+		$this->originalSizeByte=$originalSizeByte;
+		$this->keyModified['original_Size_Byte'] = 1;
 
 	}
 
@@ -176,7 +176,7 @@ class FileDetails implements Model
 	 */
 	public  function getPreviewUrl()
 	{
-		return $this->previewUrl; 
+		return $this->previewUrl;
 
 	}
 
@@ -186,8 +186,8 @@ class FileDetails implements Model
 	 */
 	public  function setPreviewUrl(string $previewUrl)
 	{
-		$this->previewUrl=$previewUrl; 
-		$this->keyModified['preview_Url'] = 1; 
+		$this->previewUrl=$previewUrl;
+		$this->keyModified['preview_Url'] = 1;
 
 	}
 
@@ -197,7 +197,7 @@ class FileDetails implements Model
 	 */
 	public  function getFileName()
 	{
-		return $this->fileName; 
+		return $this->fileName;
 
 	}
 
@@ -207,8 +207,8 @@ class FileDetails implements Model
 	 */
 	public  function setFileName(string $fileName)
 	{
-		$this->fileName=$fileName; 
-		$this->keyModified['file_Name'] = 1; 
+		$this->fileName=$fileName;
+		$this->keyModified['file_Name'] = 1;
 
 	}
 
@@ -218,7 +218,7 @@ class FileDetails implements Model
 	 */
 	public  function getFileId()
 	{
-		return $this->fileId; 
+		return $this->fileId;
 
 	}
 
@@ -228,8 +228,8 @@ class FileDetails implements Model
 	 */
 	public  function setFileId(string $fileId)
 	{
-		$this->fileId=$fileId; 
-		$this->keyModified['file_Id'] = 1; 
+		$this->fileId=$fileId;
+		$this->keyModified['file_Id'] = 1;
 
 	}
 
@@ -239,7 +239,7 @@ class FileDetails implements Model
 	 */
 	public  function getAttachmentId()
 	{
-		return $this->attachmentId; 
+		return $this->attachmentId;
 
 	}
 
@@ -249,8 +249,8 @@ class FileDetails implements Model
 	 */
 	public  function setAttachmentId(string $attachmentId)
 	{
-		$this->attachmentId=$attachmentId; 
-		$this->keyModified['attachment_Id'] = 1; 
+		$this->attachmentId=$attachmentId;
+		$this->keyModified['attachment_Id'] = 1;
 
 	}
 
@@ -260,7 +260,7 @@ class FileDetails implements Model
 	 */
 	public  function getFileSize()
 	{
-		return $this->fileSize; 
+		return $this->fileSize;
 
 	}
 
@@ -270,8 +270,8 @@ class FileDetails implements Model
 	 */
 	public  function setFileSize(string $fileSize)
 	{
-		$this->fileSize=$fileSize; 
-		$this->keyModified['file_Size'] = 1; 
+		$this->fileSize=$fileSize;
+		$this->keyModified['file_Size'] = 1;
 
 	}
 
@@ -281,7 +281,7 @@ class FileDetails implements Model
 	 */
 	public  function getCreatorId()
 	{
-		return $this->creatorId; 
+		return $this->creatorId;
 
 	}
 
@@ -291,8 +291,8 @@ class FileDetails implements Model
 	 */
 	public  function setCreatorId(string $creatorId)
 	{
-		$this->creatorId=$creatorId; 
-		$this->keyModified['creator_Id'] = 1; 
+		$this->creatorId=$creatorId;
+		$this->keyModified['creator_Id'] = 1;
 
 	}
 
@@ -302,7 +302,7 @@ class FileDetails implements Model
 	 */
 	public  function getLinkDocs()
 	{
-		return $this->linkDocs; 
+		return $this->linkDocs;
 
 	}
 
@@ -312,8 +312,8 @@ class FileDetails implements Model
 	 */
 	public  function setLinkDocs(int $linkDocs)
 	{
-		$this->linkDocs=$linkDocs; 
-		$this->keyModified['link_Docs'] = 1; 
+		$this->linkDocs=$linkDocs;
+		$this->keyModified['link_Docs'] = 1;
 
 	}
 
@@ -323,7 +323,7 @@ class FileDetails implements Model
 	 */
 	public  function getDelete()
 	{
-		return $this->delete; 
+		return $this->delete;
 
 	}
 
@@ -333,8 +333,8 @@ class FileDetails implements Model
 	 */
 	public  function setDelete(string $delete)
 	{
-		$this->delete=$delete; 
-		$this->keyModified['_delete'] = 1; 
+		$this->delete=$delete;
+		$this->keyModified['_delete'] = 1;
 
 	}
 
@@ -347,10 +347,10 @@ class FileDetails implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -361,7 +361,7 @@ class FileDetails implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

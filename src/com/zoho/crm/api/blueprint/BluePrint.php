@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\blueprint;
 
 use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class BluePrint implements Model
 {
@@ -19,7 +19,7 @@ class BluePrint implements Model
 	 */
 	public  function getTransitionId()
 	{
-		return $this->transitionId; 
+		return $this->transitionId;
 
 	}
 
@@ -29,8 +29,8 @@ class BluePrint implements Model
 	 */
 	public  function setTransitionId(string $transitionId)
 	{
-		$this->transitionId=$transitionId; 
-		$this->keyModified['transition_id'] = 1; 
+		$this->transitionId=$transitionId;
+		$this->keyModified['transition_id'] = 1;
 
 	}
 
@@ -40,7 +40,7 @@ class BluePrint implements Model
 	 */
 	public  function getData()
 	{
-		return $this->data; 
+		return $this->data;
 
 	}
 
@@ -50,8 +50,8 @@ class BluePrint implements Model
 	 */
 	public  function setData(Record $data)
 	{
-		$this->data=$data; 
-		$this->keyModified['data'] = 1; 
+		$this->data=$data;
+		$this->keyModified['data'] = 1;
 
 	}
 
@@ -61,7 +61,7 @@ class BluePrint implements Model
 	 */
 	public  function getProcessInfo()
 	{
-		return $this->processInfo; 
+		return $this->processInfo;
 
 	}
 
@@ -71,8 +71,8 @@ class BluePrint implements Model
 	 */
 	public  function setProcessInfo(ProcessInfo $processInfo)
 	{
-		$this->processInfo=$processInfo; 
-		$this->keyModified['process_info'] = 1; 
+		$this->processInfo=$processInfo;
+		$this->keyModified['process_info'] = 1;
 
 	}
 
@@ -82,7 +82,7 @@ class BluePrint implements Model
 	 */
 	public  function getTransitions()
 	{
-		return $this->transitions; 
+		return $this->transitions;
 
 	}
 
@@ -92,8 +92,8 @@ class BluePrint implements Model
 	 */
 	public  function setTransitions(array $transitions)
 	{
-		$this->transitions=$transitions; 
-		$this->keyModified['transitions'] = 1; 
+		$this->transitions=$transitions;
+		$this->keyModified['transitions'] = 1;
 
 	}
 
@@ -106,10 +106,10 @@ class BluePrint implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -120,7 +120,7 @@ class BluePrint implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,9 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\tags\Tag;
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class Record implements Model
 {
@@ -17,7 +16,7 @@ class Record implements Model
 	 */
 	public  function getId()
 	{
-		return $this->getKeyValue('id'); 
+		return $this->getKeyValue('id');
 
 	}
 
@@ -27,7 +26,7 @@ class Record implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->addKeyValue('id', $id); 
+		$this->addKeyValue('id', $id);
 
 	}
 
@@ -37,7 +36,7 @@ class Record implements Model
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->getKeyValue('Created_By'); 
+		return $this->getKeyValue('Created_By');
 
 	}
 
@@ -47,7 +46,7 @@ class Record implements Model
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->addKeyValue('Created_By', $createdBy); 
+		$this->addKeyValue('Created_By', $createdBy);
 
 	}
 
@@ -57,7 +56,7 @@ class Record implements Model
 	 */
 	public  function getCreatedTime()
 	{
-		return $this->getKeyValue('Created_Time'); 
+		return $this->getKeyValue('Created_Time');
 
 	}
 
@@ -67,7 +66,7 @@ class Record implements Model
 	 */
 	public  function setCreatedTime(\DateTime $createdTime)
 	{
-		$this->addKeyValue('Created_Time', $createdTime); 
+		$this->addKeyValue('Created_Time', $createdTime);
 
 	}
 
@@ -77,7 +76,7 @@ class Record implements Model
 	 */
 	public  function getModifiedBy()
 	{
-		return $this->getKeyValue('Modified_By'); 
+		return $this->getKeyValue('Modified_By');
 
 	}
 
@@ -87,7 +86,7 @@ class Record implements Model
 	 */
 	public  function setModifiedBy(User $modifiedBy)
 	{
-		$this->addKeyValue('Modified_By', $modifiedBy); 
+		$this->addKeyValue('Modified_By', $modifiedBy);
 
 	}
 
@@ -97,7 +96,7 @@ class Record implements Model
 	 */
 	public  function getModifiedTime()
 	{
-		return $this->getKeyValue('Modified_Time'); 
+		return $this->getKeyValue('Modified_Time');
 
 	}
 
@@ -107,7 +106,7 @@ class Record implements Model
 	 */
 	public  function setModifiedTime(\DateTime $modifiedTime)
 	{
-		$this->addKeyValue('Modified_Time', $modifiedTime); 
+		$this->addKeyValue('Modified_Time', $modifiedTime);
 
 	}
 
@@ -117,7 +116,7 @@ class Record implements Model
 	 */
 	public  function getTag()
 	{
-		return $this->getKeyValue('Tag'); 
+		return $this->getKeyValue('Tag');
 
 	}
 
@@ -127,30 +126,30 @@ class Record implements Model
 	 */
 	public  function setTag(array $tag)
 	{
-		$this->addKeyValue('Tag', $tag); 
+		$this->addKeyValue('Tag', $tag);
 
 	}
 
 	/**
 	 * The method to add field value
 	 * @param Field $field An instance of Field
-	 * @param 
+	 * @param
 	 */
 	public  function addFieldValue(Field $field,  $value)
 	{
-		$this->addKeyValue($field->getAPIName(), $value); 
+		$this->addKeyValue($field->getAPIName(), $value);
 
 	}
 
 	/**
 	 * The method to add key value
 	 * @param string $apiName A string
-	 * @param 
+	 * @param
 	 */
 	public  function addKeyValue(string $apiName,  $value)
 	{
-		$this->keyValues[$apiName] = $value; 
-		$this->keyModified[$apiName] = 1; 
+		$this->keyValues[$apiName] = $value;
+		$this->keyModified[$apiName] = 1;
 
 	}
 
@@ -162,10 +161,10 @@ class Record implements Model
 	{
 		if(((array_key_exists($apiName, $this->keyValues))))
 		{
-			return $this->keyValues[$apiName]; 
+			return $this->keyValues[$apiName];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -175,7 +174,7 @@ class Record implements Model
 	 */
 	public  function getKeyValues()
 	{
-		return $this->keyValues; 
+		return $this->keyValues;
 
 	}
 
@@ -188,10 +187,10 @@ class Record implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -202,7 +201,7 @@ class Record implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

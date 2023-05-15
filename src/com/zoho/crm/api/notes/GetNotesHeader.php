@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\notes;
 
-use com\zoho\crm\api\Header;
+use Zoho\Crm\Header;
 
 class GetNotesHeader
 {
 
 	public static final function IfModifiedSince()
 	{
-		return new Header('If-Modified-Since', 'com.zoho.crm.api.Notes.GetNotesHeader'); 
+		return new Header('If-Modified-Since', 'com.zoho.crm.api.Notes.GetNotesHeader');
 
 	}
-} 
+}

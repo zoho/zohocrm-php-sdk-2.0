@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class RemindAt implements Model
 {
@@ -15,7 +15,7 @@ class RemindAt implements Model
 	 */
 	public  function getAlarm()
 	{
-		return $this->alarm; 
+		return $this->alarm;
 
 	}
 
@@ -25,8 +25,8 @@ class RemindAt implements Model
 	 */
 	public  function setAlarm(string $alarm)
 	{
-		$this->alarm=$alarm; 
-		$this->keyModified['ALARM'] = 1; 
+		$this->alarm=$alarm;
+		$this->keyModified['ALARM'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class RemindAt implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class RemindAt implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

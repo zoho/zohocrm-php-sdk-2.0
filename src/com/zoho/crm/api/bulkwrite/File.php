@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkwrite;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class File implements Model
 {
@@ -21,7 +21,7 @@ class File implements Model
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -31,8 +31,8 @@ class File implements Model
 	 */
 	public  function setStatus(Choice $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -42,7 +42,7 @@ class File implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -52,8 +52,8 @@ class File implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -63,7 +63,7 @@ class File implements Model
 	 */
 	public  function getAddedCount()
 	{
-		return $this->addedCount; 
+		return $this->addedCount;
 
 	}
 
@@ -73,8 +73,8 @@ class File implements Model
 	 */
 	public  function setAddedCount(int $addedCount)
 	{
-		$this->addedCount=$addedCount; 
-		$this->keyModified['added_count'] = 1; 
+		$this->addedCount=$addedCount;
+		$this->keyModified['added_count'] = 1;
 
 	}
 
@@ -84,7 +84,7 @@ class File implements Model
 	 */
 	public  function getSkippedCount()
 	{
-		return $this->skippedCount; 
+		return $this->skippedCount;
 
 	}
 
@@ -94,8 +94,8 @@ class File implements Model
 	 */
 	public  function setSkippedCount(int $skippedCount)
 	{
-		$this->skippedCount=$skippedCount; 
-		$this->keyModified['skipped_count'] = 1; 
+		$this->skippedCount=$skippedCount;
+		$this->keyModified['skipped_count'] = 1;
 
 	}
 
@@ -105,7 +105,7 @@ class File implements Model
 	 */
 	public  function getUpdatedCount()
 	{
-		return $this->updatedCount; 
+		return $this->updatedCount;
 
 	}
 
@@ -115,8 +115,8 @@ class File implements Model
 	 */
 	public  function setUpdatedCount(int $updatedCount)
 	{
-		$this->updatedCount=$updatedCount; 
-		$this->keyModified['updated_count'] = 1; 
+		$this->updatedCount=$updatedCount;
+		$this->keyModified['updated_count'] = 1;
 
 	}
 
@@ -126,7 +126,7 @@ class File implements Model
 	 */
 	public  function getTotalCount()
 	{
-		return $this->totalCount; 
+		return $this->totalCount;
 
 	}
 
@@ -136,8 +136,8 @@ class File implements Model
 	 */
 	public  function setTotalCount(int $totalCount)
 	{
-		$this->totalCount=$totalCount; 
-		$this->keyModified['total_count'] = 1; 
+		$this->totalCount=$totalCount;
+		$this->keyModified['total_count'] = 1;
 
 	}
 
@@ -150,10 +150,10 @@ class File implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -164,7 +164,7 @@ class File implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,11 +1,10 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\modules;
 
 use com\zoho\crm\api\customviews\CustomView;
-use com\zoho\crm\api\profiles\Profile;
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class Module implements Model
 {
@@ -62,7 +61,7 @@ class Module implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -72,8 +71,8 @@ class Module implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -83,7 +82,7 @@ class Module implements Model
 	 */
 	public  function getGlobalSearchSupported()
 	{
-		return $this->globalSearchSupported; 
+		return $this->globalSearchSupported;
 
 	}
 
@@ -93,8 +92,8 @@ class Module implements Model
 	 */
 	public  function setGlobalSearchSupported(bool $globalSearchSupported)
 	{
-		$this->globalSearchSupported=$globalSearchSupported; 
-		$this->keyModified['global_search_supported'] = 1; 
+		$this->globalSearchSupported=$globalSearchSupported;
+		$this->keyModified['global_search_supported'] = 1;
 
 	}
 
@@ -104,7 +103,7 @@ class Module implements Model
 	 */
 	public  function getKanbanView()
 	{
-		return $this->kanbanView; 
+		return $this->kanbanView;
 
 	}
 
@@ -114,8 +113,8 @@ class Module implements Model
 	 */
 	public  function setKanbanView(bool $kanbanView)
 	{
-		$this->kanbanView=$kanbanView; 
-		$this->keyModified['kanban_view'] = 1; 
+		$this->kanbanView=$kanbanView;
+		$this->keyModified['kanban_view'] = 1;
 
 	}
 
@@ -125,7 +124,7 @@ class Module implements Model
 	 */
 	public  function getDeletable()
 	{
-		return $this->deletable; 
+		return $this->deletable;
 
 	}
 
@@ -135,8 +134,8 @@ class Module implements Model
 	 */
 	public  function setDeletable(bool $deletable)
 	{
-		$this->deletable=$deletable; 
-		$this->keyModified['deletable'] = 1; 
+		$this->deletable=$deletable;
+		$this->keyModified['deletable'] = 1;
 
 	}
 
@@ -146,7 +145,7 @@ class Module implements Model
 	 */
 	public  function getDescription()
 	{
-		return $this->description; 
+		return $this->description;
 
 	}
 
@@ -156,8 +155,8 @@ class Module implements Model
 	 */
 	public  function setDescription(string $description)
 	{
-		$this->description=$description; 
-		$this->keyModified['description'] = 1; 
+		$this->description=$description;
+		$this->keyModified['description'] = 1;
 
 	}
 
@@ -167,7 +166,7 @@ class Module implements Model
 	 */
 	public  function getCreatable()
 	{
-		return $this->creatable; 
+		return $this->creatable;
 
 	}
 
@@ -177,8 +176,8 @@ class Module implements Model
 	 */
 	public  function setCreatable(bool $creatable)
 	{
-		$this->creatable=$creatable; 
-		$this->keyModified['creatable'] = 1; 
+		$this->creatable=$creatable;
+		$this->keyModified['creatable'] = 1;
 
 	}
 
@@ -188,7 +187,7 @@ class Module implements Model
 	 */
 	public  function getFilterStatus()
 	{
-		return $this->filterStatus; 
+		return $this->filterStatus;
 
 	}
 
@@ -198,8 +197,8 @@ class Module implements Model
 	 */
 	public  function setFilterStatus(bool $filterStatus)
 	{
-		$this->filterStatus=$filterStatus; 
-		$this->keyModified['filter_status'] = 1; 
+		$this->filterStatus=$filterStatus;
+		$this->keyModified['filter_status'] = 1;
 
 	}
 
@@ -209,7 +208,7 @@ class Module implements Model
 	 */
 	public  function getInventoryTemplateSupported()
 	{
-		return $this->inventoryTemplateSupported; 
+		return $this->inventoryTemplateSupported;
 
 	}
 
@@ -219,8 +218,8 @@ class Module implements Model
 	 */
 	public  function setInventoryTemplateSupported(bool $inventoryTemplateSupported)
 	{
-		$this->inventoryTemplateSupported=$inventoryTemplateSupported; 
-		$this->keyModified['inventory_template_supported'] = 1; 
+		$this->inventoryTemplateSupported=$inventoryTemplateSupported;
+		$this->keyModified['inventory_template_supported'] = 1;
 
 	}
 
@@ -230,7 +229,7 @@ class Module implements Model
 	 */
 	public  function getModifiedTime()
 	{
-		return $this->modifiedTime; 
+		return $this->modifiedTime;
 
 	}
 
@@ -240,8 +239,8 @@ class Module implements Model
 	 */
 	public  function setModifiedTime(\DateTime $modifiedTime)
 	{
-		$this->modifiedTime=$modifiedTime; 
-		$this->keyModified['modified_time'] = 1; 
+		$this->modifiedTime=$modifiedTime;
+		$this->keyModified['modified_time'] = 1;
 
 	}
 
@@ -251,7 +250,7 @@ class Module implements Model
 	 */
 	public  function getPluralLabel()
 	{
-		return $this->pluralLabel; 
+		return $this->pluralLabel;
 
 	}
 
@@ -261,8 +260,8 @@ class Module implements Model
 	 */
 	public  function setPluralLabel(string $pluralLabel)
 	{
-		$this->pluralLabel=$pluralLabel; 
-		$this->keyModified['plural_label'] = 1; 
+		$this->pluralLabel=$pluralLabel;
+		$this->keyModified['plural_label'] = 1;
 
 	}
 
@@ -272,7 +271,7 @@ class Module implements Model
 	 */
 	public  function getPresenceSubMenu()
 	{
-		return $this->presenceSubMenu; 
+		return $this->presenceSubMenu;
 
 	}
 
@@ -282,8 +281,8 @@ class Module implements Model
 	 */
 	public  function setPresenceSubMenu(bool $presenceSubMenu)
 	{
-		$this->presenceSubMenu=$presenceSubMenu; 
-		$this->keyModified['presence_sub_menu'] = 1; 
+		$this->presenceSubMenu=$presenceSubMenu;
+		$this->keyModified['presence_sub_menu'] = 1;
 
 	}
 
@@ -293,7 +292,7 @@ class Module implements Model
 	 */
 	public  function getTriggersSupported()
 	{
-		return $this->triggersSupported; 
+		return $this->triggersSupported;
 
 	}
 
@@ -303,8 +302,8 @@ class Module implements Model
 	 */
 	public  function setTriggersSupported(bool $triggersSupported)
 	{
-		$this->triggersSupported=$triggersSupported; 
-		$this->keyModified['triggers_supported'] = 1; 
+		$this->triggersSupported=$triggersSupported;
+		$this->keyModified['triggers_supported'] = 1;
 
 	}
 
@@ -314,7 +313,7 @@ class Module implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -324,8 +323,8 @@ class Module implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -335,7 +334,7 @@ class Module implements Model
 	 */
 	public  function getRelatedListProperties()
 	{
-		return $this->relatedListProperties; 
+		return $this->relatedListProperties;
 
 	}
 
@@ -345,8 +344,8 @@ class Module implements Model
 	 */
 	public  function setRelatedListProperties(RelatedListProperties $relatedListProperties)
 	{
-		$this->relatedListProperties=$relatedListProperties; 
-		$this->keyModified['related_list_properties'] = 1; 
+		$this->relatedListProperties=$relatedListProperties;
+		$this->keyModified['related_list_properties'] = 1;
 
 	}
 
@@ -356,7 +355,7 @@ class Module implements Model
 	 */
 	public  function getProperties()
 	{
-		return $this->properties; 
+		return $this->properties;
 
 	}
 
@@ -366,8 +365,8 @@ class Module implements Model
 	 */
 	public  function setProperties(array $properties)
 	{
-		$this->properties=$properties; 
-		$this->keyModified['$properties'] = 1; 
+		$this->properties=$properties;
+		$this->keyModified['$properties'] = 1;
 
 	}
 
@@ -377,7 +376,7 @@ class Module implements Model
 	 */
 	public  function getPerPage()
 	{
-		return $this->perPage; 
+		return $this->perPage;
 
 	}
 
@@ -387,8 +386,8 @@ class Module implements Model
 	 */
 	public  function setPerPage(int $perPage)
 	{
-		$this->perPage=$perPage; 
-		$this->keyModified['per_page'] = 1; 
+		$this->perPage=$perPage;
+		$this->keyModified['per_page'] = 1;
 
 	}
 
@@ -398,7 +397,7 @@ class Module implements Model
 	 */
 	public  function getVisibility()
 	{
-		return $this->visibility; 
+		return $this->visibility;
 
 	}
 
@@ -408,8 +407,8 @@ class Module implements Model
 	 */
 	public  function setVisibility(int $visibility)
 	{
-		$this->visibility=$visibility; 
-		$this->keyModified['visibility'] = 1; 
+		$this->visibility=$visibility;
+		$this->keyModified['visibility'] = 1;
 
 	}
 
@@ -419,7 +418,7 @@ class Module implements Model
 	 */
 	public  function getConvertable()
 	{
-		return $this->convertable; 
+		return $this->convertable;
 
 	}
 
@@ -429,8 +428,8 @@ class Module implements Model
 	 */
 	public  function setConvertable(bool $convertable)
 	{
-		$this->convertable=$convertable; 
-		$this->keyModified['convertable'] = 1; 
+		$this->convertable=$convertable;
+		$this->keyModified['convertable'] = 1;
 
 	}
 
@@ -440,7 +439,7 @@ class Module implements Model
 	 */
 	public  function getEditable()
 	{
-		return $this->editable; 
+		return $this->editable;
 
 	}
 
@@ -450,8 +449,8 @@ class Module implements Model
 	 */
 	public  function setEditable(bool $editable)
 	{
-		$this->editable=$editable; 
-		$this->keyModified['editable'] = 1; 
+		$this->editable=$editable;
+		$this->keyModified['editable'] = 1;
 
 	}
 
@@ -461,7 +460,7 @@ class Module implements Model
 	 */
 	public  function getEmailtemplateSupport()
 	{
-		return $this->emailtemplateSupport; 
+		return $this->emailtemplateSupport;
 
 	}
 
@@ -471,8 +470,8 @@ class Module implements Model
 	 */
 	public  function setEmailtemplateSupport(bool $emailtemplateSupport)
 	{
-		$this->emailtemplateSupport=$emailtemplateSupport; 
-		$this->keyModified['emailTemplate_support'] = 1; 
+		$this->emailtemplateSupport=$emailtemplateSupport;
+		$this->keyModified['emailTemplate_support'] = 1;
 
 	}
 
@@ -482,7 +481,7 @@ class Module implements Model
 	 */
 	public  function getProfiles()
 	{
-		return $this->profiles; 
+		return $this->profiles;
 
 	}
 
@@ -492,8 +491,8 @@ class Module implements Model
 	 */
 	public  function setProfiles(array $profiles)
 	{
-		$this->profiles=$profiles; 
-		$this->keyModified['profiles'] = 1; 
+		$this->profiles=$profiles;
+		$this->keyModified['profiles'] = 1;
 
 	}
 
@@ -503,7 +502,7 @@ class Module implements Model
 	 */
 	public  function getFilterSupported()
 	{
-		return $this->filterSupported; 
+		return $this->filterSupported;
 
 	}
 
@@ -513,8 +512,8 @@ class Module implements Model
 	 */
 	public  function setFilterSupported(bool $filterSupported)
 	{
-		$this->filterSupported=$filterSupported; 
-		$this->keyModified['filter_supported'] = 1; 
+		$this->filterSupported=$filterSupported;
+		$this->keyModified['filter_supported'] = 1;
 
 	}
 
@@ -524,7 +523,7 @@ class Module implements Model
 	 */
 	public  function getDisplayField()
 	{
-		return $this->displayField; 
+		return $this->displayField;
 
 	}
 
@@ -534,8 +533,8 @@ class Module implements Model
 	 */
 	public  function setDisplayField(string $displayField)
 	{
-		$this->displayField=$displayField; 
-		$this->keyModified['display_field'] = 1; 
+		$this->displayField=$displayField;
+		$this->keyModified['display_field'] = 1;
 
 	}
 
@@ -545,7 +544,7 @@ class Module implements Model
 	 */
 	public  function getSearchLayoutFields()
 	{
-		return $this->searchLayoutFields; 
+		return $this->searchLayoutFields;
 
 	}
 
@@ -555,8 +554,8 @@ class Module implements Model
 	 */
 	public  function setSearchLayoutFields(array $searchLayoutFields)
 	{
-		$this->searchLayoutFields=$searchLayoutFields; 
-		$this->keyModified['search_layout_fields'] = 1; 
+		$this->searchLayoutFields=$searchLayoutFields;
+		$this->keyModified['search_layout_fields'] = 1;
 
 	}
 
@@ -566,7 +565,7 @@ class Module implements Model
 	 */
 	public  function getKanbanViewSupported()
 	{
-		return $this->kanbanViewSupported; 
+		return $this->kanbanViewSupported;
 
 	}
 
@@ -576,8 +575,8 @@ class Module implements Model
 	 */
 	public  function setKanbanViewSupported(bool $kanbanViewSupported)
 	{
-		$this->kanbanViewSupported=$kanbanViewSupported; 
-		$this->keyModified['kanban_view_supported'] = 1; 
+		$this->kanbanViewSupported=$kanbanViewSupported;
+		$this->keyModified['kanban_view_supported'] = 1;
 
 	}
 
@@ -587,7 +586,7 @@ class Module implements Model
 	 */
 	public  function getShowAsTab()
 	{
-		return $this->showAsTab; 
+		return $this->showAsTab;
 
 	}
 
@@ -597,8 +596,8 @@ class Module implements Model
 	 */
 	public  function setShowAsTab(bool $showAsTab)
 	{
-		$this->showAsTab=$showAsTab; 
-		$this->keyModified['show_as_tab'] = 1; 
+		$this->showAsTab=$showAsTab;
+		$this->keyModified['show_as_tab'] = 1;
 
 	}
 
@@ -608,7 +607,7 @@ class Module implements Model
 	 */
 	public  function getWebLink()
 	{
-		return $this->webLink; 
+		return $this->webLink;
 
 	}
 
@@ -618,8 +617,8 @@ class Module implements Model
 	 */
 	public  function setWebLink(string $webLink)
 	{
-		$this->webLink=$webLink; 
-		$this->keyModified['web_link'] = 1; 
+		$this->webLink=$webLink;
+		$this->keyModified['web_link'] = 1;
 
 	}
 
@@ -629,7 +628,7 @@ class Module implements Model
 	 */
 	public  function getSequenceNumber()
 	{
-		return $this->sequenceNumber; 
+		return $this->sequenceNumber;
 
 	}
 
@@ -639,8 +638,8 @@ class Module implements Model
 	 */
 	public  function setSequenceNumber(int $sequenceNumber)
 	{
-		$this->sequenceNumber=$sequenceNumber; 
-		$this->keyModified['sequence_number'] = 1; 
+		$this->sequenceNumber=$sequenceNumber;
+		$this->keyModified['sequence_number'] = 1;
 
 	}
 
@@ -650,7 +649,7 @@ class Module implements Model
 	 */
 	public  function getSingularLabel()
 	{
-		return $this->singularLabel; 
+		return $this->singularLabel;
 
 	}
 
@@ -660,8 +659,8 @@ class Module implements Model
 	 */
 	public  function setSingularLabel(string $singularLabel)
 	{
-		$this->singularLabel=$singularLabel; 
-		$this->keyModified['singular_label'] = 1; 
+		$this->singularLabel=$singularLabel;
+		$this->keyModified['singular_label'] = 1;
 
 	}
 
@@ -671,7 +670,7 @@ class Module implements Model
 	 */
 	public  function getViewable()
 	{
-		return $this->viewable; 
+		return $this->viewable;
 
 	}
 
@@ -681,8 +680,8 @@ class Module implements Model
 	 */
 	public  function setViewable(bool $viewable)
 	{
-		$this->viewable=$viewable; 
-		$this->keyModified['viewable'] = 1; 
+		$this->viewable=$viewable;
+		$this->keyModified['viewable'] = 1;
 
 	}
 
@@ -692,7 +691,7 @@ class Module implements Model
 	 */
 	public  function getAPISupported()
 	{
-		return $this->apiSupported; 
+		return $this->apiSupported;
 
 	}
 
@@ -702,8 +701,8 @@ class Module implements Model
 	 */
 	public  function setAPISupported(bool $apiSupported)
 	{
-		$this->apiSupported=$apiSupported; 
-		$this->keyModified['api_supported'] = 1; 
+		$this->apiSupported=$apiSupported;
+		$this->keyModified['api_supported'] = 1;
 
 	}
 
@@ -713,7 +712,7 @@ class Module implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -723,8 +722,8 @@ class Module implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -734,7 +733,7 @@ class Module implements Model
 	 */
 	public  function getQuickCreate()
 	{
-		return $this->quickCreate; 
+		return $this->quickCreate;
 
 	}
 
@@ -744,8 +743,8 @@ class Module implements Model
 	 */
 	public  function setQuickCreate(bool $quickCreate)
 	{
-		$this->quickCreate=$quickCreate; 
-		$this->keyModified['quick_create'] = 1; 
+		$this->quickCreate=$quickCreate;
+		$this->keyModified['quick_create'] = 1;
 
 	}
 
@@ -755,7 +754,7 @@ class Module implements Model
 	 */
 	public  function getModifiedBy()
 	{
-		return $this->modifiedBy; 
+		return $this->modifiedBy;
 
 	}
 
@@ -765,8 +764,8 @@ class Module implements Model
 	 */
 	public  function setModifiedBy(User $modifiedBy)
 	{
-		$this->modifiedBy=$modifiedBy; 
-		$this->keyModified['modified_by'] = 1; 
+		$this->modifiedBy=$modifiedBy;
+		$this->keyModified['modified_by'] = 1;
 
 	}
 
@@ -776,7 +775,7 @@ class Module implements Model
 	 */
 	public  function getGeneratedType()
 	{
-		return $this->generatedType; 
+		return $this->generatedType;
 
 	}
 
@@ -786,8 +785,8 @@ class Module implements Model
 	 */
 	public  function setGeneratedType(Choice $generatedType)
 	{
-		$this->generatedType=$generatedType; 
-		$this->keyModified['generated_type'] = 1; 
+		$this->generatedType=$generatedType;
+		$this->keyModified['generated_type'] = 1;
 
 	}
 
@@ -797,7 +796,7 @@ class Module implements Model
 	 */
 	public  function getFeedsRequired()
 	{
-		return $this->feedsRequired; 
+		return $this->feedsRequired;
 
 	}
 
@@ -807,8 +806,8 @@ class Module implements Model
 	 */
 	public  function setFeedsRequired(bool $feedsRequired)
 	{
-		$this->feedsRequired=$feedsRequired; 
-		$this->keyModified['feeds_required'] = 1; 
+		$this->feedsRequired=$feedsRequired;
+		$this->keyModified['feeds_required'] = 1;
 
 	}
 
@@ -818,7 +817,7 @@ class Module implements Model
 	 */
 	public  function getScoringSupported()
 	{
-		return $this->scoringSupported; 
+		return $this->scoringSupported;
 
 	}
 
@@ -828,8 +827,8 @@ class Module implements Model
 	 */
 	public  function setScoringSupported(bool $scoringSupported)
 	{
-		$this->scoringSupported=$scoringSupported; 
-		$this->keyModified['scoring_supported'] = 1; 
+		$this->scoringSupported=$scoringSupported;
+		$this->keyModified['scoring_supported'] = 1;
 
 	}
 
@@ -839,7 +838,7 @@ class Module implements Model
 	 */
 	public  function getWebformSupported()
 	{
-		return $this->webformSupported; 
+		return $this->webformSupported;
 
 	}
 
@@ -849,8 +848,8 @@ class Module implements Model
 	 */
 	public  function setWebformSupported(bool $webformSupported)
 	{
-		$this->webformSupported=$webformSupported; 
-		$this->keyModified['webform_supported'] = 1; 
+		$this->webformSupported=$webformSupported;
+		$this->keyModified['webform_supported'] = 1;
 
 	}
 
@@ -860,7 +859,7 @@ class Module implements Model
 	 */
 	public  function getArguments()
 	{
-		return $this->arguments; 
+		return $this->arguments;
 
 	}
 
@@ -870,8 +869,8 @@ class Module implements Model
 	 */
 	public  function setArguments(array $arguments)
 	{
-		$this->arguments=$arguments; 
-		$this->keyModified['arguments'] = 1; 
+		$this->arguments=$arguments;
+		$this->keyModified['arguments'] = 1;
 
 	}
 
@@ -881,7 +880,7 @@ class Module implements Model
 	 */
 	public  function getModuleName()
 	{
-		return $this->moduleName; 
+		return $this->moduleName;
 
 	}
 
@@ -891,8 +890,8 @@ class Module implements Model
 	 */
 	public  function setModuleName(string $moduleName)
 	{
-		$this->moduleName=$moduleName; 
-		$this->keyModified['module_name'] = 1; 
+		$this->moduleName=$moduleName;
+		$this->keyModified['module_name'] = 1;
 
 	}
 
@@ -902,7 +901,7 @@ class Module implements Model
 	 */
 	public  function getBusinessCardFieldLimit()
 	{
-		return $this->businessCardFieldLimit; 
+		return $this->businessCardFieldLimit;
 
 	}
 
@@ -912,8 +911,8 @@ class Module implements Model
 	 */
 	public  function setBusinessCardFieldLimit(int $businessCardFieldLimit)
 	{
-		$this->businessCardFieldLimit=$businessCardFieldLimit; 
-		$this->keyModified['business_card_field_limit'] = 1; 
+		$this->businessCardFieldLimit=$businessCardFieldLimit;
+		$this->keyModified['business_card_field_limit'] = 1;
 
 	}
 
@@ -923,7 +922,7 @@ class Module implements Model
 	 */
 	public  function getCustomView()
 	{
-		return $this->customView; 
+		return $this->customView;
 
 	}
 
@@ -933,8 +932,8 @@ class Module implements Model
 	 */
 	public  function setCustomView(CustomView $customView)
 	{
-		$this->customView=$customView; 
-		$this->keyModified['custom_view'] = 1; 
+		$this->customView=$customView;
+		$this->keyModified['custom_view'] = 1;
 
 	}
 
@@ -944,7 +943,7 @@ class Module implements Model
 	 */
 	public  function getParentModule()
 	{
-		return $this->parentModule; 
+		return $this->parentModule;
 
 	}
 
@@ -954,8 +953,8 @@ class Module implements Model
 	 */
 	public  function setParentModule(Module $parentModule)
 	{
-		$this->parentModule=$parentModule; 
-		$this->keyModified['parent_module'] = 1; 
+		$this->parentModule=$parentModule;
+		$this->keyModified['parent_module'] = 1;
 
 	}
 
@@ -965,7 +964,7 @@ class Module implements Model
 	 */
 	public  function getTerritory()
 	{
-		return $this->territory; 
+		return $this->territory;
 
 	}
 
@@ -975,8 +974,8 @@ class Module implements Model
 	 */
 	public  function setTerritory(Territory $territory)
 	{
-		$this->territory=$territory; 
-		$this->keyModified['territory'] = 1; 
+		$this->territory=$territory;
+		$this->keyModified['territory'] = 1;
 
 	}
 
@@ -989,10 +988,10 @@ class Module implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -1003,7 +1002,7 @@ class Module implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

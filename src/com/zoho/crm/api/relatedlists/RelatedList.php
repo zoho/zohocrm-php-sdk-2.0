@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\relatedlists;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class RelatedList implements Model
 {
@@ -25,7 +25,7 @@ class RelatedList implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -35,8 +35,8 @@ class RelatedList implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -46,7 +46,7 @@ class RelatedList implements Model
 	 */
 	public  function getSequenceNumber()
 	{
-		return $this->sequenceNumber; 
+		return $this->sequenceNumber;
 
 	}
 
@@ -56,8 +56,8 @@ class RelatedList implements Model
 	 */
 	public  function setSequenceNumber(string $sequenceNumber)
 	{
-		$this->sequenceNumber=$sequenceNumber; 
-		$this->keyModified['sequence_number'] = 1; 
+		$this->sequenceNumber=$sequenceNumber;
+		$this->keyModified['sequence_number'] = 1;
 
 	}
 
@@ -67,7 +67,7 @@ class RelatedList implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -77,8 +77,8 @@ class RelatedList implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -88,7 +88,7 @@ class RelatedList implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -98,8 +98,8 @@ class RelatedList implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -109,7 +109,7 @@ class RelatedList implements Model
 	 */
 	public  function getModule()
 	{
-		return $this->module; 
+		return $this->module;
 
 	}
 
@@ -119,8 +119,8 @@ class RelatedList implements Model
 	 */
 	public  function setModule(string $module)
 	{
-		$this->module=$module; 
-		$this->keyModified['module'] = 1; 
+		$this->module=$module;
+		$this->keyModified['module'] = 1;
 
 	}
 
@@ -130,7 +130,7 @@ class RelatedList implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -140,8 +140,8 @@ class RelatedList implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -151,7 +151,7 @@ class RelatedList implements Model
 	 */
 	public  function getAction()
 	{
-		return $this->action; 
+		return $this->action;
 
 	}
 
@@ -161,8 +161,8 @@ class RelatedList implements Model
 	 */
 	public  function setAction(string $action)
 	{
-		$this->action=$action; 
-		$this->keyModified['action'] = 1; 
+		$this->action=$action;
+		$this->keyModified['action'] = 1;
 
 	}
 
@@ -172,7 +172,7 @@ class RelatedList implements Model
 	 */
 	public  function getHref()
 	{
-		return $this->href; 
+		return $this->href;
 
 	}
 
@@ -182,8 +182,8 @@ class RelatedList implements Model
 	 */
 	public  function setHref(string $href)
 	{
-		$this->href=$href; 
-		$this->keyModified['href'] = 1; 
+		$this->href=$href;
+		$this->keyModified['href'] = 1;
 
 	}
 
@@ -193,7 +193,7 @@ class RelatedList implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -203,8 +203,8 @@ class RelatedList implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['type'] = 1;
 
 	}
 
@@ -214,7 +214,7 @@ class RelatedList implements Model
 	 */
 	public  function getConnectedmodule()
 	{
-		return $this->connectedmodule; 
+		return $this->connectedmodule;
 
 	}
 
@@ -224,8 +224,8 @@ class RelatedList implements Model
 	 */
 	public  function setConnectedmodule(string $connectedmodule)
 	{
-		$this->connectedmodule=$connectedmodule; 
-		$this->keyModified['connectedmodule'] = 1; 
+		$this->connectedmodule=$connectedmodule;
+		$this->keyModified['connectedmodule'] = 1;
 
 	}
 
@@ -235,7 +235,7 @@ class RelatedList implements Model
 	 */
 	public  function getLinkingmodule()
 	{
-		return $this->linkingmodule; 
+		return $this->linkingmodule;
 
 	}
 
@@ -245,8 +245,8 @@ class RelatedList implements Model
 	 */
 	public  function setLinkingmodule(string $linkingmodule)
 	{
-		$this->linkingmodule=$linkingmodule; 
-		$this->keyModified['linkingmodule'] = 1; 
+		$this->linkingmodule=$linkingmodule;
+		$this->keyModified['linkingmodule'] = 1;
 
 	}
 
@@ -259,10 +259,10 @@ class RelatedList implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -273,7 +273,7 @@ class RelatedList implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

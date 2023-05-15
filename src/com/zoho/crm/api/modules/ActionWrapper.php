@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\modules;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ActionWrapper implements Model, ActionHandler
 {
@@ -15,7 +15,7 @@ class ActionWrapper implements Model, ActionHandler
 	 */
 	public  function getModules()
 	{
-		return $this->modules; 
+		return $this->modules;
 
 	}
 
@@ -25,8 +25,8 @@ class ActionWrapper implements Model, ActionHandler
 	 */
 	public  function setModules(array $modules)
 	{
-		$this->modules=$modules; 
-		$this->keyModified['modules'] = 1; 
+		$this->modules=$modules;
+		$this->keyModified['modules'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class ActionWrapper implements Model, ActionHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class ActionWrapper implements Model, ActionHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

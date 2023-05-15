@@ -1,9 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\blueprint;
 
-use com\zoho\crm\api\fields\Field;
 use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Transition implements Model
 {
@@ -27,7 +26,7 @@ class Transition implements Model
 	 */
 	public  function getNextTransitions()
 	{
-		return $this->nextTransitions; 
+		return $this->nextTransitions;
 
 	}
 
@@ -37,8 +36,8 @@ class Transition implements Model
 	 */
 	public  function setNextTransitions(array $nextTransitions)
 	{
-		$this->nextTransitions=$nextTransitions; 
-		$this->keyModified['next_transitions'] = 1; 
+		$this->nextTransitions=$nextTransitions;
+		$this->keyModified['next_transitions'] = 1;
 
 	}
 
@@ -48,7 +47,7 @@ class Transition implements Model
 	 */
 	public  function getPercentPartialSave()
 	{
-		return $this->percentPartialSave; 
+		return $this->percentPartialSave;
 
 	}
 
@@ -58,8 +57,8 @@ class Transition implements Model
 	 */
 	public  function setPercentPartialSave(float $percentPartialSave)
 	{
-		$this->percentPartialSave=$percentPartialSave; 
-		$this->keyModified['percent_partial_save'] = 1; 
+		$this->percentPartialSave=$percentPartialSave;
+		$this->keyModified['percent_partial_save'] = 1;
 
 	}
 
@@ -69,7 +68,7 @@ class Transition implements Model
 	 */
 	public  function getData()
 	{
-		return $this->data; 
+		return $this->data;
 
 	}
 
@@ -79,8 +78,8 @@ class Transition implements Model
 	 */
 	public  function setData(Record $data)
 	{
-		$this->data=$data; 
-		$this->keyModified['data'] = 1; 
+		$this->data=$data;
+		$this->keyModified['data'] = 1;
 
 	}
 
@@ -90,7 +89,7 @@ class Transition implements Model
 	 */
 	public  function getNextFieldValue()
 	{
-		return $this->nextFieldValue; 
+		return $this->nextFieldValue;
 
 	}
 
@@ -100,8 +99,8 @@ class Transition implements Model
 	 */
 	public  function setNextFieldValue(string $nextFieldValue)
 	{
-		$this->nextFieldValue=$nextFieldValue; 
-		$this->keyModified['next_field_value'] = 1; 
+		$this->nextFieldValue=$nextFieldValue;
+		$this->keyModified['next_field_value'] = 1;
 
 	}
 
@@ -111,7 +110,7 @@ class Transition implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -121,8 +120,8 @@ class Transition implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -132,7 +131,7 @@ class Transition implements Model
 	 */
 	public  function getCriteriaMatched()
 	{
-		return $this->criteriaMatched; 
+		return $this->criteriaMatched;
 
 	}
 
@@ -142,8 +141,8 @@ class Transition implements Model
 	 */
 	public  function setCriteriaMatched(bool $criteriaMatched)
 	{
-		$this->criteriaMatched=$criteriaMatched; 
-		$this->keyModified['criteria_matched'] = 1; 
+		$this->criteriaMatched=$criteriaMatched;
+		$this->keyModified['criteria_matched'] = 1;
 
 	}
 
@@ -153,7 +152,7 @@ class Transition implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -163,8 +162,8 @@ class Transition implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -174,7 +173,7 @@ class Transition implements Model
 	 */
 	public  function getFields()
 	{
-		return $this->fields; 
+		return $this->fields;
 
 	}
 
@@ -184,8 +183,8 @@ class Transition implements Model
 	 */
 	public  function setFields(array $fields)
 	{
-		$this->fields=$fields; 
-		$this->keyModified['fields'] = 1; 
+		$this->fields=$fields;
+		$this->keyModified['fields'] = 1;
 
 	}
 
@@ -195,7 +194,7 @@ class Transition implements Model
 	 */
 	public  function getCriteriaMessage()
 	{
-		return $this->criteriaMessage; 
+		return $this->criteriaMessage;
 
 	}
 
@@ -205,8 +204,8 @@ class Transition implements Model
 	 */
 	public  function setCriteriaMessage(string $criteriaMessage)
 	{
-		$this->criteriaMessage=$criteriaMessage; 
-		$this->keyModified['criteria_message'] = 1; 
+		$this->criteriaMessage=$criteriaMessage;
+		$this->keyModified['criteria_message'] = 1;
 
 	}
 
@@ -216,7 +215,7 @@ class Transition implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -226,8 +225,8 @@ class Transition implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['type'] = 1;
 
 	}
 
@@ -237,7 +236,7 @@ class Transition implements Model
 	 */
 	public  function getExecutionTime()
 	{
-		return $this->executionTime; 
+		return $this->executionTime;
 
 	}
 
@@ -247,8 +246,8 @@ class Transition implements Model
 	 */
 	public  function setExecutionTime(\DateTime $executionTime)
 	{
-		$this->executionTime=$executionTime; 
-		$this->keyModified['execution_time'] = 1; 
+		$this->executionTime=$executionTime;
+		$this->keyModified['execution_time'] = 1;
 
 	}
 
@@ -261,10 +260,10 @@ class Transition implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -275,7 +274,7 @@ class Transition implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

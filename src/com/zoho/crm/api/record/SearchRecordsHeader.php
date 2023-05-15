@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\Header;
+use Zoho\Crm\Header;
 
 class SearchRecordsHeader
 {
 
 	public static final function XEXTERNAL()
 	{
-		return new Header('X-EXTERNAL', 'com.zoho.crm.api.Record.SearchRecordsHeader'); 
+		return new Header('X-EXTERNAL', 'com.zoho.crm.api.Record.SearchRecordsHeader');
 
 	}
-} 
+}

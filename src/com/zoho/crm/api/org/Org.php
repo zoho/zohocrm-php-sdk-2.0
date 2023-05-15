@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\org;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Org implements Model
 {
@@ -45,7 +45,7 @@ class Org implements Model
 	 */
 	public  function getCountry()
 	{
-		return $this->country; 
+		return $this->country;
 
 	}
 
@@ -55,8 +55,8 @@ class Org implements Model
 	 */
 	public  function setCountry(string $country)
 	{
-		$this->country=$country; 
-		$this->keyModified['country'] = 1; 
+		$this->country=$country;
+		$this->keyModified['country'] = 1;
 
 	}
 
@@ -66,7 +66,7 @@ class Org implements Model
 	 */
 	public  function getPhotoId()
 	{
-		return $this->photoId; 
+		return $this->photoId;
 
 	}
 
@@ -76,8 +76,8 @@ class Org implements Model
 	 */
 	public  function setPhotoId(string $photoId)
 	{
-		$this->photoId=$photoId; 
-		$this->keyModified['photo_id'] = 1; 
+		$this->photoId=$photoId;
+		$this->keyModified['photo_id'] = 1;
 
 	}
 
@@ -87,7 +87,7 @@ class Org implements Model
 	 */
 	public  function getCity()
 	{
-		return $this->city; 
+		return $this->city;
 
 	}
 
@@ -97,8 +97,8 @@ class Org implements Model
 	 */
 	public  function setCity(string $city)
 	{
-		$this->city=$city; 
-		$this->keyModified['city'] = 1; 
+		$this->city=$city;
+		$this->keyModified['city'] = 1;
 
 	}
 
@@ -108,7 +108,7 @@ class Org implements Model
 	 */
 	public  function getDescription()
 	{
-		return $this->description; 
+		return $this->description;
 
 	}
 
@@ -118,8 +118,8 @@ class Org implements Model
 	 */
 	public  function setDescription(string $description)
 	{
-		$this->description=$description; 
-		$this->keyModified['description'] = 1; 
+		$this->description=$description;
+		$this->keyModified['description'] = 1;
 
 	}
 
@@ -129,7 +129,7 @@ class Org implements Model
 	 */
 	public  function getMcStatus()
 	{
-		return $this->mcStatus; 
+		return $this->mcStatus;
 
 	}
 
@@ -139,8 +139,8 @@ class Org implements Model
 	 */
 	public  function setMcStatus(bool $mcStatus)
 	{
-		$this->mcStatus=$mcStatus; 
-		$this->keyModified['mc_status'] = 1; 
+		$this->mcStatus=$mcStatus;
+		$this->keyModified['mc_status'] = 1;
 
 	}
 
@@ -150,7 +150,7 @@ class Org implements Model
 	 */
 	public  function getGappsEnabled()
 	{
-		return $this->gappsEnabled; 
+		return $this->gappsEnabled;
 
 	}
 
@@ -160,8 +160,8 @@ class Org implements Model
 	 */
 	public  function setGappsEnabled(bool $gappsEnabled)
 	{
-		$this->gappsEnabled=$gappsEnabled; 
-		$this->keyModified['gapps_enabled'] = 1; 
+		$this->gappsEnabled=$gappsEnabled;
+		$this->keyModified['gapps_enabled'] = 1;
 
 	}
 
@@ -171,7 +171,7 @@ class Org implements Model
 	 */
 	public  function getDomainName()
 	{
-		return $this->domainName; 
+		return $this->domainName;
 
 	}
 
@@ -181,8 +181,8 @@ class Org implements Model
 	 */
 	public  function setDomainName(string $domainName)
 	{
-		$this->domainName=$domainName; 
-		$this->keyModified['domain_name'] = 1; 
+		$this->domainName=$domainName;
+		$this->keyModified['domain_name'] = 1;
 
 	}
 
@@ -192,7 +192,7 @@ class Org implements Model
 	 */
 	public  function getTranslationEnabled()
 	{
-		return $this->translationEnabled; 
+		return $this->translationEnabled;
 
 	}
 
@@ -202,8 +202,8 @@ class Org implements Model
 	 */
 	public  function setTranslationEnabled(bool $translationEnabled)
 	{
-		$this->translationEnabled=$translationEnabled; 
-		$this->keyModified['translation_enabled'] = 1; 
+		$this->translationEnabled=$translationEnabled;
+		$this->keyModified['translation_enabled'] = 1;
 
 	}
 
@@ -213,7 +213,7 @@ class Org implements Model
 	 */
 	public  function getStreet()
 	{
-		return $this->street; 
+		return $this->street;
 
 	}
 
@@ -223,8 +223,8 @@ class Org implements Model
 	 */
 	public  function setStreet(string $street)
 	{
-		$this->street=$street; 
-		$this->keyModified['street'] = 1; 
+		$this->street=$street;
+		$this->keyModified['street'] = 1;
 
 	}
 
@@ -234,7 +234,7 @@ class Org implements Model
 	 */
 	public  function getAlias()
 	{
-		return $this->alias; 
+		return $this->alias;
 
 	}
 
@@ -244,8 +244,8 @@ class Org implements Model
 	 */
 	public  function setAlias(string $alias)
 	{
-		$this->alias=$alias; 
-		$this->keyModified['alias'] = 1; 
+		$this->alias=$alias;
+		$this->keyModified['alias'] = 1;
 
 	}
 
@@ -255,7 +255,7 @@ class Org implements Model
 	 */
 	public  function getCurrency()
 	{
-		return $this->currency; 
+		return $this->currency;
 
 	}
 
@@ -265,8 +265,8 @@ class Org implements Model
 	 */
 	public  function setCurrency(string $currency)
 	{
-		$this->currency=$currency; 
-		$this->keyModified['currency'] = 1; 
+		$this->currency=$currency;
+		$this->keyModified['currency'] = 1;
 
 	}
 
@@ -276,7 +276,7 @@ class Org implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -286,8 +286,8 @@ class Org implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -297,7 +297,7 @@ class Org implements Model
 	 */
 	public  function getState()
 	{
-		return $this->state; 
+		return $this->state;
 
 	}
 
@@ -307,8 +307,8 @@ class Org implements Model
 	 */
 	public  function setState(string $state)
 	{
-		$this->state=$state; 
-		$this->keyModified['state'] = 1; 
+		$this->state=$state;
+		$this->keyModified['state'] = 1;
 
 	}
 
@@ -318,7 +318,7 @@ class Org implements Model
 	 */
 	public  function getFax()
 	{
-		return $this->fax; 
+		return $this->fax;
 
 	}
 
@@ -328,8 +328,8 @@ class Org implements Model
 	 */
 	public  function setFax(string $fax)
 	{
-		$this->fax=$fax; 
-		$this->keyModified['fax'] = 1; 
+		$this->fax=$fax;
+		$this->keyModified['fax'] = 1;
 
 	}
 
@@ -339,7 +339,7 @@ class Org implements Model
 	 */
 	public  function getEmployeeCount()
 	{
-		return $this->employeeCount; 
+		return $this->employeeCount;
 
 	}
 
@@ -349,8 +349,8 @@ class Org implements Model
 	 */
 	public  function setEmployeeCount(string $employeeCount)
 	{
-		$this->employeeCount=$employeeCount; 
-		$this->keyModified['employee_count'] = 1; 
+		$this->employeeCount=$employeeCount;
+		$this->keyModified['employee_count'] = 1;
 
 	}
 
@@ -360,7 +360,7 @@ class Org implements Model
 	 */
 	public  function getZip()
 	{
-		return $this->zip; 
+		return $this->zip;
 
 	}
 
@@ -370,8 +370,8 @@ class Org implements Model
 	 */
 	public  function setZip(string $zip)
 	{
-		$this->zip=$zip; 
-		$this->keyModified['zip'] = 1; 
+		$this->zip=$zip;
+		$this->keyModified['zip'] = 1;
 
 	}
 
@@ -381,7 +381,7 @@ class Org implements Model
 	 */
 	public  function getWebsite()
 	{
-		return $this->website; 
+		return $this->website;
 
 	}
 
@@ -391,8 +391,8 @@ class Org implements Model
 	 */
 	public  function setWebsite(string $website)
 	{
-		$this->website=$website; 
-		$this->keyModified['website'] = 1; 
+		$this->website=$website;
+		$this->keyModified['website'] = 1;
 
 	}
 
@@ -402,7 +402,7 @@ class Org implements Model
 	 */
 	public  function getCurrencySymbol()
 	{
-		return $this->currencySymbol; 
+		return $this->currencySymbol;
 
 	}
 
@@ -412,8 +412,8 @@ class Org implements Model
 	 */
 	public  function setCurrencySymbol(string $currencySymbol)
 	{
-		$this->currencySymbol=$currencySymbol; 
-		$this->keyModified['currency_symbol'] = 1; 
+		$this->currencySymbol=$currencySymbol;
+		$this->keyModified['currency_symbol'] = 1;
 
 	}
 
@@ -423,7 +423,7 @@ class Org implements Model
 	 */
 	public  function getMobile()
 	{
-		return $this->mobile; 
+		return $this->mobile;
 
 	}
 
@@ -433,8 +433,8 @@ class Org implements Model
 	 */
 	public  function setMobile(string $mobile)
 	{
-		$this->mobile=$mobile; 
-		$this->keyModified['mobile'] = 1; 
+		$this->mobile=$mobile;
+		$this->keyModified['mobile'] = 1;
 
 	}
 
@@ -444,7 +444,7 @@ class Org implements Model
 	 */
 	public  function getCurrencyLocale()
 	{
-		return $this->currencyLocale; 
+		return $this->currencyLocale;
 
 	}
 
@@ -454,8 +454,8 @@ class Org implements Model
 	 */
 	public  function setCurrencyLocale(string $currencyLocale)
 	{
-		$this->currencyLocale=$currencyLocale; 
-		$this->keyModified['currency_locale'] = 1; 
+		$this->currencyLocale=$currencyLocale;
+		$this->keyModified['currency_locale'] = 1;
 
 	}
 
@@ -465,7 +465,7 @@ class Org implements Model
 	 */
 	public  function getPrimaryZuid()
 	{
-		return $this->primaryZuid; 
+		return $this->primaryZuid;
 
 	}
 
@@ -475,8 +475,8 @@ class Org implements Model
 	 */
 	public  function setPrimaryZuid(string $primaryZuid)
 	{
-		$this->primaryZuid=$primaryZuid; 
-		$this->keyModified['primary_zuid'] = 1; 
+		$this->primaryZuid=$primaryZuid;
+		$this->keyModified['primary_zuid'] = 1;
 
 	}
 
@@ -486,7 +486,7 @@ class Org implements Model
 	 */
 	public  function getZiaPortalId()
 	{
-		return $this->ziaPortalId; 
+		return $this->ziaPortalId;
 
 	}
 
@@ -496,8 +496,8 @@ class Org implements Model
 	 */
 	public  function setZiaPortalId(string $ziaPortalId)
 	{
-		$this->ziaPortalId=$ziaPortalId; 
-		$this->keyModified['zia_portal_id'] = 1; 
+		$this->ziaPortalId=$ziaPortalId;
+		$this->keyModified['zia_portal_id'] = 1;
 
 	}
 
@@ -507,7 +507,7 @@ class Org implements Model
 	 */
 	public  function getTimeZone()
 	{
-		return $this->timeZone; 
+		return $this->timeZone;
 
 	}
 
@@ -517,8 +517,8 @@ class Org implements Model
 	 */
 	public  function setTimeZone(string $timeZone)
 	{
-		$this->timeZone=$timeZone; 
-		$this->keyModified['time_zone'] = 1; 
+		$this->timeZone=$timeZone;
+		$this->keyModified['time_zone'] = 1;
 
 	}
 
@@ -528,7 +528,7 @@ class Org implements Model
 	 */
 	public  function getZgid()
 	{
-		return $this->zgid; 
+		return $this->zgid;
 
 	}
 
@@ -538,8 +538,8 @@ class Org implements Model
 	 */
 	public  function setZgid(string $zgid)
 	{
-		$this->zgid=$zgid; 
-		$this->keyModified['zgid'] = 1; 
+		$this->zgid=$zgid;
+		$this->keyModified['zgid'] = 1;
 
 	}
 
@@ -549,7 +549,7 @@ class Org implements Model
 	 */
 	public  function getCountryCode()
 	{
-		return $this->countryCode; 
+		return $this->countryCode;
 
 	}
 
@@ -559,8 +559,8 @@ class Org implements Model
 	 */
 	public  function setCountryCode(string $countryCode)
 	{
-		$this->countryCode=$countryCode; 
-		$this->keyModified['country_code'] = 1; 
+		$this->countryCode=$countryCode;
+		$this->keyModified['country_code'] = 1;
 
 	}
 
@@ -570,7 +570,7 @@ class Org implements Model
 	 */
 	public  function getLicenseDetails()
 	{
-		return $this->licenseDetails; 
+		return $this->licenseDetails;
 
 	}
 
@@ -580,8 +580,8 @@ class Org implements Model
 	 */
 	public  function setLicenseDetails(LicenseDetails $licenseDetails)
 	{
-		$this->licenseDetails=$licenseDetails; 
-		$this->keyModified['license_details'] = 1; 
+		$this->licenseDetails=$licenseDetails;
+		$this->keyModified['license_details'] = 1;
 
 	}
 
@@ -591,7 +591,7 @@ class Org implements Model
 	 */
 	public  function getPhone()
 	{
-		return $this->phone; 
+		return $this->phone;
 
 	}
 
@@ -601,8 +601,8 @@ class Org implements Model
 	 */
 	public  function setPhone(string $phone)
 	{
-		$this->phone=$phone; 
-		$this->keyModified['phone'] = 1; 
+		$this->phone=$phone;
+		$this->keyModified['phone'] = 1;
 
 	}
 
@@ -612,7 +612,7 @@ class Org implements Model
 	 */
 	public  function getCompanyName()
 	{
-		return $this->companyName; 
+		return $this->companyName;
 
 	}
 
@@ -622,8 +622,8 @@ class Org implements Model
 	 */
 	public  function setCompanyName(string $companyName)
 	{
-		$this->companyName=$companyName; 
-		$this->keyModified['company_name'] = 1; 
+		$this->companyName=$companyName;
+		$this->keyModified['company_name'] = 1;
 
 	}
 
@@ -633,7 +633,7 @@ class Org implements Model
 	 */
 	public  function getPrivacySettings()
 	{
-		return $this->privacySettings; 
+		return $this->privacySettings;
 
 	}
 
@@ -643,8 +643,8 @@ class Org implements Model
 	 */
 	public  function setPrivacySettings(bool $privacySettings)
 	{
-		$this->privacySettings=$privacySettings; 
-		$this->keyModified['privacy_settings'] = 1; 
+		$this->privacySettings=$privacySettings;
+		$this->keyModified['privacy_settings'] = 1;
 
 	}
 
@@ -654,7 +654,7 @@ class Org implements Model
 	 */
 	public  function getPrimaryEmail()
 	{
-		return $this->primaryEmail; 
+		return $this->primaryEmail;
 
 	}
 
@@ -664,8 +664,8 @@ class Org implements Model
 	 */
 	public  function setPrimaryEmail(string $primaryEmail)
 	{
-		$this->primaryEmail=$primaryEmail; 
-		$this->keyModified['primary_email'] = 1; 
+		$this->primaryEmail=$primaryEmail;
+		$this->keyModified['primary_email'] = 1;
 
 	}
 
@@ -675,7 +675,7 @@ class Org implements Model
 	 */
 	public  function getIsoCode()
 	{
-		return $this->isoCode; 
+		return $this->isoCode;
 
 	}
 
@@ -685,8 +685,8 @@ class Org implements Model
 	 */
 	public  function setIsoCode(string $isoCode)
 	{
-		$this->isoCode=$isoCode; 
-		$this->keyModified['iso_code'] = 1; 
+		$this->isoCode=$isoCode;
+		$this->keyModified['iso_code'] = 1;
 
 	}
 
@@ -699,10 +699,10 @@ class Org implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -713,7 +713,7 @@ class Org implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

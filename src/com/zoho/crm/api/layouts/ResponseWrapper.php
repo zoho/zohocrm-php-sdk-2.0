@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\layouts;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ResponseWrapper implements Model, ResponseHandler
 {
@@ -15,7 +15,7 @@ class ResponseWrapper implements Model, ResponseHandler
 	 */
 	public  function getLayouts()
 	{
-		return $this->layouts; 
+		return $this->layouts;
 
 	}
 
@@ -25,8 +25,8 @@ class ResponseWrapper implements Model, ResponseHandler
 	 */
 	public  function setLayouts(array $layouts)
 	{
-		$this->layouts=$layouts; 
-		$this->keyModified['layouts'] = 1; 
+		$this->layouts=$layouts;
+		$this->keyModified['layouts'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class ResponseWrapper implements Model, ResponseHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class ResponseWrapper implements Model, ResponseHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

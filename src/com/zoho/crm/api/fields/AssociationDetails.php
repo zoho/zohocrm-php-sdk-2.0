@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class AssociationDetails implements Model
 {
@@ -16,7 +16,7 @@ class AssociationDetails implements Model
 	 */
 	public  function getLookupField()
 	{
-		return $this->lookupField; 
+		return $this->lookupField;
 
 	}
 
@@ -26,8 +26,8 @@ class AssociationDetails implements Model
 	 */
 	public  function setLookupField(LookupField $lookupField)
 	{
-		$this->lookupField=$lookupField; 
-		$this->keyModified['lookup_field'] = 1; 
+		$this->lookupField=$lookupField;
+		$this->keyModified['lookup_field'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class AssociationDetails implements Model
 	 */
 	public  function getRelatedField()
 	{
-		return $this->relatedField; 
+		return $this->relatedField;
 
 	}
 
@@ -47,8 +47,8 @@ class AssociationDetails implements Model
 	 */
 	public  function setRelatedField(LookupField $relatedField)
 	{
-		$this->relatedField=$relatedField; 
-		$this->keyModified['related_field'] = 1; 
+		$this->relatedField=$relatedField;
+		$this->keyModified['related_field'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class AssociationDetails implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class AssociationDetails implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

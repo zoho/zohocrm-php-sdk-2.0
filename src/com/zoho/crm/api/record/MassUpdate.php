@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class MassUpdate implements Model, MassUpdateResponse
 {
@@ -20,7 +20,7 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -30,8 +30,8 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function setStatus(Choice $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['Status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['Status'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function getFailedCount()
 	{
-		return $this->failedCount; 
+		return $this->failedCount;
 
 	}
 
@@ -51,8 +51,8 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function setFailedCount(int $failedCount)
 	{
-		$this->failedCount=$failedCount; 
-		$this->keyModified['Failed_Count'] = 1; 
+		$this->failedCount=$failedCount;
+		$this->keyModified['Failed_Count'] = 1;
 
 	}
 
@@ -62,7 +62,7 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function getUpdatedCount()
 	{
-		return $this->updatedCount; 
+		return $this->updatedCount;
 
 	}
 
@@ -72,8 +72,8 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function setUpdatedCount(int $updatedCount)
 	{
-		$this->updatedCount=$updatedCount; 
-		$this->keyModified['Updated_Count'] = 1; 
+		$this->updatedCount=$updatedCount;
+		$this->keyModified['Updated_Count'] = 1;
 
 	}
 
@@ -83,7 +83,7 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function getNotUpdatedCount()
 	{
-		return $this->notUpdatedCount; 
+		return $this->notUpdatedCount;
 
 	}
 
@@ -93,8 +93,8 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function setNotUpdatedCount(int $notUpdatedCount)
 	{
-		$this->notUpdatedCount=$notUpdatedCount; 
-		$this->keyModified['Not_Updated_Count'] = 1; 
+		$this->notUpdatedCount=$notUpdatedCount;
+		$this->keyModified['Not_Updated_Count'] = 1;
 
 	}
 
@@ -104,7 +104,7 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function getTotalCount()
 	{
-		return $this->totalCount; 
+		return $this->totalCount;
 
 	}
 
@@ -114,8 +114,8 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function setTotalCount(int $totalCount)
 	{
-		$this->totalCount=$totalCount; 
-		$this->keyModified['Total_Count'] = 1; 
+		$this->totalCount=$totalCount;
+		$this->keyModified['Total_Count'] = 1;
 
 	}
 
@@ -128,10 +128,10 @@ class MassUpdate implements Model, MassUpdateResponse
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -142,7 +142,7 @@ class MassUpdate implements Model, MassUpdateResponse
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

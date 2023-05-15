@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\currencies;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class BaseCurrencyActionWrapper implements Model, BaseCurrencyActionHandler
 {
@@ -15,7 +15,7 @@ class BaseCurrencyActionWrapper implements Model, BaseCurrencyActionHandler
 	 */
 	public  function getBaseCurrency()
 	{
-		return $this->baseCurrency; 
+		return $this->baseCurrency;
 
 	}
 
@@ -25,8 +25,8 @@ class BaseCurrencyActionWrapper implements Model, BaseCurrencyActionHandler
 	 */
 	public  function setBaseCurrency(ActionResponse $baseCurrency)
 	{
-		$this->baseCurrency=$baseCurrency; 
-		$this->keyModified['base_currency'] = 1; 
+		$this->baseCurrency=$baseCurrency;
+		$this->keyModified['base_currency'] = 1;
 
 	}
 
@@ -39,10 +39,10 @@ class BaseCurrencyActionWrapper implements Model, BaseCurrencyActionHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ class BaseCurrencyActionWrapper implements Model, BaseCurrencyActionHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

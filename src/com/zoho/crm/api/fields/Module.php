@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
 use com\zoho\crm\api\layouts\Layout;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Module implements Model
 {
@@ -21,7 +21,7 @@ class Module implements Model
 	 */
 	public  function getLayout()
 	{
-		return $this->layout; 
+		return $this->layout;
 
 	}
 
@@ -31,8 +31,8 @@ class Module implements Model
 	 */
 	public  function setLayout(Layout $layout)
 	{
-		$this->layout=$layout; 
-		$this->keyModified['layout'] = 1; 
+		$this->layout=$layout;
+		$this->keyModified['layout'] = 1;
 
 	}
 
@@ -42,7 +42,7 @@ class Module implements Model
 	 */
 	public  function getDisplayLabel()
 	{
-		return $this->displayLabel; 
+		return $this->displayLabel;
 
 	}
 
@@ -52,8 +52,8 @@ class Module implements Model
 	 */
 	public  function setDisplayLabel(string $displayLabel)
 	{
-		$this->displayLabel=$displayLabel; 
-		$this->keyModified['display_label'] = 1; 
+		$this->displayLabel=$displayLabel;
+		$this->keyModified['display_label'] = 1;
 
 	}
 
@@ -63,7 +63,7 @@ class Module implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -73,8 +73,8 @@ class Module implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -84,7 +84,7 @@ class Module implements Model
 	 */
 	public  function getModule()
 	{
-		return $this->module; 
+		return $this->module;
 
 	}
 
@@ -94,8 +94,8 @@ class Module implements Model
 	 */
 	public  function setModule(string $module)
 	{
-		$this->module=$module; 
-		$this->keyModified['module'] = 1; 
+		$this->module=$module;
+		$this->keyModified['module'] = 1;
 
 	}
 
@@ -105,7 +105,7 @@ class Module implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -115,8 +115,8 @@ class Module implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -126,7 +126,7 @@ class Module implements Model
 	 */
 	public  function getModuleName()
 	{
-		return $this->moduleName; 
+		return $this->moduleName;
 
 	}
 
@@ -136,8 +136,8 @@ class Module implements Model
 	 */
 	public  function setModuleName(string $moduleName)
 	{
-		$this->moduleName=$moduleName; 
-		$this->keyModified['module_name'] = 1; 
+		$this->moduleName=$moduleName;
+		$this->keyModified['module_name'] = 1;
 
 	}
 
@@ -150,10 +150,10 @@ class Module implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -164,7 +164,7 @@ class Module implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,11 +1,10 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\profiles;
 
-use com\zoho\crm\api\Header;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\util\CommonAPIHandler;
-use com\zoho\crm\api\util\Constants;
-use com\zoho\crm\api\util\APIResponse;
+use Zoho\Crm\Header;
+use Zoho\Crm\Util\APIResponse;
+use Zoho\Crm\Util\CommonAPIHandler;
+use Zoho\Crm\Util\Constants;
 
 class ProfilesOperations
 {
@@ -18,7 +17,7 @@ class ProfilesOperations
 	 */
 	public function __Construct(\DateTime $ifModifiedSince=null)
 	{
-		$this->ifModifiedSince=$ifModifiedSince; 
+		$this->ifModifiedSince=$ifModifiedSince;
 
 	}
 
@@ -28,14 +27,14 @@ class ProfilesOperations
 	 */
 	public  function getProfiles()
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/profiles'); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->addHeader(new Header('If-Modified-Since', 'com.zoho.crm.api.Profiles.GetProfilesHeader'), $this->ifModifiedSince); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/profiles');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->addHeader(new Header('If-Modified-Since', 'com.zoho.crm.api.Profiles.GetProfilesHeader'), $this->ifModifiedSince);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
 
@@ -46,15 +45,15 @@ class ProfilesOperations
 	 */
 	public  function getProfile(string $id)
 	{
-		$handlerInstance=new CommonAPIHandler(); 
-		$apiPath=""; 
-		$apiPath=$apiPath.('/crm/v2/settings/profiles/'); 
-		$apiPath=$apiPath.(strval($id)); 
-		$handlerInstance->setAPIPath($apiPath); 
-		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
-		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
-		$handlerInstance->addHeader(new Header('If-Modified-Since', 'com.zoho.crm.api.Profiles.GetProfileHeader'), $this->ifModifiedSince); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2/settings/profiles/');
+		$apiPath=$apiPath.(strval($id));
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->addHeader(new Header('If-Modified-Since', 'com.zoho.crm.api.Profiles.GetProfileHeader'), $this->ifModifiedSince);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
-} 
+}

@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkread;
 
-use com\zoho\crm\api\util\StreamWrapper;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
+use Zoho\Crm\Util\StreamWrapper;
 
 class FileBodyWrapper implements Model, ResponseHandler
 {
@@ -16,7 +16,7 @@ class FileBodyWrapper implements Model, ResponseHandler
 	 */
 	public  function getFile()
 	{
-		return $this->file; 
+		return $this->file;
 
 	}
 
@@ -26,8 +26,8 @@ class FileBodyWrapper implements Model, ResponseHandler
 	 */
 	public  function setFile(StreamWrapper $file)
 	{
-		$this->file=$file; 
-		$this->keyModified['file'] = 1; 
+		$this->file=$file;
+		$this->keyModified['file'] = 1;
 
 	}
 
@@ -40,10 +40,10 @@ class FileBodyWrapper implements Model, ResponseHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -54,7 +54,7 @@ class FileBodyWrapper implements Model, ResponseHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

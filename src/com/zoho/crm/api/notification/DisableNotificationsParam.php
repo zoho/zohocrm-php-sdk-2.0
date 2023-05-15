@@ -1,14 +1,14 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\notification;
 
-use com\zoho\crm\api\Param;
+use Zoho\Crm\Param;
 
 class DisableNotificationsParam
 {
 
 	public static final function channelIds()
 	{
-		return new Param('channel_ids', 'com.zoho.crm.api.Notification.DisableNotificationsParam'); 
+		return new Param('channel_ids', 'com.zoho.crm.api.Notification.DisableNotificationsParam');
 
 	}
-} 
+}

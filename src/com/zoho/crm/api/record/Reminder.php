@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Reminder implements Model
 {
@@ -16,7 +16,7 @@ class Reminder implements Model
 	 */
 	public  function getPeriod()
 	{
-		return $this->period; 
+		return $this->period;
 
 	}
 
@@ -26,8 +26,8 @@ class Reminder implements Model
 	 */
 	public  function setPeriod(string $period)
 	{
-		$this->period=$period; 
-		$this->keyModified['period'] = 1; 
+		$this->period=$period;
+		$this->keyModified['period'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Reminder implements Model
 	 */
 	public  function getUnit()
 	{
-		return $this->unit; 
+		return $this->unit;
 
 	}
 
@@ -47,8 +47,8 @@ class Reminder implements Model
 	 */
 	public  function setUnit(string $unit)
 	{
-		$this->unit=$unit; 
-		$this->keyModified['unit'] = 1; 
+		$this->unit=$unit;
+		$this->keyModified['unit'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Reminder implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Reminder implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

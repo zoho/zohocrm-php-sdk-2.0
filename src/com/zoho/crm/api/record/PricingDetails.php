@@ -1,8 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class PricingDetails extends Record implements Model
 {
@@ -14,7 +13,7 @@ class PricingDetails extends Record implements Model
 	 */
 	public  function getToRange()
 	{
-		return $this->getKeyValue('to_range'); 
+		return $this->getKeyValue('to_range');
 
 	}
 
@@ -24,7 +23,7 @@ class PricingDetails extends Record implements Model
 	 */
 	public  function setToRange(float $toRange)
 	{
-		$this->addKeyValue('to_range', $toRange); 
+		$this->addKeyValue('to_range', $toRange);
 
 	}
 
@@ -34,7 +33,7 @@ class PricingDetails extends Record implements Model
 	 */
 	public  function getDiscount()
 	{
-		return $this->getKeyValue('discount'); 
+		return $this->getKeyValue('discount');
 
 	}
 
@@ -44,7 +43,7 @@ class PricingDetails extends Record implements Model
 	 */
 	public  function setDiscount(float $discount)
 	{
-		$this->addKeyValue('discount', $discount); 
+		$this->addKeyValue('discount', $discount);
 
 	}
 
@@ -54,7 +53,7 @@ class PricingDetails extends Record implements Model
 	 */
 	public  function getFromRange()
 	{
-		return $this->getKeyValue('from_range'); 
+		return $this->getKeyValue('from_range');
 
 	}
 
@@ -64,7 +63,7 @@ class PricingDetails extends Record implements Model
 	 */
 	public  function setFromRange(float $fromRange)
 	{
-		$this->addKeyValue('from_range', $fromRange); 
+		$this->addKeyValue('from_range', $fromRange);
 
 	}
-} 
+}

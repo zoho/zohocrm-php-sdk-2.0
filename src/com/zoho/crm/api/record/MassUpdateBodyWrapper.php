@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class MassUpdateBodyWrapper implements Model
 {
@@ -20,7 +20,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function getData()
 	{
-		return $this->data; 
+		return $this->data;
 
 	}
 
@@ -30,8 +30,8 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setData(array $data)
 	{
-		$this->data=$data; 
-		$this->keyModified['data'] = 1; 
+		$this->data=$data;
+		$this->keyModified['data'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function getCvid()
 	{
-		return $this->cvid; 
+		return $this->cvid;
 
 	}
 
@@ -51,8 +51,8 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setCvid(string $cvid)
 	{
-		$this->cvid=$cvid; 
-		$this->keyModified['cvid'] = 1; 
+		$this->cvid=$cvid;
+		$this->keyModified['cvid'] = 1;
 
 	}
 
@@ -62,7 +62,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function getIds()
 	{
-		return $this->ids; 
+		return $this->ids;
 
 	}
 
@@ -72,8 +72,8 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setIds(array $ids)
 	{
-		$this->ids=$ids; 
-		$this->keyModified['ids'] = 1; 
+		$this->ids=$ids;
+		$this->keyModified['ids'] = 1;
 
 	}
 
@@ -83,7 +83,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function getTerritory()
 	{
-		return $this->territory; 
+		return $this->territory;
 
 	}
 
@@ -93,8 +93,8 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setTerritory(Territory $territory)
 	{
-		$this->territory=$territory; 
-		$this->keyModified['territory'] = 1; 
+		$this->territory=$territory;
+		$this->keyModified['territory'] = 1;
 
 	}
 
@@ -104,7 +104,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function getOverWrite()
 	{
-		return $this->overWrite; 
+		return $this->overWrite;
 
 	}
 
@@ -114,8 +114,8 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setOverWrite(bool $overWrite)
 	{
-		$this->overWrite=$overWrite; 
-		$this->keyModified['over_write'] = 1; 
+		$this->overWrite=$overWrite;
+		$this->keyModified['over_write'] = 1;
 
 	}
 
@@ -125,7 +125,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function getCriteria()
 	{
-		return $this->criteria; 
+		return $this->criteria;
 
 	}
 
@@ -135,8 +135,8 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setCriteria(array $criteria)
 	{
-		$this->criteria=$criteria; 
-		$this->keyModified['criteria'] = 1; 
+		$this->criteria=$criteria;
+		$this->keyModified['criteria'] = 1;
 
 	}
 
@@ -149,10 +149,10 @@ class MassUpdateBodyWrapper implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -163,7 +163,7 @@ class MassUpdateBodyWrapper implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

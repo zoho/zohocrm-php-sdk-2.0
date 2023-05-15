@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class SuccessfulConvert implements Model, ConvertActionResponse
 {
@@ -17,7 +17,7 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function getContacts()
 	{
-		return $this->contacts; 
+		return $this->contacts;
 
 	}
 
@@ -27,8 +27,8 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function setContacts(string $contacts)
 	{
-		$this->contacts=$contacts; 
-		$this->keyModified['Contacts'] = 1; 
+		$this->contacts=$contacts;
+		$this->keyModified['Contacts'] = 1;
 
 	}
 
@@ -38,7 +38,7 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function getDeals()
 	{
-		return $this->deals; 
+		return $this->deals;
 
 	}
 
@@ -48,8 +48,8 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function setDeals(string $deals)
 	{
-		$this->deals=$deals; 
-		$this->keyModified['Deals'] = 1; 
+		$this->deals=$deals;
+		$this->keyModified['Deals'] = 1;
 
 	}
 
@@ -59,7 +59,7 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function getAccounts()
 	{
-		return $this->accounts; 
+		return $this->accounts;
 
 	}
 
@@ -69,8 +69,8 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function setAccounts(string $accounts)
 	{
-		$this->accounts=$accounts; 
-		$this->keyModified['Accounts'] = 1; 
+		$this->accounts=$accounts;
+		$this->keyModified['Accounts'] = 1;
 
 	}
 
@@ -83,10 +83,10 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -97,7 +97,7 @@ class SuccessfulConvert implements Model, ConvertActionResponse
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

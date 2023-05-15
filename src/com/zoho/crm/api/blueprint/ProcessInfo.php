@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\blueprint;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class ProcessInfo implements Model
 {
@@ -25,7 +25,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getFieldId()
 	{
-		return $this->fieldId; 
+		return $this->fieldId;
 
 	}
 
@@ -35,8 +35,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setFieldId(string $fieldId)
 	{
-		$this->fieldId=$fieldId; 
-		$this->keyModified['field_id'] = 1; 
+		$this->fieldId=$fieldId;
+		$this->keyModified['field_id'] = 1;
 
 	}
 
@@ -46,7 +46,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getIsContinuous()
 	{
-		return $this->isContinuous; 
+		return $this->isContinuous;
 
 	}
 
@@ -56,8 +56,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setIsContinuous(bool $isContinuous)
 	{
-		$this->isContinuous=$isContinuous; 
-		$this->keyModified['is_continuous'] = 1; 
+		$this->isContinuous=$isContinuous;
+		$this->keyModified['is_continuous'] = 1;
 
 	}
 
@@ -67,7 +67,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getAPIName()
 	{
-		return $this->apiName; 
+		return $this->apiName;
 
 	}
 
@@ -77,8 +77,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setAPIName(string $apiName)
 	{
-		$this->apiName=$apiName; 
-		$this->keyModified['api_name'] = 1; 
+		$this->apiName=$apiName;
+		$this->keyModified['api_name'] = 1;
 
 	}
 
@@ -88,7 +88,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getContinuous()
 	{
-		return $this->continuous; 
+		return $this->continuous;
 
 	}
 
@@ -98,8 +98,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setContinuous(bool $continuous)
 	{
-		$this->continuous=$continuous; 
-		$this->keyModified['continuous'] = 1; 
+		$this->continuous=$continuous;
+		$this->keyModified['continuous'] = 1;
 
 	}
 
@@ -109,7 +109,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getFieldLabel()
 	{
-		return $this->fieldLabel; 
+		return $this->fieldLabel;
 
 	}
 
@@ -119,8 +119,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setFieldLabel(string $fieldLabel)
 	{
-		$this->fieldLabel=$fieldLabel; 
-		$this->keyModified['field_label'] = 1; 
+		$this->fieldLabel=$fieldLabel;
+		$this->keyModified['field_label'] = 1;
 
 	}
 
@@ -130,7 +130,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -140,8 +140,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -151,7 +151,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getColumnName()
 	{
-		return $this->columnName; 
+		return $this->columnName;
 
 	}
 
@@ -161,8 +161,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setColumnName(string $columnName)
 	{
-		$this->columnName=$columnName; 
-		$this->keyModified['column_name'] = 1; 
+		$this->columnName=$columnName;
+		$this->keyModified['column_name'] = 1;
 
 	}
 
@@ -172,7 +172,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getFieldValue()
 	{
-		return $this->fieldValue; 
+		return $this->fieldValue;
 
 	}
 
@@ -182,8 +182,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setFieldValue(string $fieldValue)
 	{
-		$this->fieldValue=$fieldValue; 
-		$this->keyModified['field_value'] = 1; 
+		$this->fieldValue=$fieldValue;
+		$this->keyModified['field_value'] = 1;
 
 	}
 
@@ -193,7 +193,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -203,8 +203,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -214,7 +214,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getFieldName()
 	{
-		return $this->fieldName; 
+		return $this->fieldName;
 
 	}
 
@@ -224,8 +224,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setFieldName(string $fieldName)
 	{
-		$this->fieldName=$fieldName; 
-		$this->keyModified['field_name'] = 1; 
+		$this->fieldName=$fieldName;
+		$this->keyModified['field_name'] = 1;
 
 	}
 
@@ -235,7 +235,7 @@ class ProcessInfo implements Model
 	 */
 	public  function getEscalation()
 	{
-		return $this->escalation; 
+		return $this->escalation;
 
 	}
 
@@ -245,8 +245,8 @@ class ProcessInfo implements Model
 	 */
 	public  function setEscalation(string $escalation)
 	{
-		$this->escalation=$escalation; 
-		$this->keyModified['escalation'] = 1; 
+		$this->escalation=$escalation;
+		$this->keyModified['escalation'] = 1;
 
 	}
 
@@ -259,10 +259,10 @@ class ProcessInfo implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -273,7 +273,7 @@ class ProcessInfo implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

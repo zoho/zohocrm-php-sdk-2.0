@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\fields;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Formula implements Model
 {
@@ -16,7 +16,7 @@ class Formula implements Model
 	 */
 	public  function getReturnType()
 	{
-		return $this->returnType; 
+		return $this->returnType;
 
 	}
 
@@ -26,8 +26,8 @@ class Formula implements Model
 	 */
 	public  function setReturnType(string $returnType)
 	{
-		$this->returnType=$returnType; 
-		$this->keyModified['return_type'] = 1; 
+		$this->returnType=$returnType;
+		$this->keyModified['return_type'] = 1;
 
 	}
 
@@ -37,7 +37,7 @@ class Formula implements Model
 	 */
 	public  function getExpression()
 	{
-		return $this->expression; 
+		return $this->expression;
 
 	}
 
@@ -47,8 +47,8 @@ class Formula implements Model
 	 */
 	public  function setExpression(string $expression)
 	{
-		$this->expression=$expression; 
-		$this->keyModified['expression'] = 1; 
+		$this->expression=$expression;
+		$this->keyModified['expression'] = 1;
 
 	}
 
@@ -61,10 +61,10 @@ class Formula implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -75,7 +75,7 @@ class Formula implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

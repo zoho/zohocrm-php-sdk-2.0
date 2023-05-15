@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class Criteria implements Model
 {
@@ -20,7 +20,7 @@ class Criteria implements Model
 	 */
 	public  function getComparator()
 	{
-		return $this->comparator; 
+		return $this->comparator;
 
 	}
 
@@ -30,8 +30,8 @@ class Criteria implements Model
 	 */
 	public  function setComparator(Choice $comparator)
 	{
-		$this->comparator=$comparator; 
-		$this->keyModified['comparator'] = 1; 
+		$this->comparator=$comparator;
+		$this->keyModified['comparator'] = 1;
 
 	}
 
@@ -41,7 +41,7 @@ class Criteria implements Model
 	 */
 	public  function getField()
 	{
-		return $this->field; 
+		return $this->field;
 
 	}
 
@@ -51,8 +51,8 @@ class Criteria implements Model
 	 */
 	public  function setField(string $field)
 	{
-		$this->field=$field; 
-		$this->keyModified['field'] = 1; 
+		$this->field=$field;
+		$this->keyModified['field'] = 1;
 
 	}
 
@@ -61,18 +61,18 @@ class Criteria implements Model
 	 */
 	public  function getValue()
 	{
-		return $this->value; 
+		return $this->value;
 
 	}
 
 	/**
 	 * The method to set the value to value
-	 * @param 
+	 * @param
 	 */
 	public  function setValue( $value)
 	{
-		$this->value=$value; 
-		$this->keyModified['value'] = 1; 
+		$this->value=$value;
+		$this->keyModified['value'] = 1;
 
 	}
 
@@ -82,7 +82,7 @@ class Criteria implements Model
 	 */
 	public  function getGroupOperator()
 	{
-		return $this->groupOperator; 
+		return $this->groupOperator;
 
 	}
 
@@ -92,8 +92,8 @@ class Criteria implements Model
 	 */
 	public  function setGroupOperator(Choice $groupOperator)
 	{
-		$this->groupOperator=$groupOperator; 
-		$this->keyModified['group_operator'] = 1; 
+		$this->groupOperator=$groupOperator;
+		$this->keyModified['group_operator'] = 1;
 
 	}
 
@@ -103,7 +103,7 @@ class Criteria implements Model
 	 */
 	public  function getGroup()
 	{
-		return $this->group; 
+		return $this->group;
 
 	}
 
@@ -113,8 +113,8 @@ class Criteria implements Model
 	 */
 	public  function setGroup(array $group)
 	{
-		$this->group=$group; 
-		$this->keyModified['group'] = 1; 
+		$this->group=$group;
+		$this->keyModified['group'] = 1;
 
 	}
 
@@ -127,10 +127,10 @@ class Criteria implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -141,7 +141,7 @@ class Criteria implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

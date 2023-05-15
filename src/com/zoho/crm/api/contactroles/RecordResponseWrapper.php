@@ -1,9 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\contactroles;
 
 use com\zoho\crm\api\record\Info;
-use com\zoho\crm\api\record\Record;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class RecordResponseWrapper implements Model, RecordResponseHandler
 {
@@ -18,7 +17,7 @@ class RecordResponseWrapper implements Model, RecordResponseHandler
 	 */
 	public  function getData()
 	{
-		return $this->data; 
+		return $this->data;
 
 	}
 
@@ -28,8 +27,8 @@ class RecordResponseWrapper implements Model, RecordResponseHandler
 	 */
 	public  function setData(array $data)
 	{
-		$this->data=$data; 
-		$this->keyModified['data'] = 1; 
+		$this->data=$data;
+		$this->keyModified['data'] = 1;
 
 	}
 
@@ -39,7 +38,7 @@ class RecordResponseWrapper implements Model, RecordResponseHandler
 	 */
 	public  function getInfo()
 	{
-		return $this->info; 
+		return $this->info;
 
 	}
 
@@ -49,8 +48,8 @@ class RecordResponseWrapper implements Model, RecordResponseHandler
 	 */
 	public  function setInfo(Info $info)
 	{
-		$this->info=$info; 
-		$this->keyModified['info'] = 1; 
+		$this->info=$info;
+		$this->keyModified['info'] = 1;
 
 	}
 
@@ -63,10 +62,10 @@ class RecordResponseWrapper implements Model, RecordResponseHandler
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -77,7 +76,7 @@ class RecordResponseWrapper implements Model, RecordResponseHandler
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

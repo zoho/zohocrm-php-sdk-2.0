@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class Comment implements Model
 {
@@ -18,7 +18,7 @@ class Comment implements Model
 	 */
 	public  function getCommentedBy()
 	{
-		return $this->commentedBy; 
+		return $this->commentedBy;
 
 	}
 
@@ -28,8 +28,8 @@ class Comment implements Model
 	 */
 	public  function setCommentedBy(string $commentedBy)
 	{
-		$this->commentedBy=$commentedBy; 
-		$this->keyModified['commented_by'] = 1; 
+		$this->commentedBy=$commentedBy;
+		$this->keyModified['commented_by'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class Comment implements Model
 	 */
 	public  function getCommentedTime()
 	{
-		return $this->commentedTime; 
+		return $this->commentedTime;
 
 	}
 
@@ -49,8 +49,8 @@ class Comment implements Model
 	 */
 	public  function setCommentedTime(\DateTime $commentedTime)
 	{
-		$this->commentedTime=$commentedTime; 
-		$this->keyModified['commented_time'] = 1; 
+		$this->commentedTime=$commentedTime;
+		$this->keyModified['commented_time'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class Comment implements Model
 	 */
 	public  function getCommentContent()
 	{
-		return $this->commentContent; 
+		return $this->commentContent;
 
 	}
 
@@ -70,8 +70,8 @@ class Comment implements Model
 	 */
 	public  function setCommentContent(string $commentContent)
 	{
-		$this->commentContent=$commentContent; 
-		$this->keyModified['comment_content'] = 1; 
+		$this->commentContent=$commentContent;
+		$this->keyModified['comment_content'] = 1;
 
 	}
 
@@ -81,7 +81,7 @@ class Comment implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -91,8 +91,8 @@ class Comment implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -105,10 +105,10 @@ class Comment implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -119,7 +119,7 @@ class Comment implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

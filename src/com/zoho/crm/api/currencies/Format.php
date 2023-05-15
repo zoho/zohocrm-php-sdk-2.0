@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\currencies;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class Format implements Model
 {
@@ -18,7 +18,7 @@ class Format implements Model
 	 */
 	public  function getDecimalSeparator()
 	{
-		return $this->decimalSeparator; 
+		return $this->decimalSeparator;
 
 	}
 
@@ -28,8 +28,8 @@ class Format implements Model
 	 */
 	public  function setDecimalSeparator(Choice $decimalSeparator)
 	{
-		$this->decimalSeparator=$decimalSeparator; 
-		$this->keyModified['decimal_separator'] = 1; 
+		$this->decimalSeparator=$decimalSeparator;
+		$this->keyModified['decimal_separator'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class Format implements Model
 	 */
 	public  function getThousandSeparator()
 	{
-		return $this->thousandSeparator; 
+		return $this->thousandSeparator;
 
 	}
 
@@ -49,8 +49,8 @@ class Format implements Model
 	 */
 	public  function setThousandSeparator(Choice $thousandSeparator)
 	{
-		$this->thousandSeparator=$thousandSeparator; 
-		$this->keyModified['thousand_separator'] = 1; 
+		$this->thousandSeparator=$thousandSeparator;
+		$this->keyModified['thousand_separator'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class Format implements Model
 	 */
 	public  function getDecimalPlaces()
 	{
-		return $this->decimalPlaces; 
+		return $this->decimalPlaces;
 
 	}
 
@@ -70,8 +70,8 @@ class Format implements Model
 	 */
 	public  function setDecimalPlaces(Choice $decimalPlaces)
 	{
-		$this->decimalPlaces=$decimalPlaces; 
-		$this->keyModified['decimal_places'] = 1; 
+		$this->decimalPlaces=$decimalPlaces;
+		$this->keyModified['decimal_places'] = 1;
 
 	}
 
@@ -84,10 +84,10 @@ class Format implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -98,7 +98,7 @@ class Format implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

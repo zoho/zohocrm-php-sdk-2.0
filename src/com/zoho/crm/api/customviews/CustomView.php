@@ -1,7 +1,7 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\customviews;
 
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Model;
 
 class CustomView implements Model
 {
@@ -29,7 +29,7 @@ class CustomView implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -39,8 +39,8 @@ class CustomView implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -50,7 +50,7 @@ class CustomView implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -60,8 +60,8 @@ class CustomView implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -71,7 +71,7 @@ class CustomView implements Model
 	 */
 	public  function getSystemName()
 	{
-		return $this->systemName; 
+		return $this->systemName;
 
 	}
 
@@ -81,8 +81,8 @@ class CustomView implements Model
 	 */
 	public  function setSystemName(string $systemName)
 	{
-		$this->systemName=$systemName; 
-		$this->keyModified['system_name'] = 1; 
+		$this->systemName=$systemName;
+		$this->keyModified['system_name'] = 1;
 
 	}
 
@@ -92,7 +92,7 @@ class CustomView implements Model
 	 */
 	public  function getDisplayValue()
 	{
-		return $this->displayValue; 
+		return $this->displayValue;
 
 	}
 
@@ -102,8 +102,8 @@ class CustomView implements Model
 	 */
 	public  function setDisplayValue(string $displayValue)
 	{
-		$this->displayValue=$displayValue; 
-		$this->keyModified['display_value'] = 1; 
+		$this->displayValue=$displayValue;
+		$this->keyModified['display_value'] = 1;
 
 	}
 
@@ -113,7 +113,7 @@ class CustomView implements Model
 	 */
 	public  function getSharedType()
 	{
-		return $this->sharedType; 
+		return $this->sharedType;
 
 	}
 
@@ -123,8 +123,8 @@ class CustomView implements Model
 	 */
 	public  function setSharedType(string $sharedType)
 	{
-		$this->sharedType=$sharedType; 
-		$this->keyModified['shared_type'] = 1; 
+		$this->sharedType=$sharedType;
+		$this->keyModified['shared_type'] = 1;
 
 	}
 
@@ -134,7 +134,7 @@ class CustomView implements Model
 	 */
 	public  function getCategory()
 	{
-		return $this->category; 
+		return $this->category;
 
 	}
 
@@ -144,8 +144,8 @@ class CustomView implements Model
 	 */
 	public  function setCategory(string $category)
 	{
-		$this->category=$category; 
-		$this->keyModified['category'] = 1; 
+		$this->category=$category;
+		$this->keyModified['category'] = 1;
 
 	}
 
@@ -155,7 +155,7 @@ class CustomView implements Model
 	 */
 	public  function getSortBy()
 	{
-		return $this->sortBy; 
+		return $this->sortBy;
 
 	}
 
@@ -165,8 +165,8 @@ class CustomView implements Model
 	 */
 	public  function setSortBy(string $sortBy)
 	{
-		$this->sortBy=$sortBy; 
-		$this->keyModified['sort_by'] = 1; 
+		$this->sortBy=$sortBy;
+		$this->keyModified['sort_by'] = 1;
 
 	}
 
@@ -176,7 +176,7 @@ class CustomView implements Model
 	 */
 	public  function getSortOrder()
 	{
-		return $this->sortOrder; 
+		return $this->sortOrder;
 
 	}
 
@@ -186,8 +186,8 @@ class CustomView implements Model
 	 */
 	public  function setSortOrder(string $sortOrder)
 	{
-		$this->sortOrder=$sortOrder; 
-		$this->keyModified['sort_order'] = 1; 
+		$this->sortOrder=$sortOrder;
+		$this->keyModified['sort_order'] = 1;
 
 	}
 
@@ -197,7 +197,7 @@ class CustomView implements Model
 	 */
 	public  function getFavorite()
 	{
-		return $this->favorite; 
+		return $this->favorite;
 
 	}
 
@@ -207,8 +207,8 @@ class CustomView implements Model
 	 */
 	public  function setFavorite(int $favorite)
 	{
-		$this->favorite=$favorite; 
-		$this->keyModified['favorite'] = 1; 
+		$this->favorite=$favorite;
+		$this->keyModified['favorite'] = 1;
 
 	}
 
@@ -218,7 +218,7 @@ class CustomView implements Model
 	 */
 	public  function getOffline()
 	{
-		return $this->offline; 
+		return $this->offline;
 
 	}
 
@@ -228,8 +228,8 @@ class CustomView implements Model
 	 */
 	public  function setOffline(bool $offline)
 	{
-		$this->offline=$offline; 
-		$this->keyModified['offline'] = 1; 
+		$this->offline=$offline;
+		$this->keyModified['offline'] = 1;
 
 	}
 
@@ -239,7 +239,7 @@ class CustomView implements Model
 	 */
 	public  function getDefault()
 	{
-		return $this->default; 
+		return $this->default;
 
 	}
 
@@ -249,8 +249,8 @@ class CustomView implements Model
 	 */
 	public  function setDefault(bool $default)
 	{
-		$this->default=$default; 
-		$this->keyModified['default'] = 1; 
+		$this->default=$default;
+		$this->keyModified['default'] = 1;
 
 	}
 
@@ -260,7 +260,7 @@ class CustomView implements Model
 	 */
 	public  function getSystemDefined()
 	{
-		return $this->systemDefined; 
+		return $this->systemDefined;
 
 	}
 
@@ -270,8 +270,8 @@ class CustomView implements Model
 	 */
 	public  function setSystemDefined(bool $systemDefined)
 	{
-		$this->systemDefined=$systemDefined; 
-		$this->keyModified['system_defined'] = 1; 
+		$this->systemDefined=$systemDefined;
+		$this->keyModified['system_defined'] = 1;
 
 	}
 
@@ -281,7 +281,7 @@ class CustomView implements Model
 	 */
 	public  function getCriteria()
 	{
-		return $this->criteria; 
+		return $this->criteria;
 
 	}
 
@@ -291,8 +291,8 @@ class CustomView implements Model
 	 */
 	public  function setCriteria(Criteria $criteria)
 	{
-		$this->criteria=$criteria; 
-		$this->keyModified['criteria'] = 1; 
+		$this->criteria=$criteria;
+		$this->keyModified['criteria'] = 1;
 
 	}
 
@@ -302,7 +302,7 @@ class CustomView implements Model
 	 */
 	public  function getSharedDetails()
 	{
-		return $this->sharedDetails; 
+		return $this->sharedDetails;
 
 	}
 
@@ -312,8 +312,8 @@ class CustomView implements Model
 	 */
 	public  function setSharedDetails(array $sharedDetails)
 	{
-		$this->sharedDetails=$sharedDetails; 
-		$this->keyModified['shared_details'] = 1; 
+		$this->sharedDetails=$sharedDetails;
+		$this->keyModified['shared_details'] = 1;
 
 	}
 
@@ -323,7 +323,7 @@ class CustomView implements Model
 	 */
 	public  function getFields()
 	{
-		return $this->fields; 
+		return $this->fields;
 
 	}
 
@@ -333,8 +333,8 @@ class CustomView implements Model
 	 */
 	public  function setFields(array $fields)
 	{
-		$this->fields=$fields; 
-		$this->keyModified['fields'] = 1; 
+		$this->fields=$fields;
+		$this->keyModified['fields'] = 1;
 
 	}
 
@@ -347,10 +347,10 @@ class CustomView implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -361,7 +361,7 @@ class CustomView implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkwrite;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHandler
 {
@@ -25,7 +25,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getCode()
 	{
-		return $this->code; 
+		return $this->code;
 
 	}
 
@@ -35,8 +35,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setCode(Choice $code)
 	{
-		$this->code=$code; 
-		$this->keyModified['code'] = 1; 
+		$this->code=$code;
+		$this->keyModified['code'] = 1;
 
 	}
 
@@ -46,7 +46,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getMessage()
 	{
-		return $this->message; 
+		return $this->message;
 
 	}
 
@@ -56,8 +56,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setMessage(Choice $message)
 	{
-		$this->message=$message; 
-		$this->keyModified['message'] = 1; 
+		$this->message=$message;
+		$this->keyModified['message'] = 1;
 
 	}
 
@@ -67,7 +67,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getStatus()
 	{
-		return $this->status; 
+		return $this->status;
 
 	}
 
@@ -77,8 +77,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setStatus(Choice $status)
 	{
-		$this->status=$status; 
-		$this->keyModified['status'] = 1; 
+		$this->status=$status;
+		$this->keyModified['status'] = 1;
 
 	}
 
@@ -88,7 +88,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getDetails()
 	{
-		return $this->details; 
+		return $this->details;
 
 	}
 
@@ -98,8 +98,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setDetails(array $details)
 	{
-		$this->details=$details; 
-		$this->keyModified['details'] = 1; 
+		$this->details=$details;
+		$this->keyModified['details'] = 1;
 
 	}
 
@@ -109,7 +109,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getErrorMessage()
 	{
-		return $this->errorMessage; 
+		return $this->errorMessage;
 
 	}
 
@@ -119,8 +119,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setErrorMessage(Choice $errorMessage)
 	{
-		$this->errorMessage=$errorMessage; 
-		$this->keyModified['ERROR_MESSAGE'] = 1; 
+		$this->errorMessage=$errorMessage;
+		$this->keyModified['ERROR_MESSAGE'] = 1;
 
 	}
 
@@ -130,7 +130,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getErrorCode()
 	{
-		return $this->errorCode; 
+		return $this->errorCode;
 
 	}
 
@@ -140,8 +140,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setErrorCode(int $errorCode)
 	{
-		$this->errorCode=$errorCode; 
-		$this->keyModified['ERROR_CODE'] = 1; 
+		$this->errorCode=$errorCode;
+		$this->keyModified['ERROR_CODE'] = 1;
 
 	}
 
@@ -151,7 +151,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getXError()
 	{
-		return $this->xError; 
+		return $this->xError;
 
 	}
 
@@ -161,8 +161,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setXError(Choice $xError)
 	{
-		$this->xError=$xError; 
-		$this->keyModified['x-error'] = 1; 
+		$this->xError=$xError;
+		$this->keyModified['x-error'] = 1;
 
 	}
 
@@ -172,7 +172,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getInfo()
 	{
-		return $this->info; 
+		return $this->info;
 
 	}
 
@@ -182,8 +182,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setInfo(Choice $info)
 	{
-		$this->info=$info; 
-		$this->keyModified['info'] = 1; 
+		$this->info=$info;
+		$this->keyModified['info'] = 1;
 
 	}
 
@@ -193,7 +193,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getXInfo()
 	{
-		return $this->xInfo; 
+		return $this->xInfo;
 
 	}
 
@@ -203,8 +203,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setXInfo(Choice $xInfo)
 	{
-		$this->xInfo=$xInfo; 
-		$this->keyModified['x-info'] = 1; 
+		$this->xInfo=$xInfo;
+		$this->keyModified['x-info'] = 1;
 
 	}
 
@@ -214,7 +214,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function getHttpStatus()
 	{
-		return $this->httpStatus; 
+		return $this->httpStatus;
 
 	}
 
@@ -224,8 +224,8 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setHttpStatus(string $httpStatus)
 	{
-		$this->httpStatus=$httpStatus; 
-		$this->keyModified['http_status'] = 1; 
+		$this->httpStatus=$httpStatus;
+		$this->keyModified['http_status'] = 1;
 
 	}
 
@@ -238,10 +238,10 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -252,7 +252,7 @@ class APIException implements Model, ActionResponse, ResponseWrapper, ResponseHa
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

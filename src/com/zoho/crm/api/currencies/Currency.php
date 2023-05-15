@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\currencies;
 
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class Currency implements Model
 {
@@ -28,7 +28,7 @@ class Currency implements Model
 	 */
 	public  function getSymbol()
 	{
-		return $this->symbol; 
+		return $this->symbol;
 
 	}
 
@@ -38,8 +38,8 @@ class Currency implements Model
 	 */
 	public  function setSymbol(string $symbol)
 	{
-		$this->symbol=$symbol; 
-		$this->keyModified['symbol'] = 1; 
+		$this->symbol=$symbol;
+		$this->keyModified['symbol'] = 1;
 
 	}
 
@@ -49,7 +49,7 @@ class Currency implements Model
 	 */
 	public  function getCreatedTime()
 	{
-		return $this->createdTime; 
+		return $this->createdTime;
 
 	}
 
@@ -59,8 +59,8 @@ class Currency implements Model
 	 */
 	public  function setCreatedTime(\DateTime $createdTime)
 	{
-		$this->createdTime=$createdTime; 
-		$this->keyModified['created_time'] = 1; 
+		$this->createdTime=$createdTime;
+		$this->keyModified['created_time'] = 1;
 
 	}
 
@@ -70,7 +70,7 @@ class Currency implements Model
 	 */
 	public  function getIsActive()
 	{
-		return $this->isActive; 
+		return $this->isActive;
 
 	}
 
@@ -80,8 +80,8 @@ class Currency implements Model
 	 */
 	public  function setIsActive(bool $isActive)
 	{
-		$this->isActive=$isActive; 
-		$this->keyModified['is_active'] = 1; 
+		$this->isActive=$isActive;
+		$this->keyModified['is_active'] = 1;
 
 	}
 
@@ -91,7 +91,7 @@ class Currency implements Model
 	 */
 	public  function getExchangeRate()
 	{
-		return $this->exchangeRate; 
+		return $this->exchangeRate;
 
 	}
 
@@ -101,8 +101,8 @@ class Currency implements Model
 	 */
 	public  function setExchangeRate(string $exchangeRate)
 	{
-		$this->exchangeRate=$exchangeRate; 
-		$this->keyModified['exchange_rate'] = 1; 
+		$this->exchangeRate=$exchangeRate;
+		$this->keyModified['exchange_rate'] = 1;
 
 	}
 
@@ -112,7 +112,7 @@ class Currency implements Model
 	 */
 	public  function getFormat()
 	{
-		return $this->format; 
+		return $this->format;
 
 	}
 
@@ -122,8 +122,8 @@ class Currency implements Model
 	 */
 	public  function setFormat(Format $format)
 	{
-		$this->format=$format; 
-		$this->keyModified['format'] = 1; 
+		$this->format=$format;
+		$this->keyModified['format'] = 1;
 
 	}
 
@@ -133,7 +133,7 @@ class Currency implements Model
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->createdBy; 
+		return $this->createdBy;
 
 	}
 
@@ -143,8 +143,8 @@ class Currency implements Model
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->createdBy=$createdBy; 
-		$this->keyModified['created_by'] = 1; 
+		$this->createdBy=$createdBy;
+		$this->keyModified['created_by'] = 1;
 
 	}
 
@@ -154,7 +154,7 @@ class Currency implements Model
 	 */
 	public  function getPrefixSymbol()
 	{
-		return $this->prefixSymbol; 
+		return $this->prefixSymbol;
 
 	}
 
@@ -164,8 +164,8 @@ class Currency implements Model
 	 */
 	public  function setPrefixSymbol(bool $prefixSymbol)
 	{
-		$this->prefixSymbol=$prefixSymbol; 
-		$this->keyModified['prefix_symbol'] = 1; 
+		$this->prefixSymbol=$prefixSymbol;
+		$this->keyModified['prefix_symbol'] = 1;
 
 	}
 
@@ -175,7 +175,7 @@ class Currency implements Model
 	 */
 	public  function getIsBase()
 	{
-		return $this->isBase; 
+		return $this->isBase;
 
 	}
 
@@ -185,8 +185,8 @@ class Currency implements Model
 	 */
 	public  function setIsBase(bool $isBase)
 	{
-		$this->isBase=$isBase; 
-		$this->keyModified['is_base'] = 1; 
+		$this->isBase=$isBase;
+		$this->keyModified['is_base'] = 1;
 
 	}
 
@@ -196,7 +196,7 @@ class Currency implements Model
 	 */
 	public  function getModifiedTime()
 	{
-		return $this->modifiedTime; 
+		return $this->modifiedTime;
 
 	}
 
@@ -206,8 +206,8 @@ class Currency implements Model
 	 */
 	public  function setModifiedTime(\DateTime $modifiedTime)
 	{
-		$this->modifiedTime=$modifiedTime; 
-		$this->keyModified['modified_time'] = 1; 
+		$this->modifiedTime=$modifiedTime;
+		$this->keyModified['modified_time'] = 1;
 
 	}
 
@@ -217,7 +217,7 @@ class Currency implements Model
 	 */
 	public  function getName()
 	{
-		return $this->name; 
+		return $this->name;
 
 	}
 
@@ -227,8 +227,8 @@ class Currency implements Model
 	 */
 	public  function setName(string $name)
 	{
-		$this->name=$name; 
-		$this->keyModified['name'] = 1; 
+		$this->name=$name;
+		$this->keyModified['name'] = 1;
 
 	}
 
@@ -238,7 +238,7 @@ class Currency implements Model
 	 */
 	public  function getModifiedBy()
 	{
-		return $this->modifiedBy; 
+		return $this->modifiedBy;
 
 	}
 
@@ -248,8 +248,8 @@ class Currency implements Model
 	 */
 	public  function setModifiedBy(User $modifiedBy)
 	{
-		$this->modifiedBy=$modifiedBy; 
-		$this->keyModified['modified_by'] = 1; 
+		$this->modifiedBy=$modifiedBy;
+		$this->keyModified['modified_by'] = 1;
 
 	}
 
@@ -259,7 +259,7 @@ class Currency implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -269,8 +269,8 @@ class Currency implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -280,7 +280,7 @@ class Currency implements Model
 	 */
 	public  function getIsoCode()
 	{
-		return $this->isoCode; 
+		return $this->isoCode;
 
 	}
 
@@ -290,8 +290,8 @@ class Currency implements Model
 	 */
 	public  function setIsoCode(string $isoCode)
 	{
-		$this->isoCode=$isoCode; 
-		$this->keyModified['iso_code'] = 1; 
+		$this->isoCode=$isoCode;
+		$this->keyModified['iso_code'] = 1;
 
 	}
 
@@ -304,10 +304,10 @@ class Currency implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -318,7 +318,7 @@ class Currency implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

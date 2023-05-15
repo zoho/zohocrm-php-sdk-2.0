@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkread;
 
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class RequestWrapper implements Model
 {
@@ -18,7 +18,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getCallback()
 	{
-		return $this->callback; 
+		return $this->callback;
 
 	}
 
@@ -28,8 +28,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setCallback(CallBack $callback)
 	{
-		$this->callback=$callback; 
-		$this->keyModified['callback'] = 1; 
+		$this->callback=$callback;
+		$this->keyModified['callback'] = 1;
 
 	}
 
@@ -39,7 +39,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getQuery()
 	{
-		return $this->query; 
+		return $this->query;
 
 	}
 
@@ -49,8 +49,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setQuery(Query $query)
 	{
-		$this->query=$query; 
-		$this->keyModified['query'] = 1; 
+		$this->query=$query;
+		$this->keyModified['query'] = 1;
 
 	}
 
@@ -60,7 +60,7 @@ class RequestWrapper implements Model
 	 */
 	public  function getFileType()
 	{
-		return $this->fileType; 
+		return $this->fileType;
 
 	}
 
@@ -70,8 +70,8 @@ class RequestWrapper implements Model
 	 */
 	public  function setFileType(Choice $fileType)
 	{
-		$this->fileType=$fileType; 
-		$this->keyModified['file_type'] = 1; 
+		$this->fileType=$fileType;
+		$this->keyModified['file_type'] = 1;
 
 	}
 
@@ -84,10 +84,10 @@ class RequestWrapper implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -98,7 +98,7 @@ class RequestWrapper implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

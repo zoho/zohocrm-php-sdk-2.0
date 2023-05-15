@@ -1,8 +1,8 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\record;
 
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Model;
 
 class DeletedRecord implements Model
 {
@@ -21,7 +21,7 @@ class DeletedRecord implements Model
 	 */
 	public  function getDeletedBy()
 	{
-		return $this->deletedBy; 
+		return $this->deletedBy;
 
 	}
 
@@ -31,8 +31,8 @@ class DeletedRecord implements Model
 	 */
 	public  function setDeletedBy(User $deletedBy)
 	{
-		$this->deletedBy=$deletedBy; 
-		$this->keyModified['deleted_by'] = 1; 
+		$this->deletedBy=$deletedBy;
+		$this->keyModified['deleted_by'] = 1;
 
 	}
 
@@ -42,7 +42,7 @@ class DeletedRecord implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -52,8 +52,8 @@ class DeletedRecord implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -63,7 +63,7 @@ class DeletedRecord implements Model
 	 */
 	public  function getDisplayName()
 	{
-		return $this->displayName; 
+		return $this->displayName;
 
 	}
 
@@ -73,8 +73,8 @@ class DeletedRecord implements Model
 	 */
 	public  function setDisplayName(string $displayName)
 	{
-		$this->displayName=$displayName; 
-		$this->keyModified['display_name'] = 1; 
+		$this->displayName=$displayName;
+		$this->keyModified['display_name'] = 1;
 
 	}
 
@@ -84,7 +84,7 @@ class DeletedRecord implements Model
 	 */
 	public  function getType()
 	{
-		return $this->type; 
+		return $this->type;
 
 	}
 
@@ -94,8 +94,8 @@ class DeletedRecord implements Model
 	 */
 	public  function setType(string $type)
 	{
-		$this->type=$type; 
-		$this->keyModified['type'] = 1; 
+		$this->type=$type;
+		$this->keyModified['type'] = 1;
 
 	}
 
@@ -105,7 +105,7 @@ class DeletedRecord implements Model
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->createdBy; 
+		return $this->createdBy;
 
 	}
 
@@ -115,8 +115,8 @@ class DeletedRecord implements Model
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->createdBy=$createdBy; 
-		$this->keyModified['created_by'] = 1; 
+		$this->createdBy=$createdBy;
+		$this->keyModified['created_by'] = 1;
 
 	}
 
@@ -126,7 +126,7 @@ class DeletedRecord implements Model
 	 */
 	public  function getDeletedTime()
 	{
-		return $this->deletedTime; 
+		return $this->deletedTime;
 
 	}
 
@@ -136,8 +136,8 @@ class DeletedRecord implements Model
 	 */
 	public  function setDeletedTime(\DateTime $deletedTime)
 	{
-		$this->deletedTime=$deletedTime; 
-		$this->keyModified['deleted_time'] = 1; 
+		$this->deletedTime=$deletedTime;
+		$this->keyModified['deleted_time'] = 1;
 
 	}
 
@@ -150,10 +150,10 @@ class DeletedRecord implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -164,7 +164,7 @@ class DeletedRecord implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}

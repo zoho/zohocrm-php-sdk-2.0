@@ -1,9 +1,9 @@
-<?php 
+<?php
 namespace com\zoho\crm\api\bulkread;
 
-use com\zoho\crm\api\users\User;
-use com\zoho\crm\api\util\Choice;
-use com\zoho\crm\api\util\Model;
+use Zoho\Crm\Users\User;
+use Zoho\Crm\Util\Choice;
+use Zoho\Crm\Util\Model;
 
 class JobDetail implements Model
 {
@@ -24,7 +24,7 @@ class JobDetail implements Model
 	 */
 	public  function getId()
 	{
-		return $this->id; 
+		return $this->id;
 
 	}
 
@@ -34,8 +34,8 @@ class JobDetail implements Model
 	 */
 	public  function setId(string $id)
 	{
-		$this->id=$id; 
-		$this->keyModified['id'] = 1; 
+		$this->id=$id;
+		$this->keyModified['id'] = 1;
 
 	}
 
@@ -45,7 +45,7 @@ class JobDetail implements Model
 	 */
 	public  function getOperation()
 	{
-		return $this->operation; 
+		return $this->operation;
 
 	}
 
@@ -55,8 +55,8 @@ class JobDetail implements Model
 	 */
 	public  function setOperation(string $operation)
 	{
-		$this->operation=$operation; 
-		$this->keyModified['operation'] = 1; 
+		$this->operation=$operation;
+		$this->keyModified['operation'] = 1;
 
 	}
 
@@ -66,7 +66,7 @@ class JobDetail implements Model
 	 */
 	public  function getState()
 	{
-		return $this->state; 
+		return $this->state;
 
 	}
 
@@ -76,8 +76,8 @@ class JobDetail implements Model
 	 */
 	public  function setState(Choice $state)
 	{
-		$this->state=$state; 
-		$this->keyModified['state'] = 1; 
+		$this->state=$state;
+		$this->keyModified['state'] = 1;
 
 	}
 
@@ -87,7 +87,7 @@ class JobDetail implements Model
 	 */
 	public  function getQuery()
 	{
-		return $this->query; 
+		return $this->query;
 
 	}
 
@@ -97,8 +97,8 @@ class JobDetail implements Model
 	 */
 	public  function setQuery(Query $query)
 	{
-		$this->query=$query; 
-		$this->keyModified['query'] = 1; 
+		$this->query=$query;
+		$this->keyModified['query'] = 1;
 
 	}
 
@@ -108,7 +108,7 @@ class JobDetail implements Model
 	 */
 	public  function getCreatedBy()
 	{
-		return $this->createdBy; 
+		return $this->createdBy;
 
 	}
 
@@ -118,8 +118,8 @@ class JobDetail implements Model
 	 */
 	public  function setCreatedBy(User $createdBy)
 	{
-		$this->createdBy=$createdBy; 
-		$this->keyModified['created_by'] = 1; 
+		$this->createdBy=$createdBy;
+		$this->keyModified['created_by'] = 1;
 
 	}
 
@@ -129,7 +129,7 @@ class JobDetail implements Model
 	 */
 	public  function getCreatedTime()
 	{
-		return $this->createdTime; 
+		return $this->createdTime;
 
 	}
 
@@ -139,8 +139,8 @@ class JobDetail implements Model
 	 */
 	public  function setCreatedTime(\DateTime $createdTime)
 	{
-		$this->createdTime=$createdTime; 
-		$this->keyModified['created_time'] = 1; 
+		$this->createdTime=$createdTime;
+		$this->keyModified['created_time'] = 1;
 
 	}
 
@@ -150,7 +150,7 @@ class JobDetail implements Model
 	 */
 	public  function getResult()
 	{
-		return $this->result; 
+		return $this->result;
 
 	}
 
@@ -160,8 +160,8 @@ class JobDetail implements Model
 	 */
 	public  function setResult(Result $result)
 	{
-		$this->result=$result; 
-		$this->keyModified['result'] = 1; 
+		$this->result=$result;
+		$this->keyModified['result'] = 1;
 
 	}
 
@@ -171,7 +171,7 @@ class JobDetail implements Model
 	 */
 	public  function getFileType()
 	{
-		return $this->fileType; 
+		return $this->fileType;
 
 	}
 
@@ -181,8 +181,8 @@ class JobDetail implements Model
 	 */
 	public  function setFileType(string $fileType)
 	{
-		$this->fileType=$fileType; 
-		$this->keyModified['file_type'] = 1; 
+		$this->fileType=$fileType;
+		$this->keyModified['file_type'] = 1;
 
 	}
 
@@ -195,10 +195,10 @@ class JobDetail implements Model
 	{
 		if(((array_key_exists($key, $this->keyModified))))
 		{
-			return $this->keyModified[$key]; 
+			return $this->keyModified[$key];
 
 		}
-		return null; 
+		return null;
 
 	}
 
@@ -209,7 +209,7 @@ class JobDetail implements Model
 	 */
 	public  function setKeyModified(string $key, int $modification)
 	{
-		$this->keyModified[$key] = $modification; 
+		$this->keyModified[$key] = $modification;
 
 	}
-} 
+}
