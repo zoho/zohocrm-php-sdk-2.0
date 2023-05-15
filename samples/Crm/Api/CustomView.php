@@ -1,12 +1,12 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\customviews\APIException;
-use com\zoho\crm\api\customviews\CustomViewsOperations;
-use com\zoho\crm\api\customviews\ResponseWrapper;
 use samples\src\com\zoho\crm\api\customview\customID;
 use samples\src\com\zoho\crm\api\customview\Exception;
 use samples\src\com\zoho\crm\api\customview\moduleAPIName;
+use Zoho\Crm\CustomViews\APIException;
+use Zoho\Crm\CustomViews\CustomViewsOperations;
+use Zoho\Crm\CustomViews\ResponseWrapper;
 
 class CustomView
 {

@@ -2,9 +2,9 @@
 
 namespace Zoho\Api\Authenticator\Store;
 
-use com\zoho\crm\api\exception\SDKException;
 use Zoho\Api\Authenticator\OAuthBuilder;
 use Zoho\Api\Authenticator\OAuthToken;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Util\Constants;
 
 /**

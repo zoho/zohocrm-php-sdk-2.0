@@ -1,7 +1,7 @@
 <?php
 namespace Zoho\Crm\Util;
 
-use com\zoho\crm\api\exception\SDKException;
+use Zoho\Crm\Exception\SDKException;
 
 /**
  * This class handles the file stream and name.

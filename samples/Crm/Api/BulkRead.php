@@ -1,20 +1,20 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\bulkread\ActionWrapper;
-use com\zoho\crm\api\bulkread\APIException;
-use com\zoho\crm\api\bulkread\BulkReadOperations;
-use com\zoho\crm\api\bulkread\CallBack;
-use com\zoho\crm\api\bulkread\Criteria;
-use com\zoho\crm\api\bulkread\FileBodyWrapper;
-use com\zoho\crm\api\bulkread\Query;
-use com\zoho\crm\api\bulkread\RequestWrapper;
-use com\zoho\crm\api\bulkread\ResponseWrapper;
-use com\zoho\crm\api\bulkread\SuccessResponse;
 use samples\src\com\zoho\crm\api\bulkread\destinationFolder;
 use samples\src\com\zoho\crm\api\bulkread\Exception;
 use samples\src\com\zoho\crm\api\bulkread\jobId;
 use samples\src\com\zoho\crm\api\bulkread\moduleAPIName;
+use Zoho\Crm\BulkRead\ActionWrapper;
+use Zoho\Crm\BulkRead\APIException;
+use Zoho\Crm\BulkRead\BulkReadOperations;
+use Zoho\Crm\BulkRead\CallBack;
+use Zoho\Crm\BulkRead\Criteria;
+use Zoho\Crm\BulkRead\FileBodyWrapper;
+use Zoho\Crm\BulkRead\Query;
+use Zoho\Crm\BulkRead\RequestWrapper;
+use Zoho\Crm\BulkRead\ResponseWrapper;
+use Zoho\Crm\BulkRead\SuccessResponse;
 use Zoho\Crm\Util\Choice;
 
 class BulkRead

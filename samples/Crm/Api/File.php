@@ -1,16 +1,16 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\file\ActionWrapper;
-use com\zoho\crm\api\file\APIException;
-use com\zoho\crm\api\file\BodyWrapper;
-use com\zoho\crm\api\file\FileBodyWrapper;
-use com\zoho\crm\api\file\FileOperations;
-use com\zoho\crm\api\file\GetFileParam;
-use com\zoho\crm\api\file\SuccessResponse;
 use samples\src\com\zoho\crm\api\file\destinationFolder;
 use samples\src\com\zoho\crm\api\file\Exception;
 use samples\src\com\zoho\crm\api\file\id;
+use Zoho\Crm\File\ActionWrapper;
+use Zoho\Crm\File\APIException;
+use Zoho\Crm\File\BodyWrapper;
+use Zoho\Crm\File\FileBodyWrapper;
+use Zoho\Crm\File\FileOperations;
+use Zoho\Crm\File\GetFileParam;
+use Zoho\Crm\File\SuccessResponse;
 use Zoho\Crm\ParameterMap;
 use Zoho\Crm\Util\StreamWrapper;
 

@@ -1,17 +1,17 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\currencies\ActionWrapper;
-use com\zoho\crm\api\currencies\APIException;
-use com\zoho\crm\api\currencies\BaseCurrencyActionWrapper;
-use com\zoho\crm\api\currencies\BaseCurrencyWrapper;
-use com\zoho\crm\api\currencies\BodyWrapper;
-use com\zoho\crm\api\currencies\CurrenciesOperations;
-use com\zoho\crm\api\currencies\Format;
-use com\zoho\crm\api\currencies\ResponseWrapper;
-use com\zoho\crm\api\currencies\SuccessResponse;
 use samples\src\com\zoho\crm\api\currencies\currencyId;
 use samples\src\com\zoho\crm\api\currencies\Exception;
+use Zoho\Crm\Currencies\ActionWrapper;
+use Zoho\Crm\Currencies\APIException;
+use Zoho\Crm\Currencies\BaseCurrencyActionWrapper;
+use Zoho\Crm\Currencies\BaseCurrencyWrapper;
+use Zoho\Crm\Currencies\BodyWrapper;
+use Zoho\Crm\Currencies\CurrenciesOperations;
+use Zoho\Crm\Currencies\Format;
+use Zoho\Crm\Currencies\ResponseWrapper;
+use Zoho\Crm\Currencies\SuccessResponse;
 use Zoho\Crm\Util\Choice;
 
 class Currency

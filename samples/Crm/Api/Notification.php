@@ -1,16 +1,16 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\notification\ActionWrapper;
-use com\zoho\crm\api\notification\APIException;
-use com\zoho\crm\api\notification\BodyWrapper;
-use com\zoho\crm\api\notification\DisableNotificationsParam;
-use com\zoho\crm\api\notification\GetNotificationDetailsParam;
-use com\zoho\crm\api\notification\NotificationOperations;
-use com\zoho\crm\api\notification\ResponseWrapper;
-use com\zoho\crm\api\notification\SuccessResponse;
 use samples\src\com\zoho\crm\api\notification\channelIds;
 use samples\src\com\zoho\crm\api\notification\Exception;
+use Zoho\Crm\Notification\ActionWrapper;
+use Zoho\Crm\Notification\APIException;
+use Zoho\Crm\Notification\BodyWrapper;
+use Zoho\Crm\Notification\DisableNotificationsParam;
+use Zoho\Crm\Notification\GetNotificationDetailsParam;
+use Zoho\Crm\Notification\NotificationOperations;
+use Zoho\Crm\Notification\ResponseWrapper;
+use Zoho\Crm\Notification\SuccessResponse;
 use Zoho\Crm\ParameterMap;
 
 class Notification
@@ -31,7 +31,7 @@ class Notification
 		//List of Notification instances
 		$notifications = array();
 
-        $notificationClass = 'com\zoho\crm\api\notification\Notification';
+        $notificationClass = 'Zoho\Crm\Notification\Notification';
 
         //Get instance of Notification Class
 		$notification = new $notificationClass();
@@ -405,7 +405,7 @@ class Notification
 		//List of Notification instances
 		$notificationList = array();
 
-		$notificationClass = 'com\zoho\crm\api\notification\Notification';
+		$notificationClass = 'Zoho\Crm\Notification\Notification';
 
 		//Get instance of Notification Class
 		$notification = new $notificationClass();
@@ -598,7 +598,7 @@ class Notification
 
 		//Get instance of Notification Class
 
-		$notificationClass = 'com\zoho\crm\api\notification\Notification';
+		$notificationClass = 'Zoho\Crm\Notification\Notification';
 
 		$notification = new $notificationClass();
 
@@ -930,7 +930,7 @@ class Notification
 		$notificationList = array();
 
 		//Get instance of Notification Class
-		$notificationClass = 'com\zoho\crm\api\notification\Notification';
+		$notificationClass = 'Zoho\Crm\Notification\Notification';
 
 		$notification = new $notificationClass();
 

@@ -1,16 +1,6 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\bulkwrite\APIException;
-use com\zoho\crm\api\bulkwrite\BulkWriteOperations;
-use com\zoho\crm\api\bulkwrite\BulkWriteResponse;
-use com\zoho\crm\api\bulkwrite\CallBack;
-use com\zoho\crm\api\bulkwrite\FieldMapping;
-use com\zoho\crm\api\bulkwrite\FileBodyWrapper;
-use com\zoho\crm\api\bulkwrite\RequestWrapper;
-use com\zoho\crm\api\bulkwrite\Resource;
-use com\zoho\crm\api\bulkwrite\SuccessResponse;
-use com\zoho\crm\api\bulkwrite\UploadFileHeader;
 use samples\src\com\zoho\crm\api\bulkwrite\absoluteFilePath;
 use samples\src\com\zoho\crm\api\bulkwrite\destinationFolder;
 use samples\src\com\zoho\crm\api\bulkwrite\downloadUrl;
@@ -19,6 +9,16 @@ use samples\src\com\zoho\crm\api\bulkwrite\fileId;
 use samples\src\com\zoho\crm\api\bulkwrite\jobId;
 use samples\src\com\zoho\crm\api\bulkwrite\moduleAPIName;
 use samples\src\com\zoho\crm\api\bulkwrite\orgID;
+use Zoho\Crm\BulkWrite\APIException;
+use Zoho\Crm\BulkWrite\BulkWriteOperations;
+use Zoho\Crm\BulkWrite\BulkWriteResponse;
+use Zoho\Crm\BulkWrite\CallBack;
+use Zoho\Crm\BulkWrite\FieldMapping;
+use Zoho\Crm\BulkWrite\FileBodyWrapper;
+use Zoho\Crm\BulkWrite\RequestWrapper;
+use Zoho\Crm\BulkWrite\Resource;
+use Zoho\Crm\BulkWrite\SuccessResponse;
+use Zoho\Crm\BulkWrite\UploadFileHeader;
 use Zoho\Crm\HeaderMap;
 use Zoho\Crm\Util\Choice;
 use Zoho\Crm\Util\StreamWrapper;

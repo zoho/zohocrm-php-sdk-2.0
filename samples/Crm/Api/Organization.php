@@ -1,13 +1,13 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\org\APIException;
-use com\zoho\crm\api\org\FileBodyWrapper;
-use com\zoho\crm\api\org\OrgOperations;
-use com\zoho\crm\api\org\ResponseWrapper;
-use com\zoho\crm\api\org\SuccessResponse;
 use samples\src\com\zoho\crm\api\organization\absoluteFilePath;
 use samples\src\com\zoho\crm\api\organization\Exception;
+use Zoho\Crm\Org\APIException;
+use Zoho\Crm\Org\FileBodyWrapper;
+use Zoho\Crm\Org\OrgOperations;
+use Zoho\Crm\Org\ResponseWrapper;
+use Zoho\Crm\Org\SuccessResponse;
 use Zoho\Crm\Util\StreamWrapper;
 
 class Organization

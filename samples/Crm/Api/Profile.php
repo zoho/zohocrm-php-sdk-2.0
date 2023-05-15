@@ -1,11 +1,11 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\profiles\APIException;
-use com\zoho\crm\api\profiles\ProfilesOperations;
-use com\zoho\crm\api\profiles\ResponseWrapper;
 use samples\src\com\zoho\crm\api\profile\Exception;
 use samples\src\com\zoho\crm\api\profile\profileId;
+use Zoho\Crm\Profiles\APIException;
+use Zoho\Crm\Profiles\ProfilesOperations;
+use Zoho\Crm\Profiles\ResponseWrapper;
 
 class Profile
 {

@@ -1,20 +1,20 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\modules\ActionWrapper;
-use com\zoho\crm\api\modules\APIException;
-use com\zoho\crm\api\modules\BodyWrapper;
-use com\zoho\crm\api\modules\GetModulesHeader;
-use com\zoho\crm\api\modules\Module;
-use com\zoho\crm\api\modules\ModulesOperations;
-use com\zoho\crm\api\modules\ResponseWrapper;
-use com\zoho\crm\api\modules\SuccessResponse;
-use com\zoho\crm\api\profiles\Profile;
 use samples\src\com\zoho\crm\api\modules\apiName;
 use samples\src\com\zoho\crm\api\modules\Exception;
 use samples\src\com\zoho\crm\api\modules\moduleAPIName;
 use samples\src\com\zoho\crm\api\modules\moduleID;
 use Zoho\Crm\HeaderMap;
+use Zoho\Crm\Modules\ActionWrapper;
+use Zoho\Crm\Modules\APIException;
+use Zoho\Crm\Modules\BodyWrapper;
+use Zoho\Crm\Modules\GetModulesHeader;
+use Zoho\Crm\Modules\Module;
+use Zoho\Crm\Modules\ModulesOperations;
+use Zoho\Crm\Modules\ResponseWrapper;
+use Zoho\Crm\Modules\SuccessResponse;
+use Zoho\Crm\Profiles\Profile;
 
 class Modules
 {

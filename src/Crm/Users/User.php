@@ -1,8 +1,8 @@
 <?php
 namespace Zoho\Crm\Users;
 
-use com\zoho\crm\api\profiles\Profile;
 use com\zoho\crm\api\record\Record;
+use Zoho\Crm\Profiles\Profile;
 use Zoho\Crm\Roles\Role;
 use Zoho\Crm\Util\Model;
 

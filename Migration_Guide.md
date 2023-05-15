@@ -717,7 +717,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $bodyWrapper = new BodyWrapper();
     //List of Note instances
     $notes = array();
-    $nodeClass = 'com\zoho\crm\api\notes\Note';
+    $nodeClass = 'Zoho\Crm\Notes\Note';
     $note = new $nodeClass();
     //Set Note_Title of the Note
     $note->setNoteTitle("Contacted12");

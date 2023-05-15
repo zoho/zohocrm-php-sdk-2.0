@@ -1,8 +1,8 @@
 <?php
 namespace Zoho\Api\Authenticator;
 
-use com\zoho\crm\api\exception\SDKException;
 use Zoho\Api\Logger\SDKLogger;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Initializer;
 use Zoho\Crm\Util\APIHTTPConnector;
 use Zoho\Crm\Util\Constants;

@@ -1,7 +1,7 @@
 <?php
 namespace Zoho\Crm\Util;
 
-use com\zoho\crm\api\exception\SDKException;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Initializer;
 
 /**
@@ -60,8 +60,8 @@ abstract class Converter
      * @param object $value A object containing the key value.
      * @param array $uniqueValuesMap A array containing the construct objects.
      * @param integer $instanceNumber An integer containing the POJO class instance list number.
-     * @throws \com\zoho\crm\api\exception\SDKException if a problem occurs.
      * @return boolean A boolean representing the key value is expected pattern, unique, length, and values.
+     *@throws \Zoho\Crm\Exception\SDKException if a problem occurs.
      */
     public function valueChecker($className, $memberName, $keyDetails, $value, &$uniqueValuesMap, $instanceNumber)
 	{

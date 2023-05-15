@@ -1,15 +1,6 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\attachments\ActionWrapper;
-use com\zoho\crm\api\attachments\APIException;
-use com\zoho\crm\api\attachments\AttachmentsOperations;
-use com\zoho\crm\api\attachments\DeleteAttachmentsParam;
-use com\zoho\crm\api\attachments\FileBodyWrapper;
-use com\zoho\crm\api\attachments\GetAttachmentsParam;
-use com\zoho\crm\api\attachments\ResponseWrapper;
-use com\zoho\crm\api\attachments\SuccessResponse;
-use com\zoho\crm\api\attachments\UploadLinkAttachmentParam;
 use samples\src\com\zoho\crm\api\attachments\absoluteFilePath;
 use samples\src\com\zoho\crm\api\attachments\attachmentId;
 use samples\src\com\zoho\crm\api\attachments\attachmentIds;
@@ -18,6 +9,15 @@ use samples\src\com\zoho\crm\api\attachments\destinationFolder;
 use samples\src\com\zoho\crm\api\attachments\Exception;
 use samples\src\com\zoho\crm\api\attachments\moduleAPIName;
 use samples\src\com\zoho\crm\api\attachments\recordId;
+use Zoho\Crm\Attachments\ActionWrapper;
+use Zoho\Crm\Attachments\APIException;
+use Zoho\Crm\Attachments\AttachmentsOperations;
+use Zoho\Crm\Attachments\DeleteAttachmentsParam;
+use Zoho\Crm\Attachments\FileBodyWrapper;
+use Zoho\Crm\Attachments\GetAttachmentsParam;
+use Zoho\Crm\Attachments\ResponseWrapper;
+use Zoho\Crm\Attachments\SuccessResponse;
+use Zoho\Crm\Attachments\UploadLinkAttachmentParam;
 use Zoho\Crm\ParameterMap;
 use Zoho\Crm\Util\StreamWrapper;
 

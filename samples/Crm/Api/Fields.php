@@ -1,12 +1,12 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\fields\APIException;
-use com\zoho\crm\api\fields\FieldsOperations;
-use com\zoho\crm\api\fields\ResponseWrapper;
 use samples\src\com\zoho\crm\api\fields\Exception;
 use samples\src\com\zoho\crm\api\fields\fieldId;
 use samples\src\com\zoho\crm\api\fields\moduleAPIName;
+use Zoho\Crm\Fields\APIException;
+use Zoho\Crm\Fields\FieldsOperations;
+use Zoho\Crm\Fields\ResponseWrapper;
 use Zoho\Crm\ParameterMap;
 
 class Fields

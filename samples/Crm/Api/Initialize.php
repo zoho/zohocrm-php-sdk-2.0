@@ -1,12 +1,12 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\dc\USDataCenter;
 use com\zoho\crm\api\SDKConfigBuilder;
 use Zoho\Api\Authenticator\OAuthBuilder;
 use Zoho\Api\Authenticator\Store\FileStore;
 use Zoho\Api\Logger\Levels;
 use Zoho\Api\Logger\LogBuilder;
+use Zoho\Crm\DataCenters\UnitedState;
 use Zoho\Crm\InitializeBuilder;
 use Zoho\Crm\ProxyBuilder;
 use Zoho\Crm\UserSignature;
@@ -34,7 +34,7 @@ class Initialize
 		 * Available Domains: USDataCenter, EUDataCenter, INDataCenter, CNDataCenter, AUDataCenter
 		 * Available Environments: PRODUCTION, DEVELOPER, SANDBOX
 		 */
-        $environment = USDataCenter::PRODUCTION();
+        $environment = UnitedState::PRODUCTION();
 
         //Create a Token instance
 		$token = (new OAuthBuilder())

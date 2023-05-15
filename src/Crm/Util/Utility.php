@@ -1,18 +1,18 @@
 <?php
 namespace Zoho\Crm\Util;
 
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\fields\APIException;
-use com\zoho\crm\api\fields\FieldsOperations;
-use com\zoho\crm\api\fields\ResponseWrapper;
-use com\zoho\crm\api\modules\ModulesOperations;
-use com\zoho\crm\api\relatedlists\RelatedListsOperations;
 use com\zoho\crm\api\util\moduleAPIName;
 use Zoho\Api\Logger\SDKLogger;
+use Zoho\Crm\Exception\SDKException;
+use Zoho\Crm\Fields\APIException;
+use Zoho\Crm\Fields\FieldsOperations;
+use Zoho\Crm\Fields\ResponseWrapper;
 use Zoho\Crm\Header;
 use Zoho\Crm\HeaderMap;
 use Zoho\Crm\Initializer;
+use Zoho\Crm\Modules\ModulesOperations;
 use Zoho\Crm\ParameterMap;
+use Zoho\Crm\RelatedLists\RelatedListsOperations;
 
 /**
  * This class handles module field details.
@@ -32,7 +32,7 @@ class Utility
 
     public static $forceRefresh = false;
 
-    private static $sdkException = 'com\zoho\crm\api\exception\SDKException';
+    private static $sdkException = 'Zoho\Crm\Exception\SDKException';
 
     public static $apiSupportedModule = array();
 
@@ -502,9 +502,9 @@ class Utility
 
             $responseHandler = $response->getObject();
 
-            $relatedlistsResponseWrapper = 'com\zoho\crm\api\relatedlists\ResponseWrapper';
+            $relatedlistsResponseWrapper = 'Zoho\Crm\RelatedLists\ResponseWrapper';
 
-            $relatedlistsAPIException = 'com\zoho\crm\api\relatedlists\APIException';
+            $relatedlistsAPIException = 'Zoho\Crm\RelatedLists\APIException';
 
             if($responseHandler instanceof $relatedlistsResponseWrapper)
             {

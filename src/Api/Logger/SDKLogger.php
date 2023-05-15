@@ -2,8 +2,8 @@
 
 namespace Zoho\Api\Logger;
 
-use com\zoho\crm\api\exception\SDKException;
 use Exception;
+use Zoho\Crm\Exception\SDKException;
 
 /**
  * This class to initialize the SDK logger.

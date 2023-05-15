@@ -1,11 +1,11 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\profiles\Profile;
 use samples\src\com\zoho\crm\api\users\Exception;
 use samples\src\com\zoho\crm\api\users\userId;
 use Zoho\Crm\HeaderMap;
 use Zoho\Crm\ParameterMap;
+use Zoho\Crm\Profiles\Profile;
 use Zoho\Crm\Roles\Role;
 use Zoho\Crm\Users\ActionWrapper;
 use Zoho\Crm\Users\APIException;

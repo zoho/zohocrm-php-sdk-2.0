@@ -1,20 +1,20 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\notes\ActionWrapper;
-use com\zoho\crm\api\notes\APIException;
-use com\zoho\crm\api\notes\BodyWrapper;
-use com\zoho\crm\api\notes\DeleteNotesParam;
-use com\zoho\crm\api\notes\GetNotesHeader;
-use com\zoho\crm\api\notes\GetNotesParam;
-use com\zoho\crm\api\notes\NotesOperations;
-use com\zoho\crm\api\notes\ResponseWrapper;
-use com\zoho\crm\api\notes\SuccessResponse;
 use com\zoho\crm\api\record\Record;
 use samples\src\com\zoho\crm\api\notes\Exception;
 use samples\src\com\zoho\crm\api\notes\noteId;
 use samples\src\com\zoho\crm\api\notes\notesID;
 use Zoho\Crm\HeaderMap;
+use Zoho\Crm\Notes\ActionWrapper;
+use Zoho\Crm\Notes\APIException;
+use Zoho\Crm\Notes\BodyWrapper;
+use Zoho\Crm\Notes\DeleteNotesParam;
+use Zoho\Crm\Notes\GetNotesHeader;
+use Zoho\Crm\Notes\GetNotesParam;
+use Zoho\Crm\Notes\NotesOperations;
+use Zoho\Crm\Notes\ResponseWrapper;
+use Zoho\Crm\Notes\SuccessResponse;
 use Zoho\Crm\ParameterMap;
 
 class Note
@@ -367,7 +367,7 @@ class Note
 
 		for($i = 1; $i <= 5; $i++)
 		{
-            $nodeClass = 'com\zoho\crm\api\notes\Note';
+            $nodeClass = 'Zoho\Crm\Notes\Note';
 
 			//Get instance of Note Class
 			$note = new $nodeClass();
@@ -524,7 +524,7 @@ class Note
 		//List of Note instances
 		$notes = array();
 
-        $noteClass = 'com\zoho\crm\api\notes\Note';
+        $noteClass = 'Zoho\Crm\Notes\Note';
 
 		//Get instance of Note Class
 		$note = new $noteClass();
@@ -994,7 +994,7 @@ class Note
 		//List of Note instances
         $notes = array();
 
-        $nodeClass = 'com\zoho\crm\api\notes\Note';
+        $nodeClass = 'Zoho\Crm\Notes\Note';
 
 		$note = new $nodeClass();
 

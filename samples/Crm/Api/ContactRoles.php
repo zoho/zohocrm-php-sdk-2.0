@@ -1,22 +1,22 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\contactroles\ActionWrapper;
-use com\zoho\crm\api\contactroles\APIException;
-use com\zoho\crm\api\contactroles\BodyWrapper;
-use com\zoho\crm\api\contactroles\ContactRole;
-use com\zoho\crm\api\contactroles\ContactRolesOperations;
-use com\zoho\crm\api\contactroles\ContactRoleWrapper;
-use com\zoho\crm\api\contactroles\DeleteContactRolesParam;
-use com\zoho\crm\api\contactroles\RecordActionWrapper;
-use com\zoho\crm\api\contactroles\RecordBodyWrapper;
-use com\zoho\crm\api\contactroles\RecordResponseWrapper;
-use com\zoho\crm\api\contactroles\ResponseWrapper;
-use com\zoho\crm\api\contactroles\SuccessResponse;
 use samples\src\com\zoho\crm\api\contactroles\contactRoleId;
 use samples\src\com\zoho\crm\api\contactroles\contactRoleIds;
 use samples\src\com\zoho\crm\api\contactroles\dealId;
 use samples\src\com\zoho\crm\api\contactroles\Exception;
+use Zoho\Crm\ContractRoles\ActionWrapper;
+use Zoho\Crm\ContractRoles\APIException;
+use Zoho\Crm\ContractRoles\BodyWrapper;
+use Zoho\Crm\ContractRoles\ContactRole;
+use Zoho\Crm\ContractRoles\ContactRolesOperations;
+use Zoho\Crm\ContractRoles\ContactRoleWrapper;
+use Zoho\Crm\ContractRoles\DeleteContactRolesParam;
+use Zoho\Crm\ContractRoles\RecordActionWrapper;
+use Zoho\Crm\ContractRoles\RecordBodyWrapper;
+use Zoho\Crm\ContractRoles\RecordResponseWrapper;
+use Zoho\Crm\ContractRoles\ResponseWrapper;
+use Zoho\Crm\ContractRoles\SuccessResponse;
 use Zoho\Crm\ParameterMap;
 
 class ContactRoles

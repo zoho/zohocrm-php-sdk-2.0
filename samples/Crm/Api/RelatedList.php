@@ -1,12 +1,12 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\relatedlists\APIException;
-use com\zoho\crm\api\relatedlists\RelatedListsOperations;
-use com\zoho\crm\api\relatedlists\ResponseWrapper;
 use samples\src\com\zoho\crm\api\relatedlist\Exception;
 use samples\src\com\zoho\crm\api\relatedlist\moduleAPIName;
 use samples\src\com\zoho\crm\api\relatedlist\relatedListId;
+use Zoho\Crm\RelatedLists\APIException;
+use Zoho\Crm\RelatedLists\RelatedListsOperations;
+use Zoho\Crm\RelatedLists\ResponseWrapper;
 
 class RelatedList
 {

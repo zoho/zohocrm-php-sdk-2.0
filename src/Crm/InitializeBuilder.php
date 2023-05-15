@@ -3,7 +3,6 @@
 namespace Zoho\Crm;
 
 use com\zoho\crm\api\dc\Environment;
-use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\SDKConfigBuilder;
 use com\zoho\crm\api\sdkconfigbuilder\SDKConfig;
 use Zoho\Api\Authenticator\Store\FileStore;
@@ -12,6 +11,7 @@ use Zoho\Api\Authenticator\Token;
 use Zoho\Api\Logger\Levels;
 use Zoho\Api\Logger\LogBuilder;
 use Zoho\Api\Logger\Logger;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Util\Constants;
 use Zoho\Crm\Util\Utility;
 

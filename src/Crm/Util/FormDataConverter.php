@@ -1,7 +1,7 @@
 <?php
 namespace Zoho\Crm\Util;
 
-use com\zoho\crm\api\exception\SDKException;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Initializer;
 
 /**

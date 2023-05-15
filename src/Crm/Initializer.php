@@ -19,13 +19,13 @@ All rights reserved.
 namespace Zoho\Crm;
 
 use com\zoho\crm\api\dc\Environment;
-use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\sdkconfigbuilder\SDKConfig;
 use com\zoho\crm\api\util\RequestProxy;
 use Zoho\Api\Authenticator\Store\TokenStore;
 use Zoho\Api\Authenticator\Token;
 use Zoho\Api\Logger\Logger;
 use Zoho\Api\Logger\SDKLogger;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Util\Constants;
 
 

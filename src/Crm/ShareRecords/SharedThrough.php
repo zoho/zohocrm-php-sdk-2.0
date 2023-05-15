@@ -1,7 +1,7 @@
 <?php
 namespace Zoho\Crm\ShareRecords;
 
-use com\zoho\crm\api\modules\Module;
+use Zoho\Crm\Modules\Module;
 use Zoho\Crm\Util\Model;
 
 class SharedThrough implements Model

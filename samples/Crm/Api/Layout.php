@@ -1,12 +1,12 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\layouts\APIException;
-use com\zoho\crm\api\layouts\LayoutsOperations;
-use com\zoho\crm\api\layouts\ResponseWrapper;
 use samples\src\com\zoho\crm\api\layouts\Exception;
 use samples\src\com\zoho\crm\api\layouts\layoutId;
 use samples\src\com\zoho\crm\api\layouts\moduleAPIName;
+use Zoho\Crm\Layouts\APIException;
+use Zoho\Crm\Layouts\LayoutsOperations;
+use Zoho\Crm\Layouts\ResponseWrapper;
 
 class Layout
 {

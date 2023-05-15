@@ -1,8 +1,6 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\attachments\Attachment;
-use com\zoho\crm\api\layouts\Layout;
 use com\zoho\crm\api\record\{Accounts,
     ApplyFeatureExecution,
     Calls,
@@ -65,7 +63,9 @@ use samples\src\com\zoho\crm\api\record\jobId;
 use samples\src\com\zoho\crm\api\record\moduleAPIName;
 use samples\src\com\zoho\crm\api\record\recordId;
 use samples\src\com\zoho\crm\api\record\recordIds;
+use Zoho\Crm\Attachments\Attachment;
 use Zoho\Crm\HeaderMap;
+use Zoho\Crm\Layouts\Layout;
 use Zoho\Crm\ParameterMap;
 use Zoho\Crm\Tags\Tag;
 use Zoho\Crm\Users\User;

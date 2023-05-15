@@ -1,11 +1,11 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\query\APIException;
-use com\zoho\crm\api\query\BodyWrapper;
-use com\zoho\crm\api\query\QueryOperations;
-use com\zoho\crm\api\query\ResponseWrapper;
 use samples\src\com\zoho\crm\api\query\Exception;
+use Zoho\Crm\Query\APIException;
+use Zoho\Crm\Query\BodyWrapper;
+use Zoho\Crm\Query\QueryOperations;
+use Zoho\Crm\Query\ResponseWrapper;
 
 class Query
 {

@@ -1,7 +1,7 @@
 <?php
 namespace Zoho\Crm;
 
-use com\zoho\crm\api\exception\SDKException;
+use Zoho\Crm\Exception\SDKException;
 use Zoho\Crm\Util\Constants;
 use Zoho\Crm\Util\DataTypeConverter;
 use Zoho\Crm\Util\HeaderParamValidator;

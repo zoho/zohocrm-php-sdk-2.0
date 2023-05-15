@@ -1,7 +1,6 @@
 <?php
 namespace samples\src\com\zoho\crm\api\threading\multiuser;
 
-use com\zoho\crm\api\dc\USDataCenter;
 use com\zoho\crm\api\record\GetRecordsHeader;
 use com\zoho\crm\api\record\RecordOperations;
 use com\zoho\crm\api\SDKConfigBuilder;
@@ -9,6 +8,7 @@ use Zoho\Api\Authenticator\OAuthBuilder;
 use Zoho\Api\Authenticator\Store\DBBuilder;
 use Zoho\Api\Logger\Levels;
 use Zoho\Api\Logger\LogBuilder;
+use Zoho\Crm\DataCenters\UnitedState;
 use Zoho\Crm\HeaderMap;
 use Zoho\Crm\InitializeBuilder;
 use Zoho\Crm\ParameterMap;
@@ -23,7 +23,7 @@ class MultiThread
 		->filePath("/Users/user_name/Documents/php_sdk_log.log")
 		->build();
 
-		$environment1 = USDataCenter::PRODUCTION();
+		$environment1 = UnitedState::PRODUCTION();
 
 		$user1 = new UserSignature("abc@zoho.com");
 
@@ -82,7 +82,7 @@ class MultiThread
 
         $this->getRecords("Leads");
 
-		$environment2 = USDataCenter::PRODUCTION();
+		$environment2 = UnitedState::PRODUCTION();
 
 		$user2 = new UserSignature("xyz@zoho.com");
 

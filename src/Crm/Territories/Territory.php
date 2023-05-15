@@ -1,7 +1,7 @@
 <?php
 namespace Zoho\Crm\Territories;
 
-use com\zoho\crm\api\customviews\Criteria;
+use Zoho\Crm\CustomViews\Criteria;
 use Zoho\Crm\Users\User;
 use Zoho\Crm\Util\Model;
 

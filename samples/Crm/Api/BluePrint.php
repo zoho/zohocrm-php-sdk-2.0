@@ -1,16 +1,16 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\blueprint\APIException;
-use com\zoho\crm\api\blueprint\BluePrintOperations;
-use com\zoho\crm\api\blueprint\BodyWrapper;
-use com\zoho\crm\api\blueprint\ResponseWrapper;
-use com\zoho\crm\api\blueprint\SuccessResponse;
 use com\zoho\crm\api\record\Record;
 use samples\src\com\zoho\crm\api\blueprint\Exception;
 use samples\src\com\zoho\crm\api\blueprint\moduleAPIName;
 use samples\src\com\zoho\crm\api\blueprint\recordId;
 use samples\src\com\zoho\crm\api\blueprint\transitionId;
+use Zoho\Crm\Blueprint\APIException;
+use Zoho\Crm\Blueprint\BluePrintOperations;
+use Zoho\Crm\Blueprint\BodyWrapper;
+use Zoho\Crm\Blueprint\ResponseWrapper;
+use Zoho\Crm\Blueprint\SuccessResponse;
 
 class BluePrint
 {
@@ -442,7 +442,7 @@ class BluePrint
 		//List of BluePrint instances
 		$bluePrintList = array();
 
-        $bluePrintClass = 'com\zoho\crm\api\blueprint\BluePrint';
+        $bluePrintClass = 'Zoho\Crm\Blueprint\BluePrint';
 
 		//Get instance of BluePrint Class
         $bluePrint = new $bluePrintClass();

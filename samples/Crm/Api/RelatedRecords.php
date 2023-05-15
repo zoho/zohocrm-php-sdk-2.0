@@ -1,8 +1,6 @@
 <?php
 namespace Zoho\Sample\Crm\Api;
 
-use com\zoho\crm\api\attachments\Attachment;
-use com\zoho\crm\api\layouts\Layout;
 use com\zoho\crm\api\record\Comment;
 use com\zoho\crm\api\record\Consent;
 use com\zoho\crm\api\record\FileDetails;
@@ -19,7 +17,9 @@ use samples\src\com\zoho\crm\api\relatedrecords\recordId;
 use samples\src\com\zoho\crm\api\relatedrecords\relatedListAPIName;
 use samples\src\com\zoho\crm\api\relatedrecords\relatedListId;
 use samples\src\com\zoho\crm\api\relatedrecords\relatedListIds;
+use Zoho\Crm\Attachments\Attachment;
 use Zoho\Crm\HeaderMap;
+use Zoho\Crm\Layouts\Layout;
 use Zoho\Crm\ParameterMap;
 use Zoho\Crm\RelatedRecords\ActionWrapper;
 use Zoho\Crm\RelatedRecords\APIException;
