@@ -254,10 +254,7 @@ $tokenstore = new FileStore("/Documents/php_sdk_token.txt");
 Users can create their own logic for storing and retrieving authentication tokens using the custom persistence technique.  To use Custom Persistence, the user must implement **TokenStore interface** (**com\zoho\api\authenticator\store\TokenStore**) and override the methods.
 
 ```php
-use com\zoho\api\authenticator\Token;
-use com\zoho\crm\api\exception\SDKException;
-use com\zoho\crm\api\UserSignature;
-use com\zoho\api\authenticator\store\TokenStore;
+use Zoho\Api\Authenticator\Store\TokenStore;use Zoho\Api\Authenticator\Token;use Zoho\Crm\Exception\SDKException;
 
 class CustomStore implements TokenStore
 {
@@ -482,16 +479,7 @@ Initialize the SDK using the following code.
 
 ```php
 <?php
-use com\zoho\api\authenticator\OAuthBuilder;
-use com\zoho\api\authenticator\store\DBBuilder;
-use com\zoho\api\authenticator\store\FileStore;
-use com\zoho\crm\api\InitializeBuilder;
-use com\zoho\crm\api\UserSignature;
-use com\zoho\crm\api\dc\USDataCenter;
-use com\zoho\api\logger\LogBuilder;
-use com\zoho\api\logger\Levels;
-use com\zoho\crm\api\SDKConfigBuilder;
-use com\zoho\crm\api\ProxyBuilder;
+use com\zoho\crm\api\SDKConfigBuilder;use Zoho\Api\Authenticator\OAuthBuilder;use Zoho\Api\Authenticator\Store\DBBuilder;use Zoho\Api\Logger\Levels;use Zoho\Api\Logger\LogBuilder;use Zoho\Crm\DataCenters\UnitedState;use Zoho\Crm\InitializeBuilder;use Zoho\Crm\ProxyBuilder;use Zoho\Crm\UserSignature;
 require_once "vendor/autoload.php";
 
 class Initialize
@@ -503,7 +491,7 @@ class Initialize
     ->filePath("/Documents/php_sdk_log.log")
     ->build();
     $user = new UserSignature("abc@zoho.com");
-    $environment = USDataCenter::PRODUCTION();
+    $environment = UnitedState::PRODUCTION();
     $token = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")
@@ -680,23 +668,14 @@ To Remove a user's configuration in SDK. Use the below code
 
 ```php
 <?php
-use com\zoho\api\authenticator\OAuthBuilder;
-use com\zoho\crm\api\InitializeBuilder;
-use com\zoho\crm\api\UserSignature;
-use com\zoho\crm\api\dc\USDataCenter;
-use com\zoho\crm\api\dc\EUDataCenter;
-use com\zoho\crm\api\Initializer;
-use com\zoho\crm\api\record\RecordOperations;
-use com\zoho\crm\api\record\GetRecordsHeader;
-use com\zoho\crm\api\HeaderMap;
-use com\zoho\crm\api\ParameterMap;
+use com\zoho\crm\api\record\GetRecordsHeader;use com\zoho\crm\api\record\RecordOperations;use Zoho\Api\Authenticator\OAuthBuilder;use Zoho\Crm\DataCenters\Europ;use Zoho\Crm\DataCenters\UnitedState;use Zoho\Crm\HeaderMap;use Zoho\Crm\InitializeBuilder;use Zoho\Crm\ParameterMap;use Zoho\Crm\UserSignature;
 require_once 'vendor/autoload.php';
 
 class MultiUser
 {
   public function main()
   {
-    $environment1 = USDataCenter::PRODUCTION();
+    $environment1 = UnitedState::PRODUCTION();
     $user1 = new UserSignature("abc1@zoho.com");
     $token1 = (new OAuthBuilder())
     ->clientId("clientId")
@@ -711,7 +690,7 @@ class MultiUser
     ->initialize();
     $this->getRecords("Leads");
 
-    $environment2 = EUDataCenter::PRODUCTION();
+    $environment2 = Europ::PRODUCTION();
     $user2 = new UserSignature("abc2@zoho.eu");
     $token2 = (new OAuthBuilder())
     ->clientId("clientId2")
@@ -770,16 +749,7 @@ $obj->main();
 
 ```php
 <?php
-use com\zoho\api\authenticator\OAuthBuilder;
-use com\zoho\crm\api\InitializeBuilder;
-use com\zoho\crm\api\UserSignature;
-use com\zoho\crm\api\dc\USDataCenter;
-use com\zoho\crm\api\record\RecordOperations;
-use com\zoho\crm\api\HeaderMap;
-use com\zoho\crm\api\ParameterMap;
-use com\zoho\crm\api\record\GetRecordsHeader;
-use com\zoho\crm\api\record\GetRecordsParam;
-use com\zoho\crm\api\record\ResponseWrapper;
+use com\zoho\crm\api\record\GetRecordsHeader;use com\zoho\crm\api\record\GetRecordsParam;use com\zoho\crm\api\record\RecordOperations;use com\zoho\crm\api\record\ResponseWrapper;use Zoho\Api\Authenticator\OAuthBuilder;use Zoho\Crm\DataCenters\UnitedState;use Zoho\Crm\HeaderMap;use Zoho\Crm\InitializeBuilder;use Zoho\Crm\ParameterMap;use Zoho\Crm\UserSignature;
 require_once 'vendor/autoload.php';
 
 class Record
@@ -787,7 +757,7 @@ class Record
   public function initialize()
   {
     $user = new UserSignature("abc@zoho.com");
-    $environment = USDataCenter::PRODUCTION();
+    $environment = UnitedState::PRODUCTION();
     $token = (new OAuthBuilder())
     ->clientId("clientId")
     ->clientSecret("clientSecret")

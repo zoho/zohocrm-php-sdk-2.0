@@ -443,7 +443,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $request = new BodyWrapper();
     //List of Tax instances
     $taxList = array();
-    $tagClass = 'com\zoho\crm\api\taxes\Tax';
+    $tagClass = 'Zoho\Crm\Taxes\Tax';
     //Get instance of Tax Class
     $tax1 = new $tagClass();
     $tax1->setName("MyTax22");
@@ -485,7 +485,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $request = new BodyWrapper();
     //List of Tax instances
     $taxList = array();
-    $taxClass = 'com\zoho\crm\api\taxes\Tax';
+    $taxClass = 'Zoho\Crm\Taxes\Tax';
     //Get instance of Tax Class
     $tax1 = new $taxClass();
     $tax1->setId("34770616499001");
@@ -717,7 +717,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $bodyWrapper = new BodyWrapper();
     //List of Note instances
     $notes = array();
-    $nodeClass = 'com\zoho\crm\api\notes\Note';
+    $nodeClass = 'Zoho\Crm\Notes\Note';
     $note = new $nodeClass();
     //Set Note_Title of the Note
     $note->setNoteTitle("Contacted12");
@@ -824,7 +824,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $request = new BodyWrapper();
     //List of Variable instances
     $variableList = array();
-    $variableClass = 'com\zoho\crm\api\variables\Variable';
+    $variableClass = 'Zoho\Crm\variables\Variable';
     //Get instance of Variable Class
     $variable1 = new $variableClass();
     $variable1->setName("asdasd");
@@ -897,7 +897,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $request = new BodyWrapper();
     //List of Variable instances
     $variableList = array();
-    $variableClass = 'com\zoho\crm\api\variables\Variable';
+    $variableClass = 'Zoho\Crm\variables\Variable';
     //Get instance of Variable Class
     $variable1 = new $variableClass();
     $variable1->setId("34770617444005");
@@ -971,7 +971,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $request = new BodyWrapper();
     //List of Variable instances
     $variableList = array();
-    $variableClass = 'com\zoho\crm\api\variables\Variable';
+    $variableClass = 'Zoho\Crm\variables\Variable';
     //Get instance of Variable Class
     $variable1 = new $variableClass();
     $variable1->setAPIName("TestAPIName");
@@ -2393,7 +2393,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $paramInstance->add(CreateTagsParam::module(), $moduleAPIName);
     //List of Tag instances
     $tagList = array();
-    $tagClass = 'com\zoho\crm\api\tags\Tag';
+    $tagClass = 'Zoho\Crm\Tags\Tag';
     //Get instance of Tag Class
     $tag1 = new $tagClass();
     $tag1->setName("tagName");
@@ -2435,7 +2435,7 @@ Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/
     $paramInstance->add(UpdateTagsParam::module(), $moduleAPIName);
     //List of Tag instances
     $tagList = array();
-    $tagClass = 'com\zoho\crm\api\tags\Tag';
+    $tagClass = 'Zoho\Crm\Tags\Tag';
     //Get instance of Tag Class
     $tag1 = new $tagClass();
     $tag1->setId("34770616454014");
