@@ -49,11 +49,11 @@ class DBStore implements TokenStore
      * @param string $userName A String containing the DataBase user name.
      * @param string $password A String containing the DataBase password.
      * @param string $portNumber A String containing the DataBase port number.
-     * @param string $sslKey A String containing the path to the ssl key file (gets passed into mysqli::set_ssl()).
-     * @param string $sslCertificate A String containing the path to the ssl certificate file (gets passed into mysqli::set_ssl()).
-     * @param string $sslCaCertificate A String containing the path to the ssl CA certificate file (gets passed into mysqli::set_ssl()).
-     * @param string $sslCaPath A String containing the path to the ssl CA certificate files (gets passed into mysqli::set_ssl()).
-     * @param string $sslCipherAlgos A String containing the list of allowed ssl cipher algorithms (gets passed into mysqli::set_ssl()).
+     * @param string $sslKey A String containing the path to the ssl key file (gets passed into mysqli::ssl_set()).
+     * @param string $sslCertificate A String containing the path to the ssl certificate file (gets passed into mysqli::ssl_set()).
+     * @param string $sslCaCertificate A String containing the path to the ssl CA certificate file (gets passed into mysqli::ssl_set()).
+     * @param string $sslCaPath A String containing the path to the ssl CA certificate files (gets passed into mysqli::ssl_set()).
+     * @param string $sslCipherAlgos A String containing the list of allowed ssl cipher algorithms (gets passed into mysqli::ssl_set()).
      */
     private function __construct($host, $databaseName, $tableName, $userName, $password, $portNumber, $sslKey, $sslCertificate, $sslCaCertificate, $sslCaPath, $sslCipherAlgos)
     {

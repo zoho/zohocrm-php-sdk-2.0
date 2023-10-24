@@ -89,7 +89,7 @@ class DBBuilder
     }
 
     /**
-     * Sets up SSL options/parameters (to be passed into mysqli::set_ssl())
+     * Sets up SSL options/parameters (to be passed into mysqli::ssl_set())
      * @param string|null $key           location of ssl keyfile
      * @param string|null $certificate   location of SSL certificate
      * @param string|null $caCertificate location of SSL CA Certificate
