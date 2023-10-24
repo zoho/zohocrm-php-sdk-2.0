@@ -215,6 +215,7 @@ $tokenstore = (new DBBuilder())
 ->portNumber("portNumber")
 ->tableName("tableName")
 ->password("password")
+->ssl("path/to/key.pem", "path/to/cert.pem", "path/to/ca_cert.pem", "path/to/ca/", "")
 ->build();
 ```
 
