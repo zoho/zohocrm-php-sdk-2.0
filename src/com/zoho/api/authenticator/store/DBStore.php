@@ -228,10 +228,14 @@ class DBStore implements TokenStore
 
     private function getMysqlConnection()
     {
+        $use_ssl = $this->sslKey ? MYSQLI_CLIENT_SSL : null;
+        $mysqli_con = mysqli_init();
+        mysqli_real_connect($mysqli_con, $this->host, $this->userName, $this->password, $this->databaseName, $this->portNumber, null, $use_ssl);
         $mysqli_con = new \mysqli($this->host . ":" . $this->portNumber, $this->userName, $this->password, $this->databaseName);
 
         // Setup SSL if there's a keyfile defined
         if ($this->sslKey) {
+            $mysqli_con->options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, true);
             $mysqli_con->ssl_set($this->sslKey, $this->sslCertificate, $this->sslCaCertificate, $this->sslCaPath, $this->sslCipherAlgos);
         }
 
