@@ -18,6 +18,16 @@ class DBBuilder
 
     private $tableName = Constants::MYSQL_TABLE_NAME;
 
+    private $sslKey = null;
+
+    private $sslCertificate = null;
+
+    private $sslCaCertificate = null;
+
+    private $sslCaPath = null;
+
+    private $sslCipherAlgos = null;
+
     public function userName(string $userName)
     {
         if($userName != null)
@@ -74,6 +84,32 @@ class DBBuilder
         {
             $this->tableName = $tableName;
         }
+
+        return $this;
+    }
+
+    /**
+     * Sets up SSL options/parameters (to be passed into mysqli::ssl_set())
+     * @param string|null $key           location of ssl keyfile
+     * @param string|null $certificate   location of SSL certificate
+     * @param string|null $caCertificate location of SSL CA Certificate
+     * @param string|null $caPath
+     * @param string|null $cipherAlgos
+     *
+     * @returns DBBuilder
+     */
+    public function ssl(
+        string $key = null,
+        string $certificate = null,
+        string $caCertificate = null,
+        string $caPath = null,
+        string $cipherAlgos = null
+    ): DBBuilder {
+        $this->sslKey = $key;
+        $this->sslCertificate = $certificate;
+        $this->sslCaCertificate = $caCertificate;
+        $this->sslCaPath = $caPath;
+        $this->sslCipherAlgos = $cipherAlgos;
 
         return $this;
     }

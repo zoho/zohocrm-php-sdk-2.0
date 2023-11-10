@@ -31,6 +31,16 @@ class DBStore implements TokenStore
 
     private $tableName = null;
 
+    private $sslKey = null;
+
+    private $sslCertificate = null;
+
+    private $sslCaCertificate = null;
+
+    private $sslCaPath = null;
+
+    private $sslCipherAlgos = null;
+
     /**
      * Create an DBStore class instance with the specified parameters.
      * @param string $host A string containing the DataBase host name.
@@ -39,8 +49,13 @@ class DBStore implements TokenStore
      * @param string $userName A String containing the DataBase user name.
      * @param string $password A String containing the DataBase password.
      * @param string $portNumber A String containing the DataBase port number.
+     * @param string $sslKey A String containing the path to the ssl key file (gets passed into mysqli::ssl_set()).
+     * @param string $sslCertificate A String containing the path to the ssl certificate file (gets passed into mysqli::ssl_set()).
+     * @param string $sslCaCertificate A String containing the path to the ssl CA certificate file (gets passed into mysqli::ssl_set()).
+     * @param string $sslCaPath A String containing the path to the ssl CA certificate files (gets passed into mysqli::ssl_set()).
+     * @param string $sslCipherAlgos A String containing the list of allowed ssl cipher algorithms (gets passed into mysqli::ssl_set()).
      */
-    private function __construct($host, $databaseName, $tableName, $userName, $password, $portNumber)
+    private function __construct($host, $databaseName, $tableName, $userName, $password, $portNumber, $sslKey, $sslCertificate, $sslCaCertificate, $sslCaPath, $sslCipherAlgos)
     {
         $this->host = $host;
 
@@ -53,6 +68,16 @@ class DBStore implements TokenStore
         $this->password = $password;
 
         $this->portNumber = $portNumber;
+
+        $this->sslKey = $sslKey;
+
+        $this->sslCertificate = $sslCertificate;
+
+        $this->sslCaCertificate = $sslCaCertificate;
+
+        $this->sslCaPath = $sslCaPath;
+
+        $this->sslCipherAlgos = $sslCipherAlgos;
     }
 
     public function getToken($user, $token)
@@ -203,7 +228,16 @@ class DBStore implements TokenStore
 
     private function getMysqlConnection()
     {
+        $use_ssl = $this->sslKey ? MYSQLI_CLIENT_SSL : null;
+        $mysqli_con = mysqli_init();
+        mysqli_real_connect($mysqli_con, $this->host, $this->userName, $this->password, $this->databaseName, $this->portNumber, null, $use_ssl);
         $mysqli_con = new \mysqli($this->host . ":" . $this->portNumber, $this->userName, $this->password, $this->databaseName);
+
+        // Setup SSL if there's a keyfile defined
+        if ($this->sslKey) {
+            $mysqli_con->options(MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, true);
+            $mysqli_con->ssl_set($this->sslKey, $this->sslCertificate, $this->sslCaCertificate, $this->sslCaPath, $this->sslCipherAlgos);
+        }
 
         if ($mysqli_con->connect_errno)
         {
