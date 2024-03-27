@@ -23,11 +23,12 @@ class CustomViewsOperations
 
 	}
 
-	/**
-	 * The method to get custom views
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get custom views
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getCustomViews(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -42,11 +43,12 @@ class CustomViewsOperations
 
 	}
 
-	/**
-	 * The method to get custom view
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get custom view
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getCustomView(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

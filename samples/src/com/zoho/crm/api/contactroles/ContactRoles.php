@@ -11,6 +11,7 @@ use com\zoho\crm\api\contactroles\ResponseWrapper;
 
 use com\zoho\crm\api\contactroles\DeleteContactRolesParam;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\contactroles\APIException;
@@ -397,12 +398,12 @@ class ContactRoles
         }
     }
 
-	/**
-	 * <h3> Delete Contact Roles </h3>
-	 * This method is used to delete Contact Roles and print the response.
-	 * @param contactRoleIds - The ID of the ContactRole to be obtainted
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Delete Contact Roles </h3>
+     * This method is used to delete Contact Roles and print the response.
+     * @param array $contactRoleIds
+     * @throws SDKException
+     */
 	public static function deleteContactRoles(array $contactRoleIds)
 	{
 		//Get instance of ContactRolesOperations Class

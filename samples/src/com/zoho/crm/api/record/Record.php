@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\record;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\HeaderMap;
 
 use com\zoho\crm\api\ParameterMap;
@@ -799,13 +800,13 @@ class Record
 		}
 	}
 
-	/**
-	 * <h3> Update Record</h3>
-	 * This method is used to update a single record of a module with ID and print the response.
-	 * @param moduleAPIName - The API Name of the record's module.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Update Record</h3>
+     * This method is used to update a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @throws SDKException
+     */
 	public static function updateRecord(string $moduleAPIName, string $recordId)
 	{
 		//API Name of the module to update record
@@ -1001,14 +1002,14 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Delete Record</h3>
-	 * This method is used to delete a single record of a module with ID and print the response.
-	 * @param moduleAPIName - The API Name of the record's module.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Delete Record</h3>
+     * This method is used to delete a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @throws SDKException
+     */
 	public static function deleteRecord(string $moduleAPIName, string $recordId)
 	{
 		//API Name of the module to delete record
@@ -1132,14 +1133,14 @@ class Record
 		}
 	}
 
-	/**
-	 * <h3> Get Record Using External Id</h3>
-	 * This method is used to get a single record using external id and print the response.
-	 * @param moduleAPIName - The API Name of the record's module.
-	 * @param externalFieldValue - 
-	 * @param destinationFolder - The absolute path of the destination folder to store the attachment
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Record Using External Id</h3>
+     * This method is used to get a single record using external id and print the response.
+     * @param string $moduleAPIName
+     * @param string $externalFieldValue
+     * @param string $destinationFolder
+     * @throws SDKException
+     */
 	public static function getRecordUsingExternalId(string $moduleAPIName, string $externalFieldValue, string $destinationFolder)
 	{
 		//example
@@ -1816,13 +1817,13 @@ class Record
 		}
 	}
 
-	/**
-	 * <h3> Update Record</h3>
-	 * This method is used to update a single record of a module with ID and print the response.
-	 * @param moduleAPIName - The API Name of the record's module.
-	 * @param externalFieldValue - The ID of the record to be obtained.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Update Record</h3>
+     * This method is used to update a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $externalFieldValue
+     * @throws SDKException
+     */
 	public static function updateRecordUsingExternalId(string $moduleAPIName, string $externalFieldValue)
 	{
 		//API Name of the module to update record
@@ -2018,14 +2019,14 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Delete Record</h3>
-	 * This method is used to delete a single record of a module with ID and print the response.
-	 * @param moduleAPIName - The API Name of the record's module.
-	 * @param externalFieldValue - The ID of the record to be obtained.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Delete Record</h3>
+     * This method is used to delete a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $externalFieldValue
+     * @throws SDKException
+     */
 	public static function deleteRecordUsingExternalId(string $moduleAPIName, string $externalFieldValue)
 	{
 		//API Name of the module to delete record
@@ -2148,14 +2149,13 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Get Records</h3>
-	 * This method is used to get all the records of a module and print the response.
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @throws Exception
-	 * 
-	 */
+
+    /**
+     * <h3> Get Records</h3>
+     * This method is used to get all the records of a module and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function getRecords(string $moduleAPIName)
 	{
 		//example
@@ -2865,13 +2865,13 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Create Records</h3>
-	 * This method is used to create records of a module and print the response
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Create Records</h3>
+     * This method is used to create records of a module and print the response
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function createRecords(string $moduleAPIName)
 	{
 		//API Name of the module to create records
@@ -3347,13 +3347,13 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Update Records</h3>
-	 * This method is used to update records of a module and print the response.
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Update Records</h3>
+     * This method is used to update records of a module and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function updateRecords(string $moduleAPIName)
 	{
 		//API Name of the module to create records
@@ -3567,13 +3567,13 @@ class Record
 		}
 	}
 
-	/**
-	 * <h3> Delete Records</h3>
-	 * This method is used to delete records of a module and print the response
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @param recordIds - The ID of the record to be obtained.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Delete Records</h3>
+     * This method is used to delete records of a module and print the response
+     * @param string $moduleAPIName
+     * @param array $recordIds
+     * @throws SDKException
+     */
 	public static function deleteRecords(string $moduleAPIName, array $recordIds)
 	{
 		//API Name of the module to update record
@@ -3701,12 +3701,12 @@ class Record
 		}
 	}
 
-	/**
-	 * <h3> Upsert Records</h3>
-	 * This method is used to Upsert records of a module and print the response.
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Upsert Records</h3>
+     * This method is used to Upsert records of a module and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function upsertRecords(string $moduleAPIName)
 	{
 		//API Name of the module to create records
@@ -3915,12 +3915,12 @@ class Record
 		}
 	}
 
-	/**
-	 * <h3> Get Deleted Records</h3>
-	 * This method is used to deleted records of a module and print the response.
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Deleted Records</h3>
+     * This method is used to deleted records of a module and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function getDeletedRecords(string $moduleAPIName)
 	{
 		//example, $moduleAPIName = "Leads";
@@ -4079,13 +4079,13 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Search Records</h3>
-	 * This method is used to search records of a module and print the response.
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Search Records</h3>
+     * This method is used to search records of a module and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function searchRecords(string $moduleAPIName)
 	{
 		//example, moduleAPIName = "Leads";
@@ -4865,14 +4865,14 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * This method is used to attach a photo to a $record-> You must include the photo in the request with content type as multipart/form data.
-	 * @param moduleAPIName - The API Name of the module to obtain records.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param absoluteFilePath - The absolute file path of the file to be uploads
-	 * @throws Exception
-	 */
+
+    /**
+     * This method is used to attach a photo to a $record-> You must include the photo in the request with content type as multipart/form data.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param string $absoluteFilePath
+     * @throws SDKException
+     */
 	public static function uploadPhoto(string $moduleAPIName, string $recordId, string $absoluteFilePath)
 	{
 		//example
@@ -5227,13 +5227,13 @@ class Record
 			}
 		}
 	}
-	
-	/**
-	 * This method is used to get the status of the mass update job scheduled previously and print the response.
-	 * @param moduleAPIName- The API Name of the module to obtain records.
-	 * @param jobId - The ID of the job from the response of Mass Update Records.
-	 * @throws Exception
-	 */
+
+    /**
+     * This method is used to get the status of the mass update job scheduled previously and print the response.
+     * @param string $moduleAPIName
+     * @param string $jobId
+     * @throws SDKException
+     */
 	public static function getMassUpdateStatus(string $moduleAPIName, string $jobId)
 	{
 		//example

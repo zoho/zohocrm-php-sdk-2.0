@@ -32,13 +32,14 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to get related records
-	 * @param string $recordId A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get related records
+     * @param string $recordId A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRelatedRecords(string $recordId, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -60,12 +61,13 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to update related records
-	 * @param string $recordId A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update related records
+     * @param string $recordId A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRelatedRecords(string $recordId, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -87,12 +89,13 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to delink records
-	 * @param string $recordId A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delink records
+     * @param string $recordId A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function delinkRecords(string $recordId, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -113,13 +116,14 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to get related records using external id
-	 * @param string $externalValue A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get related records using external id
+     * @param string $externalValue A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRelatedRecordsUsingExternalId(string $externalValue, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -141,12 +145,13 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to update related records using external id
-	 * @param string $externalValue A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update related records using external id
+     * @param string $externalValue A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRelatedRecordsUsingExternalId(string $externalValue, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -168,12 +173,13 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to delete related records using external id
-	 * @param string $externalValue A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete related records using external id
+     * @param string $externalValue A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteRelatedRecordsUsingExternalId(string $externalValue, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -194,13 +200,14 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to get related record
-	 * @param string $relatedRecordId A string
-	 * @param string $recordId A string
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get related record
+     * @param string $relatedRecordId A string
+     * @param string $recordId A string
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRelatedRecord(string $relatedRecordId, string $recordId, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -223,13 +230,14 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to update related record
-	 * @param string $relatedRecordId A string
-	 * @param string $recordId A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update related record
+     * @param string $relatedRecordId A string
+     * @param string $recordId A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRelatedRecord(string $relatedRecordId, string $recordId, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -253,12 +261,13 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to delink record
-	 * @param string $relatedRecordId A string
-	 * @param string $recordId A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delink record
+     * @param string $relatedRecordId A string
+     * @param string $recordId A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function delinkRecord(string $relatedRecordId, string $recordId)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -280,13 +289,14 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to get related record using external id
-	 * @param string $externalFieldValue A string
-	 * @param string $externalValue A string
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get related record using external id
+     * @param string $externalFieldValue A string
+     * @param string $externalValue A string
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRelatedRecordUsingExternalId(string $externalFieldValue, string $externalValue, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -309,13 +319,14 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to update related record using external id
-	 * @param string $externalFieldValue A string
-	 * @param string $externalValue A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update related record using external id
+     * @param string $externalFieldValue A string
+     * @param string $externalValue A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRelatedRecordUsingExternalId(string $externalFieldValue, string $externalValue, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -339,12 +350,13 @@ class RelatedRecordsOperations
 
 	}
 
-	/**
-	 * The method to delete related record using external id
-	 * @param string $externalFieldValue A string
-	 * @param string $externalValue A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete related record using external id
+     * @param string $externalFieldValue A string
+     * @param string $externalValue A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteRelatedRecordUsingExternalId(string $externalFieldValue, string $externalValue)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

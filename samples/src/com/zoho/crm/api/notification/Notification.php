@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\notification;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\notification\APIException;
@@ -21,11 +22,11 @@ use com\zoho\crm\api\notification\SuccessResponse;
 
 class Notification
 {
-	/**
-	 * <h3> Enable Notifications </h3>
-	 * This method is used to Enable Notifications and print the response.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Enable Notifications </h3>
+     * This method is used to Enable Notifications and print the response.
+     * @throws \Exception
+     */
 	public static function enableNotifications()
 	{
 		//Get instance of NotificationOperations Class
@@ -239,12 +240,12 @@ class Notification
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Get Notification Details </h3>
-	 * This method is used to get all the Notification and print the response.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Get Notification Details </h3>
+     * This method is used to get all the Notification and print the response.
+     * @throws SDKException
+     */
 	public static function getNotificationDetails()
 	{
 		//Get instance of NotificationOperations Class
@@ -394,12 +395,12 @@ class Notification
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Update Notifications </h3>
-	 * This method is used to update Notifications and print the response.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Update Notifications </h3>
+     * This method is used to update Notifications and print the response.
+     * @throws \Exception
+     */
 	public static function updateNotifications()
 	{
 		//Get instance of NotificationOperations Class
@@ -585,12 +586,12 @@ class Notification
 			}	
 		}
 	}
-	
-	/**
-	 * <h3> Update Specific Information of a Notification </h3>
-	 * This method is used to update single Notification and print the response.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Update Specific Information of a Notification </h3>
+     * This method is used to update single Notification and print the response.
+     * @throws \Exception
+     */
 	public static function updateNotification()
 	{
 		//Get instance of NotificationOperations Class
@@ -775,13 +776,13 @@ class Notification
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Disable Notifications </h3>
-	 * To stop all the instant notifications enabled by the user for a channel.
-	 * @param channelIds - Specify the unique IDs of the notification channels to be disabled.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Disable Notifications </h3>
+     * To stop all the instant notifications enabled by the user for a channel.
+     * @param array $channelIds
+     * @throws SDKException
+     */
 	public static function disableNotifications(array $channelIds)
 	{
 		//example

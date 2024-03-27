@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\relatedrecords;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\HeaderMap;
 
 use com\zoho\crm\api\ParameterMap;
@@ -55,14 +56,14 @@ use com\zoho\crm\api\attachments\Attachment;
 
 class RelatedRecords
 {
-	/**
-	 * <h3> Get Related Records </h3>
-	 * This method is used to get the related list records and print the response.
-	 * @param moduleAPIName - The API Name of the module to get related records.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Related Records </h3>
+     * This method is used to get the related list records and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param string $relatedListAPIName
+     * @throws SDKException
+     */
 	public static function getRelatedRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName)
 	{
 		//example
@@ -887,16 +888,16 @@ class RelatedRecords
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Delink Records </h3>
-	 * This method is used to delete the association between modules and print the response.
-	 * @param moduleAPIName - The API Name of the module to delink related records.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
-	 * @param relatedListIds - The ID of the related record.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Delink Records </h3>
+     * This method is used to delete the association between modules and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param string $relatedListAPIName
+     * @param array $relatedListIds
+     * @throws SDKException
+     */
 	public static function delinkRecords(string $moduleAPIName, string $recordId, string $relatedListAPIName, array $relatedListIds)
 	{
 		//API Name of the module to update record
@@ -1020,14 +1021,14 @@ class RelatedRecords
 		}
 	}
 
-	/**
-	 * <h3> Get Related Records Using External Id </h3>
-	 * This method is used to get the related list records and print the response.
-	 * @param moduleAPIName - The API Name of the module to get related records.
-	 * @param externalValue - 
-	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Related Records Using External Id </h3>
+     * This method is used to get the related list records and print the response.
+     * @param string $moduleAPIName
+     * @param string $externalValue
+     * @param string $relatedListAPIName
+     * @throws SDKException
+     */
 	public static function getRelatedRecordsUsingExternalId(string $moduleAPIName, string $externalValue, string $relatedListAPIName)
 	{
 		//example
@@ -1858,16 +1859,16 @@ class RelatedRecords
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Delink Records </h3>
-	 * This method is used to delete the association between modules and print the response.
-	 * @param moduleAPIName - The API Name of the module to delink related records.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
-	 * @param relatedListIds - The ID of the related record.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Delink Records </h3>
+     * This method is used to delete the association between modules and print the response.
+     * @param string $moduleAPIName
+     * @param string $externalValue
+     * @param string $relatedListAPIName
+     * @param array $relatedListIds
+     * @throws SDKException
+     */
 	public static function deleteRelatedRecordsUsingExternalId(string $moduleAPIName, string $externalValue, string $relatedListAPIName, array $relatedListIds)
 	{
 		//API Name of the module to update record
@@ -1992,15 +1993,16 @@ class RelatedRecords
 		}
 	}
 
-	/**
-	 * <h3> Get Related Record </h3>
-	 * This method is used to get the single related list record and print the response.
-	 * @param moduleAPIName - The API Name of the module to get related record.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
-	 * @param relatedListId - The ID of the related record.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Related Record </h3>
+     * This method is used to get the single related list record and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param string $relatedListAPIName
+     * @param string $relatedListId
+     * @param string $destinationFolder
+     * @throws SDKException
+     */
 	public static function getRelatedRecord(string $moduleAPIName, string $recordId, string $relatedListAPIName, string $relatedListId, string $destinationFolder)
 	{
 		//example
@@ -2913,15 +2915,16 @@ class RelatedRecords
 		}
 	}
 
-	/**
-	 * <h3> Get Related Record Using External Id </h3>
-	 * This method is used to get the single related list record and print the response.
-	 * @param moduleAPIName - The API Name of the module to get related record.
-	 * @param externalValue - 
-	 * @param relatedListAPIName - The API name of the related list. To get the API name of the related list.
-	 * @param externalFieldValue - 
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Related Record Using External Id </h3>
+     * This method is used to get the single related list record and print the response.
+     * @param string $moduleAPIName
+     * @param string $externalValue
+     * @param string $relatedListAPIName
+     * @param string $externalFieldValue
+     * @param string $destinationFolder
+     * @throws SDKException
+     */
 	public static function getRelatedRecordUsingExternalId(string $moduleAPIName, string $externalValue, string $relatedListAPIName, string $externalFieldValue, string $destinationFolder)
 	{
 		//example

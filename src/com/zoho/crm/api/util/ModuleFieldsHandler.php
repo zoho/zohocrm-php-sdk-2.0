@@ -90,10 +90,11 @@ class ModuleFieldsHandler
 		}
 	}
 
-	/**
-	 * The method to delete fields of the given module from the current user's fields JSON file.
-	 * @param module A string representing the module.
-	 */
+    /**
+     * The method to delete fields of the given module from the current user's fields JSON file.
+     * @param module A string representing the module.
+     * @throws SDKException
+     */
 	private static function deleteFields($module)
 	{
 		try

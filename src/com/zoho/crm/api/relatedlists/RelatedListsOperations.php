@@ -22,10 +22,11 @@ class RelatedListsOperations
 
 	}
 
-	/**
-	 * The method to get related lists
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get related lists
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRelatedLists()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -39,11 +40,12 @@ class RelatedListsOperations
 
 	}
 
-	/**
-	 * The method to get related list
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get related list
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRelatedList(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

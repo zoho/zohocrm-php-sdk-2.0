@@ -9,10 +9,11 @@ use com\zoho\crm\api\util\APIResponse;
 class CurrenciesOperations
 {
 
-	/**
-	 * The method to get currencies
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get currencies
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getCurrencies()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -25,11 +26,12 @@ class CurrenciesOperations
 
 	}
 
-	/**
-	 * The method to add currencies
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to add currencies
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function addCurrencies(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -45,11 +47,12 @@ class CurrenciesOperations
 
 	}
 
-	/**
-	 * The method to update currencies
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update currencies
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateCurrencies(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -65,11 +68,12 @@ class CurrenciesOperations
 
 	}
 
-	/**
-	 * The method to enable multiple currencies
-	 * @param BaseCurrencyWrapper $request An instance of BaseCurrencyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to enable multiple currencies
+     * @param BaseCurrencyWrapper $request An instance of BaseCurrencyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function enableMultipleCurrencies(BaseCurrencyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -85,11 +89,12 @@ class CurrenciesOperations
 
 	}
 
-	/**
-	 * The method to update base currency
-	 * @param BaseCurrencyWrapper $request An instance of BaseCurrencyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update base currency
+     * @param BaseCurrencyWrapper $request An instance of BaseCurrencyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateBaseCurrency(BaseCurrencyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -105,11 +110,12 @@ class CurrenciesOperations
 
 	}
 
-	/**
-	 * The method to get currency
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get currency
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getCurrency(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -123,12 +129,13 @@ class CurrenciesOperations
 
 	}
 
-	/**
-	 * The method to update currency
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update currency
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateCurrency(string $id, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

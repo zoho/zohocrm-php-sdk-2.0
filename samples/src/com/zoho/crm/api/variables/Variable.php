@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\variables;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\variablegroups\VariableGroup;
@@ -27,12 +28,12 @@ use com\zoho\crm\api\variables\GetVariablesParam;
 
 class Variable
 {
-	
-	/**
-	 * <h3> Get Variables </h3>
-	 * This method is used to retrieve all the available variables through an API request and print the response.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Get Variables </h3>
+     * This method is used to retrieve all the available variables through an API request and print the response.
+     * @throws SDKException
+     */
 	public static function getVariables()
 	{
 		//Get instance of VariablesOperations Class
@@ -447,13 +448,13 @@ class Variable
             }
 		}
 	}
-	
-	/**
-	 *  <h3> Delete Variables </h3>
-	 * This method is used to delete details of multiple variables in CRM simultaneously and print the response.
-	 * @param variableIds - The ID of the Variable to be obtainted
-	 * @throws Exception
-	 */
+
+    /**
+     *  <h3> Delete Variables </h3>
+     * This method is used to delete details of multiple variables in CRM simultaneously and print the response.
+     * @param array $variableIds
+     * @throws SDKException
+     */
 	public static function deleteVariables(array $variableIds)
 	{
 		//Get instance of VariablesOperations Class
@@ -567,14 +568,14 @@ class Variable
             }
 		}
 	}
-	
-	/**
-	 * <h3> Get Variable By Id </h3>
-	 * This method is used to get the details of any specific variable.
-	 * Specify the unique ID of the variable in your API request to get the data for that particular variable group.
-	 * @param variableId - The ID of the Variable to be obtainted
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Get Variable By Id </h3>
+     * This method is used to get the details of any specific variable.
+     * Specify the unique ID of the variable in your API request to get the data for that particular variable group.
+     * @param string $variableId
+     * @throws SDKException
+     */
 	public static function getVariableById(string $variableId)
 	{
 		//Get instance of VariablesOperations Class
@@ -918,13 +919,13 @@ class Variable
             }
 		}
 	}
-	
-	/**
-	 * This method is used to get the details of any specific variable.
-	 * Specify the unique name of the variable in your API request to get the data for that particular variable group.
-	 * @param variableName - The name of the Variable to be obtainted
-	 * @throws Exception
-	 */
+
+    /**
+     * This method is used to get the details of any specific variable.
+     * Specify the unique name of the variable in your API request to get the data for that particular variable group.
+     * @param string $variableName
+     * @throws SDKException
+     */
 	public static function getVariableForAPIName(string $variableName)
 	{
 		//Get instance of VariablesOperations Class

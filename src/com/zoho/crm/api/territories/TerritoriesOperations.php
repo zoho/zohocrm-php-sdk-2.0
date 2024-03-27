@@ -9,10 +9,11 @@ use com\zoho\crm\api\util\APIResponse;
 class TerritoriesOperations
 {
 
-	/**
-	 * The method to get territories
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get territories
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getTerritories()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -25,11 +26,12 @@ class TerritoriesOperations
 
 	}
 
-	/**
-	 * The method to get territory
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get territory
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getTerritory(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

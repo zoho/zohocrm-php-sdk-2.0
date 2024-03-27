@@ -9,11 +9,12 @@ use com\zoho\crm\api\util\APIResponse;
 class QueryOperations
 {
 
-	/**
-	 * The method to get records
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get records
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRecords(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

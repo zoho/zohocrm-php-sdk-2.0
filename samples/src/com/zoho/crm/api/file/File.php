@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\file;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\file\APIException;
@@ -155,13 +156,13 @@ class File
             }
 		}
 	}
-	
-	/**
-	 * <h3> Get File</h3>
-	 * @param id - The ID of the uploaded File.
-	 * @param destinationFolder - The absolute path of the destination folder to store the File
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Get File</h3>
+     * @param string $id
+     * @param string $destinationFolder
+     * @throws SDKException
+     */
 	public static function getFile(string $id, string $destinationFolder)
 	{
 		//example

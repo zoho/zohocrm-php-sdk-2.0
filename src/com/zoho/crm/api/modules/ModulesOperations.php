@@ -11,11 +11,12 @@ use com\zoho\crm\api\util\APIResponse;
 class ModulesOperations
 {
 
-	/**
-	 * The method to get modules
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get modules
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getModules(HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -29,11 +30,12 @@ class ModulesOperations
 
 	}
 
-	/**
-	 * The method to get module
-	 * @param string $apiName A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get module
+     * @param string $apiName A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getModule(string $apiName)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -47,12 +49,13 @@ class ModulesOperations
 
 	}
 
-	/**
-	 * The method to update module by api name
-	 * @param string $apiName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update module by api name
+     * @param string $apiName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateModuleByAPIName(string $apiName, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -68,12 +71,13 @@ class ModulesOperations
 
 	}
 
-	/**
-	 * The method to update module by id
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update module by id
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateModuleById(string $id, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

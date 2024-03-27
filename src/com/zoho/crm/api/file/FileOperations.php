@@ -11,12 +11,13 @@ use com\zoho\crm\api\util\APIResponse;
 class FileOperations
 {
 
-	/**
-	 * The method to upload files
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upload files
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function uploadFiles(BodyWrapper $request, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -33,11 +34,12 @@ class FileOperations
 
 	}
 
-	/**
-	 * The method to get file
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get file
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getFile(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

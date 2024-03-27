@@ -9,10 +9,11 @@ use com\zoho\crm\api\util\APIResponse;
 class VariableGroupsOperations
 {
 
-	/**
-	 * The method to get variable groups
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get variable groups
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getVariableGroups()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -25,11 +26,12 @@ class VariableGroupsOperations
 
 	}
 
-	/**
-	 * The method to get variable group by id
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get variable group by id
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getVariableGroupById(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -43,11 +45,12 @@ class VariableGroupsOperations
 
 	}
 
-	/**
-	 * The method to get variable group by api name
-	 * @param string $apiName A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get variable group by api name
+     * @param string $apiName A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getVariableGroupByAPIName(string $apiName)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

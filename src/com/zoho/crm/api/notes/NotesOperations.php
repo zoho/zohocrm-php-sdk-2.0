@@ -13,12 +13,13 @@ use com\zoho\crm\api\util\APIResponse;
 class NotesOperations
 {
 
-	/**
-	 * The method to get notes
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get notes
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getNotes(ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -33,11 +34,12 @@ class NotesOperations
 
 	}
 
-	/**
-	 * The method to create notes
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create notes
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createNotes(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -53,11 +55,12 @@ class NotesOperations
 
 	}
 
-	/**
-	 * The method to update notes
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update notes
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateNotes(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -73,11 +76,12 @@ class NotesOperations
 
 	}
 
-	/**
-	 * The method to delete notes
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete notes
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteNotes(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -91,13 +95,14 @@ class NotesOperations
 
 	}
 
-	/**
-	 * The method to get note
-	 * @param string $id A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get note
+     * @param string $id A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getNote(string $id, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -113,12 +118,13 @@ class NotesOperations
 
 	}
 
-	/**
-	 * The method to update note
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update note
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateNote(string $id, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -134,11 +140,12 @@ class NotesOperations
 
 	}
 
-	/**
-	 * The method to delete note
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete note
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteNote(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

@@ -11,11 +11,12 @@ use com\zoho\crm\api\util\APIResponse;
 class TagsOperations
 {
 
-	/**
-	 * The method to get tags
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get tags
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getTags(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -29,12 +30,13 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to create tags
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create tags
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createTags(BodyWrapper $request, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -51,12 +53,13 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to update tags
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update tags
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateTags(BodyWrapper $request, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -73,13 +76,14 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to update tag
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update tag
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateTag(string $id, BodyWrapper $request, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -96,11 +100,12 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to delete tag
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete tag
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteTag(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -114,12 +119,13 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to merge tags
-	 * @param string $id A string
-	 * @param MergeWrapper $request An instance of MergeWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to merge tags
+     * @param string $id A string
+     * @param MergeWrapper $request An instance of MergeWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function mergeTags(string $id, MergeWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -137,13 +143,14 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to add tags to record
-	 * @param string $recordId A string
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to add tags to record
+     * @param string $recordId A string
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function addTagsToRecord(string $recordId, string $moduleAPIName, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -162,13 +169,14 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to remove tags from record
-	 * @param string $recordId A string
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to remove tags from record
+     * @param string $recordId A string
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function removeTagsFromRecord(string $recordId, string $moduleAPIName, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -187,12 +195,13 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to add tags to multiple records
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to add tags to multiple records
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function addTagsToMultipleRecords(string $moduleAPIName, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -209,12 +218,13 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to remove tags from multiple records
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to remove tags from multiple records
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function removeTagsFromMultipleRecords(string $moduleAPIName, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -231,12 +241,13 @@ class TagsOperations
 
 	}
 
-	/**
-	 * The method to get record count for tag
-	 * @param string $id A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get record count for tag
+     * @param string $id A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRecordCountForTag(string $id, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

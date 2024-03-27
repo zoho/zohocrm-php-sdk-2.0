@@ -15,6 +15,7 @@ class UserSignature
     /**
      * Creates an UserSignature class instance with the specified user email.
      * @param string $email A string containing the CRM user email.
+     * @throws SDKException
      */
     public function __construct(string $email)
     {

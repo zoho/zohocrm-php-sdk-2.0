@@ -22,10 +22,11 @@ class LayoutsOperations
 
 	}
 
-	/**
-	 * The method to get layouts
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get layouts
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getLayouts()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -39,11 +40,12 @@ class LayoutsOperations
 
 	}
 
-	/**
-	 * The method to get layout
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get layout
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getLayout(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

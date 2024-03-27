@@ -22,10 +22,11 @@ class ProfilesOperations
 
 	}
 
-	/**
-	 * The method to get profiles
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get profiles
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getProfiles()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -39,11 +40,12 @@ class ProfilesOperations
 
 	}
 
-	/**
-	 * The method to get profile
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get profile
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getProfile(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

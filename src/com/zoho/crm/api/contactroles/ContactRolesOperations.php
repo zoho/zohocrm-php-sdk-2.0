@@ -12,10 +12,11 @@ use com\zoho\crm\api\util\APIResponse;
 class ContactRolesOperations
 {
 
-	/**
-	 * The method to get contact roles
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get contact roles
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getContactRoles()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -28,11 +29,12 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to create contact roles
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create contact roles
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createContactRoles(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -48,11 +50,12 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to update contact roles
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update contact roles
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateContactRoles(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -68,11 +71,12 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to delete contact roles
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete contact roles
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteContactRoles(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -86,11 +90,12 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to get contact role
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get contact role
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getContactRole(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -104,12 +109,13 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to update contact role
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update contact role
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateContactRole(string $id, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -125,11 +131,12 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to delete contact role
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete contact role
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteContactRole(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -143,12 +150,13 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to get all contact roles of deal
-	 * @param string $dealId A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get all contact roles of deal
+     * @param string $dealId A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getAllContactRolesOfDeal(string $dealId, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -166,12 +174,13 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to get contact role of deal
-	 * @param string $contactId A string
-	 * @param string $dealId A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get contact role of deal
+     * @param string $contactId A string
+     * @param string $dealId A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getContactRoleOfDeal(string $contactId, string $dealId)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -189,13 +198,14 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to add contact role to deal
-	 * @param string $contactId A string
-	 * @param string $dealId A string
-	 * @param RecordBodyWrapper $request An instance of RecordBodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to add contact role to deal
+     * @param string $contactId A string
+     * @param string $dealId A string
+     * @param RecordBodyWrapper $request An instance of RecordBodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function addContactRoleToDeal(string $contactId, string $dealId, RecordBodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -213,12 +223,13 @@ class ContactRolesOperations
 
 	}
 
-	/**
-	 * The method to remove contact role from deal
-	 * @param string $contactId A string
-	 * @param string $dealId A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to remove contact role from deal
+     * @param string $contactId A string
+     * @param string $dealId A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function removeContactRoleFromDeal(string $contactId, string $dealId)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

@@ -5,6 +5,7 @@ use com\zoho\crm\api\bulkwrite\FileBodyWrapper;
 
 use com\zoho\crm\api\bulkwrite\BulkWriteOperations;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\util\StreamWrapper;
 
 use com\zoho\crm\api\bulkwrite\UploadFileHeader;
@@ -29,14 +30,14 @@ use com\zoho\crm\api\bulkwrite\BulkWriteResponse;
 
 class BulkWrite
 {
-	/**
-	 * <h3> Upload File</h3>
-	 * This method is used to upload a CSV file in ZIP format for bulk write API. The response contains the file_id.
-	 * Use this ID while making the bulk write request.
-	 * @param orgID The unique ID (zgid) of your organization obtained through the Organization API.
-	 * @param absoluteFilePath To give the zip file path you want to upload.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Upload File</h3>
+     * This method is used to upload a CSV file in ZIP format for bulk write API. The response contains the file_id.
+     * Use this ID while making the bulk write request.
+     * @param string $orgID
+     * @param string $absoluteFilePath
+     * @throws SDKException
+     */
 	public static function uploadFile(string $orgID, string $absoluteFilePath)
 	{
 		//Get instance of BulkWriteOperations Class

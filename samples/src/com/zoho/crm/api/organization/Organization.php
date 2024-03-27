@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\organization;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\org\APIException;
 
 use com\zoho\crm\api\org\OrgOperations;
@@ -192,13 +193,13 @@ class Organization
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Upload Organization Photo</h3>
-	 * This method is used to upload the brand logo or image of the organization and print the response.
-	 * @param absoluteFilePath - The absolute file path of the file to be attached
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Upload Organization Photo</h3>
+     * This method is used to upload the brand logo or image of the organization and print the response.
+     * @param string $absoluteFilePath
+     * @throws SDKException
+     */
 	public static function uploadOrganizationPhoto(string $absoluteFilePath)
 	{
 		//Get instance of OrgOperations Class

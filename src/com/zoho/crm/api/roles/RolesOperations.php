@@ -9,10 +9,11 @@ use com\zoho\crm\api\util\APIResponse;
 class RolesOperations
 {
 
-	/**
-	 * The method to get roles
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get roles
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRoles()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -25,11 +26,12 @@ class RolesOperations
 
 	}
 
-	/**
-	 * The method to get role
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get role
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRole(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

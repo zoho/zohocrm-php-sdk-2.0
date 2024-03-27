@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\tags;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\tags\APIException;
@@ -43,12 +44,12 @@ use com\zoho\crm\api\tags\AddTagsToRecordParam;
 
 class Tag
 {
-	/**
-	 * <h3> Get Tags </h3>
-	 * This method is used to get all the tags in an organization.
-	 * @param moduleAPIName - The API Name of the module to get tags.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Tags </h3>
+     * This method is used to get all the tags in an organization.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function getTags(string $moduleAPIName)
 	{
 		//Get instance of TagsOperations Class
@@ -184,13 +185,13 @@ class Tag
             }
 		}
 	}
-	
-	/**
-	 * <h3> Create Tags </h3>
-	 * This method is used to create new tags and print the response.
-	 * @param moduleAPIName - The API Name of the module to create tags.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Create Tags </h3>
+     * This method is used to create new tags and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function createTags(string $moduleAPIName)
 	{
 		//Get instance of TagsOperations Class
@@ -322,13 +323,13 @@ class Tag
             }
 		}
 	}
-	
-	/**
-	 * <h3> Update Tags </h3>
-	 * This method is used to update multiple tags simultaneously and print the response.
-	 * @param moduleAPIName - The API Name of the module to update tags.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Update Tags </h3>
+     * This method is used to update multiple tags simultaneously and print the response.
+     * @param string $moduleAPIName
+     * @throws SDKException
+     */
 	public static function updateTags(string $moduleAPIName)
 	{
 		//Get instance of TagsOperations Class
@@ -462,14 +463,14 @@ class Tag
            }
 		}
 	}
-	
-	/**
-	 * <h3> Update Tag </h3>
-	 * This method is used to update single tag and print the response.
-	 * @param moduleAPIName - The API Name of the module to update tag.
-	 * @param tagId - The ID of the tag to be obtained.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Update Tag </h3>
+     * This method is used to update single tag and print the response.
+     * @param string $moduleAPIName
+     * @param string $tagId
+     * @throws SDKException
+     */
 	public static function updateTag(string $moduleAPIName, string $tagId)
 	{
 		//Get instance of TagsOperations Class
@@ -848,15 +849,15 @@ class Tag
            }
 		}
 	}
-	
-	/**
-	 * <h3> Add Tags To Record </h3>
-	 * This method is used to add tags to a specific record and print the response.
-	 * @param moduleAPIName - The API Name of the module to add tag.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param tagNames - The names of the tags to be added.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Add Tags To Record </h3>
+     * This method is used to add tags to a specific record and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param array $tagNames
+     * @throws SDKException
+     */
 	public static function addTagsToRecord(string $moduleAPIName, string $recordId, array $tagNames)
 	{
 		//Get instance of TagsOperations Class
@@ -977,15 +978,15 @@ class Tag
             }
 		}
 	}
-	
-	/**
-	 * <h3> Remove Tags From Record </h3>
-	 * This method is used to delete the tag associated with a specific record and print the response.
-	 * @param moduleAPIName - The API Name of the module to remove tag.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @param tagNames - The names of the tags to be remove.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Remove Tags From Record </h3>
+     * This method is used to delete the tag associated with a specific record and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param array $tagNames
+     * @throws SDKException
+     */
 	public static function removeTagsFromRecord(string $moduleAPIName, string $recordId, array $tagNames)
 	{
 		//Get instance of TagsOperations Class
@@ -1100,15 +1101,15 @@ class Tag
             }
 		}
 	}
-	
-	/**
-	 * <h3> Add Tags To Multiple Records </h3>
-	 * This method is used to add tags to multiple records simultaneously and print the response.
-	 * @param moduleAPIName - The API Name of the module to add tags.
-	 * @param recordIds - The ID of the record to be obtained.
-	 * @param tagNames - The names of the tags to be add.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Add Tags To Multiple Records </h3>
+     * This method is used to add tags to multiple records simultaneously and print the response.
+     * @param string $moduleAPIName
+     * @param array $recordIds
+     * @param array $tagNames
+     * @throws SDKException
+     */
 	public static function addTagsToMultipleRecords(string $moduleAPIName, array $recordIds, array $tagNames)
 	{
 		//Get instance of TagsOperations Class
@@ -1248,15 +1249,15 @@ class Tag
             }
 		}
 	}
-	
-	/**
-	 * <h3> Remove Tags From Multiple Records </h3>
-	 * This method is used to delete the tags associated with multiple records and print the response.
-	 * @param moduleAPIName - The API Name of the module to remove tags.
-	 * @param recordIds - The ID of the record to be obtained.
-	 * @param tagNames - The names of the tags to be remove.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Remove Tags From Multiple Records </h3>
+     * This method is used to delete the tags associated with multiple records and print the response.
+     * @param string $moduleAPIName
+     * @param array $recordIds
+     * @param array $tagNames
+     * @throws SDKException
+     */
 	public static function removeTagsFromMultipleRecords(string $moduleAPIName, array $recordIds, array $tagNames)
 	{
 		//Get instance of TagsOperations Class
@@ -1393,14 +1394,14 @@ class Tag
             }
 		}
 	}
-	
-	/**
-	 * <h3> Get Record Count For Tag </h3>
-	 * This method is used to get the total number of records under a tag and print the response.
-	 * @param moduleAPIName - The API Name of the module.
-	 * @param tagId - The ID of the tag to be obtained.
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Get Record Count For Tag </h3>
+     * This method is used to get the total number of records under a tag and print the response.
+     * @param string $moduleAPIName
+     * @param string $tagId
+     * @throws SDKException
+     */
 	public static function getRecordCountForTag(string $moduleAPIName, string $tagId)
 	{
 		//Get instance of TagsOperations Class

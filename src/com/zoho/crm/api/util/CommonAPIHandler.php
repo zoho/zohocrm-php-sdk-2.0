@@ -84,8 +84,9 @@ class CommonAPIHandler
 
     /**
      * This method is to add an API request parameter.
-     * @param string $param A Param containing the API request parameter .
+     * @param $paramInstane
      * @param object $paramValue A object containing the API request parameter value.
+     * @throws SDKException
      */
     public function addParam($paramInstane, $paramValue)
     {
@@ -104,8 +105,9 @@ class CommonAPIHandler
 
     /**
      * This method to add an API request header.
-     * @param string $header A Header containing the API request header .
+     * @param $headerInstane
      * @param string $headerValue A object containing the API request header value.
+     * @throws SDKException
      */
     public function addHeader($headerInstane, $headerValue)
     {
@@ -204,7 +206,8 @@ class CommonAPIHandler
      * This method is used in constructing API request and response details. To make the Zoho CRM API calls.
      * @param string $className A string containing the method return type.
      * @param string $encodeType A String containing the expected API response content type.
-     * @return \com\zoho\crm\api\util\APIResponse A APIResponse representing the Zoho CRM API response instance or null.
+     * @return APIResponse A APIResponse representing the Zoho CRM API response instance or null.
+     * @throws SDKException
      */
     public function apiCall($className, $encodeType)
     {

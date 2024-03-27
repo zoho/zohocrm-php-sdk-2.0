@@ -9,6 +9,7 @@ use com\zoho\crm\api\attachments\APIException;
 
 use com\zoho\crm\api\attachments\FileBodyWrapper;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\util\StreamWrapper;
 
 use com\zoho\crm\api\attachments\SuccessResponse;
@@ -26,12 +27,12 @@ use com\zoho\crm\api\attachments\UploadLinkAttachmentParam;
 class Attachment
 {
     /**
-	 * <h3> Get Attachments</h3>
-	 * This method is used to get a single record's attachments' details with ID and print the response.
-	 * @throws Exception
-	 * @param moduleAPIName The API Name of the record's module
-     * @param recordId The ID of the record to get attachments
-	 */
+     * <h3> Get Attachments</h3>
+     * This method is used to get a single record's attachments' details with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @throws SDKException
+     */
     public static function getAttachments(string $moduleAPIName, string $recordId)
     {
         //example
@@ -211,15 +212,15 @@ class Attachment
             }
         }
     }
-    
-     /**
-	 * <h3> Upload Attachments</h3>
-	 * This method is used to upload an attachment to a single record of a module with ID and print the response.
-	 * @throws Exception
-	 * @param moduleAPIName The API Name of the record's module
-     * @param recordId The ID of the record to upload attachment
-     * @param absoluteFilePath The absolute file path of the file to be attached
-	 */
+
+    /**
+     * <h3> Upload Attachments</h3>
+     * This method is used to upload an attachment to a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param string $absoluteFilePath
+     * @throws SDKException
+     */
     public static function uploadAttachments(string $moduleAPIName, string $recordId, string $absoluteFilePath)
     {
         //example
@@ -347,12 +348,13 @@ class Attachment
     }
 
     /**
-	 * <h3> Delete Attachments</h3>
-	 * This method is used to Delete attachments to a single record of a module with ID and print the response.
-	 * @param moduleAPIName The API Name of the record's module
-	 * @param recordId The ID of the record to delete attachment
-	 * @param attachmentIds The List of attachment IDs to be deleted
-	 */
+     * <h3> Delete Attachments</h3>
+     * This method is used to Delete attachments to a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param array $attachmentIds
+     * @throws SDKException
+     */
 	public static function deleteAttachments(string $moduleAPIName, string $recordId, array $attachmentIds)
 	{
 		//example
@@ -688,14 +690,15 @@ class Attachment
             }
         }
     }
-    
+
     /**
-	 * <h3> Upload Link Attachments</h3>
-	 * This method is used to upload link attachment to a single record of a module with ID and print the response.
-	 * @param moduleAPIName The API Name of the record's module
-	 * @param recordId The ID of the record to upload Link attachment
-	 * @param attachmentURL The attachmentURL of the doc or image link to be attached
-	 */
+     * <h3> Upload Link Attachments</h3>
+     * This method is used to upload link attachment to a single record of a module with ID and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @param string $attachmentURL
+     * @throws SDKException
+     */
     public static function uploadLinkAttachments(string $moduleAPIName, string $recordId, string $attachmentURL)
     {
         //example

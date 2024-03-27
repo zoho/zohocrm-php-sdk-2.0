@@ -9,10 +9,11 @@ use com\zoho\crm\api\util\APIResponse;
 class OrgOperations
 {
 
-	/**
-	 * The method to get organization
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get organization
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getOrganization()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -25,11 +26,12 @@ class OrgOperations
 
 	}
 
-	/**
-	 * The method to upload organization photo
-	 * @param FileBodyWrapper $request An instance of FileBodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upload organization photo
+     * @param FileBodyWrapper $request An instance of FileBodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function uploadOrganizationPhoto(FileBodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

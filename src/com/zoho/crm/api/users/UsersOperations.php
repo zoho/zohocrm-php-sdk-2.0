@@ -13,12 +13,13 @@ use com\zoho\crm\api\util\APIResponse;
 class UsersOperations
 {
 
-	/**
-	 * The method to get users
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get users
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getUsers(ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -33,11 +34,12 @@ class UsersOperations
 
 	}
 
-	/**
-	 * The method to create user
-	 * @param RequestWrapper $request An instance of RequestWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create user
+     * @param RequestWrapper $request An instance of RequestWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createUser(RequestWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -53,11 +55,12 @@ class UsersOperations
 
 	}
 
-	/**
-	 * The method to update users
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update users
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateUsers(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -73,12 +76,13 @@ class UsersOperations
 
 	}
 
-	/**
-	 * The method to get user
-	 * @param string $id A string
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get user
+     * @param string $id A string
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getUser(string $id, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -93,12 +97,13 @@ class UsersOperations
 
 	}
 
-	/**
-	 * The method to update user
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update user
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateUser(string $id, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -114,11 +119,12 @@ class UsersOperations
 
 	}
 
-	/**
-	 * The method to delete user
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete user
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteUser(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

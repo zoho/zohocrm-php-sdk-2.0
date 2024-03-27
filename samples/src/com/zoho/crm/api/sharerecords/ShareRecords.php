@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\sharerecords;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\modules\Module;
@@ -29,13 +30,13 @@ use com\zoho\crm\api\users\User;
 
 class ShareRecords
 {
-	/**
-	 * <h3> Get Shared Record Details </h3>
-	 * This method is used to get the details of a shared record and print the response.
-	 * @param moduleAPIName - The API Name of the module to get shared record details.
-	 * @param recordId - The ID of the record to be obtained.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Shared Record Details </h3>
+     * This method is used to get the details of a shared record and print the response.
+     * @param string $moduleAPIName
+     * @param string $recordId
+     * @throws SDKException
+     */
 	public static function getSharedRecordDetails(string $moduleAPIName, string $recordId)
 	{
 		//example

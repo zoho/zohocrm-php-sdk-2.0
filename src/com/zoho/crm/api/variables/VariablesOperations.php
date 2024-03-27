@@ -11,11 +11,12 @@ use com\zoho\crm\api\util\APIResponse;
 class VariablesOperations
 {
 
-	/**
-	 * The method to get variables
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get variables
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getVariables(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -29,11 +30,12 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to create variables
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create variables
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createVariables(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -49,11 +51,12 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to update variables
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update variables
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateVariables(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -69,11 +72,12 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to delete variables
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete variables
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteVariables(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -87,12 +91,13 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to get variable by id
-	 * @param string $id A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get variable by id
+     * @param string $id A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getVariableById(string $id, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -107,12 +112,13 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to update variable by id
-	 * @param string $id A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update variable by id
+     * @param string $id A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateVariableById(string $id, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -128,11 +134,12 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to delete variable
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete variable
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteVariable(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -146,12 +153,13 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to get variable for api name
-	 * @param string $apiName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get variable for api name
+     * @param string $apiName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getVariableForAPIName(string $apiName, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -166,12 +174,13 @@ class VariablesOperations
 
 	}
 
-	/**
-	 * The method to update variable by api name
-	 * @param string $apiName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update variable by api name
+     * @param string $apiName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateVariableByAPIName(string $apiName, BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

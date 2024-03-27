@@ -14,14 +14,15 @@ use com\zoho\crm\api\util\APIResponse;
 class RecordOperations
 {
 
-	/**
-	 * The method to get record
-	 * @param string $id A string
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get record
+     * @param string $id A string
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -41,14 +42,15 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to update record
-	 * @param string $id A string
-	 * @param string $moduleAPIName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update record
+     * @param string $id A string
+     * @param string $moduleAPIName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRecord(string $id, string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -69,14 +71,15 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to delete record
-	 * @param string $id A string
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete record
+     * @param string $id A string
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -95,13 +98,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to get records
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get records
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -119,13 +123,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to create records
-	 * @param string $moduleAPIName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create records
+     * @param string $moduleAPIName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -144,13 +149,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to update records
-	 * @param string $moduleAPIName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update records
+     * @param string $moduleAPIName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -169,13 +175,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to delete records
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete records
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -192,13 +199,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to upsert records
-	 * @param string $moduleAPIName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upsert records
+     * @param string $moduleAPIName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function upsertRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -218,13 +226,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to get deleted records
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get deleted records
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getDeletedRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -242,13 +251,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to search records
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to search records
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function searchRecords(string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -267,12 +277,13 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to convert lead
-	 * @param string $id A string
-	 * @param ConvertBodyWrapper $request An instance of ConvertBodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to convert lead
+     * @param string $id A string
+     * @param ConvertBodyWrapper $request An instance of ConvertBodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function convertLead(string $id, ConvertBodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -291,12 +302,13 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to get photo
-	 * @param string $id A string
-	 * @param string $moduleAPIName A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get photo
+     * @param string $id A string
+     * @param string $moduleAPIName A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getPhoto(string $id, string $moduleAPIName)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -314,13 +326,14 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to upload photo
-	 * @param string $id A string
-	 * @param string $moduleAPIName A string
-	 * @param FileBodyWrapper $request An instance of FileBodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upload photo
+     * @param string $id A string
+     * @param string $moduleAPIName A string
+     * @param FileBodyWrapper $request An instance of FileBodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function uploadPhoto(string $id, string $moduleAPIName, FileBodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -342,12 +355,13 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to delete photo
-	 * @param string $id A string
-	 * @param string $moduleAPIName A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete photo
+     * @param string $id A string
+     * @param string $moduleAPIName A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deletePhoto(string $id, string $moduleAPIName)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -365,12 +379,13 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to mass update records
-	 * @param string $moduleAPIName A string
-	 * @param MassUpdateBodyWrapper $request An instance of MassUpdateBodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to mass update records
+     * @param string $moduleAPIName A string
+     * @param MassUpdateBodyWrapper $request An instance of MassUpdateBodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function massUpdateRecords(string $moduleAPIName, MassUpdateBodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -390,12 +405,13 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to get mass update status
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get mass update status
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getMassUpdateStatus(string $moduleAPIName, ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -412,14 +428,15 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to get record using external id
-	 * @param string $externalFieldValue A string
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get record using external id
+     * @param string $externalFieldValue A string
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -439,14 +456,15 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to update record using external id
-	 * @param string $externalFieldValue A string
-	 * @param string $moduleAPIName A string
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update record using external id
+     * @param string $externalFieldValue A string
+     * @param string $moduleAPIName A string
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -467,14 +485,15 @@ class RecordOperations
 
 	}
 
-	/**
-	 * The method to delete record using external id
-	 * @param string $externalFieldValue A string
-	 * @param string $moduleAPIName A string
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete record using external id
+     * @param string $externalFieldValue A string
+     * @param string $moduleAPIName A string
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteRecordUsingExternalId(string $externalFieldValue, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

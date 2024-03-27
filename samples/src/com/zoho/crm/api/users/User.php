@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\users;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\HeaderMap;
 
 use com\zoho\crm\api\ParameterMap;
@@ -31,12 +32,12 @@ use com\zoho\crm\api\users\GetUsersParam;
 
 class User
 {
-	/**
-	 * <h3> Get Users </h3>
-	 * This method is used to retrieve the users data specified in the API request.
-	 * You can specify the type of users that needs to be retrieved using the Users API.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Users </h3>
+     * This method is used to retrieve the users data specified in the API request.
+     * You can specify the type of users that needs to be retrieved using the Users API.
+     * @throws SDKException
+     */
 	public static function getUsers()
 	{
 		//Get instance of UsersOperations Class
@@ -736,14 +737,14 @@ class User
             }
 		}
 	}
-	
-	/**
-	 * <h3> Get User </h3>
-	 * This method is used to get the details of any specific $user->
-	 * Specify the unique id of the user in your API request to get the data for that particular $user->
-	 * @param userId - The ID of the User to be obtainted
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Get User </h3>
+     * This method is used to get the details of any specific $user->
+     * Specify the unique id of the user in your API request to get the data for that particular $user->
+     * @param string $userId
+     * @throws SDKException
+     */
 	public static function getUser(string $userId)
 	{
 		//Get instance of UsersOperations Class

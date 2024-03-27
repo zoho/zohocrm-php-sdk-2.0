@@ -26,11 +26,12 @@ class AttachmentsOperations
 
 	}
 
-	/**
-	 * The method to download attachment
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to download attachment
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function downloadAttachment(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -48,11 +49,12 @@ class AttachmentsOperations
 
 	}
 
-	/**
-	 * The method to delete attachment
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete attachment
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteAttachment(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -70,11 +72,12 @@ class AttachmentsOperations
 
 	}
 
-	/**
-	 * The method to get attachments
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get attachments
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getAttachments(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -92,11 +95,12 @@ class AttachmentsOperations
 
 	}
 
-	/**
-	 * The method to upload attachment
-	 * @param FileBodyWrapper $request An instance of FileBodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upload attachment
+     * @param FileBodyWrapper $request An instance of FileBodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function uploadAttachment(FileBodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -116,11 +120,12 @@ class AttachmentsOperations
 
 	}
 
-	/**
-	 * The method to upload link attachment
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upload link attachment
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function uploadLinkAttachment(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -139,11 +144,12 @@ class AttachmentsOperations
 
 	}
 
-	/**
-	 * The method to delete attachments
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete attachments
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteAttachments(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

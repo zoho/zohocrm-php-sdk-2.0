@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\notes;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\HeaderMap;
 
 use com\zoho\crm\api\ParameterMap;
@@ -27,11 +28,11 @@ use com\zoho\crm\api\record\Record;
 
 class Note
 {
-	/**
-	 * <h3> Get Notes </h3>
-	 * This method is used to get the list of notes and print the response.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Notes </h3>
+     * This method is used to get the list of notes and print the response.
+     * @throws SDKException
+     */
 	public static function getNotes()
 	{
 		//Get instance of NotesOperations Class
@@ -674,12 +675,12 @@ class Note
             }
 		}
 	}
-	
-	/**
-	 * This method is used to delete notes in bulk and print the response.
-	 * @param notesID - The ID of the record to delete notes
-	 * @throws Exception
-	 */
+
+    /**
+     * This method is used to delete notes in bulk and print the response.
+     * @param array $notesID
+     * @throws SDKException
+     */
 	public static function deleteNotes(array $notesID)
 	{
 		//Get instance of NotesOperations Class

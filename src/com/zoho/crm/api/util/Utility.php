@@ -163,6 +163,7 @@ class Utility
      * This method to fetch field details of the current module for the current user and store the result in a JSON file.
      * @param string $moduleAPIName A String containing the CRM module API name.
      * @param string $handlerInstance A CommonAPIHandler Instance
+     * @throws SDKException
      */
     public static function getFields($moduleAPIName, $handlerInstance = null)
     {
@@ -569,6 +570,7 @@ class Utility
      * This method to get module field data from Zoho CRM.
      * @param string $moduleAPIName A string containing the CRM module API name.
      * @return array[] A array[] representing the Zoho CRM module field details.
+     * @throws SDKException
      */
     public static function getFieldDetails($moduleAPIName)
     {

@@ -73,10 +73,11 @@ class Initializer
      * @param Environment $environment A Environment class instance containing the CRM API base URL and Accounts URL.
      * @param Token $token A Token class instance containing the OAuth client application information.
      * @param TokenStore $store A TokenStore class instance containing the token store information.
-     * @param SDKConfig $ A SDKConfig class instance containing the SDK configuration.
+     * @param $sdkConfig
      * @param string $resourcePath A String containing the absolute directory path to store user specific JSON files containing module fields information.
      * @param Logger $logger A Logger class instance containing the log file path and Logger type.
      * @param RequestProxy $proxy A RequestProxy class instance containing the proxy properties of the user.
+     * @throws SDKException
      */
     public static function initialize($user, $environment, $token, $store, $sdkConfig, $resourcePath, $logger=null, $proxy=null)
     {

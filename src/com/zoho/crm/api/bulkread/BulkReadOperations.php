@@ -9,11 +9,12 @@ use com\zoho\crm\api\util\APIResponse;
 class BulkReadOperations
 {
 
-	/**
-	 * The method to get bulk read job details
-	 * @param string $jobId A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get bulk read job details
+     * @param string $jobId A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getBulkReadJobDetails(string $jobId)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -27,11 +28,12 @@ class BulkReadOperations
 
 	}
 
-	/**
-	 * The method to download result
-	 * @param string $jobId A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to download result
+     * @param string $jobId A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function downloadResult(string $jobId)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -46,11 +48,12 @@ class BulkReadOperations
 
 	}
 
-	/**
-	 * The method to create bulk read job
-	 * @param RequestWrapper $request An instance of RequestWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create bulk read job
+     * @param RequestWrapper $request An instance of RequestWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createBulkReadJob(RequestWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

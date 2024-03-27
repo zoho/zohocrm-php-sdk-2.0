@@ -24,10 +24,11 @@ class BluePrintOperations
 
 	}
 
-	/**
-	 * The method to get blueprint
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get blueprint
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getBlueprint()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -44,11 +45,12 @@ class BluePrintOperations
 
 	}
 
-	/**
-	 * The method to update blueprint
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update blueprint
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateBlueprint(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

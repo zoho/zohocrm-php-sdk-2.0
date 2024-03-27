@@ -11,11 +11,12 @@ use com\zoho\crm\api\util\APIResponse;
 class NotificationOperations
 {
 
-	/**
-	 * The method to enable notifications
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to enable notifications
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function enableNotifications(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -31,11 +32,12 @@ class NotificationOperations
 
 	}
 
-	/**
-	 * The method to get notification details
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get notification details
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getNotificationDetails(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -49,11 +51,12 @@ class NotificationOperations
 
 	}
 
-	/**
-	 * The method to update notifications
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update notifications
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateNotifications(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -69,11 +72,12 @@ class NotificationOperations
 
 	}
 
-	/**
-	 * The method to update notification
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update notification
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateNotification(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -89,11 +93,12 @@ class NotificationOperations
 
 	}
 
-	/**
-	 * The method to disable notifications
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to disable notifications
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function disableNotifications(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -107,11 +112,12 @@ class NotificationOperations
 
 	}
 
-	/**
-	 * The method to disable notification
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to disable notification
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function disableNotification(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

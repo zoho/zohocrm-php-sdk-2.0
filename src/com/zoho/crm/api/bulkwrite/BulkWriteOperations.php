@@ -11,12 +11,13 @@ use com\zoho\crm\api\util\APIResponse;
 class BulkWriteOperations
 {
 
-	/**
-	 * The method to upload file
-	 * @param FileBodyWrapper $request An instance of FileBodyWrapper
-	 * @param HeaderMap $headerInstance An instance of HeaderMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to upload file
+     * @param FileBodyWrapper $request An instance of FileBodyWrapper
+     * @param HeaderMap $headerInstance An instance of HeaderMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function uploadFile(FileBodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -33,11 +34,12 @@ class BulkWriteOperations
 
 	}
 
-	/**
-	 * The method to create bulk write job
-	 * @param RequestWrapper $request An instance of RequestWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create bulk write job
+     * @param RequestWrapper $request An instance of RequestWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createBulkWriteJob(RequestWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -53,11 +55,12 @@ class BulkWriteOperations
 
 	}
 
-	/**
-	 * The method to get bulk write job details
-	 * @param string $jobId A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get bulk write job details
+     * @param string $jobId A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getBulkWriteJobDetails(string $jobId)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -71,11 +74,12 @@ class BulkWriteOperations
 
 	}
 
-	/**
-	 * The method to download bulk write result
-	 * @param string $downloadUrl A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to download bulk write result
+     * @param string $downloadUrl A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function downloadBulkWriteResult(string $downloadUrl)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

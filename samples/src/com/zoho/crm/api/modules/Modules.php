@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\modules;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\HeaderMap;
 
 use com\zoho\crm\api\modules\APIException;
@@ -23,11 +24,11 @@ use com\zoho\crm\api\modules\GetModulesHeader;
 
 class Modules
 {
-	/**
-	 * <h3> Get Modules </h3>
-	 * This method is used to get metadata about all the modules and print the response.
-	 * @throws Exception
-	 */
+    /**
+     * <h3> Get Modules </h3>
+     * This method is used to get metadata about all the modules and print the response.
+     * @throws SDKException
+     */
 	public static function getModules()
 	{
 		//Get instance of ModulesOperations Class

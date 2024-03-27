@@ -38,6 +38,7 @@ class HeaderMap
      * This method is to add header name and value.
      * @param Header $header A Header class instance.
      * @param object $value A object containing the header value.
+     * @throws SDKException
      */
     public function add(Header $header, $value)
     {

@@ -17,6 +17,7 @@ class StreamWrapper
      * @param string $name A string containing the file name.
      * @param object $stream A object containing the file stream.
      * @param string $filepath A string containing the absolute file path.
+     * @throws SDKException
      */
     public function __construct($name, $stream, $filepath)
     {

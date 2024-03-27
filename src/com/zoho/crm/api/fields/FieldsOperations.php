@@ -23,11 +23,12 @@ class FieldsOperations
 
 	}
 
-	/**
-	 * The method to get fields
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get fields
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getFields(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -42,11 +43,12 @@ class FieldsOperations
 
 	}
 
-	/**
-	 * The method to get field
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get field
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getField(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

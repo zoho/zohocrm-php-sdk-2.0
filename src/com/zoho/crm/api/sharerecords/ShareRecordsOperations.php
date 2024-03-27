@@ -26,11 +26,12 @@ class ShareRecordsOperations
 
 	}
 
-	/**
-	 * The method to get shared record details
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get shared record details
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getSharedRecordDetails(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -48,11 +49,12 @@ class ShareRecordsOperations
 
 	}
 
-	/**
-	 * The method to share record
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to share record
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function shareRecord(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -72,11 +74,12 @@ class ShareRecordsOperations
 
 	}
 
-	/**
-	 * The method to update share permissions
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update share permissions
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateSharePermissions(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -96,10 +99,11 @@ class ShareRecordsOperations
 
 	}
 
-	/**
-	 * The method to revoke shared record
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to revoke shared record
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function revokeSharedRecord()
 	{
 		$handlerInstance=new CommonAPIHandler(); 

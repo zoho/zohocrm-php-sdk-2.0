@@ -11,10 +11,11 @@ use com\zoho\crm\api\util\APIResponse;
 class TaxesOperations
 {
 
-	/**
-	 * The method to get taxes
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get taxes
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getTaxes()
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -27,11 +28,12 @@ class TaxesOperations
 
 	}
 
-	/**
-	 * The method to create taxes
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to create taxes
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function createTaxes(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -47,11 +49,12 @@ class TaxesOperations
 
 	}
 
-	/**
-	 * The method to update taxes
-	 * @param BodyWrapper $request An instance of BodyWrapper
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to update taxes
+     * @param BodyWrapper $request An instance of BodyWrapper
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function updateTaxes(BodyWrapper $request)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -67,11 +70,12 @@ class TaxesOperations
 
 	}
 
-	/**
-	 * The method to delete taxes
-	 * @param ParameterMap $paramInstance An instance of ParameterMap
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete taxes
+     * @param ParameterMap $paramInstance An instance of ParameterMap
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteTaxes(ParameterMap $paramInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -85,11 +89,12 @@ class TaxesOperations
 
 	}
 
-	/**
-	 * The method to get tax
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to get tax
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function getTax(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
@@ -103,11 +108,12 @@ class TaxesOperations
 
 	}
 
-	/**
-	 * The method to delete tax
-	 * @param string $id A string
-	 * @return APIResponse An instance of APIResponse
-	 */
+    /**
+     * The method to delete tax
+     * @param string $id A string
+     * @return APIResponse An instance of APIResponse
+     * @throws SDKException
+     */
 	public  function deleteTax(string $id)
 	{
 		$handlerInstance=new CommonAPIHandler(); 

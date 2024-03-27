@@ -1,6 +1,7 @@
 <?php
 namespace samples\src\com\zoho\crm\api\taxes;
 
+use com\zoho\crm\api\exception\SDKException;
 use com\zoho\crm\api\ParameterMap;
 
 use com\zoho\crm\api\taxes\APIException;
@@ -411,13 +412,13 @@ class Tax
 			}
 		}
 	}
-	
-	/**
-	 * <h3> Delete Taxes </h3>
-	 * This method is used to delete Organization Taxes and print the response.
-	 * @param taxIds - The ID of the tax to be obtainted
-	 * @throws Exception
-	 */
+
+    /**
+     * <h3> Delete Taxes </h3>
+     * This method is used to delete Organization Taxes and print the response.
+     * @param array $taxIds
+     * @throws SDKException
+     */
 	public static function deleteTaxes(array $taxIds)
 	{
 		//Get instance of TaxesOperations Class
